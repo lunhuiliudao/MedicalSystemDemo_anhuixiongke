@@ -1,0 +1,150 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.OperationInformation.OperationEventNoteControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+             mc:Ignorable="d"
+             d:DesignHeight="865" d:DesignWidth="1045">
+    <Grid Margin="5,15,5,15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--搜索框-->
+            <control:SearchTextBox Name="txtBoxSearch" Background="#E4E9F0" Height="30" BorderThickness="0" Margin="5,0,5,0"
+                                   FontSize="18" PreviewKeyDown="TxtBoxSearch_PreviewKeyDown" GotFocus="TxtBoxSearch_GotFocus">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SearchClick">
+                        <i:InvokeCommandAction Command="{Binding SearchClick}"
+                            CommandParameter="{Binding Path=Text, 
+                            RelativeSource={RelativeSource AncestorType={x:Type control:SearchTextBox}}}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchTextBoxTextChanged}"
+                                               CommandParameter="{Binding Path=Text, 
+                            RelativeSource={RelativeSource AncestorType={x:Type control:SearchTextBox}}}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </control:SearchTextBox>
+
+            <!--事件明细-->
+            <ListBox x:Name="Lv" Grid.Row="1" BorderThickness="0" Background="Transparent" Margin="3,8,3,0"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ItemsSource="{Binding EventDictData}" PreviewKeyDown="Lv_PreviewKeyDown">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding DataContext.LeftEventDoubleClick,RelativeSource={RelativeSource AncestorType=local:BaseUserControl}}"
+                                               CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource AncestorType=ListBox}}">
+                        </i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2" VerticalAlignment="Top"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <StackPanel x:Name="bg" Orientation="Horizontal" Background="Transparent"
+                                                Margin="0,0,3,3">
+                                        <TextBlock x:Name="tb" Width="5" Background="#D5E2E3" HorizontalAlignment="Left" Height="45"/>
+                                        <TextBlock Text="{Binding EVENT_ITEM_NAME}" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="12"
+                                                   Foreground="#616365"/>
+                                    </StackPanel>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="bg" Property="Background" Value="#BDF0EE"/>
+                                            <Setter TargetName="tb" Property="Background" Value="#15b9c3"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Grid>
+
+        <!--分割线-->
+        <TextBlock Grid.Column="1" Width="1" HorizontalAlignment="Left" Background="#E6E9EC" Height="850"/>
+
+        <!--明细-->
+        <!--防止包含滚动条时焦点乱跳，设置EnableRowVirtualization=true-->
+        <DataGrid x:Name="dg" Grid.Column="1" IsReadOnly="False" BorderThickness="0" ItemsSource="{Binding AnesEvent}"
+                  CanUserAddRows="False" SelectedItem="{Binding SelectItem}" SelectedIndex="{Binding SelectedIndex}"
+                  PreviewKeyDown="Dg_PreviewKeyDown" SelectionChanged="Datagrid_SelectionChanged" EnableRowVirtualization="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="23">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="16" Height="16" Click="ButtonDeleteItem_Click" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Image x:Name="img" Source="/MedicalSystem.AnesWorkStation.View;component/Images/delnormal.png"
+                                               Width="16" Height="16" HorizontalAlignment="Right"/>
+                                        </Grid>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="img" Property="Source" Value="/MedicalSystem.AnesWorkStation.View;component/Images/delpress.png"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1.8*" Header="项目">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding EVENT_ITEM_NAME}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Name="tbEventItemName" Text="{Binding EVENT_ITEM_NAME,UpdateSourceTrigger=PropertyChanged}" Margin="0"
+                                     Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=DataGridCell}}"/>
+                            <DataTemplate.Triggers>
+                                <Trigger SourceName="tbEventItemName" Property="IsVisible" Value="True">
+                                    <Setter TargetName="tbEventItemName" Property="FocusManager.FocusedElement" Value="{Binding ElementName=tbEventItemName}" />
+                                </Trigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!--<DataGridTemplateColumn Header="开始时间" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <control:DateSelector Width="200" 
+                                                  SelectedDate="{Binding START_TIME,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                  ConsumerFontSize="13" InputTextWidth="25" Command="{Binding}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+
+                <control:DataGridDateSelectorColumn Width="*"
+                                                        Binding="{Binding START_TIME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        Header="开始时间" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:BaseUserControl>

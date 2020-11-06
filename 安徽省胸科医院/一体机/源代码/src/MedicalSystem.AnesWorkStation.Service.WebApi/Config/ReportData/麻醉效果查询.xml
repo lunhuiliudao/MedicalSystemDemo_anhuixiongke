@@ -1,0 +1,473 @@
+<?xml version="1.0" standalone="yes"?>
+<XMLData>
+  <xs:schema id="XMLData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XMLData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportInformation">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ReportTitle" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportTitle, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportColumnList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportColumn, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportSubConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportSubCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="SubReportInformationList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportInformation, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportChartInfo" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportChartInfo, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportInformation>
+    <ReportTitle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportName>麻醉效果查询</ReportName>
+      <Menu>手术查询</Menu>
+      <StrSql>
+       select a.patient_id,A.VISIT_ID,A.OPER_ID,d.inp_no ,b.name,b.sex, fun_get_pat_age( b.date_of_birth,a.start_date_time ) age, nvl(c.dept_name,a.dept_code) deptname,
+a.operation_name ,to_char(a.start_date_time,'yyyy-mm-dd') operdate ,to_char(a.start_date_time,'hh24:mi') opertime,a.oper_scale,decode(a.emergency_ind,1,'急诊','择期') emergency_ind,
+nvl(e.USER_NAME,a.surgeon ) surgeon   , a.anes_method,a.asa_grade,
+ nvl(g.USER_NAME,a.anes_doctor) anes_doctor ,f.Anes_Effect , f.ANALGESIA_METHOD
+ from  med_operation_master a ,med_pat_master_index b, med_dept_dict c ,med_pat_visit d,MED_ANESTHESIA_INPUT_DATA f,
+       med_his_users e,med_his_users g
+  where a.patient_id=b.patient_id(+) and a.dept_code=c.dept_code and a.patient_id=d.patient_id and a.visit_id=d.visit_id and 
+        a.surgeon=e.USER_JOB_ID(+) and a.anes_doctor =g.USER_JOB_ID(+) and 
+        a.patient_id=f.patient_id and a.visit_id=f.visit_id and a.oper_id=f.oper_id(+) and 
+        a.start_date_time &gt;=:STARTTIME and a.start_date_time &lt;= :ENDTIME 
+     and (b.name like '%'||:vname||'%' or :vname is null) and (d.inp_no like '%'||:VINP_NO||'%'  or :VINP_NO is null) AND
+     (a.dept_code=:vdeptcode or :vdeptcode is null) and (a.operation_name like '%'||:voperationname||'%' or :voperationname is null) AND
+     (a.anes_doctor = :vanesdoctor or :vanesdoctor is null)  and (a.surgeon = :vsurgeon or :vsurgeon is null) and
+     (a.anes_method like '%'||:vanesmethod||'%' or :vanesmethod is null)  and
+     (a.asa_grade  =:vasagrade or :vasagrade is null)  and (a.oper_scale = :voperscale or :voperscale is null) and 
+     (decode(a.emergency_ind,1,'急诊','择期') = :JZZQ OR :JZZQ IS NULL ) and (f.Anes_Effect =:VANESEFFECT or :VANESEFFECT is null)
+     order by b.name
+        </StrSql>
+      <PageSize>13</PageSize>
+      <SortNumber>5</SortNumber>
+      <ModelFileName />
+      <ShowSummary>false</ShowSummary>
+      <IsLinkButton>false</IsLinkButton>
+    </ReportTitle>
+    <ReportColumnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportColumn>
+        <FieldName>INP_NO</FieldName>
+        <Title>住院号 </Title>
+        <Width>100</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>NAME</FieldName>
+        <Title>姓名</Title>
+        <Width>100</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>true</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>SEX</FieldName>
+        <Title>性别</Title>
+        <Width>80</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>AGE</FieldName>
+        <Title>年龄</Title>
+        <Width>80</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>DEPTNAME</FieldName>
+        <Title>科室</Title>
+        <Width>120</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>OPERDATE</FieldName>
+        <Title>手术日期</Title>
+        <Width>120</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>OPERTIME</FieldName>
+        <Title>开始时间</Title>
+        <Width>100</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>OPERATION_NAME</FieldName>
+        <Title>手术名称</Title>
+        <Width>180</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>SURGEON</FieldName>
+        <Title>术者</Title>
+        <Width>100</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ANES_METHOD</FieldName>
+        <Title>麻醉方法</Title>
+        <Width>160</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ANES_EFFECT</FieldName>
+        <Title>麻醉效果</Title>
+        <Width>70</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ASA_GRADE</FieldName>
+        <Title>ASA分级</Title>
+        <Width>70</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ANES_DOCTOR</FieldName>
+        <Title>主麻</Title>
+        <Width>100</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ANALGESIA_METHOD</FieldName>
+        <Title>镇痛方式</Title>
+        <Width>300</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+    </ReportColumnList>
+    <ReportConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportCondition>
+        <Title>姓名</Title>
+        <ControlType>TextBox</ControlType>
+        <FieldName>VNAME</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>住院号</Title>
+        <ControlType>TextBox</ControlType>
+        <FieldName>VINP_NO</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>科室</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VDEPTCODE</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>手术名称</Title>
+        <ControlType>TextBox</ControlType>
+        <FieldName>VOPERATIONNAME</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>麻醉医生</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VANESDOCTOR</FieldName>
+        <DataType>String</DataType>
+        <DictType>DoctorDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>手术医生</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VSURGEON</FieldName>
+        <DataType>String</DataType>
+        <DictType>DoctorDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>麻醉方法</Title>
+        <ControlType>TextBox</ControlType>
+        <FieldName>VANESMETHOD</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>手术日期</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>STARTTIME</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentFirstDate</DateDefaultVal>
+        <Value>2019-07-01</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>至 </Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>ENDTIME</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value>2019-07-17</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>ASA分级</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VASAGRADE</FieldName>
+        <DataType>String</DataType>
+        <DictType>DynamicDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName>med_anesthesia_input_dict</TableName>
+          <KeyColumn>item_code</KeyColumn>
+          <ValColumn>item_name</ValColumn>
+          <Condition>item_class='ASA分级'</Condition>
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>麻醉效果</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VANESEFFECT</FieldName>
+        <DataType>String</DataType>
+        <DictType>DynamicDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName>med_anesthesia_input_dict</TableName>
+          <KeyColumn>item_code</KeyColumn>
+          <ValColumn>item_name</ValColumn>
+          <Condition>item_class='麻醉效果'</Condition>
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>手术等级</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VOPERSCALE</FieldName>
+        <DataType>String</DataType>
+        <DictType>DynamicDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName>med_anesthesia_input_dict</TableName>
+          <KeyColumn>item_code</KeyColumn>
+          <ValColumn>item_name</ValColumn>
+          <Condition>item_class='手术等级'</Condition>
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>急诊择期</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>JZZQ</FieldName>
+        <DataType>String</DataType>
+        <DictType>DiyDict</DictType>
+        <BindDict>
+          <KeyValue>
+            <Key>急诊</Key>
+            <Value>急诊</Value>
+            <flag>0</flag>
+          </KeyValue>
+          <KeyValue>
+            <Key>择期</Key>
+            <Value>择期</Value>
+            <flag>0</flag>
+          </KeyValue>
+        </BindDict>
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+    </ReportConditionList>
+    <ReportSubConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <SubReportInformationList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <ReportChartInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ChartType>Line</ChartType>
+      <SeriesData />
+      <XAxisInfo>
+        <Type>value</Type>
+        <DataColumn />
+        <Data />
+      </XAxisInfo>
+      <YAxisInfo>
+        <Type>value</Type>
+        <DataColumn />
+        <Data />
+      </YAxisInfo>
+    </ReportChartInfo>
+  </ReportInformation>
+</XMLData>

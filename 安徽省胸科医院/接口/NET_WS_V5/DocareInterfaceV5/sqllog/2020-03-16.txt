@@ -1,0 +1,1011 @@
+-----------------------------------------------------------
+接口日志：时间 20200316 09:43:23
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 09:43:23
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:43:23
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:43:24
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:43:26
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 09:43:31
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 09:43:32
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 09:43:45
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 09:43:45
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 09:43:46
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 09:47:26
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 09:47:26
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:47:26
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 09:47:32
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 09:50:02
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 09:50:02
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:50:02
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 09:50:04
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 09:51:18
+名称不能以“ ”字符(十六进制值 0x20)开头。 第 7 行，位置 17。调用堆栈上的桢的字符串表现形式:   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   在 System.Xml.XmlTextReaderImpl.ParseQName(Boolean isQName, Int32 startOffset, Int32& colonPos)
+   在 System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   在 System.Xml.XmlTextReaderImpl.ParseEndElement()
+   在 System.Xml.XmlTextReaderImpl.ParseElementContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlTextReader.Read()
+   在 System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   在 System.Xml.XmlLoader.ReadCurrentNode(XmlDocument doc, XmlReader reader)
+   在 System.Xml.XmlDocument.ReadNode(XmlReader reader)
+   在 System.Data.DataSet.ReadXml(XmlReader reader, Boolean denyResolving)
+   在 System.Data.DataSet.ReadXml(TextReader reader)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:Throw
+导致错误的应用程序或对象的名称为:System.Xml
+-----------------------------------------------------------
+接口日志：时间 20200316 09:51:21
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 09:51:21
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:51:21
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 09:51:23
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 09:51:26
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020003487</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>973</SCHEDULE_ID>
+    <OPER_ID> 973 </OPER_ID>
+    <HOSP_BRANCH> 安徽省胸科医院 </HOSP_BRANCH>
+    <WARD_CODE> 10 </WARD_CODE>
+    <DEPT_CODE> 202033 </DEPT_CODE>
+    <OPER_DEPT_CODE> 303001 </OPER_DEPT_CODE>
+    <OPER_ROOM> 303001 </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE> 1 </SEQUENCE>
+    <OPER_CLASS> 1 </OPER_CLASS>
+    <DIAG_BEFORE_OPERATION> 右下肺结节 </DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE> 4 </OPER_SCALE>
+    <WOUND_TYPE> 3 </WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND> 0 </EMERGENCY_IND>
+    <OPER_SOURCE> 1 </OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON> 112061 </SURGEON>
+    <FIRST_OPER_ASSISTANT> 212268 </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT> 112694 </SECOND_OPER_ASSISTANT>
+    <THIRD_OPER_ASSISTANT> 210015 </THIRD_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD> 全身麻醉 </ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME> 2020 - 03 - 16 09:00:48 </REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME> 2020 - 03 - 16 09:00:48 </SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION> 左侧卧位 </OPER_POSITION>
+    <BED_NO> 29 </BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID> 2020003487 </HIS_PATIENT_ID>
+    <HIS_VISIT_ID> 1 </HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID> 973 </HIS_SCHEDULE_ID>
+    <OPERATING_TIME> 2020 - 03 - 13 17:38:11 </OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 09:51:28
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 09:51:35
+列“his_oper_status”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 09:52:40
+列“anes_doctor”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 09:53:12
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 09:53:12
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:53:12
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 09:53:13
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:01:00
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020003487</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>973</SCHEDULE_ID>
+    <OPER_ID> 973 </OPER_ID>
+    <HOSP_BRANCH> 安徽省胸科医院 </HOSP_BRANCH>
+    <WARD_CODE> 10 </WARD_CODE>
+    <DEPT_CODE> 202033 </DEPT_CODE>
+    <OPER_DEPT_CODE> 303001 </OPER_DEPT_CODE>
+    <OPER_ROOM> 303001 </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE> 1 </SEQUENCE>
+    <OPER_CLASS> 1 </OPER_CLASS>
+    <DIAG_BEFORE_OPERATION> 右下肺结节 </DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE> 4 </OPER_SCALE>
+    <WOUND_TYPE> 3 </WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND> 0 </EMERGENCY_IND>
+    <OPER_SOURCE> 1 </OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON> 112061 </SURGEON>
+    <FIRST_OPER_ASSISTANT> 212268 </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT> 112694 </SECOND_OPER_ASSISTANT>
+    <THIRD_OPER_ASSISTANT> 210015 </THIRD_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD> 全身麻醉 </ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME> 2020 - 03 - 16 09:00:48 </REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME> 2020 - 03 - 16 09:00:48 </SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION> 左侧卧位 </OPER_POSITION>
+    <BED_NO> 29 </BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID> 2020003487 </HIS_PATIENT_ID>
+    <HIS_VISIT_ID> 1 </HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID> 973 </HIS_SCHEDULE_ID>
+    <OPERATING_TIME> 2020 - 03 - 13 17:38:11 </OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:01:01
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:01:08
+列“his_oper_status”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 10:03:46
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 10:03:47
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:03:47
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 10:03:48
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:03:51
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020003487</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>973</SCHEDULE_ID>
+    <OPER_ID> 973 </OPER_ID>
+    <HOSP_BRANCH> 安徽省胸科医院 </HOSP_BRANCH>
+    <WARD_CODE> 10 </WARD_CODE>
+    <DEPT_CODE> 202033 </DEPT_CODE>
+    <OPER_DEPT_CODE> 303001 </OPER_DEPT_CODE>
+    <OPER_ROOM> 303001 </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE> 1 </SEQUENCE>
+    <OPER_CLASS> 1 </OPER_CLASS>
+    <DIAG_BEFORE_OPERATION> 右下肺结节 </DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE> 4 </OPER_SCALE>
+    <WOUND_TYPE> 3 </WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND> 0 </EMERGENCY_IND>
+    <OPER_SOURCE> 1 </OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON> 112061 </SURGEON>
+    <FIRST_OPER_ASSISTANT> 212268 </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT> 112694 </SECOND_OPER_ASSISTANT>
+    <THIRD_OPER_ASSISTANT> 210015 </THIRD_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD> 全身麻醉 </ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME> 2020 - 03 - 16 09:00:48 </REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME> 2020 - 03 - 16 09:00:48 </SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION> 左侧卧位 </OPER_POSITION>
+    <BED_NO> 29 </BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID> 2020003487 </HIS_PATIENT_ID>
+    <HIS_VISIT_ID> 1 </HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID> 973 </HIS_SCHEDULE_ID>
+    <OPERATING_TIME> 2020 - 03 - 13 17:38:11 </OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:03:51
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:04:01
+列“his_oper_status”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 10:04:41
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 10:04:41
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:04:41
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 10:04:43
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:04:45
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020003487</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>973</SCHEDULE_ID>
+    <OPER_ID> 973 </OPER_ID>
+    <HOSP_BRANCH> 安徽省胸科医院 </HOSP_BRANCH>
+    <WARD_CODE> 10 </WARD_CODE>
+    <DEPT_CODE> 202033 </DEPT_CODE>
+    <OPER_DEPT_CODE> 303001 </OPER_DEPT_CODE>
+    <OPER_ROOM> 303001 </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE> 1 </SEQUENCE>
+    <OPER_CLASS> 1 </OPER_CLASS>
+    <DIAG_BEFORE_OPERATION> 右下肺结节 </DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE> 4 </OPER_SCALE>
+    <WOUND_TYPE> 3 </WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND> 0 </EMERGENCY_IND>
+    <OPER_SOURCE> 1 </OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON> 112061 </SURGEON>
+    <FIRST_OPER_ASSISTANT> 212268 </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT> 112694 </SECOND_OPER_ASSISTANT>
+    <THIRD_OPER_ASSISTANT> 210015 </THIRD_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD> 全身麻醉 </ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME> 2020 - 03 - 16 09:00:48 </REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME> 2020 - 03 - 16 09:00:48 </SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION> 左侧卧位 </OPER_POSITION>
+    <BED_NO> 29 </BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID> 2020003487 </HIS_PATIENT_ID>
+    <HIS_VISIT_ID> 1 </HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID> 973 </HIS_SCHEDULE_ID>
+    <OPERATING_TIME> 2020 - 03 - 13 17:38:11 </OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:04:45
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:05:40
+列“anes_doctor”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 10:05:44
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 10:05:44
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:05:44
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:05:45
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 10:05:46
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:05:49
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020003487</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>973</SCHEDULE_ID>
+    <OPER_ID> 973 </OPER_ID>
+    <HOSP_BRANCH> 安徽省胸科医院 </HOSP_BRANCH>
+    <WARD_CODE> 10 </WARD_CODE>
+    <DEPT_CODE> 202033 </DEPT_CODE>
+    <OPER_DEPT_CODE> 303001 </OPER_DEPT_CODE>
+    <OPER_ROOM> 303001 </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE> 1 </SEQUENCE>
+    <OPER_CLASS> 1 </OPER_CLASS>
+    <DIAG_BEFORE_OPERATION> 右下肺结节 </DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE> 4 </OPER_SCALE>
+    <WOUND_TYPE> 3 </WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND> 0 </EMERGENCY_IND>
+    <OPER_SOURCE> 1 </OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON> 112061 </SURGEON>
+    <FIRST_OPER_ASSISTANT> 212268 </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT> 112694 </SECOND_OPER_ASSISTANT>
+    <THIRD_OPER_ASSISTANT> 210015 </THIRD_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD> 全身麻醉 </ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME> 2020 - 03 - 16 09:00:48 </REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME> 2020 - 03 - 16 09:00:48 </SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION> 左侧卧位 </OPER_POSITION>
+    <BED_NO> 29 </BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID> 2020003487 </HIS_PATIENT_ID>
+    <HIS_VISIT_ID> 1 </HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID> 973 </HIS_SCHEDULE_ID>
+    <OPERATING_TIME> 2020 - 03 - 13 17:38:11 </OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:05:49
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:16:17
+列“anes_doctor”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt)
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 10:29:09
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 10:29:09
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:29:09
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020005295</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>978</SCHEDULE_ID>
+    <OPER_ID>978</OPER_ID>
+    <HOSP_BRANCH>安徽省胸科医院</HOSP_BRANCH>
+    <WARD_CODE>08          </WARD_CODE>
+    <DEPT_CODE>202031      </DEPT_CODE>
+    <OPER_DEPT_CODE>303001      </OPER_DEPT_CODE>
+    <OPER_ROOM>303001      </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE>1</SEQUENCE>
+    <OPER_CLASS>1</OPER_CLASS>
+    <DIAG_BEFORE_OPERATION>食管胸下段恶性肿瘤</DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE>4 </OPER_SCALE>
+    <WOUND_TYPE>3</WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND>0</EMERGENCY_IND>
+    <OPER_SOURCE>1</OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON>811111      </SURGEON>
+    <FIRST_OPER_ASSISTANT>112126      </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT>212514      </SECOND_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD>复合麻醉</ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME>2020-03-16 08:43:26</REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME>2020-03-16 08:43:26</SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION>左侧卧位</OPER_POSITION>
+    <BED_NO>10</BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID>2020005295</HIS_PATIENT_ID>
+    <HIS_VISIT_ID>1</HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID>978</HIS_SCHEDULE_ID>
+    <OPERATING_TIME>2020-03-15 09:56:00</OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:29:11
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:30:14
+列“first_anes_assistant”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.HospitalBase.GetMedOperationSchedule(DataTable dt) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\接口\NET_WS_V5\BLL\HospitalBase.cs:行号 407
+   在 BLL.BOperationSchedule.PreDataBase(Config2 config, ParamInputDomain domain) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\接口\NET_WS_V5\BLL\BOperationSchedule.cs:行号 186
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+-----------------------------------------------------------
+接口日志：时间 20200316 10:30:16
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 10:30:16
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:30:16
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020005295</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>978</SCHEDULE_ID>
+    <OPER_ID>978</OPER_ID>
+    <HOSP_BRANCH>安徽省胸科医院</HOSP_BRANCH>
+    <WARD_CODE>08          </WARD_CODE>
+    <DEPT_CODE>202031      </DEPT_CODE>
+    <OPER_DEPT_CODE>303001      </OPER_DEPT_CODE>
+    <OPER_ROOM>303001      </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE>1</SEQUENCE>
+    <OPER_CLASS>1</OPER_CLASS>
+    <DIAG_BEFORE_OPERATION>食管胸下段恶性肿瘤</DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE>4 </OPER_SCALE>
+    <WOUND_TYPE>3</WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND>0</EMERGENCY_IND>
+    <OPER_SOURCE>1</OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON>811111      </SURGEON>
+    <FIRST_OPER_ASSISTANT>112126      </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT>212514      </SECOND_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD>复合麻醉</ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME>2020-03-16 08:43:26</REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME>2020-03-16 08:43:26</SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION>左侧卧位</OPER_POSITION>
+    <BED_NO>10</BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID>2020005295</HIS_PATIENT_ID>
+    <HIS_VISIT_ID>1</HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID>978</HIS_SCHEDULE_ID>
+    <OPERATING_TIME>2020-03-15 09:56:00</OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 10:30:18
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 10:32:02
+开始同步BMedPatsMasterIndex 入参PATIENT_ID:2020005295-----------------------------------------------------------
+接口日志：时间 20200316 10:32:07
+sqlDDL:SELECT PATIENT_ID,PATIENT_ID as INP_NO , NAME, NAME_PHONETIC, SEX, DATE_OF_BIRTH, BIRTH_PLACE, CITIZENSHIP, NATION, ID_NO, 
+UNIT_IN_CONTRACT, MAILING_ADDRESS, ZIP_CODE, PHONE_NUMBER_HOME, PHONE_NUMBER_BUSINESS, NEXT_OF_KIN, 
+RELATIONSHIP, NEXT_OF_KIN_ADDR, NEXT_OF_KIN_ZIP_CODE, NEXT_OF_KIN_PHONE,CHARGE_TYPE,LCLJ FROM V_PAT_MASTER_INDEX where PATIENT_ID = @patientid-----------------------------------------------------------
+接口日志：时间 20200316 10:32:10
+ para[0].Value :2020005295-----------------------------------------------------------
+接口日志：时间 20200316 10:33:14
+ para[0].Value :2020005295-----------------------------------------------------------
+接口日志：时间 20200316 10:34:25
+开始同步BMedPatInHospital 入参 InpNo:2020005116-----------------------------------------------------------
+接口日志：时间 20200316 10:35:00
+BMedPatInHospitalsqlDDL:SELECT PATIENT_ID,
+PATIENT_ID as INP_NO,
+VISIT_ID,
+PATIENT_SOURCE,
+HOSP_BRANCH,
+WARD_CODE,
+'' AS DEP_ID,
+DEPT_CODE,
+BED_NO,
+ADMISSION_DATE_TIME,
+ADM_WARD_DATE_TIME ,
+DEPT_DISCHARGE_FROM,
+DISCHARGE_DATE_TIME,
+DIAGNOSIS,PATIENT_CONDITION,
+BLOOD_TYPE,BLOOD_TYPE_RH,BODY_HEIGHT,
+BODY_WEIGHT,NURSING_CLASS,
+DOCTOR_IN_CHARGE,NURSE_IN_CHARGE,
+PREPAYMENTS,SETTLED_INDICATOR,
+INSURANCE_TYPE,INSURANCE_NO,
+PATIENT_CLASS,ADMISSION_CAUSE,
+CONSULTING_DOCTOR,
+'' AS ADMITTRD_BY,
+RESERVED01,RESERVED02,RESERVED03,
+RESERVED_DATE01,RESERVED_DATE02
+  FROM V_PATS_IN_HOSPITAL where PATIENT_ID = @patientid-----------------------------------------------------------
+接口日志：时间 20200316 11:06:42
+传入参数:mess{"Patient":{"PatientId":null,"VisitId":null,"OperId":null,"InpNo":null,"WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":"\/Date(1584288000000)\/","StopDataTime":"\/Date(1584288000000)\/","BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"OPER101","MsgType":null,"Route":0,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20200316 11:06:42
+HanderDomain：OPER101-----------------------------------------------------------
+接口日志：时间 20200316 11:06:42
+CODExxxoooo:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+开始同步手术预约信息Code:OPER101-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+sql;1-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+temp.TransName:HIS-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+oneTransEntity.Dbms:SQLSERVER-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+2020/3/16 0:00:00,2020/3/16 0:00:00,ALL-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+SELECT * FROM V_OPERATION_SCHEDULE where SCHEDULED_DATE_TIME >= @scheduledDateTimeStart and SCHEDULED_DATE_TIME < @scheduledDateTimeEnd and (PATIENT_ID = @patientId or @patientId = 'ALL' )-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+Data Source = 192.168.6.100; Initial Catalog = THIS4; User Id = mdsm; Password = xkyymdsm;-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+ds;<NewDataSet>
+  <Table>
+    <PATIENT_ID>2020005116</PATIENT_ID>
+    <VISIT_ID>1</VISIT_ID>
+    <SCHEDULE_ID>968</SCHEDULE_ID>
+    <OPER_ID>968</OPER_ID>
+    <HOSP_BRANCH>安徽省胸科医院</HOSP_BRANCH>
+    <WARD_CODE>11          </WARD_CODE>
+    <DEPT_CODE>202034      </DEPT_CODE>
+    <OPER_DEPT_CODE>303001      </OPER_DEPT_CODE>
+    <OPER_ROOM>303001      </OPER_ROOM>
+    <OPER_ROOM_NO />
+    <SEQUENCE>1</SEQUENCE>
+    <OPER_CLASS>1</OPER_CLASS>
+    <DIAG_BEFORE_OPERATION>左侧胸壁结核</DIAG_BEFORE_OPERATION>
+    <PATIENT_CONDITION />
+    <OPER_SCALE>3 </OPER_SCALE>
+    <WOUND_TYPE>3</WOUND_TYPE>
+    <ASA_GRADE />
+    <EMERGENCY_IND>0</EMERGENCY_IND>
+    <OPER_SOURCE>1</OPER_SOURCE>
+    <ISOLATION_IND />
+    <INFECTED_IND />
+    <RADIATE_IND />
+    <SURGEON>212510      </SURGEON>
+    <FIRST_OPER_ASSISTANT>112228      </FIRST_OPER_ASSISTANT>
+    <SECOND_OPER_ASSISTANT>212599      </SECOND_OPER_ASSISTANT>
+    <FOURTH_OPER_ASSISTANT />
+    <ANES_METHOD>静吸复合全麻</ANES_METHOD>
+    <SECOND_ANES_ASSISTANT />
+    <THIRD_ANES_ASSISTANT />
+    <FOURTH_ANES_ASSISTANT />
+    <CPB_DOCTOR />
+    <FIRST_CPB_ASSISTANT />
+    <SECOND_CPB_ANESTHESIA />
+    <THIRD_CPB_ANESTHESIA />
+    <FOURTH_CPB_ANESTHESIA />
+    <FIRST_OPER_NURSE />
+    <SECOND_OPER_NURSE />
+    <THIRD_OPER_NURSE />
+    <FOURTH_OPER_NURSE />
+    <FIRST_ANES_NURSE />
+    <SECOND_ANES_NURSE />
+    <THIRD_ANES_NURSE />
+    <FIRST_SUPPLY_NURSE />
+    <SECOND_SUPPLY_NURSE />
+    <THIRD_SUPPLY_NURSE />
+    <FOURTH_SUPPLY_NURSE />
+    <REQ_DATE_TIME>2020-03-16 08:19:32</REQ_DATE_TIME>
+    <SCHEDULED_DATE_TIME>2020-03-16 08:19:32</SCHEDULED_DATE_TIME>
+    <PACU_DOCTOR />
+    <FIRST_PACU_ASSISTANT />
+    <SECOND_PACU_ASSISTANT />
+    <FIRST_PACU_NURSE />
+    <SECOND_PACU_NURSE />
+    <OPER_POSITION>右侧卧位</OPER_POSITION>
+    <BED_NO>08</BED_NO>
+    <SPECIAL_EQUIPMENT />
+    <SPECIAL_INFECT />
+    <NOTES_ON_OPERATION />
+    <OPERATOR />
+    <HIS_PATIENT_ID>2020005116</HIS_PATIENT_ID>
+    <HIS_VISIT_ID>1</HIS_VISIT_ID>
+    <HIS_SCHEDULE_ID>968</HIS_SCHEDULE_ID>
+    <OPERATING_TIME>2020-03-13 08:27:17</OPERATING_TIME>
+    <RESERVED1 />
+    <RESERVED2 />
+    <RESERVED3 />
+  </Table>
+</NewDataSet>-----------------------------------------------------------
+接口日志：时间 20200316 11:06:46
+dt;1-----------------------------------------------------------
+接口日志：时间 20200316 11:12:48
+开始同步BMedPatsMasterIndex 入参PATIENT_ID:2020005116-----------------------------------------------------------
+接口日志：时间 20200316 11:12:48
+sqlDDL:SELECT PATIENT_ID,PATIENT_ID as INP_NO , NAME, NAME_PHONETIC, SEX, DATE_OF_BIRTH, BIRTH_PLACE, CITIZENSHIP, NATION, ID_NO, 
+UNIT_IN_CONTRACT, MAILING_ADDRESS, ZIP_CODE, PHONE_NUMBER_HOME, PHONE_NUMBER_BUSINESS, NEXT_OF_KIN, 
+RELATIONSHIP, NEXT_OF_KIN_ADDR, NEXT_OF_KIN_ZIP_CODE, NEXT_OF_KIN_PHONE,CHARGE_TYPE,LCLJ FROM V_PAT_MASTER_INDEX where PATIENT_ID = @patientid-----------------------------------------------------------
+接口日志：时间 20200316 11:12:48
+ para[0].Value :2020005116-----------------------------------------------------------
+接口日志：时间 20200316 11:13:16
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)调用堆栈上的桢的字符串表现形式:   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 BLL.DataSqlServerHelper.PrepareCommand(DbCommand cmd, DbConnection conn, DbTransaction trans, CommandType cmdType, String cmdText, DbParameter[] commandParameters)
+   在 BLL.DataSqlServerHelper.GetDataSet(CommandType cmdType, String cmdText, String connectionString, DbParameter[] commandParameters)
+   在 BLL.BMedPatsMasterIndex.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:.ctor
+导致错误的应用程序或对象的名称为:.Net SqlClient Data Provider
+-----------------------------------------------------------
+接口日志：时间 20200316 11:14:56
+开始同步BMedPatsMasterIndex 入参PATIENT_ID:2020005116-----------------------------------------------------------
+接口日志：时间 20200316 11:14:58
+sqlDDL:SELECT PATIENT_ID,PATIENT_ID as INP_NO , NAME, NAME_PHONETIC, SEX, DATE_OF_BIRTH, BIRTH_PLACE, CITIZENSHIP, NATION, ID_NO, 
+UNIT_IN_CONTRACT, MAILING_ADDRESS, ZIP_CODE, PHONE_NUMBER_HOME, PHONE_NUMBER_BUSINESS, NEXT_OF_KIN, 
+RELATIONSHIP, NEXT_OF_KIN_ADDR, NEXT_OF_KIN_ZIP_CODE, NEXT_OF_KIN_PHONE,CHARGE_TYPE,LCLJ FROM V_PAT_MASTER_INDEX where PATIENT_ID = @patientid-----------------------------------------------------------
+接口日志：时间 20200316 11:16:10
+ para[0].Value :2020005116-----------------------------------------------------------
+接口日志：时间 20200316 11:17:31
+开始同步BMedPatInHospital 入参 InpNo:2020005116-----------------------------------------------------------
+接口日志：时间 20200316 11:17:34
+BMedPatInHospitalsqlDDL:SELECT PATIENT_ID,
+PATIENT_ID as INP_NO,
+VISIT_ID,
+PATIENT_SOURCE,
+HOSP_BRANCH,
+WARD_CODE,
+'' AS DEP_ID,
+DEPT_CODE,
+BED_NO,
+ADMISSION_DATE_TIME,
+ADM_WARD_DATE_TIME ,
+DEPT_DISCHARGE_FROM,
+DISCHARGE_DATE_TIME,
+DIAGNOSIS,PATIENT_CONDITION,
+BLOOD_TYPE,BLOOD_TYPE_RH,BODY_HEIGHT,
+BODY_WEIGHT,NURSING_CLASS,
+DOCTOR_IN_CHARGE,NURSE_IN_CHARGE,
+PREPAYMENTS,SETTLED_INDICATOR,
+INSURANCE_TYPE,INSURANCE_NO,
+PATIENT_CLASS,ADMISSION_CAUSE,
+CONSULTING_DOCTOR,
+'' AS ADMITTRD_BY,
+RESERVED01,RESERVED02,RESERVED03,
+RESERVED_DATE01,RESERVED_DATE02
+  FROM V_PATS_IN_HOSPITAL where PATIENT_ID = @patientid-----------------------------------------------------------
+接口日志：时间 20200316 11:17:37
+BMedPatInHospitaldsGetXml:1-----------------------------------------------------------
+接口日志：时间 20200316 11:18:46
+开始同步手术名称信息 入参 Code:OPER106-----------------------------------------------------------
+接口日志：时间 20200316 11:19:48
+sqlDDL:SELECT * FROM V_OPERATION_SCHEDULE_NAME where PATIENT_ID=@patientId and SCHEDULE_ID=@scheduleId-----------------------------------------------------------
+接口日志：时间 20200316 11:25:15
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)调用堆栈上的桢的字符串表现形式:   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 BLL.DataSqlServerHelper.PrepareCommand(DbCommand cmd, DbConnection conn, DbTransaction trans, CommandType cmdType, String cmdText, DbParameter[] commandParameters)
+   在 BLL.DataSqlServerHelper.GetDataSet(CommandType cmdType, String cmdText, String connectionString, DbParameter[] commandParameters)
+   在 BLL.BMedScheduleOperationName.PreDataBase(Config2 config, ParamInputDomain domain)
+引发当前异常的函数为:.ctor
+导致错误的应用程序或对象的名称为:.Net SqlClient Data Provider

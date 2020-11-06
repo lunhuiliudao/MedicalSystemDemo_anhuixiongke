@@ -1,0 +1,23 @@
+{
+  "comment-apiUrl": "服务端接口地址",
+  "apiUrl": "http://localhost:8048",
+  "comment-timeLineStart": "时间轴开始点",
+  "timeLineStart": 8,
+  "comment-timeLineEnd": "时间轴结束点",
+  "timeLineEnd": 23,
+  "comment-timeSpan": "默认手术间隔时间 单位：（分钟）",
+  "timeSpan": 0,
+  "comment-firstOperTime": "首台手术时间",
+  "firstOperTime": {
+    "hour": 8,
+    "minute": 0
+  },
+  "comment-operTimeLength": "默认手术时长 单位：(分钟)",
+  "operTimeLength": 60,
+  "ssoWebUrl": "http://localhost:8048",
+  "ssoApiUrl": "http://localhost:8048/api/platformaccount/CheckLogin",
+  "sso": false,
+  "openLIS101": true,
+  "openORDER103": true,
+  "AnesWorkStationApiUrl": "http://localhost:8048/"
+}

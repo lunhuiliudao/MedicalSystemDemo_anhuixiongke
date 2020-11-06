@@ -1,0 +1,107 @@
+*{ padding:0; margin:0; border:0;}
+body{ background:#ffffff;}
+td{
+	background-repeat:repeat-x;
+	border-right-style: none;
+	text-align: left;
+	text-indent: 5px;
+	color:#363636;
+	height:25px;
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+/*导航按钮定义*/
+.but_nal{
+	width:62px;
+	height:62px;
+	float:none;
+	background-image: url(but_bg.png);
+	background-repeat: no-repeat;
+	top: 100px;	
+}
+
+}
+/*文字定义*/
+.write {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.text_gray3{
+	font-family: "宋体";	 
+	font-size: 12px; 
+	color: #333333;
+}
+.text_gray4{
+	font-family:"宋体";
+	font-size:12px;
+	color:#5f5f5f;
+	font-weight:bold;
+}
+.blue{
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight:normal;
+	color: #047db5;
+	text-decoration: underline;
+}
+
+/*表单相关定义*/
+.input_1{
+	width:180px;
+	border: 1px solid #b7e2f8;
+}
+.input_3{
+	width:455px;
+	border: 1px solid #b7e2f8;
+}
+.input_2{ width:80px;
+	border: 1px solid #a6c4eb;}
+
+			
+
+.but{
+	width:61px;
+	height:24px;
+	float:none;
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #354f70;
+	text-align:center;
+	background-image: url(but.jpg);
+}
+/*表格相关定义*/
+.tr_top{
+	background-image:url(tab_bg.jpg);
+	background-repeat:repeat-x;
+	border-right-style: none;
+	text-align: left;
+	text-indent: 5px;
+}
+.tr_top1{
+	background-repeat:repeat-x;
+	border-right-style: none;
+	text-align: right;
+	text-indent: 5px;
+}
+.tab{
+	text-align: left;
+	vertical-align: middle;
+	border-top-color: #d4d4d4;
+	border-right-color: #d4d4d4;
+	border-bottom-color: #d4d4d4;
+	border-left-color: #D4D4D4;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+}
+#xia{
+	width:100%;
+	bottom:0px;
+	
+	
+}

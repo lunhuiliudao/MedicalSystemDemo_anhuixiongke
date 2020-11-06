@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<XMLData>
+  <xs:schema id="XMLData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XMLData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportInformation">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ReportTitle" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportTitle, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportColumnList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportColumn, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportSubConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportSubCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="SubReportInformationList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportInformation, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportChartInfo" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportChartInfo, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportInformation>
+    <ReportTitle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportName>科室报表二</ReportName>
+      <Menu>科室报表</Menu>
+      <StrSql>
+          select DEPTNAME,
+                A1,       A2,       A3,       A4,       A5,       A6,       A7,       A8,
+                A9,       A10,       A11,       A12,       A13,       A14,       A15,       A16,
+                A17,       A18,       A19,       A20,       A21,       A22,       A23,       A24,
+                A25,       A26,       A27,       A28,       A29,       A30,       A31,
+                NVL(A1, 0) + NVL(A2, 0) + NVL(A3, 0) + NVL(A4, 0) + nvl(A5, 0) +
+                nvl(A6, 0) + nvl(A7, 0) + nvl(A8, 0) + nvl(A9, 0) + nvl(A10, 0) +
+                nvl(A11, 0) + nvl(A12, 0) + nvl(A13, 0) + nvl(A14, 0) + nvl(A15, 0) +
+                nvl(A16, 0) + nvl(A17, 0) + nvl(A18, 0) + nvl(A19, 0) + nvl(A20, 0) +
+                nvl(A21, 0) + nvl(A22, 0) + nvl(A23, 0) + nvl(A24, 0) + nvl(A25, 0) +
+                nvl(A26, 0) + nvl(A27, 0) + nvl(A28, 0) + nvl(A29, 0) + nvl(A30, 0) +
+                nvl(A31, 0) zl
+            from (select a.dept_name DEPTNAME , a.dept_code  DEPTCODE,
+                        to_char(a.anes_start_time, 'dd') MONTH,
+                        COUNT(*) SL
+                    from  v_operation_master_v2 a   
+                  where  a.oper_status_code > 35
+                    AND TO_CHAR(A.anes_start_time, 'YYYY-MM') = :MONTHS
+                    AND (a.dept_code like '%' || :vdeptcode || '%' or :vdeptcode is null or a.dept_name like '%' || :vdeptcode || '%')
+                    and (A.OPER_ROOM = :VOPERROOM OR :VOPERROOM IS NULL)
+                  GROUP BY a.dept_name  , a.dept_code ,
+                            to_char(a.anes_start_time, 'dd'))
+          pivot(sum(sl)
+            for month in('01' A1,                '02' A2,                '03' A3,                '04' A4,                '05' A5,
+                          '06' A6,                '07' A7,                '08' A8,                '09' A9,                '10' A10,
+                          '11' A11,                '12' A12,                '13' A13,                '14' A14,                '15' A15,
+                          '16' A16,                '17' A17,                '18' A18,                '19' A19,                '20' A20,
+                          '21' A21,                '22' A22,                '23' A23,                '24' A24,                '25' A25,
+                          '26' A26,                '27' A27,                '28' A28,                '29' A29,                '30' A30,
+                          '31' A31))
+          order by  DEPTNAME
+      </StrSql>
+      <PageSize>30</PageSize>
+      <SortNumber>2</SortNumber>
+    </ReportTitle>
+    <ReportColumnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <ReportColumn>
+        <FieldName>DEPTNAME</FieldName>
+        <Title>科室</Title>
+        <Width>130</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+       </ReportColumn>  
+       <ReportColumn>
+        <FieldName>ZL</FieldName>
+        <Title>合计</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+       <ReportColumn>
+        <FieldName>A1</FieldName>
+        <Title>1日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A2</FieldName>
+        <Title>2日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A3</FieldName>
+        <Title>3日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A4</FieldName>
+        <Title>4日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A5</FieldName>
+        <Title>5日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A6</FieldName>
+        <Title>6日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A7</FieldName>
+        <Title>7日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+        <ReportColumn>
+        <FieldName>A8</FieldName>
+        <Title>8日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A9</FieldName>
+        <Title>9日</Title>
+        <Width>40</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A10</FieldName>
+        <Title>10日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+       <ReportColumn>
+        <FieldName>A11</FieldName>
+        <Title>11日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+       <ReportColumn>
+        <FieldName>A12</FieldName>
+        <Title>12日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A13</FieldName>
+        <Title>13日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A14</FieldName>
+        <Title>14日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A15</FieldName>
+        <Title>15日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A16</FieldName>
+        <Title>16日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A17</FieldName>
+        <Title>17日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A18</FieldName>
+        <Title>18日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A19</FieldName>
+        <Title>19日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A20</FieldName>
+        <Title>20日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+        <ReportColumn>
+        <FieldName>A21</FieldName>
+        <Title>21日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A22</FieldName>
+        <Title>22日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A23</FieldName>
+        <Title>23日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A24</FieldName>
+        <Title>24日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A25</FieldName>
+        <Title>25日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A26</FieldName>
+        <Title>26日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A27</FieldName>
+        <Title>27日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A28</FieldName>
+        <Title>28日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A29</FieldName>
+        <Title>29日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A30</FieldName>
+        <Title>30日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+       <ReportColumn>
+        <FieldName>A31</FieldName>
+        <Title>31日</Title>
+        <Width>60</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+      </ReportColumn>  
+
+
+    </ReportColumnList>
+    <ReportConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportCondition>
+        <Title>上报月份</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>MONTHS</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DateControlType>month</DateControlType>
+        <DateDefaultVal>CurrentFirstDate</DateDefaultVal>
+        <Value>2017-11-01</Value>
+      </ReportCondition>
+
+      <ReportCondition>
+        <Title>手术室</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VOPERROOM</FieldName>
+        <DataType>String</DataType>
+        <DictType>DynamicDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName>med_anesthesia_input_dict</TableName>
+          <KeyColumn>item_code</KeyColumn>
+          <ValColumn>item_name</ValColumn>
+          <Condition>item_class='手术室'</Condition>
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>   
+      <ReportCondition>
+        <Title>科室</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VDEPTCODE</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>         
+ 
+    
+    </ReportConditionList>
+    <ReportSubConditionList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    </ReportSubConditionList>
+    <SubReportInformationList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+     
+    </SubReportInformationList>
+	<ReportChartInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+      <ChartType>Line</ChartType>
+    </ReportChartInfo>
+  </ReportInformation>
+</XMLData>

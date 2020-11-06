@@ -1,0 +1,1096 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="患者主页结构图" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\患者主页结构图.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮样式2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\按钮样式2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login最小化_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login最小化_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="抢救_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\抢救_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="批量插入_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\批量插入_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术进程title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\手术进程title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格标题栏_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格标题栏_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_出室1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_出室1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_入室3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_入室3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术进程栏_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术进程栏_05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="日历_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\日历_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_64X64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\64X64.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="示意图_术后" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\示意图_术后.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征保存模版1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征保存模版1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="分隔线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\分隔线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="复制1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\复制1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="男" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\男.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧连接" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右侧连接.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="二级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\二级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_入室2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_入室2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icu_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\icu_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="底框_首" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\底框_首.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_语音" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_语音.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="患者信息底纹" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\患者信息底纹.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yilan_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\yilan_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格标题栏_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格标题栏_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="蓝线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\蓝线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="今日患者列表" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\今日患者列表.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="感染" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\感染.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\搜索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icom_yisheng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\icom_yisheng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="弹出框标题栏__05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\弹出框标题栏__05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="复苏室_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\复苏室_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="医嘱信息_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\医嘱信息_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="登录2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\登录2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设置_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设置_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设置_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设置_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="蓝条100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\蓝条100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="删除_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\删除_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_splash_loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_splash_loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1026标题版" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1026标题版.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="患者信息栏__01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\患者信息栏__01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="弹出框标题栏__03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\弹出框标题栏__03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icu_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\icu_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术室" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术室.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="女" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\女.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading图" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\loading图.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左灯2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\左灯2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征保存1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征保存1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_64X641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\64X64.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中灯2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\中灯2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="保存" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\保存.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\title_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="day1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\day1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu_free_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu_free].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\login框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="finished" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\finished.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮样式1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\按钮样式1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login最小化_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login最小化_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="客服电话icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\客服电话icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_pacu状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_pacu状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="一级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\一级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\按钮1_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧连接线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右侧连接线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="套用模板_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\套用模板_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_联络医生格子_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_联络医生格子_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="检验信息_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\检验信息_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PC麻醉login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\PC麻醉login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉进程按钮bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉进程按钮bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_文字消息" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_文字消息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="勾" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\勾.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_选中状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_选中状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="退出2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\退出2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="标题栏分隔拉伸" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\标题栏分隔拉伸.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉恢复情况-button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉恢复情况-button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="三级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\三级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_箭头" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\icon_箭头.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访记录-button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\术后随访记录-button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="检验信息_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\检验信息_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="未选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\未选中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="套用模版2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\套用模版2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="急诊" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\急诊.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="标题背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\标题背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左侧连接" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\左侧连接.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="体征展示" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\体征展示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="模版导入2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\模版导入2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="示意图_术中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\示意图_术中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\loading_1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="返回1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\返回1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转出1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转出1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="插入数据1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\插入数据1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格通用栏_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格通用栏_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_登录2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_登录2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="连接机器_yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\连接机器_yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="刷新" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\刷新.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="体征数据选择1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\体征数据选择1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件类型选取框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件类型选取框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右灯1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右灯1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧未连接线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右侧未连接线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OnceLoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\OnceLoad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页图标说明2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页图标说明2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="删除项目1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\删除项目1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="增加项目1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\增加项目1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件标题选择1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件标题选择1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top__02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\top__02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="提醒_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\提醒_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单bar右" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉单bar右.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doctor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\doctor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="体征数据选择2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\体征数据选择2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右下图标1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右下图标1_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术进程栏_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术进程栏_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_整框背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_整框背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉前核查_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉前核查_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单bar左1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉单bar左1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main上栏底纹" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\main上栏底纹.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格通用栏_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格通用栏_05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="标题修" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\标题修.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="今日手术列表" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\今日手术列表.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="病房_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\病房_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="放射" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\放射.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top__04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\top__04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="患者信息栏__04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\患者信息栏__04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右下图标2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右下图标2_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灯连接线gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\灯连接线gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="套用模版1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\套用模版1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="当前用户" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\当前用户.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="提醒_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\提醒_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dayleftbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dayleftbtn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="上一页2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\上一页2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术信息小标题框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术信息小标题框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="急诊登记_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\急诊登记_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="未连接机器_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\未连接机器_no.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login最小化_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login最小化_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="刷新1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\刷新1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征保存模版2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征保存模版2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_在线1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_在线1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_联络医生格子_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_联络医生格子_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="下方任务栏_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\下方任务栏_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_手术信息" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_手术信息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_出室2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_出室2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="示意图_术前" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\示意图_术前.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术间号" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术间号.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="日历_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\日历_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_入室1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_入室1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\选中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="急诊登记_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\急诊登记_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title分割线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title分割线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="隔离" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\隔离.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_选中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术前核查_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术前核查_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_发送消息" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_发送消息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="患者信息栏__02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\患者信息栏__02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doctor_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doctor_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="删除1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\删除1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉恢复情况-button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉恢复情况-button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_术后" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_术后.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="增加项目_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\增加项目_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_未完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_未完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="排班底图" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\排班底图.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左侧未连接" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\左侧未连接.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="患者信息栏__01_xiu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\患者信息栏__01_xiu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程2-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="登录1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\登录1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login外框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login外框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_视频" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_视频.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top__01_xiu_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\top__01_xiu_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单bar中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉单bar中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="插入数据2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\插入数据2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页_灰色分割线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页-灰色分割线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="产品LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\产品LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="出室前核查_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\出室前核查_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="医嘱信息_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\医嘱信息_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_术中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\card_术中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\按钮2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术信息分隔线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术信息分隔线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="左灯1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\左灯1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="时间图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\时间图标.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征保存2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征保存2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="增加项目2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\增加项目2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格标题栏_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格标题栏_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术信息_手术进程" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\手术信息_手术进程.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="蓝点" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\蓝点.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主页图标说明1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主页图标说明1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="下一页1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\下一页1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title文字" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title文字.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_在线医生头像" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_在线医生头像.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="出室前核查_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\出室前核查_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同意书_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同意书_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术进程栏_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术进程栏_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="弹出框标题栏__01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\弹出框标题栏__01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右下图标1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右下图标1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_患者信息_图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_患者信息_图标.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灰点" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\灰点.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="抢救_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\抢救_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="日历_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\日历_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="诱导" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\诱导.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉事件选择按钮2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉事件选择按钮2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中灯1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\中灯1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_报警状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_报警状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="底框_尾" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\底框_尾.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中间选中灯" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\中间选中灯.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="下一页2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\下一页2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右下图标2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\右下图标2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访记录-button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\术后随访记录-button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="day2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\day2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中间未选中灯" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\中间未选中灯.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="上一页1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\上一页1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="复苏室_button11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\复苏室_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灯连接线2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\灯连接线2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉事件选择按钮1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉事件选择按钮1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="刷新2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\刷新2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top__01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\top__01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\bar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="复制2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\复制2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu左表格_出室3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu左表格_出室3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu格子" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacu格子.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="我要留言" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\我要留言.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\按钮2_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="退出1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\退出1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unfinished" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unfinished.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术前访视_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术前访视_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他二_未完成2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他二_未完成2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\搜索1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灯连接线1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\灯连接线1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dayrightbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dayrightbtn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="模版导入1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\模版导入1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="其他_完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\其他_完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_空闲状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_空闲状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="术后随访_未完成3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\术后随访_未完成3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转出3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转出3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="手术前核查_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\手术前核查_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="底框_拉伸部分" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\底框_拉伸部分.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="表格通用栏_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\表格通用栏_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="返回2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\返回2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="删除2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\删除2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="灰线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\灰线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉记录单_标头图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉记录单_标头图标.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="标题栏分隔" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\标题栏分隔.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logi_登录3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logi_登录3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="复苏室_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\复苏室_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件未选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件未选中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设置_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设置_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_下线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_下线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="转出2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\转出2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacu_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\pacu_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="入pacu_确定" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\入pacu_确定.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_术前" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\card_术前.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件选中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="删除项目2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\删除项目2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_登录1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_登录1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_报警状态_手术信息" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_报警状态_手术信息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程1_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="提醒_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\提醒_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_搜索框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\协同_搜索框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="事件体征1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\事件体征1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右灯2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右灯2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="抢救_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\抢救_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉前核查_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\麻醉前核查_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="麻醉单_完成1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\麻醉单_完成1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="右侧未连接线_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\右侧未连接线_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="进程完成图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\进程完成图标.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PACU_card_报警外框" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PACU_card_报警外框.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\按钮1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="病房_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\病房_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="四级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Skins\四级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="协同_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\协同_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_anesthesia_64X64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_anesthesia_64X64.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

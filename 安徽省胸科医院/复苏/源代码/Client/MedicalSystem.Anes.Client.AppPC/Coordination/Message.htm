@@ -1,0 +1,372 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>协同聊天记录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <style type="text/css">
+        body {
+            background: url('images/coordination.png') no-repeat center;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            margin: 0px;
+            padding: 2px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: Arial;
+            border: 1px solid #d2d8dd;
+        }
+
+        table, tr, th, td {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 14px;
+        }
+
+        image {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .recever .header {
+            padding: 4px;
+        }
+
+            .recever .header .room {
+                font-weight: bold;
+                padding-right: 20px;
+            }
+
+        .recever .top {
+            height: 14px;
+        }
+
+            .recever .top .icon {
+                padding-right: 10px;
+                width: 54px;
+                background: url('images/room1.png') no-repeat;
+            }
+
+            .recever .top .left {
+                background-image: url('images/room_bg1_topleft.png');
+                width: 14px;
+            }
+
+            .recever .top .center {
+                background-image: url('images/room_bg1_top.png');
+            }
+
+            .recever .top .right {
+                background-image: url('images/room_bg1_topright.png');
+                background-position: right top;
+                width: 14px;
+            }
+
+        .recever .center {
+        }
+
+            .recever .center .left {
+                background-image: url('images/room_bg1_left.png');
+            }
+
+            .recever .center .center {
+                background-image: url('images/room_bg1_center.png');
+                font-size: 14px;
+                min-width: 110px;
+            }
+
+            .recever .center .right {
+                background-image: url('images/room_bg1_right.png');
+            }
+
+        .recever .bottom {
+            height: 14px;
+        }
+
+            .recever .bottom .left {
+                background-image: url('images/room_bg1_bottomleft.png');
+            }
+
+            .recever .bottom .center {
+                background-image: url('images/room_bg1_bottom.png');
+            }
+
+            .recever .bottom .right {
+                background-image: url('images/room_bg1_bottomright.png');
+                background-position: right bottom;
+            }
+
+        .recever .icon {
+            height: 10px;
+        }
+
+            .recever .icon .center {
+                text-align: left;
+                background: url('images/room_bg2.png') no-repeat;
+            }
+
+        .sender {
+            text-align: right;
+        }
+
+            .sender .header {
+                padding: 4px;
+                text-align: right;
+            }
+
+                .sender .header .room {
+                    font-weight: bold;
+                    padding-left: 20px;
+                }
+
+            .sender .top {
+                height: 14px;
+            }
+
+                .sender .top .icon {
+                    padding-left: 10px;
+                    width: 54px;
+                    background: url('images/room2.png') no-repeat;
+                    background-position: right top;
+                }
+
+                .sender .top .left {
+                    background-image: url('images/room_bg3_topleft.png');
+                    width: 14px;
+                }
+
+                .sender .top .center {
+                    background-image: url('images/room_bg3_top.png');
+                }
+
+                .sender .top .right {
+                    background-image: url('images/room_bg3_topright.png');
+                    background-position: right top;
+                    width: 14px;
+                }
+
+            .sender .center {
+            }
+
+                .sender .center .left {
+                    background-image: url('images/room_bg3_left.png');
+                }
+
+                .sender .center .center {
+                    background-image: url('images/room_bg3_center.png');
+                    font-size: 14px;
+                    min-width: 110px;
+                }
+
+                .sender .center .right {
+                    background-image: url('images/room_bg3_right.png');
+                }
+
+            .sender .bottom {
+                height: 14px;
+            }
+
+                .sender .bottom .left {
+                    background-image: url('images/room_bg3_bottomleft.png');
+                }
+
+                .sender .bottom .center {
+                    background-image: url('images/room_bg3_bottom.png');
+                }
+
+                .sender .bottom .right {
+                    background-image: url('images/room_bg3_bottomright.png');
+                    background-position: right bottom;
+                }
+
+            .sender .icon {
+                height: 10px;
+            }
+
+                .sender .icon .center {
+                    text-align: right;
+                    background: url('images/room_bg4.png') no-repeat;
+                    background-position: right top;
+                }
+    </style>
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        function load() {
+            window.scrollTo(0, document.body.scrollHeight);
+            $('div').height($(window).height() - 6);
+        }
+        function keydown(event) {
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 116) {
+                e.keyCode = 0;
+                e.cancelBubble = true;
+                return false;
+            }
+            window.external.webMessage_KeyDown(e && e.keyCode == 37, e && e.keyCode == 39);
+        }
+        //删除所有的记录
+        function clearMessages() {
+            var root = document.getElementById("tbody");
+            while (root.rows.length > 0) {
+                root.firstChild.removeNode(true);
+            }
+        }
+        //追加记录
+        function addMessage(json) {
+            if (json == null || json.length == 0)
+                return;
+            var obj = eval('(' + json + ')');
+            if (obj == null || obj.length == 0)
+                return;
+
+            var scflag = true; //判断在阅读上面消息时，不滚动到最底部。
+            if (document.body.scrollTop + document.body.clientHeight < document.body.scrollHeight - 20) {
+                scflag = false;
+            }
+
+            var root = document.getElementById("tbody");
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].IS_RECEVED) {
+                    $(root).append('<tr><td>' +
+'<table class="recever" border="0" cellpadding="0" cellspacing="0">' +
+'   <tr>' +
+'       <td colspan="4" class="header"><span class="room">' + obj[i].CLIENT_NAME + '</span>' + obj[i].SEND_TIME + '</td>' +
+'   </tr>' +
+'   <tr class="top">' +
+'       <td rowspan="4" class="icon"></td>' +
+'       <td class="left"></td>' +
+'       <td class="center"></td>' +
+'       <td class="right"></td>' +
+'   </tr>' +
+'   <tr class="center">' +
+'       <td class="left"></td>' +
+'       <td class="center">' + obj[i].MESSAGE + '</td>' +
+'       <td class="right"></td>' +
+'   </tr>' +
+'   <tr class="bottom">' +
+'       <td class="left"></td>' +
+'       <td class="center"></td>' +
+'       <td class="right"></td>' +
+'   </tr>' +
+'   <tr class="icon">' +
+'       <td></td>' +
+'       <td class="center"></td>' +
+'       <td></td>' +
+'   </tr>' +
+'</table>' +
+                    '</td></tr>');
+                } else {
+                    $(root).append('<tr><td>' +
+'<table class="sender" border="0" cellpadding="0" cellspacing="0" align="right">' +
+'   <tr>' +
+'       <td colspan="4" class="header">' + obj[i].SEND_TIME + '<span class="room">' + obj[i].CLIENT_NAME + '</span></td>' +
+'   </tr>' +
+'   <tr class="top">' +
+'       <td class="left"></td>' +
+'       <td class="center"></td>' +
+'       <td class="right"></td>' +
+'       <td rowspan="4" class="icon"></td>' +
+'   </tr>' +
+'   <tr class="center">' +
+'       <td class="left"></td>' +
+'       <td class="center">' + obj[i].MESSAGE + '</td>' +
+'       <td class="right"></td>' +
+'   </tr>' +
+'   <tr class="bottom">' +
+'       <td class="left"></td>' +
+'       <td class="center"></td>' +
+'       <td class="right"></td>' +
+'   </tr>' +
+'   <tr class="icon">' +
+'       <td></td>' +
+'       <td class="center"></td>' +
+'       <td></td>' +
+'   </tr>' +
+'</table>' +
+                    '</td></tr>');
+                }
+            }
+            if (scflag) {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        }
+    </script>
+</head>
+<body onload="load()" onkeydown="return keydown(event);">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin:1px;">
+            <tbody id="tbody">
+                <!--<tr>
+                    <td>
+                        <table class="recever" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td colspan="4" class="header"><span class="room">OR-01</span>2015-12-12 12:12:23</td>
+                            </tr>
+                            <tr class="top">
+                                <td rowspan="4" class="icon"></td>
+                                <td class="left"></td>
+                                <td class="center"></td>
+                                <td class="right"></td>
+                            </tr>
+                            <tr class="center">
+                                <td class="left"></td>
+                                <td class="center">
+                                    判
+                                </td>
+                                <td class="right"></td>
+                            </tr>
+                            <tr class="bottom">
+                                <td class="left"></td>
+                                <td class="center"></td>
+                                <td class="right"></td>
+                            </tr>
+                            <tr class="icon">
+                                <td></td>
+                                <td class="center"></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="sender" border="0" cellpadding="0" cellspacing="0" align="right">
+                            <tr>
+                                <td colspan="4" class="header">2015-12-12 12:12:23<span class="room">OR-01</span></td>
+                            </tr>
+                            <tr class="top">
+                                <td class="left"></td>
+                                <td class="center"></td>
+                                <td class="right"></td>
+                                <td rowspan="4" class="icon"></td>
+                            </tr>
+                            <tr class="center">
+                                <td class="left"></td>
+                                <td class="center">
+                                    判断在阅读上面消息时，不滚动到最底部。
+                                </td>
+                                <td class="right"></td>
+                            </tr>
+                            <tr class="bottom">
+                                <td class="left"></td>
+                                <td class="center"></td>
+                                <td class="right"></td>
+                            </tr>
+                            <tr class="icon">
+                                <td></td>
+                                <td class="center"></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

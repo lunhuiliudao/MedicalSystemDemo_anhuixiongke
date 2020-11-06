@@ -1,0 +1,204 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View">
+
+    <ControlTemplate x:Key="BaseWindowControlTemplate" TargetType="{x:Type local:WindowBase}">
+        <Grid x:Name="grid" Background="{TemplateBinding Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--  title部分  -->
+            <Grid Grid.Row="0" Height="28"
+                  Visibility="{TemplateBinding SystemTitleVisibility}">
+                <Grid.Background>
+                    <ImageBrush ImageSource="../Images/h-1.png" />
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Image Height="18" Source="../Images/logo_title.png" />
+                </Grid>
+                <StackPanel Grid.Column="2" FlowDirection="RightToLeft" Orientation="Horizontal">
+                    <Grid>
+                        <Label Margin="40,0,0,0" VerticalAlignment="Center" FontSize="11" Foreground="White">
+                            <Label.Content>
+                                <DockPanel FlowDirection="LeftToRight">
+                                    <Image Width="13" Height="13" Margin="0,0,5,0" DockPanel.Dock="Left"
+                                           Source="../Images/Loginicon.png"
+                                           Visibility="{TemplateBinding LoginIconVisibility}" />
+                                    <TextBlock DockPanel.Dock="Right" Text="{TemplateBinding LoginName}" />
+                                </DockPanel>
+                            </Label.Content>
+                        </Label>
+                        <Button x:Name="btnLoginChange" Width="80" Height="40" Opacity="0" />
+                    </Grid>
+                    <!--对方小麦助手发消息时，本机出现的提示图标-->
+                    <Border x:Name="CallBorder" Width="45" Height="22" VerticalAlignment="Center"
+                            Background="#23D1AA" CornerRadius="10"
+                            Visibility="{TemplateBinding CallIconVisibility}">
+                        <StackPanel x:Name="stackPanel" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    FlowDirection="LeftToRight" Orientation="Horizontal">
+                            <Image x:Name="CallImage1" Width="12" Height="12"
+                                   Source="../Images/Coordination/min-call-1.png" />
+                            <Image x:Name="CallImage2" Width="12" Height="12"
+                                   Source="../Images/Coordination/min-call-2.png" Visibility="Collapsed" />
+                            <Image x:Name="CallImage3" Width="12" Height="12"
+                                   Source="../Images/Coordination/min-call-3.png" Visibility="Collapsed" />
+                            <Image Width="12" Height="13" Margin="8,0,0,0"
+                                   Source="../Images/Coordination/min-user.png" />
+                        </StackPanel>
+                    </Border>
+                    <Label Margin="20,0,0,0" VerticalAlignment="Center"
+                           Content="{TemplateBinding CurTime}"
+                           FontSize="11" Foreground="White" />
+                </StackPanel>
+            </Grid>
+
+            <!--  内容模块  -->
+            <Grid Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <Popup x:Name="popupChange" AllowsTransparency="True" IsOpen="False"
+                       Placement="Relative" PlacementRectangle="0, 28, 90, 10"
+                       PlacementTarget="{Binding ElementName=btnLoginChange}"
+                       StaysOpen="False">
+                    <ListBox x:Name="lbChangeType" Width="90" Height="178" HorizontalAlignment="Right"
+                             VerticalAlignment="Top" Visibility="Visible">
+                        <ListBox.Style>
+                            <Style TargetType="ListBox">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBox">
+                                            <Grid>
+                                                <Border Background="#0A404C" Opacity="0.8" />
+                                                <StackPanel IsItemsHost="True" Orientation="Vertical" />
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.Style>
+                        <ListBoxItem Height="35" Style="{StaticResource _ListboxItemStyleKey}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Width="18" Height="18" Source="../Images/icon锁屏.png" />
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="16" Foreground="White"
+                                           Text="锁屏" />
+                            </Grid>
+                        </ListBoxItem>
+                        <ListBoxItem Height="35" Style="{StaticResource _ListboxItemStyleKey}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Width="18" Height="18" Source="../Images/icon注销.png" />
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="16" Foreground="White"
+                                           Text="注销" />
+                            </Grid>
+                        </ListBoxItem>
+                        <ListBoxItem Height="35" Style="{StaticResource _ListboxItemStyleKey}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Width="18" Height="18" Source="../Images/icon关机.png" />
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="16" Foreground="White"
+                                           Text="退出" />
+                            </Grid>
+                        </ListBoxItem>
+                        <ListBoxItem Height="35" Style="{StaticResource _ListboxItemStyleKey}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Width="18" Height="18" Source="../Images/icon关于.png" />
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="16" Foreground="White"
+                                           Text="关于" />
+                            </Grid>
+                        </ListBoxItem>
+                        <ListBoxItem Height="35" Style="{StaticResource _ListboxItemStyleKey}">
+                            <Grid Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Width="18" Height="18" Source="../Images/icon最小化.png" />
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="16" Foreground="White"
+                                           Text="最小" />
+                            </Grid>
+                        </ListBoxItem>
+                    </ListBox>
+                </Popup>
+                <ContentPresenter />
+            </Grid>
+        </Grid>
+        <ControlTemplate.Resources>
+            <Storyboard x:Key="CallStoryboard" RepeatBehavior="Forever">
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CallImage1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Collapsed}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Collapsed}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Visible}" />
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CallImage2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Collapsed}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Collapsed}" />
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CallImage3" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Collapsed}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Collapsed}" />
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+        </ControlTemplate.Resources>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Name="storyBegin" Storyboard="{StaticResource CallStoryboard}" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+                <RemoveStoryboard BeginStoryboardName="storyBegin" />
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <Style x:Key="BaseWindowStyle" TargetType="{x:Type local:WindowBase}">
+        <Setter Property="Template" Value="{StaticResource BaseWindowControlTemplate}" />
+        <!--<Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="WindowState" Value="Maximized"/>
+        <Setter Property="AllowsTransparency" Value="false"/>-->
+    </Style>
+    <Style x:Key="_ListboxItemStyleKey" TargetType="ListBoxItem">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid>
+                        <Border x:Name="bg" Background="#21C1D4" Visibility="Collapsed" />
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="bg" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

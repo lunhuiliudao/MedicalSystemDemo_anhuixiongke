@@ -1,0 +1,47 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.OperationInformation.PACUQuery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+      xmlns:attach="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Core;assembly=MedicalSystem.AnesWorkStation.Wpf"
+      xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="748">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontSize="30" TextAlignment="Center" Text="{Binding TotalBed}" Foreground="#FF60D7EA"/>
+            <TextBlock Grid.Column="1" FontSize="30" TextAlignment="Center" Text="{Binding RemainBed}" Foreground="#FF60D7EA"/>
+            <TextBlock Grid.Column="2" FontSize="30" TextAlignment="Center" Text="{Binding PatsWaiting}" Foreground="#FF60D7EA"/>
+        </Grid>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding PACURecord}" BorderThickness="0"
+                       IsReadOnly="True" CanUserAddRows="False" CanUserResizeColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="床号" Binding="{Binding BED_NO}" Width="*" Foreground="#FFF32B4F"/>
+                <DataGridTextColumn Header="患者ID" Binding="{Binding PATIENT_ID}" Width="*"/>
+                <DataGridTextColumn Header="姓名" Binding="{Binding NAME}" Width="*"/>
+                <DataGridTextColumn Header="性别" Binding="{Binding SEX}" Width="*"/>
+                <DataGridTextColumn Header="年龄" Binding="{Binding AGE}" Width="*"/>
+                <DataGridTextColumn Header="手术名称" Binding="{Binding OPERATION_NAME}" Width="210"/>
+                <DataGridTextColumn Header="复苏时长" Binding="{Binding PACU_TIME_RANGE}" Width="120" Foreground="#FF6EF567"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--确定按钮-->
+        <Grid Grid.Row="2">
+        <Button  Width="250" Content="确定"  
+                    Command="{Binding Path=BtnOKCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</local:BaseUserControl>

@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml.Serialization;
+
+namespace MedicalSystem.Anes.FrameWork.Utilities
+{
+    public class XmlUtil
+    {
+        #region 反序列化
+
+        /// <summary>
+        /// 反序列化
+        /// </summary>
+        /// <typeparam name="T">类型</typeparam>
+        /// <param name="xml">XML字符串</param>
+        /// <returns></returns>
+        public static T Deserialize<T>(string xml) where T : class
+        {
+            return Deserialize(typeof(T), xml) as T;
+        }
+
+        /// <summary>
+        /// 反序列化
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="xml">XML字符串</param>
+        /// <returns></returns>
+        public static object Deserialize(Type type, string xml)
+        {
+            try
+            {
+                using (StringReader sr = new StringReader(xml))
+                {
+                    XmlSerializer xmldes = new XmlSerializer(type);
+                    return xmldes.Deserialize(sr);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 反序列化
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="xml"></param>
+        /// <returns></returns>
+        public static object Deserialize(Type type, Stream stream)
+        {
+            XmlSerializer xmldes = new XmlSerializer(type);
+            return xmldes.Deserialize(stream);
+        }
+        #endregion
+
+        #region 序列化
+
+        /// <summary>
+        /// 序列化
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="obj">对象</param>
+        /// <returns></returns>
+        public static string Serializer<T>(T obj)
+        {
+            return Serializer(typeof(T), obj);
+        }
+
+        /// <summary>
+        /// 序列化
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="obj">对象</param>
+        /// <returns></returns>
+        public static string Serializer(Type type, object obj)
+        {
+            using (MemoryStream Stream = new MemoryStream())
+            {
+                XmlSerializer xml = new XmlSerializer(type);
+                try
+                {
+                    //序列化对象
+                    xml.Serialize(Stream, obj);
+                }
+                catch (InvalidOperationException)
+                {
+                    throw;
+                }
+                Stream.Position = 0;
+                StreamReader sr = new StreamReader(Stream);
+                string str = sr.ReadToEnd();
+                return str;
+            }
+        }
+
+        #endregion
+    }
+}

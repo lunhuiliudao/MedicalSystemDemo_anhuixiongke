@@ -1,0 +1,146 @@
+CREATE OR REPLACE VIEW VIEW_OPERATION_LIST AS
+SELECT
+       A.PATIENT_ID,                                       --病人ID (住院号)
+       A.VISIT_ID,                                         --本次住院标示
+       A.SCHEDULE_ID,                                      --手术申请ID
+       C.NAME,                                             --名称
+       C.SEX,                                              --性别
+       C.INP_NO,                                           --住院号
+       C.DATE_OF_BIRTH,                                    --出生日期
+       C.NATION,                                           --民族
+       --病人所在科室
+       NVL((SELECT medsurgery.V_DEPT_DICT.DEPT_NAME   FROM medsurgery.V_DEPT_DICT WHERE medsurgery.V_DEPT_DICT.DEPT_CODE = A.DEPT_code ),A.DEPT_code ) DEPT_STAYED,
+       A.BED_NO,                                           --床号
+       A.SCHEDULED_DATE_TIME,                              --手术日期及时间
+       --手术室
+       A.OPER_ROOM as OPERATING_ROOM,
+       A.OPER_ROOM_NO,                                --手术间索引
+       D.BED_LABEL,                                        --手术间名称
+       A.SEQUENCE,                                         --台次
+       A.DIAG_BEFORE_OPERATION,                            --术前诊断
+       A.PATIENT_CONDITION,                                --特殊情况
+       A.OPERATION_NAME ,                                  --手术名称
+       A.OPER_SCALE,                                  --手术等级
+        --手术科室
+       NVL((SELECT medsurgery.V_DEPT_DICT.DEPT_NAME   FROM medsurgery.V_DEPT_DICT WHERE medsurgery.V_DEPT_DICT.DEPT_CODE = A.OPER_DEPT_code ),A.OPER_DEPT_code ) OPERATING_DEPT,
+       --手术者
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SURGEON ),A.SURGEON ) SURGEON,
+       --第一手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_oper_ASSISTANT ),A.FIRST_oper_ASSISTANT ) FIRST_ASSISTANT,
+       --第二手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_oper_ASSISTANT ),A.SECOND_oper_ASSISTANT ) SECOND_ASSISTANT,
+       --第三手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.THIRD_oper_ASSISTANT ),A.THIRD_oper_ASSISTANT ) THIRD_ASSISTANT,
+       --第四手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FOURTH_oper_ASSISTANT ),A.FOURTH_oper_ASSISTANT ) FOURTH_ASSISTANT,
+       A.ANES_METHOD,                                --麻醉方法
+       --麻醉医生
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.ANES_DOCTOR ),A.ANES_DOCTOR ) ANESTHESIA_DOCTOR,
+       --第麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.first_ANES_ASSISTANT ),A.first_ANES_ASSISTANT ) ANESTHESIA_ASSISTANT,
+       --第二麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_ANES_assistant ),A.SECOND_ANES_assistant ) SECOND_ANESTHESIA_DOCTOR,
+       --第三麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.third_anes_assistant ),A.third_anes_assistant) THIRD_ANESTHESIA_DOCTOR,
+       --第四麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FOURTH_ANES_ASSISTANT ),A.FOURTH_ANES_ASSISTANT ) FOURTH_ANESTHESIA_ASSISTANT,
+       --第一洗手护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_OPER_NURSE ),A.FIRST_OPER_NURSE ) FIRST_OPERATION_NURSE,
+       --第二洗手护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_OPER_NURSE ),A.SECOND_OPER_NURSE ) SECOND_OPERATION_NURSE,
+       --第一巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_SUPPLY_NURSE ),A.FIRST_SUPPLY_NURSE ) FIRST_SUPPLY_NURSE,
+       --第二巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_SUPPLY_NURSE ),A.SECOND_SUPPLY_NURSE ) SECOND_SUPPLY_NURSE,
+       --第三巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.THIRD_SUPPLY_NURSE ),A.THIRD_SUPPLY_NURSE ) THIRD_SUPPLY_NURSE,
+       A.NOTES_ON_OPERATION,                               --备注
+       A.REQ_DATE_TIME,                                    --申请日期时间
+       A.EMERGENCY_IND,                              --急诊标志
+  A.ISOLATION_IND,                                    --隔离标志
+  A.RADIATE_IND,                                      --放射标志
+  A.INFECTED_IND,                                     --感染标志
+       A.OPER_POSITION,                               --体位
+       CASE A.ANES_METHOD WHEN '局麻' THEN '术中' ELSE '术前' END  TYPE,
+       A.OPER_STATUS,
+       TO_CHAR(SYSDATE,'YYYY') - TO_CHAR(C.DATE_OF_BIRTH,'YYYY') AS PAT_AGE
+       FROM
+       (SELECT * FROM medsurgery.V_OPERATION_SCHEDULE  WHERE TO_CHAR(SCHEDULED_DATE_TIME,'yyyyMMdd') = TO_CHAR(SYSDATE ,'yyyyMMdd')  AND OPER_STATUS_CODE = 2) A
+       LEFT OUTER JOIN medsurgery.V_PAT_MASTER_INDEX C ON A.PATIENT_ID = C.PATIENT_ID
+       LEFT OUTER JOIN medsurgery.V_OPERATING_ROOM D ON A.OPER_ROOM = D.DEPT_CODE AND A.OPER_ROOM_NO = D.ROOM_NO
+UNION
+SELECT
+       A.PATIENT_ID,                                       --病人ID (住院号)
+       A.VISIT_ID,                                         --本次住院标示
+       A.OPER_ID,                                          --手术申请ID
+       D.NAME,                                             --名称
+       D.SEX,                                              --性别
+       D.INP_NO,                                           --住院号
+       D.DATE_OF_BIRTH,                                    --出生日期
+       D.NATION,                                           --民族
+       --病人所在科室
+      NVL((SELECT medsurgery.V_DEPT_DICT.DEPT_NAME   FROM medsurgery.V_DEPT_DICT WHERE medsurgery.V_DEPT_DICT.DEPT_CODE = A.DEPT_code ),A.oper_dept_code ) DEPT_STAYED,                                      A.BED_NO,                                                    --床号
+       A.START_DATE_TIME,                                  --手术日期及时间
+       --手术室
+       A.OPER_ROOM,
+       A.OPER_ROOM_NO,                                --手术间索引
+       E.BED_LABEL,                                        --手术间名称
+       A.SEQUENCE,                                         --台次
+       A.DIAG_BEFORE_OPERATION,                            --术前诊断
+       A.PATIENT_CONDITION,                                --特殊情况
+       A.OPERATION_NAME ,                                       --手术名称
+       A.OPER_SCALE,                                  --手术等级
+       --手术科室
+      NVL((SELECT medsurgery.V_DEPT_DICT.DEPT_NAME   FROM medsurgery.V_DEPT_DICT WHERE medsurgery.V_DEPT_DICT.DEPT_CODE = A.OPER_DEPT_code ),A.OPER_DEPT_code ) OPERATING_DEPT,
+       --手术者
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SURGEON ),A.SURGEON ) SURGEON,
+       --第一手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_oper_ASSISTANT ),A.FIRST_oper_ASSISTANT ) FIRST_ASSISTANT,
+       --第二手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_oper_ASSISTANT ),A.SECOND_oper_ASSISTANT ) SECOND_ASSISTANT,
+       --第三手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.THIRD_oper_ASSISTANT ),A.THIRD_oper_ASSISTANT ) THIRD_ASSISTANT,
+       --第四手术助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FOURTH_oper_ASSISTANT ),A.FOURTH_oper_ASSISTANT ) FOURTH_ASSISTANT,
+       A.ANES_METHOD,                                --麻醉方法
+       --麻醉医生
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.ANES_DOCTOR ),A.ANES_DOCTOR ) ANESTHESIA_DOCTOR,
+       --第麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.first_ANES_ASSISTANT ),A.first_ANES_ASSISTANT ) ANESTHESIA_ASSISTANT,
+       --第二麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_ANES_ASSISTANT ),A.SECOND_ANES_ASSISTANT ) SECOND_ANESTHESIA_DOCTOR,
+       --第三麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.THIRD_ANES_ASSISTANT ),A.THIRD_ANES_ASSISTANT ) THIRD_ANESTHESIA_DOCTOR,
+       --第四麻醉助手
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FOURTH_ANES_ASSISTANT ),A.FOURTH_ANES_ASSISTANT ) FOURTH_ANESTHESIA_ASSISTANT,
+       --第一洗手护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_OPER_NURSE ),A.FIRST_OPER_NURSE ) FIRST_OPERATION_NURSE,
+       --第二洗手护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_OPER_NURSE ),A.SECOND_OPER_NURSE ) SECOND_OPERATION_NURSE,
+       --第一巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.FIRST_SUPPLY_NURSE ),A.FIRST_SUPPLY_NURSE ) FIRST_SUPPLY_NURSE,
+       --第二巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.SECOND_SUPPLY_NURSE ),A.SECOND_SUPPLY_NURSE ) SECOND_SUPPLY_NURSE,
+       --第三巡回护士
+       NVL( ( SELECT  medsurgery.V_HIS_USERS.USER_NAME FROM medsurgery.V_HIS_USERS WHERE medsurgery.V_HIS_USERS.USER_JOB_ID = A.THIRD_SUPPLY_NURSE ),A.THIRD_SUPPLY_NURSE ) THIRD_SUPPLY_NURSE,
+       NULL,                                               --备注
+       TO_DATE(NULL,'YYYY-MM-DD'),                         --申请日期时间
+  A.EMERGENCY_IND,                              --急诊标志
+  A.ISOLATION_IND,                                    --隔离标志
+  A.RADIATE_IND,                                      --放射标志
+   A.INFECTED_IND,                                     --感染标志
+       A.OPER_POSITION,                               --体位
+       CASE A.ANES_METHOD WHEN '局麻' THEN '术中' ELSE
+       DECODE( A.OPER_STATUS_code, 5,'术中',10,'术中',15,'术中',25,'术中',30,'术中',35,'术后',40,'复苏',45,'复苏') END  TYPE,
+       A.OPER_STATUS_code,
+       TO_CHAR(SYSDATE,'YYYY') - TO_CHAR(D.DATE_OF_BIRTH,'YYYY') AS PAT_AGE
+       FROM
+       (SELECT * FROM medsurgery.V_OPERATION_MASTER WHERE OPER_STATUS_code > 0  AND
+       --2011.05.31入手术室时改变的IN_DATE_TIME，而开始手术改变的是START_DATE_TIME，所以要两个时间都判断
+       (TO_CHAR(START_DATE_TIME , 'yyyyMMdd') = TO_CHAR( SYSDATE,'yyyyMMdd')  OR
+       TO_CHAR(IN_DATE_TIME , 'yyyyMMdd') = TO_CHAR( SYSDATE ,'yyyyMMdd')) AND
+       --TRUNC((SYSDATE-NVL(OUT_DATE_TIME,SYSDATE))*1440 ) <  5   AND  --这个5代表术后5分钟不显示
+       OPER_STATUS_code < 50 ) A
+       LEFT OUTER JOIN medsurgery.V_PAT_MASTER_INDEX D ON A.PATIENT_ID = D.PATIENT_ID
+       LEFT OUTER JOIN medsurgery.V_OPERATING_ROOM E ON A.OPER_ROOM = E.DEPT_CODE AND A.OPER_ROOM_NO = E.ROOM_NO
+

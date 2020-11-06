@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MedicalSystem.Anes.Domain.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\MedicalSystem.Anes.Domain.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <NoWarn>
+    </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{929DF7A2-D882-4502-AB10-5C49ED5BE1DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.Anes.Domain</RootNamespace>
+    <AssemblyName>MedicalSystem.Anes.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\ArrayConverter.cs" />
+    <Compile Include="Converter\BindingException.cs" />
+    <Compile Include="Converter\ConverterUtil.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Converter\DateTimeOffsetConverter.cs" />
+    <Compile Include="Converter\DecimalConverter.cs" />
+    <Compile Include="Converter\DefaultConverter.cs" />
+    <Compile Include="Converter\EnumConverter.cs" />
+    <Compile Include="Converter\ExactMatchConverter.cs" />
+    <Compile Include="Converter\GenericListConverter.cs" />
+    <Compile Include="Converter\GuidConverter.cs" />
+    <Compile Include="Converter\HttpPostedFileConverter.cs" />
+    <Compile Include="Converter\IConverter.cs" />
+    <Compile Include="Converter\NullableConverter.cs" />
+    <Compile Include="Converter\PrimitiveConverter.cs" />
+    <Compile Include="Converter\StringConverter.cs" />
+    <Compile Include="Converter\TypeConverterAdapter.cs" />
+    <Compile Include="Converter\TypeConverterBase.cs" />
+    <Compile Include="Extents\BloodGasDetail.cs" />
+    <Compile Include="Extents\BloodGasMaster.cs" />
+    <Compile Include="Extents\MED_RESCUE_MESSAGE_LOG.cs" />
+    <Compile Include="Extents\NewMonitorDataItem.cs" />
+    <Compile Include="Origins\MED_BJCA_SIGN.cs" />
+    <Compile Include="Origins\MED_VER_INFO.cs" />
+    <Compile Include="Permission\MDSD_ACTION.cs" />
+    <Compile Include="Permission\MDSD_APPLICATION.cs" />
+    <Compile Include="Extents\MED_ANESTHESIA_EVENT.cs" />
+    <Compile Include="Extents\MED_COMM_VITAL_REC.cs" />
+    <Compile Include="Extents\MED_LAB_PATIENT.cs" />
+    <Compile Include="Extents\MED_LAB_RESULT.cs" />
+    <Compile Include="Extents\MED_LOG_RECORD.cs" />
+    <Compile Include="Extents\MED_MONITOR_DICT.cs" />
+    <Compile Include="Extents\MED_OPERATION_SCHEDULE.cs" />
+    <Compile Include="Extents\MED_ORDERS.cs" />
+    <Compile Include="Extents\MED_CLIENT_COMPUTER.cs" />
+    <Compile Include="Extents\MED_PATIENT_CARD.cs" />
+    <Compile Include="Extents\MED_PAT_MASTER_INDEX.cs" />
+    <Compile Include="Extents\MED_RESCUE_GROUP.cs" />
+    <Compile Include="Extents\MED_SHIFT_INFO.cs" />
+    <Compile Include="Extents\MED_USERS.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Extents\MED_USER_MESSAGES.cs" />
+    <Compile Include="Extents\MED_VITALSIGN_ALARM.cs" />
+    <Compile Include="Extents\MED_VITAL_SIGN.cs" />
+    <Compile Include="Extents\STANDARD_KEYWORD.cs" />
+    <Compile Include="Origins\MED_ADMINISTRATION_DICT.cs" />
+    <Compile Include="Origins\MED_ALDRETE_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_DICT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT_LOG.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT_TEMPLET.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INPUT_DATA.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INPUT_DICT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INQUIRY.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN_EXAM.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN_PMH.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_RECOVER.cs" />
+    <Compile Include="Origins\MED_ANES_ALARM_MESSAGE.cs" />
+    <Compile Include="Origins\MED_APACHE2_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_DAILY_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_APPLICATIONS.cs" />
+    <Compile Include="Origins\MED_BALTHAZAR_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_BILL_ITEM_CLASS_DICT.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DETAIL.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DICT.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_MASTER.cs" />
+    <Compile Include="Origins\MED_CHILDPUGH_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_CLIENT_COMPUTER.cs" />
+    <Compile Include="Origins\MED_COMM_VITAL_REC.cs" />
+    <Compile Include="Origins\MED_COMM_VITAL_REC_EXTEND.cs" />
+    <Compile Include="Origins\MED_CONFIG.cs" />
+    <Compile Include="Origins\MED_CONFIRMATION_PACU.cs" />
+    <Compile Include="Origins\MED_CONSULTATION_REGISTRATION.cs" />
+    <Compile Include="Origins\MED_DEPT_DICT.cs" />
+    <Compile Include="Origins\MED_DIAGNOSIS_DICT.cs" />
+    <Compile Include="Origins\MED_DOCUMENT_TEMPLET.cs" />
+    <Compile Include="Origins\MED_EMR_ARCHIVE_DETIAL.cs" />
+    <Compile Include="Origins\MED_EVENT_DICT.cs" />
+    <Compile Include="Origins\MED_EVENT_DICT_EXT.cs" />
+    <Compile Include="Origins\MED_EVENT_ITEM_CLASS_DICT.cs" />
+    <Compile Include="Origins\MED_EVENT_SORT.cs" />
+    <Compile Include="Origins\MED_EVENT_VS_BILL.cs" />
+    <Compile Include="Origins\MED_EXAM_ITEMS.cs" />
+    <Compile Include="Origins\MED_EXAM_MASTER.cs" />
+    <Compile Include="Origins\MED_EXAM_REPORT.cs" />
+    <Compile Include="Origins\MED_GOLDMAN_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_HIS_USERS.cs" />
+    <Compile Include="Origins\MED_HIS_USERS_INFO.cs" />
+    <Compile Include="Origins\MED_HOSPITAL_CONFIG.cs" />
+    <Compile Include="Origins\MED_HOSP_BRANCH_DICT.cs" />
+    <Compile Include="Origins\MED_LAB_RESULT.cs" />
+    <Compile Include="Origins\MED_LAB_TEST_ITEMS.cs" />
+    <Compile Include="Origins\MED_LAB_TEST_MASTER.cs" />
+    <Compile Include="Origins\MED_LOG_RECORD.cs" />
+    <Compile Include="Origins\MED_LUTZ_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_MESSAGE_LOG.cs" />
+    <Compile Include="Origins\MED_MESSAGE_TEMPLET.cs" />
+    <Compile Include="Origins\MED_METHOD_DICT.cs" />
+    <Compile Include="Origins\MED_MONITOR_DICT.cs" />
+    <Compile Include="Origins\MED_MONITOR_FUNCTION_CODE.cs" />
+    <Compile Include="Origins\MED_OPERATING_ROOM.cs" />
+    <Compile Include="Origins\MED_OPERATING_ROOM_VS_MONITOR.cs" />
+    <Compile Include="Origins\MED_OPERATION_ANALGESIC_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_BILL_DETAIL.cs" />
+    <Compile Include="Origins\MED_OPERATION_BILL_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_CANCELED.cs" />
+    <Compile Include="Origins\MED_OPERATION_DICT.cs" />
+    <Compile Include="Origins\MED_OPERATION_EXTENDED.cs" />
+    <Compile Include="Origins\MED_OPERATION_LOG.cs" />
+    <Compile Include="Origins\MED_OPERATION_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_MASTER_EXT.cs" />
+    <Compile Include="Origins\MED_OPERATION_NAME.cs" />
+    <Compile Include="Origins\MED_OPERATION_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_OPERATION_SCHEDULE_NAME.cs" />
+    <Compile Include="Origins\MED_OPERATION_SHIFT_RECORD.cs" />
+    <Compile Include="Origins\MED_OPERATION_STATUS_DICT.cs" />
+    <Compile Include="Origins\MED_OPERATION_STATUS_EXT.cs" />
+    <Compile Include="Origins\MED_OPER_ANALGESIC_MEDICINE.cs" />
+    <Compile Include="Origins\MED_OPER_ANALGESIC_TOTAL.cs" />
+    <Compile Include="Origins\MED_OPER_RISK_ESTIMATE.cs" />
+    <Compile Include="Origins\MED_ORDERS.cs" />
+    <Compile Include="Origins\MED_PARS_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_PATIENT_MONITOR_CONFIG.cs" />
+    <Compile Include="Origins\MED_PATIENT_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_PATS_IN_HOSPITAL.cs" />
+    <Compile Include="Origins\MED_PAT_MASTER_INDEX.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_DICT.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_EXT.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_HISTORY.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_LOG.cs" />
+    <Compile Include="Origins\MED_PAT_VISIT.cs" />
+    <Compile Include="Origins\MED_PERIOPERATIVE_EVENT_CONFIG.cs" />
+    <Compile Include="Origins\MED_PERIOPERATIVE_EVENT_INDEX.cs" />
+    <Compile Include="Extents\MED_PERMISSION_LOGINNAME.cs" />
+    <Compile Include="Origins\MED_PERMISSIONS.cs" />
+    <Compile Include="Origins\MED_POSTOPERATIVE_EXTENDED.cs" />
+    <Compile Include="Origins\MED_PREOPERATIVE_EXPANSION.cs" />
+    <Compile Include="Origins\MED_PRIMARY_FIELD_MODIFY.cs" />
+    <Compile Include="Origins\MED_QIXIE_QINGDIAN.cs" />
+    <Compile Include="Origins\MED_QIXIE_TEMPLET_DETAIL.cs" />
+    <Compile Include="Origins\MED_QIXIE_TEMPLET_MASTER.cs" />
+    <Compile Include="Origins\MED_RESCUE_EXPERTS.cs" />
+    <Compile Include="Origins\MED_RESCUE_EXPERTS_GROUP.cs" />
+    <Compile Include="Origins\MED_RESCUE_GROUP.cs" />
+    <Compile Include="Origins\MED_RESCUE_GROUP_VS_DEPT.cs" />
+    <Compile Include="Origins\MED_RESCUE_MESSAGE_LOG.cs" />
+    <Compile Include="Origins\MED_ROLES.cs" />
+    <Compile Include="Origins\MED_ROLES_PERMISSIONS.cs" />
+    <Compile Include="Origins\MED_SAFETY_CHECKS.cs" />
+    <Compile Include="Origins\MED_SCREEN_MSG.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_DATA.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_FILES.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_MASTER.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_SIGN.cs" />
+    <Compile Include="Origins\MED_STEWARD_MARK.cs" />
+    <Compile Include="Origins\MED_STEWARD_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_TISS_SCORING_RESULT_DETAIL.cs" />
+    <Compile Include="Origins\MED_UNIT_DICT.cs" />
+    <Compile Include="Origins\MED_USERS.cs" />
+    <Compile Include="Origins\MED_USERS_ROLES.cs" />
+    <Compile Include="Origins\MED_USER_MESSAGES.cs" />
+    <Compile Include="Origins\MED_USER_NOTE.cs" />
+    <Compile Include="Origins\MED_WARD_DICT.cs" />
+    <Compile Include="Origins\SCHEDULEREPORTVIEW.cs" />
+    <Compile Include="Origins\SHIFT_OPERATION_INFO.cs" />
+    <Compile Include="Permission\MDSD_FUNC.cs" />
+    <Compile Include="Permission\MDSD_MENU.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

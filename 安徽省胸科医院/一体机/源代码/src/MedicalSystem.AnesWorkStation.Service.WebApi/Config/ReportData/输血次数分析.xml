@@ -1,0 +1,178 @@
+<?xml version="1.0" standalone="yes"?>
+<XMLData>
+  <xs:schema id="XMLData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XMLData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportInformation">
+            <xs:complexType>
+               <xs:sequence>
+                <xs:element name="ReportTitle" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportTitle, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportColumnList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportColumn, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportSubConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportSubCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="SubReportInformationList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportInformation, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportChartInfo" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportChartInfo, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportInformation>
+    <ReportTitle xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ReportName>输血次数分析</ReportName>
+      <Menu>科研分析</Menu>
+      <StrSql>SELECT A.EVENT_ITEM_NAME,
+                           A.ITEM_COUNT,
+                           CASE WHEN instr(A.EVENT_ITEM_NAME,'红细胞')&gt;0 THEN A.SUM_DOSAGE * 200 
+                                WHEN instr(A.EVENT_ITEM_NAME,'冷沉淀')&gt;0 THEN A.SUM_DOSAGE * 50 
+                                WHEN instr(A.EVENT_ITEM_NAME,'血小板')&gt;0 THEN A.SUM_DOSAGE * 100
+                                ELSE A.SUM_DOSAGE 
+                           END AS SUM_DOSAGE,
+                           ROUND(A.ITEM_COUNT / B.TOTAL * 100, 2) AS ITEM_PERCENT
+                      FROM (SELECT EVENT_ITEM_NAME,
+                                   COUNT(1) AS ITEM_COUNT,
+                                   SUM(S_DOSAGE) AS SUM_DOSAGE
+                              FROM (SELECT PATIENT_ID,
+                                           VISIT_ID,
+                                           OPER_ID,
+                                           EVENT_ITEM_NAME,
+                                           SUM(DOSAGE) AS S_DOSAGE
+                                      FROM V_ANESTHESIA_ENENT_BLOOD_V2
+                                     WHERE START_TIME &gt;= :START_TIME
+                                       AND START_TIME &lt;= :END_TIME
+                                     GROUP BY PATIENT_ID, VISIT_ID, OPER_ID, EVENT_ITEM_NAME)
+                             GROUP BY EVENT_ITEM_NAME) A,
+                           (SELECT '总计' AS ITEM_NAME, SUM(ITEM_COUNT) AS TOTAL
+                              FROM (SELECT EVENT_ITEM_NAME, COUNT(1) AS ITEM_COUNT
+                                      FROM (SELECT PATIENT_ID, VISIT_ID, OPER_ID, EVENT_ITEM_NAME
+                                              FROM V_ANESTHESIA_ENENT_BLOOD_V2
+                                             WHERE START_TIME &gt;= :START_TIME
+                                               AND START_TIME &lt;= :END_TIME
+                                             GROUP BY PATIENT_ID, VISIT_ID, OPER_ID, EVENT_ITEM_NAME)
+                                     GROUP BY EVENT_ITEM_NAME)) B</StrSql>
+      <PageSize>10</PageSize>
+      <SortNumber>0</SortNumber>
+      <ModelFileName />
+      <ShowSummary>false</ShowSummary>
+      <IsLinkButton>false</IsLinkButton>
+    </ReportTitle>
+    <ReportColumnList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ReportColumn>
+        <FieldName>EVENT_ITEM_NAME</FieldName>
+        <Title>输血项目</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ITEM_COUNT</FieldName>
+        <Title>输血次数</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>SUM_DOSAGE</FieldName>
+        <Title>输血剂量</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ITEM_PERCENT</FieldName>
+        <Title>百分比</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+    </ReportColumnList>
+    <ReportConditionList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ReportCondition>
+        <Title>开始时间</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>START_TIME</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentFirstDate</DateDefaultVal>
+        <Value>2018-09-01</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>结束时间</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>END_TIME</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentLastDate</DateDefaultVal>
+        <Value>2018-09-30</Value>
+      </ReportCondition>
+    </ReportConditionList>
+    <ReportSubConditionList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <SubReportInformationList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <ReportChartInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ChartType>Pie</ChartType>
+      <SeriesData>
+        <SeriesDataSet>
+          <Title>输血项目</Title>
+          <Field>EVENT_ITEM_NAME</Field>
+        </SeriesDataSet>
+        <SeriesDataSet>
+          <Title>输血次数</Title>
+          <Field>ITEM_COUNT</Field>
+        </SeriesDataSet>
+      </SeriesData>
+      <XAxisInfo>
+        <Type>value</Type>
+        <DataColumn>EVENT_ITEM_NAME</DataColumn>
+        <Data />
+      </XAxisInfo>
+      <YAxisInfo>
+        <Type>value</Type>
+        <DataColumn>ITEM_COUNT</DataColumn>
+        <Data />
+      </YAxisInfo>
+    </ReportChartInfo>
+  </ReportInformation>
+</XMLData>

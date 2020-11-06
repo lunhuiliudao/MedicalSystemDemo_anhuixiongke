@@ -1,0 +1,27 @@
+========[Header]========
+
+2019-01-24 16:39:31,986   [12]   ERROR - WebApi错误：/Api/PlatformAccount/Login
+System.ArgumentNullException: String 引用没有设置为 String 的实例。
+参数名: s
+   在 System.Text.Encoding.GetBytes(String s)
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAccountService.Encrypto(String Source) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAccountService.cs:行号 43
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAccountService.Login(String LoginName, String PassWord) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAccountService.cs:行号 59
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAccountController.Login(Object data) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAccountController.cs:行号 52
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2019-01-24 16:39:46,566   [8]   ERROR - WebApi错误：/Api/PlatformAccount/Login
+System.ArgumentNullException: String 引用没有设置为 String 的实例。
+参数名: s
+   在 System.Text.Encoding.GetBytes(String s)
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAccountService.Encrypto(String Source) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAccountService.cs:行号 43
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAccountService.Login(String LoginName, String PassWord) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAccountService.cs:行号 59
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAccountController.Login(Object data) 位置 C:\SVN\AnesPlatformV2.0\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAccountController.cs:行号 52
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)

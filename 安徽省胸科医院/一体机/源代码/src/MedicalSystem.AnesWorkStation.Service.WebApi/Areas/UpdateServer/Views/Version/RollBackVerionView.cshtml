@@ -1,0 +1,29 @@
+﻿@model MedicalSystem.AnesWorkStation.Domain.MED_VER_INFO
+@{
+    ViewBag.Title = "RollBackVerionView";
+    Layout = "~/Areas/UpdateServer/Views/Shared/_Page.cshtml";
+}
+
+<div style="width:100%;height:100%;">
+    <form id="form" method="post">
+        <table class="t2" cellpadding="0">
+            <tr>
+                <td class="f1">回退原因:</td>
+                <td>
+                    <input id="VER_ID" type="hidden" name="VER_ID" value="@Model.VER_ID">
+                    <input class="easyui-textbox" name="ROLL_BACK_DESC" data-options="multiline:true,required:true" style="height:60px;width:350px;" value="@Model.ROLL_BACK_DESC">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" class="btn">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="submitForm(this, '/UpdateServer/Version/UpdateRollBackDesc')">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" onclick="clearForm(this)">重置</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="closeWin()">关闭</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+

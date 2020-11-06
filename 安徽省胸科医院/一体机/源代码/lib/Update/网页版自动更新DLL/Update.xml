@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UpdateConfig>
+  <!--服务端更新地址-->
+  <ServerURL>http://localhost:8047/</ServerURL>
+  <!--应用程序更新主键-->
+  <AppKey>ANES</AppKey>
+  <!--是否获取测试版，只有为1时才会获取，其它任何值不获取-->
+  <IsTest>0</IsTest>
+  <!--是否为调试程序，调试程序将不再更新任何程序-->
+  <IsDebug>0</IsDebug>
+  <!--启动主程序名称,仅供双击自动更新程序时使用，不是双击请清空-->
+  <StartProcessName>MedicalSystem.AnesWorkStation.View</StartProcessName>
+</UpdateConfig>

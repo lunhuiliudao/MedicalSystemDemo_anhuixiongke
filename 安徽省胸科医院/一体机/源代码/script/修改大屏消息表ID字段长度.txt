@@ -1,0 +1,9 @@
+-- Alter table 
+alter table MED_SCREEN_MSG
+  storage
+  (
+    next 1
+  )
+;
+-- Add/modify columns 
+alter table MED_SCREEN_MSG modify id VARCHAR2(80);

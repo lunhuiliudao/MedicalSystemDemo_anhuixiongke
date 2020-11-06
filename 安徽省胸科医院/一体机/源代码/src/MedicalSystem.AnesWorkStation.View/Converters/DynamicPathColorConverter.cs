@@ -1,0 +1,40 @@
+﻿//＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//文件名称(File Name)：      DynamicPathColorConverter.cs
+//功能描述(Description)：    转换类，提供界面显示，根据图标的画刷返回图标轮廓的画刷
+//数据表(Tables)：		    无
+//作者(Author)：             MDSD
+//日期(Create Date)：        2017/12/27 09:35
+//R1:
+//    修改作者:
+//    修改日期:
+//    修改理由:
+//＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+using MedicalSystem.AnesWorkStation.Model.InOperationModel;
+using System;
+using System.Drawing;
+using System.Windows.Data;
+using System.Windows.Media;
+
+namespace MedicalSystem.AnesWorkStation.View.Converters
+{
+    public class DynamicPathColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            var pathmodel = value as SymbolModel;
+            if (pathmodel != null)
+            {
+                SolidBrush brush = (SolidBrush)pathmodel.Brush;
+                System.Windows.Media.Color color = System.Windows.Media.Color.FromRgb(brush.Color.R, brush.Color.G, brush.Color.B);
+                return  new SolidColorBrush(color);
+            }
+
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="MedicalSystem.AnesWorkStation.View.AnesGraph.IntakeAndOutputControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded" SizeChanged="UserControl_SizeChanged">
+    <Border BorderBrush="Chocolate" BorderThickness="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:Name="gridTable" MouseLeftButtonDown="gridTable_MouseLeftButtonDown" AllowDrop="True" DragOver="gridTable_DragOver"
+                  Drop="gridTable_Drop" GiveFeedback="gridTable_GiveFeedback" Background="White" 
+                  MouseMove="gridTable_MouseMove" MouseLeave="gridTable_MouseLeave"/>
+            <Grid x:Name="gridXAxis" Grid.Row="1"/>
+        </Grid>
+    </Border>
+</UserControl>

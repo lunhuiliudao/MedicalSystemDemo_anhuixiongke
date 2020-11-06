@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtAllTableColumnSql.Text" xml:space="preserve">
+    <value>SELECT A.COLUMN_NAME,
+       A.DATA_TYPE,
+       A.DATA_LENGTH,
+       A.DATA_PRECISION,
+       A.DATA_SCALE,
+       A.NULLABLE,
+       B.COMMENTS,
+       CASE
+         WHEN A.COLUMN_NAME IN
+              (SELECT C.COLUMN_NAME
+                 FROM USER_CONS_COLUMNS C, USER_CONSTRAINTS D
+                WHERE C.CONSTRAINT_NAME = D.CONSTRAINT_NAME
+                  AND D.CONSTRAINT_TYPE = 'P'
+                  AND D.TABLE_NAME = A.TABLE_NAME) THEN
+          'Y'
+         ELSE
+          'N'
+       END KEY_TYPE
+  FROM ALL_TAB_COLUMNS A
+  LEFT JOIN ALL_COL_COMMENTS B
+    ON A.TABLE_NAME = B.TABLE_NAME
+   AND A.COLUMN_NAME = B.COLUMN_NAME
+ WHERE A.TABLE_NAME = '{table_name}'
+ ORDER BY COLUMN_ID</value>
+  </data>
+  <data name="txtDataType.Text" xml:space="preserve">
+    <value>&lt;ORACLE&gt;
+    &lt;!-- 代表字段为数值型，没有小数数位的数值类型，等价于 NUMBER_0 --&gt;
+    &lt;NUMBER&gt;Int32&lt;/NUMBER&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 0 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_0&gt;Int32&lt;/NUMBER_0&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 1 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_1&gt;decimal&lt;/NUMBER_1&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 2 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_2&gt;decimal&lt;/NUMBER_2&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 3 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_3&gt;decimal&lt;/NUMBER_3&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 4 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_4&gt;decimal&lt;/NUMBER_4&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 5 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_5&gt;decimal&lt;/NUMBER_5&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 6 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_6&gt;decimal&lt;/NUMBER_6&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 7 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_7&gt;decimal&lt;/NUMBER_7&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 8 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_8&gt;decimal&lt;/NUMBER_8&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 9 的数值类型，依次类推 --&gt;
+    &lt;NUMBER_9&gt;decimal&lt;/NUMBER_9&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 10 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_10&gt;decimal&lt;/NUMBER_10&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 11 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_11&gt;decimal&lt;/NUMBER_11&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 12 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_12&gt;decimal&lt;/NUMBER_12&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 13 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_13&gt;decimal&lt;/NUMBER_13&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 14 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_14&gt;decimal&lt;/NUMBER_14&gt;
+    &lt;!-- 代表字段为数值型，小数数位为 15 的数值类型，依次类推... --&gt;
+    &lt;NUMBER_15&gt;decimal&lt;/NUMBER_15&gt;
+    &lt;VARCHAR&gt;string&lt;/VARCHAR&gt;
+    &lt;VARCHAR2&gt;string&lt;/VARCHAR2&gt;
+    &lt;NVARCHAR&gt;string&lt;/NVARCHAR&gt;
+    &lt;NVARCHAR2&gt;string&lt;/NVARCHAR2&gt;
+    &lt;CHAR&gt;string&lt;/CHAR&gt;
+    &lt;NCHAR&gt;string&lt;/NCHAR&gt;
+    &lt;DATE&gt;DateTime&lt;/DATE&gt;
+    &lt;TIMESTAMP&gt;DateTime&lt;/TIMESTAMP&gt;
+    &lt;FLOAT&gt;double&lt;/FLOAT&gt;
+    &lt;BOOLEAN&gt;Boolean&lt;/BOOLEAN&gt;
+    &lt;LONG&gt;string&lt;/LONG&gt;
+    &lt;!-- C#对应byte[],VB对应byte(),下同 --&gt;
+    &lt;BLOB&gt;byte[]&lt;/BLOB&gt;
+    &lt;!-- C#对应byte[],VB对应byte(),下同 --&gt;
+    &lt;CLOB&gt;byte[]&lt;/CLOB&gt;
+    &lt;!-- C#对应byte[],VB对应byte(),下同 --&gt;
+    &lt;NCLOB&gt;byte[]&lt;/NCLOB&gt;
+    &lt;!-- C#对应byte[],VB对应byte(),下同 --&gt;
+    &lt;RAW&gt;byte[]&lt;/RAW&gt;
+    &lt;!-- C#对应byte[],VB对应byte(),下同 --&gt;
+    &lt;LONG_x0020_RAW&gt;byte[]&lt;/LONG_x0020_RAW&gt;
+    &lt;!-- LONG_x0020_RAW=LONG RAW --&gt;
+    &lt;INTERVAL_x0020_DAY_x0028_2_x0029__x0020_TO_x0020_SECOND_x0028_6_x0029_&gt;TimeSpan&lt;/INTERVAL_x0020_DAY_x0028_2_x0029__x0020_TO_x0020_SECOND_x0028_6_x0029_&gt;
+    &lt;INTERVAL_x0020_YEAR_x0028_2_x0029__x0020_TO_x0020_MONTH&gt;TimeSpan&lt;/INTERVAL_x0020_YEAR_x0028_2_x0029__x0020_TO_x0020_MONTH&gt;
+    &lt;!-- LONG_x0020_RAW=LONG RAW --&gt;
+  &lt;/ORACLE&gt;</value>
+  </data>
+  <data name="txtClassTemp.Text" xml:space="preserve">
+    <value>namespace MedicalSystem.Anes.Domain
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    /// &lt;summary&gt;
+    /// 实体 {comments}
+    /// &lt;/summary&gt;
+    [Table("{table_name}")]
+    public partial class {table_name} : BaseModel
+    {
+{properties}
+    }
+}</value>
+  </data>
+  <data name="BaseModel" xml:space="preserve">
+    <value>using Castle.Components.Binder;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
+namespace MedicalSystem.Anes.Domain
+{
+    /// &lt;summary&gt;
+    /// 基类通用方法接口
+    /// &lt;/summary&gt;
+    [Serializable]
+    public partial class BaseModel : ICloneable
+    {
+        #region Get All Props Name
+
+        public IEnumerable&lt;string&gt; GetPropsName()
+        {
+            foreach (var prop in GetProperties())
+            {
+                yield return prop.Name;
+            }
+        }
+
+        #endregion
+
+        #region Get Set Value
+
+        /// &lt;summary&gt;
+        /// 取值
+        /// &lt;/summary&gt;
+        /// &lt;param name="fieldName"&gt;字段名称&lt;/param&gt;
+        /// &lt;returns&gt;当前值&lt;/returns&gt;
+        public object GetValue(string fieldName)
+        {
+            return GetProperty(fieldName).GetValue(this, null);
+        }
+
+        /// &lt;summary&gt;
+        /// 取值
+        /// &lt;/summary&gt;
+        /// &lt;param name="fieldName"&gt;字段名称&lt;/param&gt;
+        /// &lt;returns&gt;当前值&lt;/returns&gt;
+        public T GetValue&lt;T&gt;(string fieldName)
+        {
+            return (T)GetValue(fieldName);
+        }
+
+        /// &lt;summary&gt;
+        /// 赋值
+        /// &lt;/summary&gt;
+        /// &lt;param name="fieldName"&gt;字段名称&lt;/param&gt;
+        /// &lt;param name="value"&gt;当前值&lt;/param&gt;
+        public void SetValue(string fieldName, object value)
+        {
+            var prop = GetProperty(fieldName);
+
+            bool conversionSucceeded = false;
+
+            if (converter == null)
+            {
+                converter = new DefaultConverter();
+            }
+            value = converter.Convert(prop.PropertyType, typeof(string), value, out conversionSucceeded);
+            
+            if (conversionSucceeded)
+            {
+                prop.SetValue(this, value, null);
+            }
+        }
+
+        #endregion
+
+        #region Type PropertyInfo[] Cache
+
+        /// &lt;summary&gt;
+        /// 值类型转换工具
+        /// &lt;/summary&gt;
+        private static IConverter converter = null;
+
+        /// &lt;summary&gt;
+        /// 类型属性缓存
+        /// &lt;/summary&gt;
+        private static Dictionary&lt;Type, PropertyInfo[]&gt; _cacheTypePropsDict = null;
+
+        /// &lt;summary&gt;
+        /// 所有属性
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        private PropertyInfo[] GetProperties()
+        {
+            PropertyInfo[] propInfos = null;
+            Type type = this.GetType();
+
+            if (_cacheTypePropsDict == null)
+            {
+                _cacheTypePropsDict = new Dictionary&lt;Type, PropertyInfo[]&gt;();
+            }
+
+            if (!_cacheTypePropsDict.TryGetValue(type, out propInfos) || propInfos == null)
+            {
+                propInfos = type.GetProperties();
+                _cacheTypePropsDict[type] = propInfos;
+            }
+
+            return propInfos;
+        }
+
+        /// &lt;summary&gt;
+        /// 获取当前某一个名称的字段属性
+        /// &lt;/summary&gt;
+        /// &lt;param name="name"&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        private PropertyInfo GetProperty(string name)
+        {
+            PropertyInfo[] propInfos = GetProperties();
+            return propInfos.FirstOrDefault(x =&gt; x.Name.ToUpper() == name.ToUpper());
+        }
+
+        #endregion
+
+        #region ICloneable 成员
+
+        public object Clone()
+        {
+            using (MemoryStream ms = new MemoryStream(1000))
+            {
+                object CloneObject;
+                BinaryFormatter bf = new BinaryFormatter(null, new StreamingContext(StreamingContextStates.Clone));
+                bf.Serialize(ms, this);
+                ms.Seek(0, SeekOrigin.Begin);
+                // 反序列化至另一个对象(即创建了一个原对象的深表副本) 
+                CloneObject = bf.Deserialize(ms);
+                // 关闭流 
+                ms.Close();
+                return CloneObject;
+            } 
+        }
+
+        #endregion
+    }
+}</value>
+  </data>
+</root>

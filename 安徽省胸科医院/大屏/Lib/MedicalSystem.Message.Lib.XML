@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MedicalSystem.Message.Lib</name>
+    </assembly>
+    <members>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateConnectionClosed">
+            <summary>
+            失去连接
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateSendMessage">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateOnLine">
+            <summary>
+            上线消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateUnLine">
+            <summary>
+            下线消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateGetUserDict">
+            <summary>
+            获取在线用户列表
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.ServerURI">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="ipAddress">ip地址:端口,默认为localhost:9999</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendALLMessage(System.String)">
+            <summary>
+            群发消息
+            </summary>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendMessage(System.String,System.String)">
+            <summary>
+            制定用户发消息
+            </summary>
+            <param name="name">接受用户名</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.Close">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.GetUserDict">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.Connect">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.ConnectionStatus">
+            <summary>
+            是否已经连接
+            </summary>
+        </member>
+    </members>
+</doc>

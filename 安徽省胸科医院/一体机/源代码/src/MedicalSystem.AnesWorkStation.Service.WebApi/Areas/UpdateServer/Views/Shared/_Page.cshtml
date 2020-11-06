@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content='' />
+    <meta name="description" content='自动更新管理后台' />
+    <title>自动更新管理后台</title>
+    <!-- 浏览器标签图片 -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" />
+    <!-- FontAwesome字体图标 -->
+    <link type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/easyui/jquery.min.js"></script>
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script>
+    <script src="~/Content/easyui/jquery.easyui.mobile.js"></script>
+    <script src="~/Content/easyui/easyloader.js"></script>
+    <script src="~/Content/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    @Styles.Render("~/Content/easyui/css")
+    @Scripts.Render("~/Content/easyui/jquery")
+    @Scripts.Render("~/Content/bootstrap/scrpit")
+
+    <link type="text/css" href="~/Content/edit.css" rel="stylesheet" />
+    <script src="~/Scripts/index.js"></script>
+</head>
+<body class="easyui-layout">
+    @RenderBody()
+    <div id="win"></div>
+    <script>
+        function submitForm(tag, url) {
+            $.messager.confirm('提示', '确定要提交吗?', function (r) {
+                if (r) {
+                    var formid = "#" + $(tag).parents().find('form').attr('id');
+                    $(formid).form('submit', {
+                        url: url,
+                        onSubmit: function () {               //表单提交前的回调函数
+                            var isValid = $(this).form('validate');//验证表单中的一些控件的值是否填写正确，比如某些文本框中的内容必须是数字
+                            if (!isValid) {
+                            }
+                            return isValid; // 如果验证不通过，返回false终止表单提交
+                        },
+                        success: function (data) {    //表单提交成功后的回调函数，里面参数data是我们调用/BasicClass/ModifyClassInfo方法的返回值。
+                            if (data == "true") {
+                                $.messager.show({
+                                    title: '提示消息',
+                                    msg: '提交成功',
+                                    showType: 'show',
+                                    timeout: 1000,
+                                    style: {
+                                        right: '',
+                                        bottom: ''
+                                    }
+                                });
+                                $("#win").window("close");
+                                $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', getData());
+                            }
+                            else {
+                                $.messager.alert('提示信息', '提交失败！\r\n' + data, 'warning');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        function submitFormNoClose(tag, url) {
+            $.messager.confirm('提示', '确定要提交吗?', function (r) {
+                if (r) {
+                    var formid = "#" + $(tag).parents().find('form').attr('id');
+                    $(formid).form('submit', {
+                        url: url,
+                        onSubmit: function () {               //表单提交前的回调函数
+                            var isValid = $(this).form('validate');//验证表单中的一些控件的值是否填写正确，比如某些文本框中的内容必须是数字
+                            if (!isValid) {
+                            }
+                            return isValid; // 如果验证不通过，返回false终止表单提交
+                        },
+                        success: function (data) {    //表单提交成功后的回调函数，里面参数data是我们调用/BasicClass/ModifyClassInfo方法的返回值。
+                            if (data == "true") {
+                                $.messager.show({
+                                    title: '提示消息',
+                                    msg: '提交成功',
+                                    showType: 'show',
+                                    timeout: 1000,
+                                    style: {
+                                        right: '',
+                                        bottom: ''
+                                    }
+                                });
+                            }
+                            else {
+                                $.messager.alert('提示信息', '提交失败！\r\n' + data, 'warning');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        function submitFormRest(tag, url) {
+            $.messager.confirm('提示', '确定要提交吗?', function (r) {
+                if (r) {
+                    var formid = "#" + $(tag).parents().find('form').attr('id');
+                    $(formid).form('submit', {
+                        url: url,
+                        onSubmit: function () {               //表单提交前的回调函数
+                            var isValid = $(this).form('validate');//验证表单中的一些控件的值是否填写正确，比如某些文本框中的内容必须是数字
+                            if (!isValid) {
+                            }
+                            return isValid; // 如果验证不通过，返回false终止表单提交
+                        },
+                        success: function (data) {    //表单提交成功后的回调函数，里面参数data是我们调用/BasicClass/ModifyClassInfo方法的返回值。
+                            if (data == "true") {
+                                $.messager.show({
+                                    title: '提示消息',
+                                    msg: '提交成功',
+                                    showType: 'show',
+                                    timeout: 1000,
+                                    style: {
+                                        right: '',
+                                        bottom: ''
+                                    }
+                                });
+                                $(formid).form('clear');
+                            }
+                            else {
+                                $.messager.alert('提示信息', '提交失败！\r\n' + data, 'warning');
+                            }
+                        }
+                    });
+                }
+            });            
+        }
+        function clearForm(tag) {
+            var formid = $(tag).parents().find('form');
+            $(formid).form('clear');
+        }
+
+        function getID(dg)
+        {
+            var row = null;
+            if (dg != null) {
+                row = $(dg).datagrid('getSelected');
+            }
+            return row;
+        }
+
+        function winOpen(title, width, height, url, dg, idName) {
+            var row = getID(dg);
+            if (dg!=null && row == null)
+            {
+                $.messager.alert('提示', '请选择数据行！');
+                return;
+            }
+            var id = '';
+            if (dg != null && idName!=null)
+                id = '/' + row[idName];
+            $('#win').window({
+                title: title,
+                width: width,
+                height: height,
+                modal: true,
+                iconCls: 'fa fa-key',
+                href: url + id
+            });
+        };
+
+        //关闭window窗口    
+        function closeWin() {
+            $("#win").window("close");
+        }
+
+        //有提示提交AJAX
+        function TipSubmitAjax(tip, url, dg, idName) {
+            var row = getID(dg);
+            if (dg != null && row == null) {
+                $.messager.alert('提示', '请选择数据行！');
+                return;
+            }
+            var id = '';
+            if (dg != null)
+                id = row[idName];
+            $.messager.confirm('提示', tip, function (r) {
+                if (r) {
+                    $.ajax({
+                        type : "POST",
+                        url: url,
+                        contentType: "application/json",//传值的方式
+                        data: "{id:'" + id + "'}",
+                        success: function (data) {
+                            if (data==true) {
+                                $.messager.alert('提示', '提交完成');
+                                $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', getData());
+                            }
+                            else
+                                $.messager.alert('提示', '提交失败:' + data);
+                        }
+                    });
+                }
+            });
+        }
+
+        function pagerFilter(data) {
+            if (typeof data.length == 'number' && typeof data.splice == 'function') {	// is array
+                data = {
+                    total: data.length,
+                    rows: data
+                }
+            }
+            var dg = $(this);
+            var opts = dg.datagrid('options');
+            var pager = dg.datagrid('getPager');
+            pager.pagination({
+                onSelectPage: function (pageNum, pageSize) {
+                    opts.pageNumber = pageNum;
+                    opts.pageSize = pageSize;
+                    pager.pagination('refresh', {
+                        pageNumber: pageNum,
+                        pageSize: pageSize
+                    });
+                    dg.datagrid('loadData', data);
+                }
+            });
+            if (!data.originalRows) {
+                data.originalRows = (data.rows);
+            }
+            var start = (opts.pageNumber - 1) * parseInt(opts.pageSize);
+            var end = start + parseInt(opts.pageSize);
+            data.rows = (data.originalRows.slice(start, end));
+            return data;
+        }
+        $("#submit_search").linkbutton({ iconCls: 'icon-search', plain: true })
+            .click(function () {
+                $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', getData());
+            });
+        //将表单数据转为json
+        function form2Json(id) {
+
+            var arr = $("#" + id).serializeArray()
+            var jsonStr = "";
+
+            jsonStr += '{';
+            for (var i = 0; i < arr.length; i++) {
+                jsonStr += '"' + arr[i].name + '":"' + arr[i].value + '",'
+            }
+            jsonStr = jsonStr.substring(0, (jsonStr.length - 1));
+            jsonStr += '}'
+
+            var json = JSON.parse(jsonStr)
+            return json
+        }
+        window.onload = function () {
+            if ($("#dg").length) {
+                $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', getData());
+            }
+        }
+        //格式化单元格提示信息  
+        function formatCellTooltip(value) {
+            return "<span title='" + value + "'>" + value + "</span>";
+        }
+    </script>
+</body>
+</html>

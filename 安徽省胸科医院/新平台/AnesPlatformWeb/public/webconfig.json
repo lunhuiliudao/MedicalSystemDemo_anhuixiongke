@@ -1,0 +1,56 @@
+﻿{
+  "apiUrl": "http://localhost:54402",
+  "OperSchedule": "http://localhost:8048/#/OperSchedule",
+  "EmrService": "http://localhost:8048/EMR/",
+  "AnesWorkStationApiUrl": "http://localhost:8048/",
+  "OauthSide": {
+    "path": "http://localhost:54402/api/account/CheckLogin",
+    "successReturn": {
+      "parma1": "USER_JOB_ID"
+    },
+    "errorReturn": "null"
+  },
+  "DocumentList": [
+    "麻醉同意书",
+    "麻醉记录单",
+    "麻醉总结单",
+    "复苏记录单",
+    "手术护理单",
+    "眼科手术护理单",
+    "眼科手术清点记录",
+    "患者交接单",
+    "术前病例讨论",
+    "安全核查单",
+    "会诊记录单",
+    "术后随访单",
+    "术后随访单2",
+    "术后随访单3",
+    "术前访视单"
+  ],
+  "MenuList": [
+    "手术信息",
+    "仪器设置",
+    "术后登记",
+    "保存模板",
+    "更换手术间",
+    "手术交接班",
+    "检验结果",
+    "查看术中",
+    "血气分析",
+    "手术跳转",
+    "手术取消",
+    "家属协同",
+    "拍照",
+    "PACS检查信息",
+    "麻醉评分"
+  ],
+  "AnesWardCode": "3701",
+  "DeptCode": "3701",
+  "AnesShiftDrugList": [
+    "舒芬太尼",
+    "瑞芬太尼",
+    "芬太尼",
+    "氨茶碱"
+  ],
+  "AnesShiftEmergencyPatCount": "5"
+}

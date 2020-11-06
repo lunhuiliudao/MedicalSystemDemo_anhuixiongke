@@ -1,0 +1,322 @@
+body {
+}
+#PtLogOn
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 371px;
+}
+#zhuxiao
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 62px;
+}
+#hisInfo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 172px;
+}
+#lisInfo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 172px;
+}
+#textInfo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 172px;
+}
+#keshi
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#renyuan
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#operaitonDict
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#selectPatientID
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#selectPatientOrders
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#selectPatientOrdersDate
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#selectPatientLabMaster
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientInpNo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#DeptSchedules
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientSchedulesInto
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;  
+}
+#PatientNursingDataInfo
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#patientChargesVerifyInfo214
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PriceDict
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#DeptDrugdocumentBT
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#DeptMtrldocumentBT
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#Drugdict
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+
+#DrugNameDict
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#Mtrldict
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#MtrlSupplierCatalog
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+
+#PatientEmrDocUpLoad
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientAllEmrDocUpLoad
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+
+#logsDate
+{
+    width: 182px;
+}
+#logsTxt
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientInfoExperiment
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#DeptPatInfoExperiment
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientInfoMedical
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#PatientUpdateOperSchedule
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#setOperationState
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#CopyBackOperationInformationBtn
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#CopyBackOperationChancelBtn
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#keshiICU
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#renyuanICU
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUDeptPatientInfo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUselectPatientID
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUselectPatientOrders
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUselectPatientOrdersDate
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUselectPatientLabMaster
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUPatientInpNo
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUPatientEmrDocUpLoad
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#ICUPatientAllEmrDocUpLoad
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+
+#GetXMLUpdateDeptDictBT
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLUpdateUsersBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLUpdatePatMasterIndexBT
+{
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLUpdatePatsInHospitalBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLUpdateOperationScheduleBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLDataPatientEmrArchiveDetialBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetXMLDataPatientEmrArchiveDetialInfoBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}
+#GetAnesthesiaEventBT
+{
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    width: 182px;
+}

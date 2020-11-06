@@ -1,0 +1,514 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 13:59:31,514   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 13:59:31，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 13:59:34,290   [10]   DEBUG   File   [(null)]   <(null)>   -   名为“PHAM_STD_CODE”的列已属于此 DataTable。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column, DataTable table)
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 InitDocare.PublicXML.EexcColumnName(DataTable dt, InterfaceDataType type) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\InitDocare\Public.cs:行号 530
+   在 BLL.hospitalbaseStandXm.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 1856
+引发当前异常的函数为:RegisterColumnName
+导致错误的应用程序或对象的名称为:System.Data
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 14:01:12,776   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:01:12，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:01:13,150   [12]   DEBUG   File   [(null)]   <(null)>   -   名为“PHAM_STD_CODE”的列已属于此 DataTable。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column, DataTable table)
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 InitDocare.PublicXML.EexcColumnName(DataTable dt, InterfaceDataType type) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\InitDocare\Public.cs:行号 530
+   在 BLL.hospitalbaseStandXm.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 1856
+引发当前异常的函数为:RegisterColumnName
+导致错误的应用程序或对象的名称为:System.Data
+
+2014-08-20 14:02:29,934   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:02:29，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:03:15,860   [12]   DEBUG   File   [(null)]   <(null)>   -   名为“PHAM_STD_CODE”的列已属于此 DataTable。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column, DataTable table)
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 InitDocare.PublicXML.EexcColumnName(DataTable dt, InterfaceDataType type) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\InitDocare\Public.cs:行号 530
+   在 BLL.hospitalbaseStandXm.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 1856
+引发当前异常的函数为:RegisterColumnName
+导致错误的应用程序或对象的名称为:System.Data
+
+2014-08-20 14:03:20,025   [11]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:03:20，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:05:48,172   [11]   DEBUG   File   [(null)]   <(null)>   -   名为“PHAM_STD_CODE”的列已属于此 DataTable。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column, DataTable table)
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 InitDocare.PublicXML.EexcColumnName(DataTable dt, InterfaceDataType type) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\InitDocare\Public.cs:行号 530
+   在 BLL.hospitalbaseStandXm.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 1856
+引发当前异常的函数为:RegisterColumnName
+导致错误的应用程序或对象的名称为:System.Data
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 14:07:30,350   [11]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:07:30，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS105
+2014-08-20 14:09:22,875   [4]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:09:22，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:09:43,077   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:52,718   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:52,718   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:52,733   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:52,889   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:52,905   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:52,905   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:52,920   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:52,936   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:52,936   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:52,936   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:52,952   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:52,952   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:52,952   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:52,967   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:52,983   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:52,983   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:52,998   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:52,998   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,014   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,030   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,030   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,030   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,045   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,045   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,061   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,076   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,076   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,076   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,092   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,092   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,108   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,123   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,123   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,123   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,139   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,139   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,154   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,154   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,154   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,170   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,170   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,201   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,201   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,201   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,217   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,232   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,232   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,232   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,232   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,248   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,248   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,264   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,264   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,279   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,279   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,279   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,279   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,295   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,310   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,310   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,310   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,310   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,326   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,342   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,342   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,342   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,357   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,357   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,373   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,373   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,373   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,388   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,404   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,404   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,404   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,404   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,420   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,435   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,435   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,435   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,451   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,451   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,466   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,466   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,466   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,482   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,482   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,498   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,498   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,498   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,513   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,513   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,529   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,529   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,544   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,544   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,544   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,560   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,560   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,576   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,576   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,576   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,576   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,591   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,607   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,607   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,607   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,607   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,622   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,638   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,638   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,638   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,654   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,654   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,669   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,669   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,669   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,685   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,685   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,700   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,716   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,716   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,716   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,732   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,732   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,732   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,747   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:09:53,747   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,763   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,763   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,763   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,778   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,794   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,794   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,794   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,794   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,810   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:09:53,825   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,825   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:09:53,825   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:09:53,825   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:09:53,841   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:09,485   [11]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:11:09，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:11:15,834   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:15,834   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:15,850   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:15,850   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:15,881   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:15,881   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:15,881   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:15,897   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:15,912   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:15,912   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:15,912   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:15,912   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:15,928   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:15,928   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:15,944   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:15,944   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:15,959   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:15,975   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:15,975   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:15,975   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:15,990   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,006   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,006   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,022   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,022   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,037   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,053   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,053   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,068   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,084   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,084   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,084   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,100   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,115   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,115   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,131   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,131   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,146   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,146   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,146   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,146   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,162   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,178   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,178   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,178   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,193   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,209   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,209   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,224   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,224   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,224   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,224   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,240   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,240   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,256   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,256   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,256   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,271   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,287   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,287   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,287   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,302   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,302   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,318   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,318   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,318   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,318   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,334   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,349   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,349   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,365   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,365   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,365   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,380   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,380   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,396   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,396   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,396   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,412   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,427   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,427   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,443   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,443   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,458   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,458   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,458   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,458   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,474   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,490   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,490   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,490   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,505   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,505   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,521   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,536   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,536   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,536   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,536   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,552   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,568   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,568   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,568   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,568   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,583   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,599   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,599   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,614   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,614   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,614   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,630   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,646   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,646   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,646   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,646   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,661   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,677   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,677   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,677   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,692   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,692   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,692   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,708   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,708   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,724   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,724   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,724   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,724   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,755   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:16,755   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,755   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,770   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,770   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,770   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,786   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,786   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,802   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,802   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,802   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:16,817   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,817   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:16,833   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:16,833   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:16,833   [11]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:38,829   [4]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:11:38，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2014-08-20 14:11:38,876   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:38,876   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:38,891   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:38,891   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:38,907   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:38,907   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:38,923   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:38,923   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:38,938   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:38,938   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:38,954   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:38,954   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:38,954   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:38,954   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:38,969   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:38,985   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:38,985   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,001   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,016   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,016   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,032   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,032   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,032   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,047   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,063   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,063   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,079   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,079   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,094   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,110   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,110   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,110   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,125   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,141   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,141   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,157   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,157   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,157   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,172   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,172   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,172   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,188   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,203   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,203   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,203   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,203   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,219   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,235   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,235   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,235   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,235   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,250   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,266   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,266   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,266   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,266   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,281   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,281   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,297   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,297   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,313   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,313   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,313   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,328   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,328   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,344   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,344   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,344   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,359   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,359   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,375   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,375   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,375   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,391   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,391   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,406   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,406   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,406   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,422   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,437   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,437   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,437   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,437   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,453   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,469   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,469   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,469   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,469   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,484   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,500   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,500   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,500   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,500   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,515   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,531   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,531   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,531   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,547   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,547   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,562   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,562   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,562   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,578   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,578   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,593   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,593   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,593   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,609   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,609   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,625   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,625   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,625   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,640   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,640   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,640   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,656   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,656   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,671   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,671   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,671   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,671   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,687   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,703   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,703   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,703   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,718   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,718   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,734   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'DOSAGE' 格式不是数值类型!
+2014-08-20 14:11:39,734   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,749   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,749   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,749   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,749   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,765   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,781   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,781   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,781   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,781   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:39,796   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,812   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'FREQ_DETAIL' 为空!
+2014-08-20 14:11:39,812   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'PERFORM_RESULT' 为空!
+2014-08-20 14:11:39,812   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'STOP_ORDER_DATE_TIME' 格式不是时间类型!
+2014-08-20 14:11:39,812   [4]   DEBUG   File   [(null)]   <(null)>   -   XML 中 'TREAT_SHEET_FLAG' 为空!
+2014-08-20 14:11:50,201   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:11:50，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 14:12:34,814   [4]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:12:34，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 14:48:21,176   [9]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:48:21，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 14:48:23,701   [9]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 14:48:25,123   [9]   DEBUG   File   [(null)]   <(null)>   -   列“REPORT_ITEM_NAME”不属于表 Row。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.hospitalbaseStandXm.GetPatientLabTestMaster(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 2073
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 14:53:21,575   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 14:53:21，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 14:53:21,669   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 14:53:21,997   [16]   DEBUG   File   [(null)]   <(null)>   -   列“REPORT_ITEM_NAME”不属于表 Row。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.hospitalbaseStandXm.GetPatientLabTestMaster(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140819\BLL\模板\hospitalbaseStandXml.cs:行号 2073
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 17:29:23,864   [9]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:29:23，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:29:24,041   [9]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:31:16,891   [9]   DEBUG   File   [(null)]   <(null)>   -   没有信息，请根据入惨查询，入参为:
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-20 17:36:34,356   [4]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:36:34，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:36:34,436   [4]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:36:38,286   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:36:38，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:36:38,307   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:36:39,417   [4]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:36:39，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:36:39,435   [4]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:36:40,298   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:36:40，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:36:40,311   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:36:47,532   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-20 17:36:47，接收到由系统ANESMGR传递过来的调用信息.申请类型为LIS，接口类型为LIS001
+2014-08-20 17:36:47,554   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人检验信息...
+2014-08-20 17:36:47,893   [10]   DEBUG   File   [(null)]   <(null)>   -   没有信息，请根据入惨查询，入参为:<DoCare><TestNo>4070398614</TestNo></DoCare>
+2014-08-20 17:36:47,911   [10]   DEBUG   File   [(null)]   <(null)>   -   没有信息，请根据入惨查询，入参为:<DoCare><TestNo>4070398616</TestNo></DoCare>
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

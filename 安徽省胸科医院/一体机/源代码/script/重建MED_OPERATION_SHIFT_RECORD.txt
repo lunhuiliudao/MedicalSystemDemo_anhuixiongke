@@ -1,0 +1,71 @@
+-- Create table
+create table MED_OPERATION_SHIFT_RECORD
+(
+  patient_id      VARCHAR2(40) not null,
+  visit_id        NUMBER(4) not null,
+  oper_id         NUMBER(2) not null,
+  shift_duty      VARCHAR2(20) not null,
+  shift_times     NUMBER(2) not null,
+  person          VARCHAR2(20) not null,
+  shift_person    VARCHAR2(20),
+  start_date_time DATE not null,
+  end_date_time   DATE,
+  shift_date_time DATE,
+  memo            VARCHAR2(200),
+  reserved1       VARCHAR2(20),
+  reserved2       VARCHAR2(20),
+  reserved3       VARCHAR2(20),
+  reserved4       VARCHAR2(20)
+)
+tablespace TSP_MEDSURGERY
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table MED_OPERATION_SHIFT_RECORD
+  is '交班记录表';
+-- Add comments to the columns 
+comment on column MED_OPERATION_SHIFT_RECORD.patient_id
+  is '病人ID  ;非空，唯一确定手术病人';
+comment on column MED_OPERATION_SHIFT_RECORD.visit_id
+  is '入院次数  ;  住院病人每次住院加1';
+comment on column MED_OPERATION_SHIFT_RECORD.oper_id
+  is '手术号  ;一个病人一次住院期间手术的标识，从1开始顺序排列';
+comment on column MED_OPERATION_SHIFT_RECORD.shift_duty
+  is '工作类型  ;麻醉医生、麻醉一助等等 ';
+comment on column MED_OPERATION_SHIFT_RECORD.shift_times
+  is '交班次数 ';
+comment on column MED_OPERATION_SHIFT_RECORD.person
+  is '交班人';
+comment on column MED_OPERATION_SHIFT_RECORD.shift_person
+  is '接班人';
+comment on column MED_OPERATION_SHIFT_RECORD.start_date_time
+  is '开始时间';
+comment on column MED_OPERATION_SHIFT_RECORD.end_date_time
+  is '结束时间  ;为空时标示为手术结束时间或麻醉结束时间';
+comment on column MED_OPERATION_SHIFT_RECORD.shift_date_time
+  is '交班时间  ;填写交班记录事件，提取系统时间 ';
+comment on column MED_OPERATION_SHIFT_RECORD.memo
+  is '交班备注';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MED_OPERATION_SHIFT_RECORD
+  add constraint PK_OPERATION_SHIFT_RECORD primary key (PATIENT_ID, VISIT_ID, OPER_ID, SHIFT_DUTY, SHIFT_TIMES, PERSON, START_DATE_TIME)
+  using index 
+  tablespace TSP_MEDSURGERY
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Grant/Revoke object privileges 
+grant select, insert, update, delete on MED_OPERATION_SHIFT_RECORD to ROLE_DOCARE;

@@ -1,0 +1,218 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 09:58:07,354   [5]   DEBUG   File   [(null)]   <(null)>   -   oneMedVsHisPat is null inpara pateint_id:Z001425883500;visit_id:111
+2014-08-04 10:01:21,779   [4]   DEBUG   File   [(null)]   <(null)>   -   oneMedVsHisPat is null inpara pateint_id:Z001425883500;visit_id:111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 16:44:11,972   [14]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:44:11，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:44:12,050   [14]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:44:33,351   [14]   DEBUG   File   [(null)]   <(null)>   -   ORA-12170: TNS: 连接超时
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 BLL.DataReaderOracleHelper.PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 244
+   在 BLL.DataReaderOracleHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 110
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 346
+引发当前异常的函数为:Check
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:44:43,514   [14]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:44:43，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:44:43,530   [14]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:45:04,717   [14]   DEBUG   File   [(null)]   <(null)>   -   ORA-12170: TNS: 连接超时
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 BLL.DataReaderOracleHelper.PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 244
+   在 BLL.DataReaderOracleHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 110
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 346
+引发当前异常的函数为:Check
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:45:09,165   [15]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:45:09，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:45:09,181   [15]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:45:22,874   [15]   DEBUG   File   [(null)]   <(null)>   -   ORA-12170: TNS: 连接超时
+调用堆栈上的桢的字符串表现形式:   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 BLL.DataReaderOracleHelper.PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 244
+   在 BLL.DataReaderOracleHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 110
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 346
+引发当前异常的函数为:Check
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:47:00,058   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:47:00，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:47:00,074   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:47:28,315   [16]   DEBUG   File   [(null)]   <(null)>   -   ORA-12170: TNS: 连接超时
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 BLL.DataReaderOracleHelper.PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 244
+   在 BLL.DataReaderOracleHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\DataReaderOracleHelper.cs:行号 110
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 346
+引发当前异常的函数为:Check
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:47:42,708   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:47:42，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:47:42,724   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:47:42,771   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第1个字段名不是'SERIAL_NO'，请修正!
+2014-08-04 16:47:42,786   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第2个字段名不是'DEPT_CODE'，请修正!
+2014-08-04 16:47:42,786   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:47:42,786   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:47:42,786   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:47:42,802   [16]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第4个字段名不是'INPUT_CODE'，请修正!
+2014-08-04 16:47:42,864   [16]   DEBUG   File   [(null)]   <(null)>   -   ORA-01400: 无法将 NULL 插入 ("MEDCOMM"."MED_OPERATION_DICT"."OPERATION_NAME")
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedOperationDict.InsertMedOperationDict(MedOperationDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedOperationDict.cs:行号 412
+   在 BLL.hospitalbase.InsertMedOperationDict(MedOperationDict medOperationDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2482
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 432
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:48:10,393   [13]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:48:10，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:48:10,409   [13]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:48:30,248   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第1个字段名不是'SERIAL_NO'，请修正!
+2014-08-04 16:48:30,263   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第2个字段名不是'DEPT_CODE'，请修正!
+2014-08-04 16:48:30,263   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:48:30,263   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:48:30,279   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第3个字段名不是'DEPT_NAME'，请修正!
+2014-08-04 16:48:30,279   [13]   DEBUG   File   [(null)]   <(null)>   -   MED_IF_HIS_VIEW_SQL表中MED_DEPT_DICT对应的SQL语句中，第4个字段名不是'INPUT_CODE'，请修正!
+2014-08-04 16:48:30,295   [13]   DEBUG   File   [(null)]   <(null)>   -   ORA-01400: 无法将 NULL 插入 ("MEDCOMM"."MED_OPERATION_DICT"."OPERATION_NAME")
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedOperationDict.InsertMedOperationDict(MedOperationDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedOperationDict.cs:行号 412
+   在 BLL.hospitalbase.InsertMedOperationDict(MedOperationDict medOperationDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2482
+   在 BLL.hospitalbaseStandNewOracle.GetOperationDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 432
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:55:07,528   [15]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:55:07，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS013
+2014-08-04 16:55:07,543   [15]   DEBUG   File   [(null)]   <(null)>   -   开始同步手术名称字典...
+2014-08-04 16:59:15,692   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:59:15，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 16:59:15,723   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 16:59:15,849   [16]   DEBUG   File   [(null)]   <(null)>   -   ORA-01036: 非法的变量名/编号
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 492
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 546
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 16:59:43,097   [13]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 16:59:43，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 16:59:43,112   [13]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 17:00:20,271   [13]   DEBUG   File   [(null)]   <(null)>   -   ORA-01036: 非法的变量名/编号
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 492
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 546
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2014-08-04 17:00:23,566   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 17:00:23，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 17:00:23,582   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 17:01:49,411   [16]   DEBUG   File   [(null)]   <(null)>   -   ORA-01036: 非法的变量名/编号
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 492
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 546
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 17:03:22,810   [13]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 17:03:22，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 17:03:22,872   [13]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 17:04:01,663   [13]   DEBUG   File   [(null)]   <(null)>   -   ORA-01847: 月份中日的值必须介于 1 和当月最后一日之间
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 493
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 546
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 17:06:18,361   [16]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 17:06:18，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 17:06:18,443   [16]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 17:06:18,540   [16]   DEBUG   File   [(null)]   <(null)>   -   ORA-01861: 文字与格式字符串不匹配
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 493
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 548
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 17:10:30,391   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 17:10:30，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 17:10:30,469   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+2014-08-04 17:10:30,563   [10]   DEBUG   File   [(null)]   <(null)>   -   ORA-01861: 文字与格式字符串不匹配
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedDiagnosisDict.InsertMedDiagnosisDict(MedDiagnosisDict model) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\DAL\DALMedDiagnosisDict.cs:行号 493
+   在 BLL.hospitalbase.InsertMedDiagnosisDict(MedDiagnosisDict medDeptDict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\hospitalbasePartal.cs:行号 2114
+   在 BLL.hospitalbaseStandNewOracle.GetDiagnosisDict(Config config, MedInitDict dict) 位置 E:\接口版本\WS 最近版本交替\NET-WS-V420140731\BLL\模板\hospitalbaseStandNewOracle.cs:行号 548
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-08-04 17:16:31,533   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2014-08-04 17:16:31，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS003
+2014-08-04 17:16:31,611   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步诊断字典...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

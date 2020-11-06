@@ -1,0 +1,3120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Medicalsystem.Common.Doricon</name>
+    </assembly>
+    <members>
+        <member name="T:Medicalsystem.Common.Doricon.CallResultInfo">
+            <summary>
+            呼叫结果信息
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResultInfo.CallResult">
+            <summary>
+            呼叫结果
+            true：成功，false：失败
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResultInfo.OfflineUsers">
+            <summary>
+            不在线用户
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType">
+            <summary>
+            呼叫错误类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType.None">
+            <summary>
+            无异常
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType.Offline">
+            <summary>
+            用户不在线
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType.SystemError">
+            <summary>
+            系统错误
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType.Verification">
+            <summary>
+            校验错误
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResultInfo.ErrorType">
+            <summary>
+            错误类型
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResultInfo.Message">
+            <summary>
+            消息(如果呼叫失败，则是错误描述，否则为成功相关提醒消息)
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.CallResultInfo.#ctor(System.Boolean,Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType,System.String)">
+            <summary>
+            呼叫结果信息
+            </summary>
+            <param name="CallResult">呼叫结果 true：成功，false：失败</param>
+            <param name="ErrorType">呼叫错误类型</param>
+            <param name="Message">消息(如果呼叫失败，则是错误描述，否则为成功相关提醒消息)</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.CallResultInfo.#ctor(System.Boolean,Medicalsystem.Common.Doricon.CallResultInfo.CallErrorType,System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser},System.String)">
+            <summary>
+            呼叫结果信息
+            </summary>
+            <param name="CallResult"></param>
+            <param name="ErrorType"></param>
+            <param name="offlineUsers"></param>
+            <param name="Message"></param>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.RequestInfo">
+            <summary>
+            应用用户
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.RequestInfo.EnumRequestType">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RequestInfo.EnumRequestType.Call">
+            <summary>
+            呼叫
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RequestInfo.EnumRequestType.ApplyJoinSession">
+            <summary>
+            申请加入会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RequestInfo.EnumRequestType.ApplyOverSession">
+            <summary>
+            申请结束会话
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.RequestInfo.RequestType">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.RequestInfo.RequestUser">
+            <summary>
+            请求用户
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.RequestInfo.RequestContent">
+            <summary>
+            请求内容
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.AudioInfo.SessionID">
+            <summary>
+            用户SessionID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.AudioInfo.IsRemote">
+            <summary>
+            是否是远程
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Model.AudioInfo.#ctor(System.String,System.Boolean)">
+            <summary>
+            音频信息
+            </summary>
+            <param name="sessionID"></param>
+            <param name="isRemote"></param>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.Channel.IsOpen">
+            <summary>
+            是否打开状态（如果关闭，同步设置远程接收状态）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.Channel.IsReceived">
+            <summary>
+            是否接收视频（远程视频）
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.MultipScreenManager">
+            <summary>
+            多屏管理
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.MultipScreenManager.MinorScreens">
+            <summary>
+            监视器（扩展屏）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.MultipScreenManager.MinorScreenCount">
+            <summary>
+            监视器（扩展屏）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.UserInfo">
+            <summary>
+            组件平台用户
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.AppUserInfo">
+            <summary>
+            应用用户
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.Channels">
+            <summary>
+            通道
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.InteractChannels">
+            <summary>
+            交互通道（默认通道0）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.BROADCASTAV">
+            <summary>
+            广播
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.IsAudioOpen">
+            <summary>
+            音频是否打开
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.IsAudioReceived">
+            <summary>
+            音频是否接收
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.OnlineUser.CurrentGroup">
+            <summary>
+            当前临时会话组
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.Operands">
+            <summary>
+            操作对象类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.Operands.None">
+            <summary>
+            无类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.Operands.Audio">
+            <summary>
+            音频
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.Operands.Video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.Operands.EMR">
+            <summary>
+            电子病历
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.OperationType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.OperationType.NONE">
+            <summary>
+            无操作类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.OperationType.OPEN">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.OperationType.COPY">
+            <summary>
+            复制
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.OperationType.CLOSE">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.OperationType.Drag">
+            <summary>
+            拖拽
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.GroupStatus">
+            <summary>
+            会话组状态
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.GroupStatus.Calling">
+            <summary>
+            会话中
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Model.GroupStatus.CallOver">
+            <summary>
+            会话结束
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.PlayData">
+            <summary>
+            播放数据
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.PlayDataID">
+            <summary>
+            播放数据ID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.Operands">
+            <summary>
+            操作对象类型
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.IsAudio">
+            <summary>
+            是否是音频
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.IsVideo">
+            <summary>
+            是否是视频
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.IsEMR">
+            <summary>
+            是否是EMR
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.OperationInstance">
+            <summary>
+            操作实例（AudioInfo、VideoInfo或电子病历）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.AudioInstance">
+            <summary>
+            音频实例
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.VideoInstance">
+            <summary>
+            视频实例
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.IsCopy">
+            <summary>
+            是否是复制
+            true：复制
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.PlayData.OperationType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Model.PlayData.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Model.PlayData.ReleaseData">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Model.PlayData.SetData(Medicalsystem.Common.Doricon.Model.PlayData)">
+            <summary>
+            设置操作数据
+            </summary>
+            <param name="OperateData"></param>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Model.VideoInfo">
+            <summary>
+            视频信息
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.VideoInfo.IsRemote">
+            <summary>
+            是否是远程
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.VideoInfo.SessionID">
+            <summary>
+            用户SessionID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Model.VideoInfo.Channel">
+            <summary>
+            通道号
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Model.VideoInfo.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            视频信息
+            </summary>
+            <param name="sessionID"></param>
+            <param name="channel"></param>
+            <param name="isRemote"></param>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.NotifyMessage">
+            <summary>
+            通知消息
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType">
+            <summary>
+            通知类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.Sample">
+            <summary>
+            普通信息
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.CallResponse">
+            <summary>
+            呼叫应答
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.UserOnline">
+            <summary>
+            用户上线
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.UserOffline">
+            <summary>
+            用户下线
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.AudioVol">
+            <summary>
+            本地音频回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.AudioRealVol">
+            <summary>
+            实时音量（音感）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ExitCall">
+            <summary>
+            退出会话通知
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.OverCall">
+            <summary>
+            结束会话通知
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ApplyOverSessionAgree">
+            <summary>
+            同意申请结束会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ApplyOverSessionRefuse">
+            <summary>
+            拒绝申请结束会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ApplyJoinSessionAgree">
+            <summary>
+            同意申请加入会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ApplyJoinSessionRefuse">
+            <summary>
+            拒绝申请加入会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.DisConnect">
+            <summary>
+            连接断开
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ExtendCustomMessage">
+            <summary>
+            扩展自定义消息
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.ReceivedVideoUserInfo">
+            <summary>
+            接收到视频用户信息
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType.CallStatusInfo">
+            <summary>
+            通话状态
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.NotifyMessage.NotifyType">
+            <summary>
+            通知类型
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.NotifyMessage.Message">
+            <summary>
+            通知消息
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.NotifyMessage.NotifyContent">
+            <summary>
+            通知内容
+            呼叫应答 NotifyType（EnumNotifyType.CallResponse），NotifyContent（CallResponse）
+            用户上线 NotifyType（EnumNotifyType.UserOnline），NotifyContent（UserOnlineInfo）
+            用户下线 NotifyType（EnumNotifyType.UserOffline），NotifyContent（UserOnlineInfo）
+            退出会话 NotifyType（EnumNotifyType.ExitCall），NotifyContent（AppUser）
+            结束会话 NotifyType（EnumNotifyType.OverCall），NotifyContent（AppUser）
+            扩展自定义消息 NotifyType（EnumNotifyType.ExtendCustomMessage），NotifyContent（string）
+            本地音频回调 NotifyType（EnumNotifyType.AudioVol），NotifyContent（AudioVol）
+            实时音量（音感） NotifyType（EnumNotifyType.AudioRealVol），NotifyContent（AudioVol）
+            同意申请结束会话 NotifyType（EnumNotifyType.ApplyOverSessionAgree），NotifyContent（null）
+            拒绝申请结束会话 NotifyType（EnumNotifyType.ApplyOverSessionRefuse），NotifyContent（null）
+            同意申请加入会话 NotifyType（EnumNotifyType.ApplyJoinSessionAgree），NotifyContent（null）
+            拒绝申请加入会话 NotifyType（EnumNotifyType.ApplyJoinSessionRefuse），NotifyContent（null）
+            连接断开 NotifyType（EnumNotifyType.DisConnect），NotifyContent（null）
+            接收到视频用户信息 NotifyType（EnumNotifyType.ReceivedVideoUserInfo），NotifyContent（AppUser）
+            接收通过状态信息 NotifyType（EnumNotifyType.CallStatusInfo），NotifyContent（<![CDATA[List<AppUser>]]>）
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.CallResponse">
+            <summary>
+            呼叫应答
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResponse.AppUserID">
+            <summary>
+            App用户ID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.CallResponse.IsAgreeCall">
+            <summary>
+            是否同意呼叫
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.AudioVol">
+            <summary>
+            音频设备音量
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.AudioVol.AudioDeviceType">
+            <summary>
+            音频设备
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.AudioVol.AudioDeviceType.Speaker">
+            <summary>
+            扬声器
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.AudioVol.AudioDeviceType.Mic">
+            <summary>
+            麦克风
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.AudioVol.DeviceType">
+            <summary>
+            Speaker（扬声器）、Mic（麦克风）
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.OverSessionNotify">
+            <summary>
+            结束会话通知
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.OverSessionNotify.ApplyOverUserID">
+            <summary>
+            结束发起者（可以是申请结束的人，也可以是发起会话者）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.OverSessionNotify.OverCMDUserID">
+            <summary>
+            发出结束会话命令者
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.JoinSessionNotify">
+            <summary>
+            加入会话通知
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.JoinSessionNotify.ApplyJoinUserID">
+            <summary>
+            申请加入会话者（可以是申请人，也可以是发起会话者）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.JoinSessionNotify.JoinCMDUserID">
+            <summary>
+            发出呼叫命令者
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.UploadStatus">
+            <summary>
+            上传状态
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.UploadStatus.NotUpload">
+            <summary>
+            未上传
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.UploadStatus.Uploading">
+            <summary>
+            上传中
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.UploadStatus.Uploaded">
+            <summary>
+            已上传
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.RECStatus">
+            <summary>
+            录像状态
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RECStatus.Recording">
+            <summary>
+            录像中
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RECStatus.Done">
+            <summary>
+            录像完成
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.RECStatus.Unknow">
+            <summary>
+            录像异常未结束
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.AppUser">
+            <summary>
+            应用用户
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.AppUser.AppKey">
+            <summary>
+            应用key
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.AppUser.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.AppUser.IsOnline">
+            <summary>
+            是否在线
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.AppUser.IsCalling">
+            <summary>
+            是否正在通话(null:未知状态，true：通话中，false：空闲中)
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.FullScreenMode">
+            <summary>
+            全屏模式
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.FullScreenMode.FullControl">
+            <summary>
+            全控件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.FullScreenMode.FullScreen">
+            <summary>
+            全屏幕
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.CurrentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.CurrentTickTextBrush">
+            <summary>
+            当前时间刻度值颜色
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.CurrentTimeLineBrush">
+            <summary>
+            当前时间线颜色
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickSpec">
+            <summary>
+            刻度规格
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.IsShowTickText">
+            <summary>
+            是否显示刻度值
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.IsShowTick">
+            <summary>
+            是否显示刻度
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.IsShowCurrentTickText">
+            <summary>
+            是否显示当前刻度值
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickTextFontSize">
+            <summary>
+            刻度值字体大小
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickTextFontBrush">
+            <summary>
+            刻度值颜色
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickLineBrush">
+            <summary>
+            刻度线颜色
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickFrequencyTs">
+            <summary>
+            刻度线间隔时长
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.TickTextFrequencyTs">
+            <summary>
+            刻度值间隔时长
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.CustomTickBar.IsShowTimeLine">
+            <summary>
+            是否显示时间线
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.CustomTickBar.SyncAction">
+            <summary>
+            同步委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.CustomTickBar.CheckWheel">
+            <summary>
+            返回变化后的开始和结束时间
+            开始时间，结束时间，变化秒数
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.CustomTickBar.SyncTickBar">
+            <summary>
+            同步TickBar
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.TickSpec">
+            <summary>
+            刻度规格
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.drawEventList">
+            <summary>
+            需要绘的事件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.EventRects">
+            <summary>
+            手术事件区域
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.tip">
+            <summary>
+            toolTip
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.OperationEventCanvas._SymbolTypeList">
+            <summary>
+            自绘图形列表
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.EventList">
+            <summary>
+            手术事件
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            重绘
+            </summary>
+            <param name="dc"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.GetVal(System.DateTime)">
+            <summary>
+            获取值
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawSquare(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            矩形
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawDiamond(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            钻石型
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawXCross(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            交叉线
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawXCrossLine(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            交叉线竖线
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawPlus(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            加号
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawTriangle(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            三角形
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawTriangleDown(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            倒三角
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircle(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawDot(System.Windows.Media.DrawingContext,System.Windows.Rect,System.Windows.Media.Brush)">
+            <summary>
+            圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawFillCircle(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            实心圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawMiniCircle(System.Windows.Media.DrawingContext,System.Windows.Rect,System.Nullable{System.Double})">
+            <summary>
+            小圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawFillMiniCircle(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            实心小圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleXCross(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内交叉线
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleHArrow(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内水平箭头
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleVArrow(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内垂直箭头
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawInCircleHLine(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内横线
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleHLine(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            横线圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleVLine(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            竖线圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawTLineEllipse(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            T线椭圆
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawMiniCircleVLineWithArc(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            竖线小圆下带圆弧
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawMiniCircleLine(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            小圆斜线
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleSlash(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内斜线(左下到右上)
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleSlash2(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内斜线(左上到右下)
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCirclePlus(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆内加号
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawCircleDot(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            圆中点
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawPoint(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            点
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.OperationEventCanvas.DrawMachineAir(System.Windows.Media.DrawingContext,System.Windows.Rect)">
+            <summary>
+            机械通气
+            </summary>
+            <param name="dc"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.PlayBar">
+            <summary>
+            PlayBar.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PlayBar
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.PlayBar.ValueChanged">
+            <summary>
+            值改变
+            </summary>
+            <param name="sender"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.Player.PlayBar.OnSeek">
+            <summary>
+            Seek事件
+            </summary>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.Player.PlayBar.OnPlay">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.Player.PlayBar.OnPause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayBar.isPlaying">
+            <summary>
+            是否正在播放 true:正在播放，false：暂停
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayBar.Frequency">
+            <summary>
+            刻度间隔（秒）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayBar.IsBroadcast">
+            <summary>
+            是否是直播，true：直播
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayBar.MaxValue">
+            <summary>
+            进度条最大值
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayBar.Value">
+            <summary>
+            进度条当前值
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayBar._eventList">
+            <summary>
+            手术事件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayBar.OldValue">
+            <summary>
+            进度条拖动前值
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.#ctor(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            进度条构造函数
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.zoomer_OnChangeTick(System.Boolean)">
+            <summary>
+            修改Tick
+            </summary>
+            <param name="NeedRefreshGraph"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.UC_PlayBar_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            进度条加载事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.InitSlider">
+            <summary>
+            初始化slider
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.SyncTickBars(Medicalsystem.Common.Doricon.Player.CustomTickBar,Medicalsystem.Common.Doricon.Player.CustomTickBar)">
+            <summary>
+            同步tickbar
+            </summary>
+            <param name="targetBar"></param>
+            <param name="sourceBar"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.Slider_Progress_PreviewMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            进度条鼠标左键按下前事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.RefreshTicks">
+            <summary>
+            刷新刻度
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.GetTicks">
+            <summary>
+            获取刻度
+            </summary>
+            <returns>DoubleCollection</returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.RefreshGraph">
+            <summary>
+            刷新图表
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.GetValLenth(System.Double)">
+            <summary>
+            获取时间对应的长度
+            </summary>
+            <param name="Val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.GetRelativeLenth(System.Double)">
+            <summary>
+            获取相对长度
+            </summary>
+            <param name="RelativeVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.LoadOperationEvents">
+            <summary>
+            加载手术事件
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.SyncPlayTime(System.Nullable{System.DateTime})">
+            <summary>
+            同步播放时间
+            </summary>
+            <param name="PlayTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayBar.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventExt.EventName">
+            <summary>
+            事件名称
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventExt.EventTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventExt.EventImageCode">
+            <summary>
+            事件图片编码
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.OperationEventExt.EventImage">
+            <summary>
+            事件图片
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer">
+            <summary>
+            播放进度缩放工具类
+            add by yuanle
+            2016-05-11
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer._currentLong">
+            <summary>
+            当前时长
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer._zoomNumber">
+            <summary>
+            缩放单位数（单次）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer._zoomTime">
+            <summary>
+            缩放时长（单次）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer._zoomTimes">
+            <summary>
+            缩放次数（默认为0，放大一次计数1，缩小一次计数为-1）
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Default">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Default.ZoomUnit">
+            <summary>
+            默认缩放单位时长
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Default.LowerLimit">
+            <summary>
+            默认缩放下限
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Default.ZoomType">
+            <summary>
+            缩放类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Default.ZoomNumber">
+            <summary>
+            缩放单位数（单次）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.defaultLongTS">
+            <summary>
+            默认加载时长
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.StartTime">
+            <summary>
+            开始时间(入手术间时间)
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.EndTime">
+            <summary>
+            结束时间（出手术间时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentStartTime">
+            <summary>
+            当前开始时间（进度条当前开始时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentEndTime">
+            <summary>
+            当前结束时间（进度条当前结束时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentDuration">
+            <summary>
+            当前间隔（秒）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentStartVal">
+            <summary>
+            当前开始时间数值（秒，相对最初开始时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentEndVal">
+            <summary>
+            当前结束时间数值（秒，相对最初开始时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.IsBroadcast">
+            <summary>
+            是否直播
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.ProcessTime">
+            <summary>
+            当前进度时间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.CurrentVal">
+            <summary>
+            当前进度值（秒，相对最初开始时间）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.ZoomUnit">
+            <summary>
+            缩放单位
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.LowerLimit">
+            <summary>
+            缩放下限
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.IsCanZoomIn">
+            <summary>
+            是否能放大
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.IsCanZoomOut">
+            <summary>
+            是否能缩小
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.ChangeTickAction">
+            <summary>
+            修改Tick
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.GetInstance(System.DateTime,System.DateTime,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            获取缩放工具实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.GetInstance(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            获取缩放工具实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.#ctor(System.DateTime,System.DateTime,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="StartTime"></param>
+            <param name="EndTime"></param>
+            <param name="ZoomUnit"></param>
+            <param name="LowerLimit"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.SetCurrentEndTime">
+            <summary>
+            设置当前结束时间
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.GetTimeVal(System.DateTime)">
+            <summary>
+            获取时间对应值
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.GetValTime(System.Double)">
+            <summary>
+            获取值对应的时间
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.ZoomIn(System.DateTime)">
+            <summary>
+            放大
+            </summary>
+            <param name="ProcessTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.ZoomOut(System.DateTime)">
+            <summary>
+            缩小
+            </summary>
+            <param name="ProcessTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.Zoom">
+            <summary>
+            缩放
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.PlayProcessZoomer.recovery">
+            <summary>
+            恢复
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.ZoomType">
+            <summary>
+            缩放类型
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.ZoomType.ZoomIn">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Player.ZoomType.ZoomOut">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Player.WaitProgress">
+            <summary>
+            WaitProgress.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WaitProgress
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Player.WaitProgress.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.AudioAndVideoSetWindowVM.CurrentChannelNo">
+            <summary>
+            当前通道号
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.AudioAndVideoSetWindowVM.CurrentChannelName">
+            <summary>
+            当前通道名称
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.hasInitAVSDK">
+            <summary>
+            是否已初始化AVSDK
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.hasInitRecordSDK">
+            <summary>
+            是否已初始化AVSDK
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.AppUser">
+            <summary>
+            应用用户
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.isMainControl">
+            <summary>
+            是否是主控件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._IsLocalSetting">
+            <summary>
+            是否正在本地音视频设置
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._IsCanOpenLocalAVDevice">
+            <summary>
+            是否能打开本地视音频
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._Templates">
+            <summary>
+            所有模板
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.HasExtendScreen">
+            <summary>
+            是否有扩展屏
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CurrentSelectPanel">
+            <summary>
+            当前选中的Panel
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._AudioCtrlFunc">
+            <summary>
+            获取音频控件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._OnlineUserList">
+            <summary>
+            在线用户列表
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._IsJoinApplying">
+            <summary>
+            是否正在申请加入会话
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CallBackRece">
+            <summary>
+            视频会诊及AVI录像SDK回调委托
+            </summary>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CallBackEvent">
+            <summary>
+            视频会诊及AVI录像SDK回调事件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.RecordCallBackRece">
+            <summary>
+            MVF录像回调委托
+            </summary>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.RecordCallBackEvent">
+            <summary>
+            MVF录像回调事件
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.RECPath">
+            <summary>
+            录像路径
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.MinDiskSpace">
+            <summary>
+            磁盘最小预留空间
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CutFileLimit">
+            <summary>
+            文件分割大小
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.RECDiskFreeSpace">
+            <summary>
+            录像所在磁盘剩余空间
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.StartRecordAction">
+            <summary>
+            开始录制委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CutRecordAction">
+            <summary>
+            录像分割文件委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.FinishRecordAction">
+            <summary>
+            完成录像委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._CurrentRec">
+            <summary>
+            当前录像
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.InteractChannels">
+            <summary>
+            交互通道
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.AllowRevRemoteVideoToMain">
+            <summary>
+            是否允许接入远程视频到Main控件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._revRemoteVideoCount">
+            <summary>
+            接入远程视频数
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.AVSettingCommand">
+            <summary>
+            广播控制命令
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._FinishCallBack">
+            <summary>
+            完成录像结果回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._RecordCallBack">
+            <summary>
+            开始录像回调（外部调用）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._CallResultAction">
+            <summary>
+            呼叫回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._RequestFunc">
+            <summary>
+            请求委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._IsIniting">
+            <summary>
+            是否正在初始化
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._InitLocalChannelCount">
+            <summary>
+            初始化完成视频通道数
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._OpenLocalAVResults">
+            <summary>
+            打开本地视音频结果
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._OpenLocalAVAction">
+            <summary>
+            打开本地视音频结果回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._OpenLocalAudioAction">
+            <summary>
+            打开本地音频结果回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._CloseLocalAVAction">
+            <summary>
+            关闭本地音视频结果回调
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM._BackgroundImage">
+            <summary>
+            背景图片
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.WaittingPannelVisibility">
+            <summary>
+            等待层显隐
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.#ctor(System.String,Medicalsystem.Common.Doricon.AppUser,System.Boolean,System.Func{Medicalsystem.Common.Doricon.Views.AudioControl},System.Func{Medicalsystem.Common.Doricon.RequestInfo,System.Boolean},System.String,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="HashCode">哈希编码</param>
+            <param name="appUser">应用用户</param>
+            <param name="IsMainControl">是否是主控件</param>
+            <param name="AudioCtrlFunc">获取音频控件委托</param>
+            <param name="RequestFunc">呼叫结果委托</param>
+            <param name="BackgroundImage">背景图片</param>
+            <param name="InteractChannels">交互通道</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CheckServerSetting">
+            <summary>
+            检测服务器设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CreateTemplate(System.String)">
+            <summary>
+            创建模板
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetWaittingVisibleAction(System.Boolean)">
+            <summary>
+            设置等待界面显隐
+            </summary>
+            <param name="isVisible"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.RefreshModules">
+            <summary>
+            test
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.FullScreenAction(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            全屏回调
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.GetContainerFunc(Medicalsystem.Common.Doricon.Model.PlayData)">
+            <summary>
+            获取病历报告容器委托
+            </summary>
+            <param name="Rpt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SelectedAction(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            选中回调
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseAction(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            关闭复制
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReadGroup(Medicalsystem.Common.Doricon.Model.OnlineUser@)">
+            <summary>
+            读取用户组
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.NotifyUI(System.String)">
+            <summary>
+            通知UI
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.InitCallBack(System.Boolean,System.String)">
+            <summary>
+            初始化回调
+            </summary>
+            <param name="result"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.Login">
+            <summary>
+            登录（开放组件系统及MCU）
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.LoadChannelSetting">
+            <summary>
+            加载本地视频通道设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.InitAVSDKCallBack">
+            <summary>
+            初始化AVSDK回调
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UserOffline(System.String)">
+            <summary>
+            用户下线
+            </summary>
+            <param name="OfflineSessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReleaseUserData(System.String)">
+            <summary>
+            用户下线释放用户信息
+            </summary>
+            <param name="SessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SendClientNotify(Medicalsystem.Common.Doricon.NotifyMessage.EnumNotifyType,System.Object,System.String)">
+            <summary>
+            发送客户端通知消息
+            </summary>
+            <param name="notifyType"></param>
+            <param name="contentObj"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.LocalAVOperation">
+            <summary>
+            本地音视频操作
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UpdateLocalChannel(System.String,System.String)">
+            <summary>
+            更新本地通道状态
+            </summary>
+            <param name="openVideoResult"></param>
+            <param name="openVideoChannel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UpdateCloseLocalChannel(System.String,System.String)">
+            <summary>
+            更新本地通道状态
+            </summary>
+            <param name="closeVideoResult"></param>
+            <param name="closeVideoChannel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.OpenLocalCameraByCfg">
+            <summary>
+            根据配置（是否自动打开） 打开本地摄像机
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.GetPlayHandle(Medicalsystem.Common.Doricon.Model.PlayData,System.Boolean)">
+            <summary>
+            获取播放句柄
+            </summary>
+            <param name="OpData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.OpenAudio">
+            <summary>
+            打开本地音频
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetLiving(System.Boolean)">
+            <summary>
+            设置直播状态
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveVideoCallBack(System.String,System.String,System.String)">
+            <summary>
+            接收/关闭指定用户视频 回调处理
+            </summary>
+            <param name="BeginReceVideoResult"></param>
+            <param name="BeginReceVideoSessionID"></param>
+            <param name="BeginReceVideoIndex"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveCustomMsg(System.String,System.String,System.String,System.String)">
+            <summary>
+            接收自定义命令
+            </summary>
+            <param name="FROMSESSIONID"></param>
+            <param name="COMMANDID"></param>
+            <param name="COMMANDLEN"></param>
+            <param name="COMMANDDATA"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveCall(System.String,System.String)">
+            <summary>
+            收到呼叫命令
+            </summary>
+            <param name="FROMSESSIONID"></param>
+            <param name="COMMANDDATA"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveAgreeCallResponse(System.String,System.String)">
+            <summary>
+            收到同意呼叫应答
+            </summary>
+            <param name="FROMSESSIONID"></param>
+            <param name="COMMANDDATA"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveSetInteractChannels(System.String,System.String)">
+            <summary>
+            收到设置交互通道命令
+            </summary>
+            <param name="FROMSESSIONID"></param>
+            <param name="COMMANDDATA"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.PleaseOut(System.String)">
+            <summary>
+            踢人
+            </summary>
+            <param name="outSessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseCallAV">
+            <summary>
+            关闭会话音视频
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveVideo(System.Boolean,System.String,System.String)">
+            <summary>
+            接收或停止接收视频
+            </summary>
+            <param name="IsOpen">true：接收，false：停止接收</param>
+            <param name="OperSessionID">sessionID</param>
+            <param name="OperIndex">通道号</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseRemoteVideo(System.String,System.String)">
+            <summary>
+            关闭视频
+            </summary>
+            <param name="SessionID"></param>
+            <param name="ChannelNo"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ExistUser(System.String,System.String,Medicalsystem.Common.Doricon.Model.OnlineUser@)">
+            <summary>
+            是否存在某通道的用户
+            </summary>
+            <param name="SessionID"></param>
+            <returns>true:是否存在用户</returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReleaseVideo(System.String,System.String)">
+            <summary>
+            释放视频
+            </summary>
+            <param name="SessionID"></param>
+            <param name="ChannelNo"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveCallUserVideoAudio(System.String)">
+            <summary>
+            接收第三方视音频
+            </summary>
+            <param name="OperSessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseUserVideoAudio(System.String)">
+            <summary>
+            停止接收用户音视频
+            </summary>
+            <param name="OperSessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UpdateUserVideoChannel(System.String,System.String,System.String)">
+            <summary>
+            更新用户视频通道
+            </summary>
+            <param name="OperSessionID"></param>
+            <param name="OperIndex"></param>
+            <param name="OperResult"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UpdateUserAudio(System.String,System.String)">
+            <summary>
+            更新用户视频通道
+            </summary>
+            <param name="OperSessionID"></param>
+            <param name="OperResult"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveRemoteAudio(System.String)">
+            <summary>
+            接收远程音频
+            </summary>
+            <param name="SessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReceiveRemoteAudio(Medicalsystem.Common.Doricon.Model.OnlineUser)">
+            <summary>
+            接收远程音频
+            </summary>
+            <param name="User"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.StopRemoteAudio(System.String)">
+            <summary>
+            停止接收用户音频
+            </summary>
+            <param name="SessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseAudio(Medicalsystem.Common.Doricon.Model.OnlineUser)">
+            <summary>
+            停止接收音频
+            </summary>
+            <param name="User"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.StartRecordCallBack(System.String)">
+            <summary>
+            开始录像回调
+            </summary>
+            <param name="STARTRESULT"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.StopRecordCallBack(System.String)">
+            <summary>
+            结束录像回调
+            </summary>
+            <param name="STOPRESULT"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CutRecordCallBack(System.String)">
+            <summary>
+            分割录像文件回调
+            </summary>
+            <param name="COUNT"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.FinishRecordCallBack(System.String)">
+            <summary>
+            结束录像回调
+            </summary>
+            <param name="FINSHRETURN"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.StartRecordLocal(System.Collections.Generic.List{System.String},System.Action{System.Boolean,System.String})">
+            <summary>
+            录制本地
+            </summary>
+            <param name="channels">通道</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.WriteRecRecord(System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.Action{System.Boolean,System.String})">
+            <summary>
+            写录像记录
+            </summary>
+            <param name="channels"></param>
+            <param name="recFilePath"></param>
+            <param name="recName"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.UpdateRecordFile(System.Boolean,System.Int32)">
+            <summary>
+            更新录像文件
+            </summary>
+            <param name="isCut">true:分割，false：完成</param>
+            <param name="nCount">分割文件索引</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.FinishRecord(System.Action{System.Boolean,System.String})">
+            <summary>
+            结束录像
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.OpenLocalAVDevice(System.Action{System.Boolean,System.String})">
+            <summary>
+            打开本地视音频设备
+            </summary>
+            <param name="OpenResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.OpenLocalAudio(System.Action{System.Boolean,System.String})">
+            <summary>
+            打开本地音频
+            </summary>
+            <param name="OpenResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseLocalAVDevice(System.Action{System.Boolean,System.String})">
+            <summary>
+            关闭本地音频
+            </summary>
+            <param name="CloseResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.Call(System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser},System.Action{Medicalsystem.Common.Doricon.CallResultInfo})">
+            <summary>
+            呼叫其他用户
+            </summary>
+            <param name="callAppUsers"></param>
+            <param name="CallResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ExitCall(System.Action{System.Boolean,System.String})">
+            <summary>
+            退出会话
+            </summary>
+            <param name="CallExitAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CallOver(System.Action{System.Boolean,System.String})">
+            <summary>
+            结束会话
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.AddGroupMembers(System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser},System.Boolean,System.String@,System.Int32@,System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser}@)">
+            <summary>
+            添加会话组成员（除当前用户）
+            </summary>
+            <param name="callAppUsers"></param>
+            <param name="isNeedCreateGroup"></param>
+            <param name="outErrorMsg"></param>
+            <param name="outFailCount"></param>
+            <param name="offlineAppUsers"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ReleaseCtrl">
+            <summary>
+            释放控件
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.GetUserOnlineStatus(System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser}@)">
+            <summary>
+            获取用户在线状态
+            </summary>
+            <param name="userList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetLocalVideoFullScreen(System.Int32)">
+            <summary>
+            设置本地某通道视频全屏
+            </summary>
+            <param name="channelNO"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.CloseLocalSet(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            关闭本地音视频设置
+            </summary>
+            <param name="NeedOpenChannels"></param>
+            <param name="NeedOpenAudio"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.LocalSetCloseAudioAction">
+            <summary>
+            本地音视频设置关闭本地音频
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.LocalSetCloseVideoAction(System.String)">
+            <summary>
+            本地音视频设置关闭某路通道
+            </summary>
+            <param name="ChannelNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.PleaseOut(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            请出交互（踢人）
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetSpeakerMute(System.Boolean)">
+            <summary>
+            设置扬声器静音
+            </summary>
+            <param name="IsMute"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetMicMute(System.Boolean)">
+            <summary>
+            设置麦克风静音
+            </summary>
+            <param name="IsMute"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetSpeakerVolume(System.Int32)">
+            <summary>
+            设置扬声器音量
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SetMicVolume(System.Int32)">
+            <summary>
+            设置麦克风音量
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ApplyJoinSession(Medicalsystem.Common.Doricon.AppUser,System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser})">
+            <summary>
+            申请加入会话
+            </summary>
+            <param name="hostUser">主持人</param>
+            <param name="JoinUsers">加入会话者</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.ApplyOverSession(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            申请结束会话
+            </summary>
+            <param name="hostUser">主持人</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MultimediaControlVM.SendCustomMessage(Medicalsystem.Common.Doricon.AppUser,System.String,System.String@)">
+            <summary>
+            发送自定义消息
+            </summary>
+            <param name="SendTo"></param>
+            <param name="Data"></param>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.ViewModel.MainViewModel">
+            <summary>
+            This class contains properties that the main View can data bind to.
+            <para>
+            Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
+            </para>
+            <para>
+            You can also use Blend to data bind with the tool's support.
+            </para>
+            <para>
+            See http://www.galasoft.ch/mvvm
+            </para>
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.MainViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the MainViewModel class.
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.ViewModel.ViewModelLocator">
+            <summary>
+            This class contains static references to all the view models in the
+            application and provides an entry point for the bindings.
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.ViewModelLocator.#ctor">
+            <summary>
+            Initializes a new instance of the ViewModelLocator class.
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM._currentMoudle">
+            <summary>
+            当前模板
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.CallBackRev">
+            <summary>
+            CDR播放器回调委托
+            </summary>
+        </member>
+        <member name="E:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.CallBackEvent">
+            <summary>
+            CDR播放器回调事件
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM._PlayBar">
+            <summary>
+            CDR播放进度条
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM._PlayTimer">
+            <summary>
+            播放定时器
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus">
+            <summary>
+            播放状态
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus.NotStart">
+            <summary>
+            未开始
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus.Suspend">
+            <summary>
+            暂停（还有后续文件需要播放）
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus.Seeking">
+            <summary>
+            正在Seek
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus.Playing">
+            <summary>
+            正在播放
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayStatus.End">
+            <summary>
+            播放结束
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayerWaitAction">
+            <summary>
+            播放委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.SeekAction">
+            <summary>
+            Seek委托
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.CheckServerSetting">
+            <summary>
+            检测服务器设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.SetWaitStatus(System.Boolean,System.String)">
+            <summary>
+            设置等待界面状态
+            </summary>
+            <param name="IsOpen">true：打开等待</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.InitTimeAxisControl">
+            <summary>
+            初始化时间轴控件
+            </summary>
+            <param name="StartTime"></param>
+            <param name="TotalTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.SeekPlay(System.DateTime)">
+            <summary>
+            跳转播放
+            </summary>
+            <param name="SeekTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.DealPlayStatusCallBack(System.String,System.String)">
+            <summary>
+            处理播放状态回调
+            </summary>
+            <param name="Event"></param>
+            <param name="Status"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.Play(System.Double)">
+            <summary>
+            播放
+            </summary>
+            <param name="milliseconds">时间间隔Interval</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayREC(System.DateTime)">
+            <summary>
+            播放录像
+            </summary>
+            <param name="processTime"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.PlayREC(System.String)">
+            <summary>
+            播放录像
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.NotifyUI(System.String)">
+            <summary>
+            通知UI
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.Release">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.ViewModel.VODControlVM.ExitVOD">
+            <summary>
+            完全退出
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.AudioControl">
+            <summary>
+            AudioControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AudioControl
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.AudioControl.GetAudioHandle(System.String)">
+            <summary>
+            获取音频句柄
+            </summary>
+            <param name="SessionID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.AudioControl.RemoveAudio(System.String)">
+            <summary>
+            移除音频
+            </summary>
+            <param name="SessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.AudioControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.CountdownWindow">
+            <summary>
+            倒计时窗口
+            </summary>
+            <summary>
+            CountdownWindow
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.CountdownWindow.CountdownString">
+            <summary>
+            倒计时提示信息
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.CountdownWindow.TotalSeconds">
+            <summary>
+            倒计时长
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="CountdownString">倒计时提示信息</param>
+            <param name="TotalSeconds">倒计时长</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.timer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            定时器
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.btnAgree_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            同意
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.btnRefuse_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            拒绝
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.StopAndReleaseTimer">
+            <summary>
+            停止并释放定时器
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CountdownWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.AVSettingWindow">
+            <summary>
+            AudioAndVideoSetWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AVSettingWindow
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.AVSettingWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.ServerSetting">
+            <summary>
+            CameraNumberSetting.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ServerSetting
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.ServerSetting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.RecordSetting">
+            <summary>
+            CameraNumberSetting.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RecordSetting
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.RecordSetting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.CameraNumberSetting">
+            <summary>
+            CameraNumberSetting.xaml 的交互逻辑
+            </summary>
+            <summary>
+            CameraNumberSetting
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.CameraNumberSetting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.MultimediaPanel">
+            <summary>
+            音视频Panel
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.PanelID">
+            <summary>
+            PanelID
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.Index">
+            <summary>
+            模板内索引
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.IsUsing">
+            <summary>
+            是否正在使用
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.IsFullScreen">
+            <summary>
+            是否全屏
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.BeforeFullScreenContainer">
+            <summary>
+            全屏前所在容器
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.MultimediaPanel.PlayData">
+            <summary>
+            播放数据
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.MultimediaPanel.#ctor">
+            <summary>
+            音视频Panel
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.TemplateControl">
+            <summary>
+            TemplateControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            TemplateControl
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.TemplateCtrlID">
+            <summary>
+            模板控件实例ID
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.MARGIN">
+            <summary>
+            边界
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.ChannelPadding">
+            <summary>
+            通道容器Padding
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.ContainerPanelList">
+            <summary>
+            容器panel列表
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.panelList">
+            <summary>
+            panel列表
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl._hasCreateTemplate">
+            <summary>
+            是否已创建过模板
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Views.TemplateControl.ActionKeys">
+            <summary>
+            委托Keys
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.SelectedAction">
+            <summary>
+            选中委托
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.CloseAction">
+            <summary>
+            关闭委托
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.OpenAction">
+            <summary>
+            打开委托
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncOpenAction">
+            <summary>
+            同步打开委托
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncFullScreenAction">
+            <summary>
+            同步全屏委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncAction">
+            <summary>
+            同步委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.GetContainerFunc">
+            <summary>
+            获取病历所在模板及Panel
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.ShowMsgAction">
+            <summary>
+            显示消息委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncTemplateAction">
+            <summary>
+            同步模板委托
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.SetWaittingVisibleAction">
+            <summary>
+            设置等待界面显隐
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.Views.TemplateControl.ScreenInfo">
+            <summary>
+            屏幕索引
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.MaxTemplete">
+            <summary>
+            最大模板
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.IsRemote">
+            <summary>
+            是否是远程模板（用于接收非本地媒体内容）
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Views.TemplateControl.AllowOperate">
+            <summary>
+            是否允许操作
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.#ctor(Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete,System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel},System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel},System.Func{Medicalsystem.Common.Doricon.Model.PlayData,System.Object},System.Action{System.String},System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel},System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel},System.Action{Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete},System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel},System.Action{Medicalsystem.Common.Doricon.Views.TemplateControl},System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel})">
+            <summary>
+            模板控件
+            </summary>
+            <param name="Templete">模板</param>
+            <param name="FullScreenAction">全屏委托</param>
+            <param name="SelectedAction">选中委托</param>
+            <param name="GetContainerFunc">获取容器委托</param>
+            <param name="ShowMsgAction">消息委托</param>
+            <param name="OpenAction">打开委托</param>
+            <param name="CloseAction">关闭委托</param>
+            <param name="SyncTemplateAction">同步模板委托</param>
+            <param name="SyncOpenAction">同步打开委托</param>
+            <param name="SyncAction">同步委托</param>
+            <param name="SyncFullScreenAction">同步全屏委托</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.#ctor(Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete,System.Collections.Generic.Dictionary{System.String,System.Action{Medicalsystem.Common.Doricon.Views.MultimediaPanel}},System.Action{System.Boolean},System.Func{Medicalsystem.Common.Doricon.Model.PlayData,System.Object},System.Action{System.String},System.Action{Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete},System.Action{Medicalsystem.Common.Doricon.Views.TemplateControl})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="Templete"></param>
+            <param name="ActionDic"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetAction(System.String)">
+            <summary>
+            获取委托
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ActionKey">actionKey</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.TemplateControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            加载事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.SetTemplate(Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete,System.Action{System.String})">
+            <summary>
+            设置模板
+            </summary>
+            <param name="Templete"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetTemplateWindowCount(Medicalsystem.Common.Doricon.Public.ClientEnumDefine.ScreenTemplete)">
+            <summary>
+            获取模板窗口数量
+            </summary>
+            <param name="Templete"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.CreateTemplate(System.Collections.Generic.List{Medicalsystem.Common.Doricon.Views.MultimediaPanel})">
+            <summary>
+            创建模板
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.RefreshModules">
+            <summary>
+            test
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.RefreshTemplate">
+            <summary>
+            刷新模板
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.RefreshWithUsing">
+            <summary>
+            刷新模板（切到相应模板）
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ContentPanel_SizeChanged(System.Object,System.EventArgs)">
+            <summary>
+            Panel尺寸改变
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.AddNoSignalWords(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            添加无信号文字图片
+            </summary>
+            <param name="ContentPanel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ContentPanel_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Panel鼠标按下
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ContentPanel_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Panel拖拽
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ContentPanel_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Panel拖拽鼠标释放
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.DargDrop(System.Object,Medicalsystem.Common.Doricon.Views.TemplateControl,Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            拖拽释放
+            </summary>
+            <param name="Data"></param>
+            <param name="TargetPanel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExchangePanels(Medicalsystem.Common.Doricon.Views.TemplateControl,Medicalsystem.Common.Doricon.Views.TemplateControl,Medicalsystem.Common.Doricon.Views.MultimediaPanel,Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            交换Panel
+            </summary>
+            <param name="SourceTemplate"></param>
+            <param name="TargetTemplate"></param>
+            <param name="SourcePanel"></param>
+            <param name="TargetPanel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetPlayHandle(Medicalsystem.Common.Doricon.Model.PlayData,System.Boolean)">
+            <summary>
+            获取播放视频的句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.PlayEMR(Medicalsystem.Common.Doricon.Model.PlayData,Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            播放电子病历
+            </summary>
+            <param name="OperateData"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.reportControl_DragDropAction(System.Windows.Controls.Control,System.Windows.DragEventArgs)">
+            <summary>
+            病历拖拽（释放鼠标）
+            </summary>
+            <param name="DragSourceControl"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.reportControl_OnClickControl(System.Windows.Controls.Control)">
+            <summary>
+            选中电子病历
+            </summary>
+            <param name="aControl"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.PlayCallBack(System.String,System.String)">
+            <summary>
+            播放回调
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetNextTemplate">
+            <summary>
+            获取下一模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetTemplate(System.Int32)">
+            <summary>
+            获取下一模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.RemoveUserVideo(System.String)">
+            <summary>
+            移除用户所有视频
+            </summary>
+            <param name="SessionID"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.CloseVideo(System.String,System.String)">
+            <summary>
+            关闭视频
+            </summary>
+            <param name="SessionID"></param>
+            <param name="Channel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.CloseVideo(System.String)">
+            <summary>
+            关闭视频
+            </summary>
+            <param name="SessionID">SessionID</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ResizeVideo(System.String,System.String)">
+            <summary>
+            设置视频窗口大小
+            </summary>
+            <param name="SessionID"></param>
+            <param name="Channel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExistVideo(System.String,System.String,System.IntPtr@,System.Boolean)">
+            <summary>
+            是否存在某路视频
+            </summary>
+            <param name="SessionID"></param>
+            <param name="Channel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExistVideo(System.String,System.String,Medicalsystem.Common.Doricon.Views.MultimediaPanel@,System.Boolean)">
+            <summary>
+            是否存在某路视频
+            </summary>
+            <param name="SessionID"></param>
+            <param name="Channel"></param>
+            <param name="pannel"></param>
+            <param name="IsCopy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExistReport(Medicalsystem.Common.Doricon.Model.PlayData,Medicalsystem.Common.Doricon.Views.MultimediaPanel@)">
+            <summary>
+            是否存在电子病历报告
+            </summary>
+            <param name="Rpt">病历报告</param>
+            <param name="panel">病历报告所在的Panel</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExistReport(Medicalsystem.Common.Doricon.Views.MultimediaPanel@)">
+            <summary>
+            是否存在病历报告
+            </summary>
+            <param name="panel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ExistPanel(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            是否存在某panel
+            </summary>
+            <param name="panel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncTemplateControl(Medicalsystem.Common.Doricon.Views.TemplateControl)">
+            <summary>
+            同步模板控件
+            </summary>
+            <param name="TempCtrl"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ShowWindow(System.Int32,System.Boolean)">
+            <summary>
+            显示/隐藏窗口
+            </summary>
+            <param name="Handle"></param>
+            <param name="IsShow"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.GetContentPanel(System.String)">
+            <summary>
+            根据索引获取内容Panel
+            </summary>
+            <param name="Index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.SyncExtendFullScreen(Medicalsystem.Common.Doricon.Views.MultimediaPanel)">
+            <summary>
+            同步扩展屏全屏
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.ReleaseTemplate">
+            <summary>
+            释放模板
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.Views.TemplateControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.RecordQuery.CheckServerSetting">
+            <summary>
+            检测服务器设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.RecordQuery.GetRECStatus(System.String)">
+            <summary>
+            获取录像状态
+            </summary>
+            <param name="RecID"></param>
+            <returns>枚举Medicalsystem.Common.Doricon.UploadStatus</returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.RecordQuery.GetRecordUploadStatus(System.String)">
+            <summary>
+            获取录像上传状态
+            </summary>
+            <param name="RecID"></param>
+            <returns>枚举Medicalsystem.Common.Doricon.UploadStatus</returns>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.VODControl">
+            <summary>
+            VODControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            VODControl
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.VODControl.NotifyCallBack">
+            <summary>
+            通知回调
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.HandleMessage">
+            <summary>
+            处理消息
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.NotifyUI(Medicalsystem.Common.Doricon.NotifyMessage)">
+            <summary>
+            通知
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.WaitProgressAction(System.Boolean,System.String)">
+            <summary>
+            等待进度委托
+            </summary>
+            <param name="IsOpen"></param>
+            <param name="Progress"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.VOD(System.String,System.Action{System.Boolean,System.String})">
+            <summary>
+            点播
+            </summary>
+            <param name="RecID">录像ID</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.Release">
+            <summary>
+            释放控件
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.ExitVOD">
+            <summary>
+            完全退出
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.VODControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.MultimediaControl">
+            <summary>
+            MultimediaControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MultimediaControl
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.MultimediaControl._NotifyCallBack">
+            <summary>
+            通知回调<![CDATA[<bool,string>:<是否是异常(true：异常，false：非异常)，通知信息>]]>
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.MultimediaControl._InitCallBack">
+            <summary>
+            初始化回调
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.MultimediaControl.MediaTemplate">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.MultimediaControl.HashCode">
+            <summary>
+            HashCode
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.MultimediaControl.BackgroundImguri">
+            <summary>
+            背景图片(须初始化之前设置有效)
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.MultimediaControl.InteractChannels">
+            <summary>
+            交互通道
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.MultimediaControl.CompleteAVSettingAction">
+            <summary>
+            完成音视频设置
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.MultimediaControl._FullScreenMode">
+            <summary>
+            全屏模式
+            </summary>
+        </member>
+        <member name="F:Medicalsystem.Common.Doricon.MultimediaControl._FullScreenWindow">
+            <summary>
+            全屏窗口(主屏)
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.InitMainControl(Medicalsystem.Common.Doricon.AppUser,System.Action{System.Boolean,System.String},System.Action{Medicalsystem.Common.Doricon.NotifyMessage},System.Func{Medicalsystem.Common.Doricon.RequestInfo,System.Boolean},Medicalsystem.Common.Doricon.FullScreenMode)">
+            <summary>
+            初始化主控件
+            </summary>
+            <param name="appUser">应用用户</param>
+            <param name="InitCallBack">初始化结果委托</param>
+            <param name="NotifyCallBack">消息通知委托（包括普通消息，异常，呼叫应答）</param>
+            <param name="CallFunc">被呼叫委托</param>
+            <param name="FullMode">全屏模式，默认为控件内全屏</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.InitSampleControl(Medicalsystem.Common.Doricon.AppUser,System.Action{System.Boolean,System.String},System.Action{Medicalsystem.Common.Doricon.NotifyMessage},Medicalsystem.Common.Doricon.FullScreenMode)">
+            <summary>
+            初始化普通控件
+            </summary>
+            <param name="appUser">应用用户</param>
+            <param name="InitCallBack">初始化结果委托</param>
+            <param name="NotifyCallBack">消息通知委托</param>
+            <param name="FullMode">全屏模式，默认为控件内全屏</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.ShowFuncBar">
+            <summary>
+            显隐功能栏
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.HandleMessage">
+            <summary>
+            处理消息
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.StartWaitting">
+            <summary>
+            开始等待
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.NotifyUI(Medicalsystem.Common.Doricon.NotifyMessage)">
+            <summary>
+            通知
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.StartRecord(System.Collections.Generic.List{System.String},System.Action{System.Boolean,System.String})">
+            <summary>
+            录像
+            </summary>
+            <param name="channels">通道列表</param>
+            <param name="RecordCallBack">录像回调，<![CDATA[<bool,string>:<结果，录像ID>,结果为false时录像ID为null]]></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.FinishRecord(System.Action{System.Boolean,System.String})">
+            <summary>
+            结束录像
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.RegisterSampleCtrls(System.Collections.Generic.List{Medicalsystem.Common.Doricon.MultimediaControl})">
+            <summary>
+            注册普通多媒体控件
+            </summary>
+            <param name="sampleCtrls"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.Call(System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser},System.Action{Medicalsystem.Common.Doricon.CallResultInfo})">
+            <summary>
+            呼叫其他用户
+            </summary>
+            <param name="callAppUsers">呼叫用户列表</param>
+            <param name="CallResultAction">呼叫结果委托</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.CallExit(System.Action{System.Boolean,System.String})">
+            <summary>
+            退出会话
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.CallOver(System.Action{System.Boolean,System.String})">
+            <summary>
+            结束会话
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.Release">
+            <summary>
+            释放控件
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.GetUserOnlineStatus(System.Collections.Generic.List{Medicalsystem.Common.Doricon.AppUser}@)">
+            <summary>
+            获取用户在线状态
+            </summary>
+            <param name="userList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.OpenLocalAVDevice(System.Action{System.Boolean,System.String})">
+            <summary>
+            打开本地视音频设备
+            </summary>
+            <param name="OpenResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.OpenLocalAudio(System.Action{System.Boolean,System.String})">
+            <summary>
+            打开本地音频
+            </summary>
+            <param name="OpenResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.CloseLocalAVDevice(System.Action{System.Boolean,System.String})">
+            <summary>
+            关闭本地视音频频
+            </summary>
+            <param name="CloseResultAction"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetLocalVideoFullScreen(System.Int32)">
+            <summary>
+            设置本地某通道视频全屏
+            </summary>
+            <param name="channelNO"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.CloseAppUserVideo(Medicalsystem.Common.Doricon.AppUser,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            关闭应用用户视频（制定通道，如不指定默认关闭该用户的交互通道）
+            </summary>
+            <param name="user"></param>
+            <param name="channels"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.CloseAppUserAudio(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            关闭应用用户音频
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetInteractChannels(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            设置交互通道
+            </summary>
+            <param name="interactChannels"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.PleaseOut(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            请出交互（踢人）
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetSpeakerVolume(System.Int32)">
+            <summary>
+            设置扬声器音量
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetMicVolume(System.Int32)">
+            <summary>
+            设置麦克风音量
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetSpeakerMute(System.Boolean)">
+            <summary>
+            设置扬声器静音
+            </summary>
+            <param name="IsMute">true：静音，false取消静音</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetMicMute(System.Boolean)">
+            <summary>
+            设置麦克风静音
+            </summary>
+            <param name="IsMute">true：静音，false取消静音</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.ApplyJoinSession(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            申请加入会话
+            </summary>
+            <param name="hostUser">申请对象（会话主持人）</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.ApplyOverSession(Medicalsystem.Common.Doricon.AppUser)">
+            <summary>
+            申请结束会话
+            </summary>
+            <param name="hostUser">申请对象（会话主持人）</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.AVSetting">
+            <summary>
+            音视频设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.RecordSetting">
+            <summary>
+            录像设置
+            </summary>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SendCustomMessage(Medicalsystem.Common.Doricon.AppUser,System.String,System.String@)">
+            <summary>
+            发送自定义消息
+            </summary>
+            <param name="SendTo">发送给谁（null表示发送给所有人）</param>
+            <param name="Data">数据</param>
+            <param name="ErrorMsg">错误消息</param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.SetAllowRevRemoteVideoToMain(System.Boolean)">
+            <summary>
+            设置是否允许接入远程视频到Main控件
+            </summary>
+            <param name="Allow"></param>
+        </member>
+        <member name="M:Medicalsystem.Common.Doricon.MultimediaControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Medicalsystem.Common.Doricon.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Medicalsystem.Common.Doricon.Properties.Resources.ChannelBg1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+    </members>
+</doc>

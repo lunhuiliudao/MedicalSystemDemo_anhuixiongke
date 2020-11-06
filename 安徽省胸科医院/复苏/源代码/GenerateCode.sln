@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{1766C3B4-9824-4045-89AD-1EFAD2B8EF72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1AA711C8-467C-4DAE-9AA8-DB4C8F9225A7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{07C8099C-4BDC-4749-80AD-76C364259DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.ORM", "Libraries\Dapper.ORM\Dapper.ORM.csproj", "{0489BEC3-D340-4B61-96F1-34446FD5BADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.AutoGenerateCode", "AutoGenerateCode\MedicalSystem.AutoGenerateCode.csproj", "{1DEFA617-A137-44B3-8555-F9C9CC542383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|x86.ActiveCfg = Debug|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Debug|x86.Build.0 = Debug|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|x64.ActiveCfg = Release|Any CPU
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|x86.ActiveCfg = Release|x86
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE}.Release|x86.Build.0 = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|x64.ActiveCfg = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|x86.ActiveCfg = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Debug|x86.Build.0 = Debug|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|Any CPU.ActiveCfg = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|x64.ActiveCfg = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|x86.ActiveCfg = Release|x86
+		{1DEFA617-A137-44B3-8555-F9C9CC542383}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0489BEC3-D340-4B61-96F1-34446FD5BADE} = {1766C3B4-9824-4045-89AD-1EFAD2B8EF72}
+		{1DEFA617-A137-44B3-8555-F9C9CC542383} = {07C8099C-4BDC-4749-80AD-76C364259DF8}
+	EndGlobalSection
+EndGlobal

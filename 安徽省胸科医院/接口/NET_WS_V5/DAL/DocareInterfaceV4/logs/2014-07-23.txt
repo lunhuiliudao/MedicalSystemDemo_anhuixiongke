@@ -1,0 +1,4 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-23 10:51:29,996   [4]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOraOLEDB hispatientidZ001425883500hisvisitid1
+2014-07-23 10:52:18,879   [4]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOraOLEDB hispatientidZ001425883500hisvisitid1
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

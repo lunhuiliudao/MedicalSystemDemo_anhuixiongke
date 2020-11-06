@@ -1,0 +1,138 @@
+﻿<local:WindowBase x:Class="MedicalSystem.AnesWorkStation.View.AnesGraph.InOperationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+        xmlns:graph="clr-namespace:MedicalSystem.AnesWorkStation.View.AnesGraph"
+        xmlns:operinfo="clr-namespace:MedicalSystem.AnesWorkStation.View.OperationInformation"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+        Title="InOperationWindow" Height="1366" Width="768" WindowState="Maximized" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <operinfo:OperationInformationTopControl x:Name="topInfo" Grid.Row="0"></operinfo:OperationInformationTopControl>
+        <Grid Grid.Row="1" Margin="2,0,2,0">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="80*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="91*"></RowDefinition>-->
+                <RowDefinition Height="560*"></RowDefinition>
+                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="671*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <graph:InAndOutControl  Grid.Row="0" x:Name="graph1" Data="{Binding InputOutData}" XAxisSetting="{Binding xAxisSetting}"
+                               MedicineRowCount="14" OutputRowCount="3" InfusionRowCount="3" TableHeadWidthPercent="0.2">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="DoubleClick">
+                        <i:InvokeCommandAction Command="{Binding GraphDoubleClickCommand}"
+                            CommandParameter="{Binding Path=DoubleClickData, RelativeSource={RelativeSource AncestorType={x:Type graph:InAndOutControl}}}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="DataPointDrag">
+                        <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding DataPointDragCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+            </graph:InAndOutControl>
+            <graph:DateAxisControl Grid.Row="1" x:Name="dateAxis1" XAxisSetting="{Binding xAxisSetting}" 
+                                   ProcessBeginTime="{Binding ProcessBeginTime}" ProcessEndTime="{Binding ProcessEndTime}" HeadWidthPercent="0.2"
+                              Margin="0,2,0,2" RescueTimeList="{Binding RescueTimeList}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="RescueClick">
+                        <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding RescueClickCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </graph:DateAxisControl>
+            <graph:VitalSignsControl Grid.Row="2" x:Name="VitalSignsControl1" XAxisSetting="{Binding xAxisSetting}"
+                                YAxisSettings="{Binding YAxisSettings}"  BreathParam="{Binding BreathParam}"
+                                Curves="{Binding Curves}" EventMark="{Binding EventMark}"   TextMarkPoints="{Binding TextMarkPoints}"
+                                HeadWidthPercent="0.2" IsEditEnable="{Binding IsVitalSignsEditEnable}"
+                                >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="CurveSetClick">
+                        <i:InvokeCommandAction Command="{Binding CurveSetCommand}"
+                            CommandParameter="{Binding Path=Curves, RelativeSource={RelativeSource AncestorType={x:Type graph:VitalSignsControl}}}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="CurvePointDoubleClick">
+                        <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding CurvePointDoubleClickCommand}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="ChartDoubleClick">
+                        <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding ChartDoubleClickCommand}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="CurvePointDrag">
+                        <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding CurvePointDragCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </graph:VitalSignsControl>
+            <Image Source="SettingButtonBg.png"
+                MouseLeftButtonDown="Button_MouseLeftButtonDown"  
+                Canvas.Left="820" Canvas.Top="1600"
+                MouseMove="Button_MouseMove" MouseLeftButtonUp="Button_MouseLeftButtonUp" Margin="579,530,66,61" Grid.Row="2"  >
+                <Image.RenderTransform>
+                    <TranslateTransform x:Name="_trans" X="20" Y="20"/>
+                </Image.RenderTransform>
+            </Image>
+
+
+
+
+            <Image Grid.Row="0" Name="IMG_Rescue" Source="../Images/rescue.png"  Height="44" Width="44"
+                    HorizontalAlignment="Right" VerticalAlignment="Top" 
+                MouseLeftButtonDown="IMG_Rescue_MouseLeftButtonDown"   
+                 MouseLeftButtonUp="IMG_Rescue_MouseLeftButtonDown"    Visibility="{Binding IsResueShow }" >
+                <!--Margin='479,10,66,410'-->
+                <Image.RenderTransform>
+                    <TranslateTransform x:Name="_rescue" X="-30" Y="40"/>
+                </Image.RenderTransform>
+            </Image>
+
+            <StackPanel Name="pupopPanel"   Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                <Popup Name="popupMonitor" Placement="Bottom"  StaysOpen="True"  Width="192px"
+                       IsOpen="{Binding IsPopupShow, Mode=TwoWay}" PlacementTarget="{Binding ElementName=pupopPanel}" >
+                    <Grid  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#2A2948">
+                            <Image Name="ImgRescueTitle" Source="../Images/MJSignTitle.png" Height="44"  Width="44"  Margin="140,0,0,0"
+                                   MouseLeftButtonDown="ImgRescueTitle_MouseLeftButtonDown" 
+                                   MouseLeftButtonUp="ImgRescueTitle_MouseLeftButtonDown" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Background="#2A2948" >
+                            <TextBlock Text="脉搏" FontSize="14px" Foreground="#FFFFFF"  Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding PulseValue}" FontSize="20px" Foreground="#10FFF7" Margin="80,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Background="#2A2948">
+                            <TextBlock Text="呼吸" FontSize="14px" Foreground="#FFFFFF"  Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding BreathValue}"  FontSize="20px" Foreground="#10FFF7" Margin="80,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Background="#2A2948">
+                            <TextBlock Text="血压"  FontSize="14px" Foreground="#FFFFFF" Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding BloodPreValue}" FontSize="20px" Foreground="#10FFF7" Margin="80,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="4" Background="#2A2948">
+                            <TextBlock Text="体温"  FontSize="14px" Foreground="#FFFFFF" Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding TemperatureValue}" FontSize="20px" Foreground="#10FFF7" Margin="80,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="5" Background="#2A2948">
+                            <TextBlock Text="SPO2"  FontSize="14px" Foreground="#FFFFFF" Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding Spo2Value}" FontSize="20px" Foreground="#10FFF7" Margin="70,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Popup>
+            </StackPanel>
+            <Button x:Name="_btnSet" Visibility="Collapsed"  Command="{Binding BottomMenu}"/>
+        </Grid>
+    </Grid>
+</local:WindowBase>

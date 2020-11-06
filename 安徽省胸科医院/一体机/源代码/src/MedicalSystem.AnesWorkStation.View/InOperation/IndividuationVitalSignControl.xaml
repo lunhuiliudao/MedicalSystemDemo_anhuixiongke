@@ -1,0 +1,181 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.InOperation.IndividuationVitalSignControl"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+       xmlns:system="clr-namespace:System;assembly=mscorlib" 
+         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+        xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+          xmlns:ba="clr-namespace:MedicalSystem.AnesWorkStation.View.Behaviour"
+          xmlns:cc="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Converters;assembly=MedicalSystem.AnesWorkStation.Wpf"
+           xmlns:helper="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Helper;assembly=MedicalSystem.AnesWorkStation.Wpf"
+           xmlns:converter="clr-namespace:MedicalSystem.AnesWorkStation.View.Converters"
+           mc:Ignorable="d" 
+           d:DesignHeight="700" d:DesignWidth="1060">
+
+    <Grid Margin="10" Background="White">
+        <Grid.Resources>
+            <converter:DrawingMediaColorConverter x:Key="DrawingMediaColorConverter"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <!--信息展示Grid-->
+        <DataGrid x:Name="datagrid" Grid.Row="0" Margin="0,0,0,0" ItemsSource="{Binding DetailModel}"
+                      IsReadOnly="False" CanUserAddRows="False" SelectionMode="Single" SelectedItem="{Binding SelectItem}" BeginningEdit="datagrid_BeginningEdit" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="1.6*" Header="名称">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DisplayName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="1.6*" Header="是否显示" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Visible}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Name="cbVisible" ItemsSource="{Binding Path=DataContext.SelectIsVisible,
+                                    RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          DisplayMemberPath="ITEM_NAME" SelectedValuePath="ITEM_NAME"
+                                          SelectedValue="{Binding Path=Visible,UpdateSourceTrigger=PropertyChanged}" Margin="0" SelectionChanged="ComboBox_SelectionChanged"/>
+
+                            <DataTemplate.Triggers>
+                                <Trigger SourceName="cbVisible" Property="IsVisible" Value="True">
+                                    <Setter TargetName="cbVisible" Property="FocusManager.FocusedElement" Value="{Binding ElementName=cbVisible}" />
+                                </Trigger>
+                            </DataTemplate.Triggers>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1.6*" Header="显示类型" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ShowType}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Name="cbShowType" ItemsSource="{Binding DataContext.SelectShowType,
+                                    RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          DisplayMemberPath="ITEM_NAME" SelectedValuePath="ITEM_NAME"
+                                      SelectedValue="{Binding ShowType,UpdateSourceTrigger=PropertyChanged}"  Margin="0" SelectionChanged="ComboBox_SelectionChanged"/>
+
+                            <DataTemplate.Triggers>
+                                <Trigger SourceName="cbShowType" Property="IsVisible" Value="True">
+                                    <Setter TargetName="cbShowType" Property="FocusManager.FocusedElement" Value="{Binding ElementName=cbShowType}" />
+                                </Trigger>
+                            </DataTemplate.Triggers>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1.6*" Header="图标">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SymbolName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Name="cbSymbol" ItemsSource="{Binding DataContext.SelectSymbol,
+                                    RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          DisplayMemberPath="ITEM_NAME" SelectedValuePath="ITEM_NAME"
+                                         SelectedValue="{Binding SymbolName,UpdateSourceTrigger=PropertyChanged}" Margin="0" SelectionChanged="ComboBox_SelectionChanged"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1.6*" Header="颜色">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Rectangle Width="40" Height="16">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{Binding LineColor, Converter={StaticResource DrawingMediaColorConverter}}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <Border>
+                                <ComboBox SelectedValuePath="Value" SelectedValue="{Binding LineColor, Converter={StaticResource DrawingMediaColorConverter}}" SelectionChanged="ComboBox_SelectionChanged"
+                                    ItemsSource="{Binding DataContext.ColorList, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Rectangle Width="40" Height="16">
+                                                    <Rectangle.Fill>
+                                                        <SolidColorBrush Color="{Binding Value}" />
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                                <TextBlock Text="{Binding Name}"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1.6*" Header="时间间隔">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TimeInterval}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Name="cbShowTimeInterval" ItemsSource="{Binding DataContext.SelectShowTimeInterval,
+                                    RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                         DisplayMemberPath="ITEM_NAME" SelectedValuePath="ITEM_NAME"
+                                          SelectedValue="{Binding TimeInterval,UpdateSourceTrigger=PropertyChanged}" Margin="0" SelectionChanged="ComboBox_SelectionChanged"/>
+
+                            <DataTemplate.Triggers>
+                                <Trigger SourceName="cbShowTimeInterval" Property="IsVisible" Value="True">
+                                    <Setter TargetName="cbShowTimeInterval" Property="FocusManager.FocusedElement" Value="{Binding ElementName=cbShowTimeInterval}" />
+                                </Trigger>
+                            </DataTemplate.Triggers>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="2*" Header="开始隐藏时间">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <control:DateSelector SelectedDate="{Binding HideStart,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                      ConsumerFontSize="13" InputTextWidth="10" Command="{Binding}" CommandParameter="{Binding}" 
+                                                      HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="2*" Header="结束隐藏时间">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid Background="Transparent">
+                                <control:DateSelector SelectedDate="{Binding HideEnd,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                      ConsumerFontSize="13" InputTextWidth="15" Command="{Binding}" CommandParameter="{Binding}" 
+                                                      HorizontalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--按钮区域-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <Button Content="确定"  x:Name="BtnSure"  Command="{Binding SureCommand}" Width="180" Margin="20,15,0,15" FontSize="15"/>
+        </StackPanel>
+
+    </Grid>
+</local:BaseUserControl>

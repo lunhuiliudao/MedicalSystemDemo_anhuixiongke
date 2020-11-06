@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MedicalSystem.Updater.Lib</name>
+    </assembly>
+    <members>
+        <member name="M:MedicalSystem.Updater.Lib.Update.KillProcess">
+            <summary>
+            结束当前进程
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Updater.Lib.Update.FileUpdater">
+            <summary>
+            文件方式更新
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Updater.Lib.Update.FileUpdaterSend">
+            <summary>
+            推送方式更新
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Updater.Lib.Update.FileUpdating">
+            <summary>
+            先获取更新，再等待服务器推送更新
+            </summary>
+        </member>
+    </members>
+</doc>

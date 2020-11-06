@@ -1,0 +1,1001 @@
+<?xml version="1.0" standalone="yes"?>
+<XMLData>
+  <xs:schema id="XMLData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XMLData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportInformation">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ReportTitle" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportTitle, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportColumnList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportColumn, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportSubConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportSubCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="SubReportInformationList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportInformation, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportChartInfo" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportChartInfo, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportInformation>
+    <ReportTitle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportName>科室月工作量统计</ReportName>
+      <Menu>日常统计</Menu>
+      <StrSql>SELECT DEPT_CODE, DEPT_NAME,
+       SUM(FIRST_SCALE) AS FIRST_SCALE,
+       SUM(SECOND_SCALE) AS SECOND_SCALE,
+       SUM(THIRD_SCALE) AS THIRD_SCALE,
+       SUM(FOURTH_SCALE) AS FOURTH_SCALE,
+       SUM(OTHER_SCALE) AS OTHER_SCALE,
+       SUM(ALL_SCALE) AS ALL_SCALE,
+       SUM(SURGEON) AS SURGEON,
+       SUM(FIRST_ASS) AS FIRST_ASS,
+       SUM(TWO_ASS) AS TWO_ASS,
+       SUM(QUAN_MA) AS QUAN_MA,
+       SUM(OTERH_MA) AS OTERH_MA
+FROM VIEW_DEPT_GONGZUOLIANG
+WHERE 1=1
+AND START_DATE_TIME =:MONTHS
+AND (DEPT_NAME LIKE '%' || :VDEPT || '%' OR DEPT_CODE LIKE '%' || :VDEPT || '%' OR :VDEPT IS NULL) 
+GROUP BY DEPT_NAME, DEPT_CODE</StrSql>
+      <PageSize>13</PageSize>
+      <SortNumber>2</SortNumber>
+      <ModelFileName />
+      <ShowSummary>true</ShowSummary>
+      <IsLinkButton>false</IsLinkButton>
+    </ReportTitle>
+    <ReportColumnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportColumn>
+        <FieldName>DEPT_CODE</FieldName>
+        <Title>科室代码</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>DEPT_NAME</FieldName>
+        <Title>科室</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>true</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>FIRST_SCALE</FieldName>
+        <Title>Ⅰ级手术</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>SECOND_SCALE</FieldName>
+        <Title>Ⅱ级手术</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>THIRD_SCALE</FieldName>
+        <Title>Ⅲ级手术</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>FOURTH_SCALE</FieldName>
+        <Title>Ⅳ级手术</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>OTHER_SCALE</FieldName>
+        <Title>其他手术</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>ALL_SCALE</FieldName>
+        <Title>手术合计</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>true</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>SURGEON</FieldName>
+        <Title>主刀次数</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>FIRST_ASS</FieldName>
+        <Title>一助次数</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>TWO_ASS</FieldName>
+        <Title>二助次数</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>QUAN_MA</FieldName>
+        <Title>全麻次数</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName />
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+    </ReportColumnList>
+    <ReportConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportCondition>
+        <Title>月份</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>MONTHS</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>month</DateControlType>
+        <DateDefaultVal>CurrentFirstDate</DateDefaultVal>
+        <Value>2020-04-01</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>科室</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VDEPT</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+    </ReportConditionList>
+    <ReportSubConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <SubReportInformationList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportInformation>
+        <ReportTitle>
+          <ReportName>患者详细信息</ReportName>
+          <StrSql>SELECT :DEPT_CODE AS DEPT_CODE,
+       :DEPT_NAME AS DEPT_NAME,
+       NVL(A.USER_NAME, M.SURGEON) AS SURGEON_NAME,
+       b.user_dept_code, c.user_dept_code,
+       NVL(B.USER_NAME, M.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(C.USER_NAME, M.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       M.OPERATION_NAME,
+       M.ANES_METHOD,
+       D.INP_NO,
+       M.OPER_SCALE,
+       E.NAME
+FROM MED_OPERATION_MASTER M
+LEFT JOIN MED_HIS_USERS A ON M.SURGEON=A.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS B ON M.FIRST_OPER_ASSISTANT = B.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS C ON M.SECOND_OPER_ASSISTANT = C.USER_JOB_ID
+LEFT JOIN MED_PATS_IN_HOSPITAL D ON M.PATIENT_ID=D.PATIENT_ID
+LEFT JOIN MED_PAT_MASTER_INDEX E ON M.PATIENT_ID=E.PATIENT_ID
+where (M.OPER_STATUS_CODE &gt;= 35 AND TO_CHAR(M.START_DATE_TIME, 'yyyy-MM')=:MONTHS) 
+and  m.surgeon in (select user_id from view_dept_gongzuoliang where START_DATE_TIME =:MONTHS AND (dept_code=:DEPT_CODE OR DEPT_NAME=:DEPT_NAME) )
+AND (1=1 OR :VDEPT IS NULL)
+
+union all 
+
+SELECT :DEPT_CODE AS DEPT_CODE,
+       :DEPT_NAME AS DEPT_NAME,
+       NVL(A.USER_NAME, M.SURGEON) AS SURGEON_NAME,
+       b.user_dept_code, c.user_dept_code,
+       NVL(B.USER_NAME, M.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(C.USER_NAME, M.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       M.OPERATION_NAME,
+       M.ANES_METHOD,
+       D.INP_NO,
+       M.OPER_SCALE,
+       E.NAME
+FROM MED_OPERATION_MASTER M
+LEFT JOIN MED_HIS_USERS A ON M.SURGEON=A.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS B ON M.FIRST_OPER_ASSISTANT = B.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS C ON M.SECOND_OPER_ASSISTANT = C.USER_JOB_ID
+LEFT JOIN MED_PATS_IN_HOSPITAL D ON M.PATIENT_ID=D.PATIENT_ID
+LEFT JOIN MED_PAT_MASTER_INDEX E ON M.PATIENT_ID=E.PATIENT_ID
+where (M.OPER_STATUS_CODE &gt;= 35 AND TO_CHAR(M.START_DATE_TIME, 'yyyy-MM')=:MONTHS) 
+and  m.First_Oper_Assistant in (select user_id from view_dept_gongzuoliang where START_DATE_TIME =:MONTHS AND (dept_code=:DEPT_CODE OR DEPT_NAME=:DEPT_NAME) )
+AND (1=1 OR :VDEPT IS NULL)
+
+UNION ALL
+
+SELECT :DEPT_CODE AS DEPT_CODE,
+       :DEPT_NAME AS DEPT_NAME,
+       NVL(A.USER_NAME, M.SURGEON) AS SURGEON_NAME,
+       b.user_dept_code, c.user_dept_code,
+       NVL(B.USER_NAME, M.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(C.USER_NAME, M.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       M.OPERATION_NAME,
+       M.ANES_METHOD,
+       D.INP_NO,
+       M.OPER_SCALE,
+       E.NAME
+FROM MED_OPERATION_MASTER M
+LEFT JOIN MED_HIS_USERS A ON M.SURGEON=A.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS B ON M.FIRST_OPER_ASSISTANT = B.USER_JOB_ID
+LEFT JOIN MED_HIS_USERS C ON M.SECOND_OPER_ASSISTANT = C.USER_JOB_ID
+LEFT JOIN MED_PATS_IN_HOSPITAL D ON M.PATIENT_ID=D.PATIENT_ID
+LEFT JOIN MED_PAT_MASTER_INDEX E ON M.PATIENT_ID=E.PATIENT_ID
+where (M.OPER_STATUS_CODE &gt;= 35 AND TO_CHAR(M.START_DATE_TIME, 'yyyy-MM')=:MONTHS) 
+and  m.Second_Oper_Assistant in (select user_id from view_dept_gongzuoliang where START_DATE_TIME =:MONTHS AND (dept_code=:DEPT_CODE OR DEPT_NAME=:DEPT_NAME) )
+AND (1=1 OR :VDEPT IS NULL)</StrSql>
+          <PageSize>10</PageSize>
+          <SortNumber>0</SortNumber>
+          <ShowSummary>false</ShowSummary>
+          <IsLinkButton>false</IsLinkButton>
+        </ReportTitle>
+        <ReportColumnList>
+          <ReportColumn>
+            <FieldName>DEPT_CODE</FieldName>
+            <Title>科室代码</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>DEPT_NAME</FieldName>
+            <Title>科室名称</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SURGEON_NAME</FieldName>
+            <Title>主刀医生</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERATION_NAME</FieldName>
+            <Title>手术名称</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ANES_METHOD</FieldName>
+            <Title>麻醉方式</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>INP_NO</FieldName>
+            <Title>住院号</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>NAME</FieldName>
+            <Title>患者姓名</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPER_SCALE</FieldName>
+            <Title>手术等级</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>FIRST_OPER_ASSISTANT_NAME</FieldName>
+            <Title>手术一助</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SECOND_OPER_ASSISTANT_NAME</FieldName>
+            <Title>手术二助</Title>
+            <Width>0</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <SubReportName />
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+        </ReportColumnList>
+        <ReportConditionList />
+        <ReportSubConditionList>
+          <ReportSubCondition>
+            <FieldName>DEPT_CODE</FieldName>
+            <ParamName>DEPT_CODE</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+          <ReportSubCondition>
+            <FieldName>DEPT_NAME</FieldName>
+            <ParamName>DEPT_NAME</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+        </ReportSubConditionList>
+        <SubReportInformationList />
+        <ReportChartInfo>
+          <ChartType />
+          <SeriesData />
+          <XAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </XAxisInfo>
+          <YAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </YAxisInfo>
+        </ReportChartInfo>
+      </ReportInformation>
+      <ReportInformation>
+        <ReportTitle>
+          <ReportName>主刀明细</ReportName>
+          <StrSql>
+                    select a.patient_id,d.inp_no ,b.name,b.sex, fun_get_pat_age( b.date_of_birth,a.start_date_time ) age， nvl(c.dept_name,a.dept_code) deptname,
+            a.operation_name ,to_char(a.start_date_time,'yyyy-mm-dd') operdate ,to_char(a.start_date_time,'hh24:mi') opertime,a.oper_scale,decode(a.emergency_ind,1,'急诊','择期') emergency_ind,
+            nvl(e.USER_NAME，a.surgeon ) surgeon , a.anes_method,a.asa_grade,  nvl(g.USER_NAME,a.anes_doctor) anes_doctor , 
+              nvl(i.USER_NAME,a.FIRST_OPER_NURSE) FIRST_OPER_NURSE  , nvl(j.USER_NAME,a.FIRST_SUPPLY_NURSE) FIRST_SUPPLY_NURSE
+            from  med_operation_master a ,med_pat_master_index b, med_dept_dict c ,med_pat_visit d,
+                  med_his_users e,med_his_users g,med_his_users i,med_his_users j,
+                  med_his_users first,med_his_users second,med_his_users third,med_his_users fourth
+              where a.patient_id=b.patient_id(+) and a.dept_code=c.dept_code and a.patient_id=d.patient_id and a.visit_id=d.visit_id and 
+                    a.surgeon=e.USER_JOB_ID(+) and  a.anes_doctor =g.USER_JOB_ID(+)  and  a.FIRST_OPER_NURSE=i .USER_JOB_ID(+) and  a.FIRST_SUPPLY_NURSE=j.USER_JOB_ID(+) and 
+                    a.FIRST_OPER_ASSISTANT=first.USER_JOB_ID(+) and a.SECOND_OPER_ASSISTANT=second.USER_JOB_ID(+) and 
+                    a.THIRD_OPER_ASSISTANT = third.USER_JOB_ID(+) and a.FOURTH_OPER_ASSISTANT=fourth.USER_JOB_ID(+) and 
+                    to_char(a.START_DATE_TIME,'yyyy-mm')=:MONTHS 	 
+                    and (a.dept_code like '%'||:VDEPT||'%' OR c.dept_code like '%'||:VDEPT||'%' OR c.dept_name like '%'||:VDEPT||'%'  or :VDEPT is null )	
+                   AND  ( a.SURGEON LIKE '%'||:VDOCNAME||'%' or e.USER_JOB_ID LIKE '%'||:VDOCNAME||'%' or e.user_name LIKE '%'||:VDOCNAME||'%'  ) 
+                    AND  (a.dept_code like '%'||:VDEPTNAME||'%' OR c.dept_code like '%'||:VDEPTNAME||'%' OR c.dept_name like '%'||:VDEPTNAME||'%'  or :VDEPTNAME is null )	
+
+            </StrSql>
+          <PageSize>10</PageSize>
+          <SortNumber>0</SortNumber>
+          <ShowSummary>false</ShowSummary>
+          <IsLinkButton>false</IsLinkButton>
+        </ReportTitle>
+        <ReportColumnList>
+          <ReportColumn>
+            <FieldName>INP_NO</FieldName>
+            <Title>住院号 </Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>NAME</FieldName>
+            <Title>姓名</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>true</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SEX</FieldName>
+            <Title>性别</Title>
+            <Width>80</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>AGE</FieldName>
+            <Title>年龄</Title>
+            <Width>80</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>DEPTNAME</FieldName>
+            <Title>科室</Title>
+            <Width>120</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERDATE</FieldName>
+            <Title>手术日期</Title>
+            <Width>120</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERTIME</FieldName>
+            <Title>开始时间</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERATION_NAME</FieldName>
+            <Title>手术名称</Title>
+            <Width>180</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPER_SCALE</FieldName>
+            <Title>手术等级</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>EMERGENCY_IND</FieldName>
+            <Title>急诊择期</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SURGEON</FieldName>
+            <Title>术者</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ANES_METHOD</FieldName>
+            <Title>麻醉方法</Title>
+            <Width>160</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ASA_GRADE</FieldName>
+            <Title>ASA分级</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ANES_DOCTOR</FieldName>
+            <Title>主麻</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>FIRST_OPER_NURSE</FieldName>
+            <Title>洗手护士</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>FIRST_SUPPLY_NURSE</FieldName>
+            <Title>巡回护士</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+        </ReportColumnList>
+        <ReportConditionList />
+        <ReportSubConditionList>
+          <ReportSubCondition>
+            <FieldName>DOCNAME</FieldName>
+            <ParamName>VDOCNAME</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+          <ReportSubCondition>
+            <FieldName>DEPTNAME</FieldName>
+            <ParamName>VDEPTNAME</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+        </ReportSubConditionList>
+        <SubReportInformationList />
+        <ReportChartInfo>
+          <ChartType />
+          <SeriesData />
+          <XAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </XAxisInfo>
+          <YAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </YAxisInfo>
+        </ReportChartInfo>
+      </ReportInformation>
+      <ReportInformation>
+        <ReportTitle>
+          <ReportName>助手明细</ReportName>
+          <StrSql>
+                    select a.patient_id,d.inp_no ,b.name,b.sex, fun_get_pat_age( b.date_of_birth,a.start_date_time ) age， nvl(c.dept_name,a.dept_code) deptname,
+            a.operation_name ,to_char(a.start_date_time,'yyyy-mm-dd') operdate ,to_char(a.start_date_time,'hh24:mi') opertime,a.oper_scale,decode(a.emergency_ind,1,'急诊','择期') emergency_ind,
+            nvl(e.USER_NAME，a.surgeon ) surgeon , a.anes_method,a.asa_grade,  nvl(g.USER_NAME,a.anes_doctor) anes_doctor , 
+              nvl(i.USER_NAME,a.FIRST_OPER_NURSE) FIRST_OPER_NURSE  , nvl(j.USER_NAME,a.FIRST_SUPPLY_NURSE) FIRST_SUPPLY_NURSE
+            from  med_operation_master a ,med_pat_master_index b, med_dept_dict c ,med_pat_visit d,
+                  med_his_users e,med_his_users g,med_his_users i,med_his_users j,
+                  med_his_users first,med_his_users second,med_his_users third,med_his_users fourth
+              where a.patient_id=b.patient_id(+) and a.dept_code=c.dept_code and a.patient_id=d.patient_id and a.visit_id=d.visit_id and 
+                    a.surgeon=e.USER_JOB_ID(+) and  a.anes_doctor =g.USER_JOB_ID(+)  and  a.FIRST_OPER_NURSE=i .USER_JOB_ID(+) and  a.FIRST_SUPPLY_NURSE=j.USER_JOB_ID(+) and 
+                    a.FIRST_OPER_ASSISTANT=first.USER_JOB_ID(+) and a.SECOND_OPER_ASSISTANT=second.USER_JOB_ID(+) and 
+                    a.THIRD_OPER_ASSISTANT = third.USER_JOB_ID(+) and a.FOURTH_OPER_ASSISTANT=fourth.USER_JOB_ID(+) and 
+                    to_char(a.START_DATE_TIME,'yyyy-mm')=:MONTHS 	 
+                    and (a.dept_code like '%'||:VDEPT||'%' OR c.dept_code like '%'||:VDEPT||'%' OR c.dept_name like '%'||:VDEPT||'%'  or :VDEPT is null )	
+                   AND  ( a.FIRST_OPER_ASSISTANT LIKE '%'||:VDOCNAME||'%' or first.USER_JOB_ID LIKE '%'||:VDOCNAME||'%' or first.user_name LIKE '%'||:VDOCNAME||'%' or 
+                    a.SECOND_OPER_ASSISTANT LIKE '%'||:VDOCNAME||'%' or second.USER_JOB_ID LIKE '%'||:VDOCNAME||'%' or second.user_name LIKE '%'||:VDOCNAME||'%' or 
+                    a.THIRD_OPER_ASSISTANT LIKE '%'||:VDOCNAME||'%' or third.USER_JOB_ID LIKE '%'||:VDOCNAME||'%' or third.user_name LIKE '%'||:VDOCNAME||'%' or 
+                    a.FOURTH_OPER_ASSISTANT LIKE '%'||:VDOCNAME||'%' or fourth.USER_JOB_ID LIKE '%'||:VDOCNAME||'%' or fourth.user_name LIKE '%'||:VDOCNAME||'%' ) 
+                    AND  (a.dept_code like '%'||:VDEPTNAME||'%' OR c.dept_code like '%'||:VDEPTNAME||'%' OR c.dept_name like '%'||:VDEPTNAME||'%'  or :VDEPTNAME is null )	
+
+            </StrSql>
+          <PageSize>10</PageSize>
+          <SortNumber>0</SortNumber>
+          <ShowSummary>false</ShowSummary>
+          <IsLinkButton>false</IsLinkButton>
+        </ReportTitle>
+        <ReportColumnList>
+          <ReportColumn>
+            <FieldName>INP_NO</FieldName>
+            <Title>住院号 </Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>false</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>NAME</FieldName>
+            <Title>姓名</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>true</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SEX</FieldName>
+            <Title>性别</Title>
+            <Width>80</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>AGE</FieldName>
+            <Title>年龄</Title>
+            <Width>80</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>DEPTNAME</FieldName>
+            <Title>科室</Title>
+            <Width>120</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERDATE</FieldName>
+            <Title>手术日期</Title>
+            <Width>120</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERTIME</FieldName>
+            <Title>开始时间</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPERATION_NAME</FieldName>
+            <Title>手术名称</Title>
+            <Width>180</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>OPER_SCALE</FieldName>
+            <Title>手术等级</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>EMERGENCY_IND</FieldName>
+            <Title>急诊择期</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>SURGEON</FieldName>
+            <Title>术者</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ANES_METHOD</FieldName>
+            <Title>麻醉方法</Title>
+            <Width>160</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ASA_GRADE</FieldName>
+            <Title>ASA分级</Title>
+            <Width>70</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>ANES_DOCTOR</FieldName>
+            <Title>主麻</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>FIRST_OPER_NURSE</FieldName>
+            <Title>洗手护士</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+          <ReportColumn>
+            <FieldName>FIRST_SUPPLY_NURSE</FieldName>
+            <Title>巡回护士</Title>
+            <Width>100</Width>
+            <IsSHow>true</IsSHow>
+            <IsSort>false</IsSort>
+            <IsSum>true</IsSum>
+            <IsSubReportCondition>false</IsSubReportCondition>
+            <IsExport>true</IsExport>
+            <Align>center</Align>
+            <ReportColumnList />
+          </ReportColumn>
+        </ReportColumnList>
+        <ReportConditionList />
+        <ReportSubConditionList>
+          <ReportSubCondition>
+            <FieldName>DOCNAME</FieldName>
+            <ParamName>VDOCNAME</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+          <ReportSubCondition>
+            <FieldName>DEPTNAME</FieldName>
+            <ParamName>VDEPTNAME</ParamName>
+            <DataType>String</DataType>
+            <Value />
+          </ReportSubCondition>
+        </ReportSubConditionList>
+        <SubReportInformationList />
+        <ReportChartInfo>
+          <ChartType />
+          <SeriesData />
+          <XAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </XAxisInfo>
+          <YAxisInfo>
+            <Type>value</Type>
+            <DataColumn />
+            <Data />
+          </YAxisInfo>
+        </ReportChartInfo>
+      </ReportInformation>
+    </SubReportInformationList>
+    <ReportChartInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ChartType>Line</ChartType>
+      <SeriesData />
+      <XAxisInfo>
+        <Type>value</Type>
+        <DataColumn />
+        <Data />
+      </XAxisInfo>
+      <YAxisInfo>
+        <Type>value</Type>
+        <DataColumn />
+        <Data />
+      </YAxisInfo>
+    </ReportChartInfo>
+  </ReportInformation>
+</XMLData>

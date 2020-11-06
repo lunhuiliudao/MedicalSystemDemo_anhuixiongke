@@ -1,0 +1,71 @@
+﻿<local:WindowBase x:Class="MedicalSystem.AnesWorkStation.View.AnesGraph.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+        xmlns:graph="clr-namespace:MedicalSystem.AnesWorkStation.View.AnesGraph"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+        Title="TestWindow" Height="600" Width="600" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <graph:InAndOutControl x:Name="graph1" Data="{Binding InputOutData}" XAxisSetting="{Binding xAxisSetting}" Margin="10,0,10,0" 
+                               MedicineRowCount="3" OutputRowCount="3" InfusionRowCount="3" TableHeadWidthPercent="0.1" DataTimeShowFormat="yyyy-MM-dd HH:mm">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="DoubleClick">
+                    <i:InvokeCommandAction Command="{Binding GraphDoubleClickCommand}"
+                            CommandParameter="{Binding Path=DoubleClickData, RelativeSource={RelativeSource AncestorType={x:Type graph:InAndOutControl}}}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </graph:InAndOutControl>
+        <graph:DateAxisControl Grid.Row="1" x:Name="dateAxis1" XAxisSetting="{Binding xAxisSetting}" HeadWidthPercent="0.1"
+                                Margin="10,5,10,5" ProcessBeginTime="{Binding ProcessBeginTime}" RescueTimeList="{Binding RescueTimeList}" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="RescueClick">
+                    <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding RescueClickCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </graph:DateAxisControl>
+        <graph:VitalSignsControl Grid.Row="2" x:Name="VitalSignsControl1" XAxisSetting="{Binding xAxisSetting}"
+                                YAxisSettings="{Binding YAxisSettings}"  BreathParam="{Binding BreathParam}"
+                                Curves="{Binding Curves}" EventMark="{Binding EventMark}"
+                                TextMarkPoints="{Binding TextMarkPoints}"
+                                IsEditEnable="{Binding IsEditEnable}"
+                                IsHiddenEventMarkArea="{Binding IsHiddenEventMarkArea}"
+                                HeadWidthPercent="0.1"
+                                Margin="10,0,10,0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="CurveSetClick">
+                    <i:InvokeCommandAction Command="{Binding CurveSetCommand}"
+                            CommandParameter="{Binding Path=Curves, RelativeSource={RelativeSource AncestorType={x:Type graph:VitalSignsControl}}}"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="CurvePointDoubleClick">
+                    <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding CurvePointDoubleClickCommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="ChartDoubleClick">
+                    <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding ChartDoubleClickCommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="CurvePointDrag">
+                    <cmd:EventToCommand PassEventArgsToCommand="True"  
+                                            Command="{Binding CurvePointDragCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </graph:VitalSignsControl>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button Content="刷新数据" Width="120" Height="30" Margin="30,0,0,0">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding RefreshDataCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>    
+            </Button>
+        </StackPanel>
+    </Grid>
+</local:WindowBase>

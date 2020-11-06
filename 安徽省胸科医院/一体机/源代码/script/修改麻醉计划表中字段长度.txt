@@ -1,0 +1,9 @@
+-- Alter table 
+alter table MED_ANESTHESIA_PLAN
+  storage
+  (
+    next 1
+  )
+;
+-- Add/modify columns 
+alter table MED_ANESTHESIA_PLAN modify on_time VARCHAR2(40);

@@ -1,0 +1,12 @@
+-- Alter table 
+alter table MED_ANESTHESIA_PLAN
+  storage
+  (
+    next 8
+  )
+;
+-- Add/modify columns 
+alter table MED_ANESTHESIA_PLAN add anes_risk_grade VARCHAR2(20);
+-- Add comments to the columns 
+comment on column MED_ANESTHESIA_PLAN.anes_risk_grade
+  is '手术麻醉风险类别';

@@ -1,0 +1,123 @@
+BODY{
+	margin:0px;
+	font:12px verdana;
+	overflow:auto;
+	SCROLLBAR-FACE-COLOR: #BAD0FC;
+	SCROLLBAR-HIGHLIGHT-COLOR: #B8CBF6;
+	SCROLLBAR-SHADOW-COLOR: #F9F8F4; 
+	SCROLLBAR-3DLIGHT-COLOR: #F9F8F4; 
+	SCROLLBAR-ARROW-COLOR:  #4D6185; 
+	SCROLLBAR-TRACK-COLOR: #EFF6FF; 
+	SCROLLBAR-DARKSHADOW-COLOR: #B8CBF6;
+}
+div,td,span,a{
+	font:12px verdana;
+}
+form{
+	margin:0px;
+	padding:0px;
+}
+.loadTab{
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	border-style:solid;
+	border-color:#7C8B95 #EAEFF4 #EAEFF4 #7C8B95;
+	border-width:1px;
+}
+#top{
+	width:100%;
+	height:78px;
+	margin:0px;
+	padding:0px;
+	background:url(../img/load_topBg.gif);
+	background-color:#7A95E2;
+}
+#middle{
+	background:url(../img/load_middleBg.gif);
+	background-color:#DDE6F7;
+	padding:0px;
+}
+#middle .mdiv{
+	background:url(../img/load_middleImg.gif) no-repeat;
+	background-position:100%;
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+#welcomeTab{
+	margin-top:86px;
+	width:720px;
+	height:inherit;
+	text-align:left;
+}
+#welcomeTab .text{
+	padding-left:25px;
+}
+#welcomeTab span{
+	width:179px;
+	height:94px;
+	cursor:hand;
+	margin:24px;
+}
+
+#loadingBar{
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-position:0% 100%;
+	text-align:right;
+	padding-top:67px;
+	padding-right:124px;
+
+}
+#loadingBar table{
+	width:inherit;
+	height:inherit;
+}
+#loadingBar table td{
+	height:35px;
+}
+#loadingBar table input{
+	border:1px solid #000;
+	background:#FFF;
+	font-size:12px;
+	color: #4B5964;
+	width:175px;
+	height:20px;
+}
+#loadingBar table .errorInf{
+	color: red;
+	padding-left:20px;
+	display:none;
+	
+}
+
+#loadingBar table .buttonBar{
+	text-align:right;
+	padding-top:29px;
+	height:30px;
+}
+#loadingBar table .button{
+	
+	margin-left:20px;
+	cursor:hand;
+}
+#bottom{
+	width:100%;
+	height:90px;
+	margin:0px;
+	padding:0px;
+	background:url(../img/load_bottomBg.gif);
+	background-color:#7A95E2;
+	text-align:right;
+}
+#bottom div{
+	width:518px;
+	height:90px;
+	margin:0px;
+	padding:0px;
+	background:url(../img/load_bottomImg.gif);
+}

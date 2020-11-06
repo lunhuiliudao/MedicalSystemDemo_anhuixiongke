@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE71DA80-4E68-4A94-AEFA-ACBE2565BE5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.AnesWorkStation.Domain</RootNamespace>
+    <AssemblyName>MedicalSystem.AnesWorkStation.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper.ORM.v1.1, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Dapper.ORM.v1.1.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.AnesWorkStationCoordination.Logger">
+      <HintPath>..\..\lib\MedicalSystem.AnesWorkStationCoordination.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.AnesWorkStationCoordination.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MedicalSystem.AnesWorkStationCoordination.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Coordination.Interface">
+      <HintPath>..\..\lib\MedicalSystem.Coordination.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Coordination.Lib">
+      <HintPath>..\..\lib\MedicalSystem.Coordination.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Message.Common">
+      <HintPath>..\..\lib\MedicalSystem.Message.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Message.Lib">
+      <HintPath>..\..\lib\MedicalSystem.Message.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Permission.DataServices">
+      <HintPath>..\..\lib\MedicalSystem.Permission.DataServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnesQuery\AnesDocumentPDFSrcEntity.cs" />
+    <Compile Include="AnesQuery\EChartsItemEntity.cs" />
+    <Compile Include="AnesQuery\OperDetailListForDirectorIndexEntity.cs" />
+    <Compile Include="AnesQuery\OperInfosForDirectorIndexEntity.cs" />
+    <Compile Include="AnesQuery\OperInfosForDoctorIndexEntity.cs" />
+    <Compile Include="AnesQuery\OperPatientProgressEntity.cs" />
+    <Compile Include="AnesQuery\OperQueryParaModel.cs" />
+    <Compile Include="AnesQuery\OperQuerytForAnesQueryEntity.cs" />
+    <Compile Include="AnesQuery\OperQuerytForDoctorIndexEntity.cs" />
+    <Compile Include="AnesQuery\OperReportForDirectionEntity.cs" />
+    <Compile Include="AnesQuery\OutOperatingRoomAnesRecordEntity.cs" />
+    <Compile Include="Extends\MED_EVENT_DICT_EXT.cs" />
+    <Compile Include="Extends\MED_HIS_USERS.cs" />
+    <Compile Include="Extends\MED_NURSING_TOUR.cs" />
+    <Compile Include="Extends\MED_OPERATING_ROOM.cs" />
+    <Compile Include="Extends\MED_USERS_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INPUT_DATA_OUT.cs" />
+    <Compile Include="Origins\MED_APP_INFO.cs" />
+    <Compile Include="Origins\MED_CAMERA_PICINFO.cs" />
+    <Compile Include="Origins\MED_NURSING_AFTER.cs" />
+    <Compile Include="Origins\MED_NURSING_AFTERSHIFT_PACU.cs" />
+    <Compile Include="Origins\MED_NURSING_AFTERSHIFT_WARD.cs" />
+    <Compile Include="Origins\MED_NURSING_BEFOREASSESS.cs" />
+    <Compile Include="Origins\MED_NURSING_BEFORESHIFT.cs" />
+    <Compile Include="Origins\MED_NURSING_QDNURSE.cs" />
+    <Compile Include="Origins\MED_NURSING_QINGDIAN.cs" />
+    <Compile Include="Origins\MED_NURSING_TOUR.cs" />
+    <Compile Include="Origins\MED_NURSING_YWASSESS.cs" />
+    <Compile Include="Origins\MED_PRESSUREESTIMATE_DOC.cs" />
+    <Compile Include="Origins\MED_QC_OUT_AE.cs" />
+    <Compile Include="Origins\MED_QC_OUT_AE_BAK.cs" />
+    <Compile Include="Origins\MED_QC_OUT_PAT_INFO.cs" />
+    <Compile Include="Origins\MED_QC_OUT_REPORT_DATA.cs" />
+    <Compile Include="Origins\MED_QC_OUT_REPORT_DATA_BAK.cs" />
+    <Compile Include="Origins\MED_SYSTEM_CONFIG.cs" />
+    <Compile Include="Origins\MED_USERS_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_VER_INFO.cs" />
+    <Compile Include="Origins\MED_VER_LIST.cs" />
+    <Compile Include="Origins\MED_VER_UPDATE_REC.cs" />
+    <Compile Include="Origins\MED_VER_UPDATE_REC_LIST.cs" />
+    <Compile Include="PagedList.cs" />
+    <Compile Include="Screen\ApiResult.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Commom.cs" />
+    <Compile Include="Converter\ArrayConverter.cs" />
+    <Compile Include="Converter\BindingException.cs" />
+    <Compile Include="Converter\ConverterUtil.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Converter\DateTimeOffsetConverter.cs" />
+    <Compile Include="Converter\DecimalConverter.cs" />
+    <Compile Include="Converter\DefaultConverter.cs" />
+    <Compile Include="Converter\EnumConverter.cs" />
+    <Compile Include="Converter\ExactMatchConverter.cs" />
+    <Compile Include="Converter\GenericListConverter.cs" />
+    <Compile Include="Converter\GuidConverter.cs" />
+    <Compile Include="Converter\HttpPostedFileConverter.cs" />
+    <Compile Include="Converter\IConverter.cs" />
+    <Compile Include="Converter\NullableConverter.cs" />
+    <Compile Include="Converter\PrimitiveConverter.cs" />
+    <Compile Include="Converter\StringConverter.cs" />
+    <Compile Include="Converter\StringManage.cs" />
+    <Compile Include="Converter\TypeConverterAdapter.cs" />
+    <Compile Include="Converter\TypeConverterBase.cs" />
+    <Compile Include="DocDataPars.cs" />
+    <Compile Include="Extends\AddDetailCharge.cs" />
+    <Compile Include="Extends\MED_ANESTHESIA_EVENT.cs" />
+    <Compile Include="Extends\MED_ANESTHESIA_EVENT_TEMPLET.cs" />
+    <Compile Include="Extends\MED_ANESTHESIA_INPUT_DICT.cs" />
+    <Compile Include="Extends\MED_ANES_BILL_TEMPLET.cs" />
+    <Compile Include="Extends\MED_ANES_VALUATION_LIST.cs" />
+    <Compile Include="Extends\MED_BILL_TEMPLET_MASTER.cs" />
+    <Compile Include="Extends\MED_CHARGE_VS_EVENT.cs" />
+    <Compile Include="Extends\MED_CLIENT_COMPUTER.cs" />
+    <Compile Include="Extends\MED_COMM_VITAL_REC.cs" />
+    <Compile Include="Extends\MED_CONFIGSET.cs" />
+    <Compile Include="Extends\MED_EVENT_DICT.cs" />
+    <Compile Include="Extends\MED_INP_BILL_DETAIL.cs" />
+    <Compile Include="Extends\MED_LAB_PATIENT.cs" />
+    <Compile Include="Extends\MED_LAB_RESULT.cs" />
+    <Compile Include="Extends\MED_LAB_TEST_MASTER.cs" />
+    <Compile Include="Extends\MED_LOG_RECORD.cs" />
+    <Compile Include="Extends\MED_MONITOR_DICT.cs" />
+    <Compile Include="Extends\MED_OPERATION_SCHEDULE.cs" />
+    <Compile Include="Extends\MED_OPERATION_SHIFT_RECORD.cs" />
+    <Compile Include="Extends\MED_ORDERS.cs" />
+    <Compile Include="Extends\MED_PACU_INFO.cs" />
+    <Compile Include="Extends\MED_PATIENT_CARD.cs" />
+    <Compile Include="Extends\MED_PAT_INFO.cs" />
+    <Compile Include="Extends\MED_PAT_MASTER_INDEX.cs" />
+    <Compile Include="Extends\MED_PERMISSION_LOGINNAME.cs" />
+    <Compile Include="Extends\MED_PRICE_LIST.cs" />
+    <Compile Include="Extends\MED_RESCUE_GROUP.cs" />
+    <Compile Include="Extends\MED_RESCUE_MESSAGE_LOG.cs" />
+    <Compile Include="Extends\MED_SHIFT_INFO.cs" />
+    <Compile Include="Extends\MED_UNIT_DICT.cs" />
+    <Compile Include="Extends\MED_USERS.cs" />
+    <Compile Include="Extends\MED_USER_MESSAGES.cs" />
+    <Compile Include="Extends\MED_VALUATION_ITEM_LIST.cs" />
+    <Compile Include="Extends\MED_VITALSIGN_ALARM.cs" />
+    <Compile Include="Extends\MED_VITAL_SIGN.cs" />
+    <Compile Include="Extends\CLIENT_INFO.cs" />
+    <Compile Include="Extends\STANDARD_KEYWORD.cs" />
+    <Compile Include="Helper\PinYinConverter.cs" />
+    <Compile Include="Origins\MED_ADMINISTRATION_DICT.cs" />
+    <Compile Include="Origins\MED_ALDRETE_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_CONFIG.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_DICT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT_LOG.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_EVENT_TEMPLET.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INPUT_DATA.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INPUT_DICT.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_INQUIRY.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN_EXAM.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_PLAN_PMH.cs" />
+    <Compile Include="Origins\MED_ANESTHESIA_RECOVER.cs" />
+    <Compile Include="Origins\MED_ANES_ALARM_MESSAGE.cs" />
+    <Compile Include="Origins\MED_ANES_BILL_TEMPLET.cs" />
+    <Compile Include="Origins\MED_ANES_SHIFT_DRUGS.cs" />
+    <Compile Include="Origins\MED_ANES_SHIFT_MASTER.cs" />
+    <Compile Include="Origins\MED_ANES_SHIFT_PATIENTINFO.cs" />
+    <Compile Include="Origins\MED_ANES_VALUATION_LIST.cs" />
+    <Compile Include="Origins\MED_ANES_VT_VS_CHARGE.cs" />
+    <Compile Include="Origins\MED_APACHE2_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_APPLICATIONS.cs" />
+    <Compile Include="Origins\MED_BALTHAZAR_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_BILL_ITEM_CLASS_DICT.cs" />
+    <Compile Include="Origins\MED_BJCA_SIGN.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DETAIL.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DETAIL_EXT.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DETAIL_SHOW.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_DICT.cs" />
+    <Compile Include="Origins\MED_BLOOD_GAS_MASTER.cs" />
+    <Compile Include="Origins\MED_CHANGE_ROOM_NO.cs" />
+    <Compile Include="Origins\MED_CHECKBOX_ITEM.cs" />
+    <Compile Include="Origins\MED_CHILDPUGH_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_CHUFANG_RECORD.cs" />
+    <Compile Include="Origins\MED_CLIENT_COMPUTER.cs" />
+    <Compile Include="Origins\MED_COMM_VITAL_REC.cs" />
+    <Compile Include="Origins\MED_COMM_VITAL_REC_EXTEND.cs" />
+    <Compile Include="Origins\MED_CONFIG.cs" />
+    <Compile Include="Origins\MED_CONFIRMATION_PACU.cs" />
+    <Compile Include="Origins\MED_CONSULTATION_REGISTRATION.cs" />
+    <Compile Include="Origins\MED_DAILY_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_DEPT_DICT.cs" />
+    <Compile Include="Origins\MED_DIAGNOSIS_DICT.cs" />
+    <Compile Include="Origins\MED_DOCUMENT_TEMPLET.cs" />
+    <Compile Include="Origins\MED_EMR_ARCHIVE_DETIAL.cs" />
+    <Compile Include="Origins\MED_EVENT_DICT.cs" />
+    <Compile Include="Origins\MED_EVENT_DICT_EXT.cs" />
+    <Compile Include="Origins\MED_EVENT_ITEM_CLASS_DICT.cs" />
+    <Compile Include="Origins\MED_EVENT_SORT.cs" />
+    <Compile Include="Origins\MED_EVENT_VS_BILL.cs" />
+    <Compile Include="Origins\MED_EVENT_VS_VALUATION.cs" />
+    <Compile Include="Origins\MED_EXAM_ITEMS.cs" />
+    <Compile Include="Origins\MED_EXAM_MASTER.cs" />
+    <Compile Include="Origins\MED_EXAM_REPORT.cs" />
+    <Compile Include="Origins\MED_GOLDMAN_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_HIS_USERS.cs" />
+    <Compile Include="Origins\MED_HIS_USERS_INFO.cs" />
+    <Compile Include="Origins\MED_HOSPITAL_CONFIG.cs" />
+    <Compile Include="Origins\MED_HOSP_BRANCH_DICT.cs" />
+    <Compile Include="Origins\MED_INP_BILL_DETAIL.cs" />
+    <Compile Include="Origins\MED_INTERFACE_DETAIL.cs" />
+    <Compile Include="Origins\MED_LAB_RESULT.cs" />
+    <Compile Include="Origins\MED_LAB_TEST_ITEMS.cs" />
+    <Compile Include="Origins\MED_LAB_TEST_MASTER.cs" />
+    <Compile Include="Origins\MED_LOG_RECORD.cs" />
+    <Compile Include="Origins\MED_LUTZ_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_MESSAGE_LOG.cs" />
+    <Compile Include="Origins\MED_MESSAGE_TEMPLET.cs" />
+    <Compile Include="Origins\MED_METHOD_DICT.cs" />
+    <Compile Include="Origins\MED_MONITOR_DICT.cs" />
+    <Compile Include="Origins\MED_MONITOR_FUNCTION_CODE.cs" />
+    <Compile Include="Origins\MED_OPERATING_ROOM.cs" />
+    <Compile Include="Origins\MED_OPERATING_ROOM_VS_MONITOR.cs" />
+    <Compile Include="Origins\MED_OPERATION_ANALGESIC_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_BILL_DETAIL.cs" />
+    <Compile Include="Origins\MED_OPERATION_BILL_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_CANCELED.cs" />
+    <Compile Include="Origins\MED_OPERATION_CANCELED_DETAIL.cs" />
+    <Compile Include="Origins\MED_OPERATION_DICT.cs" />
+    <Compile Include="Origins\MED_OPERATION_EXTENDED.cs" />
+    <Compile Include="Origins\MED_OPERATION_JUMP.cs" />
+    <Compile Include="Origins\MED_OPERATION_LOG.cs" />
+    <Compile Include="Origins\MED_OPERATION_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_MASTER_EXT.cs" />
+    <Compile Include="Extends\MED_OPERATION_MASTER.cs" />
+    <Compile Include="Origins\MED_OPERATION_NAME.cs" />
+    <Compile Include="Origins\MED_OPERATION_RESCUE.cs" />
+    <Compile Include="Origins\MED_OPERATION_SCHEDULE.cs" />
+    <Compile Include="Origins\MED_OPERATION_SCHEDULE_NAME.cs" />
+    <Compile Include="Origins\MED_OPERATION_SHIFT_RECORD.cs" />
+    <Compile Include="Origins\MED_OPERATION_STATUS_DICT.cs" />
+    <Compile Include="Origins\MED_OPERATION_STATUS_EXT.cs" />
+    <Compile Include="Origins\MED_OPERSCORE_DICT.cs" />
+    <Compile Include="Origins\MED_OPER_ANALGESIC_MEDICINE.cs" />
+    <Compile Include="Origins\MED_OPER_ANALGESIC_TOTAL.cs" />
+    <Compile Include="Origins\MED_OPER_RISK_ESTIMATE.cs" />
+    <Compile Include="Origins\MED_ORDERS.cs" />
+    <Compile Include="Origins\MED_PACU_SORCE.cs" />
+    <Compile Include="Origins\MED_PARS_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_PATIENT_MONITOR_CONFIG.cs" />
+    <Compile Include="Origins\MED_PATIENT_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_PATS_IN_HOSPITAL.cs" />
+    <Compile Include="Origins\MED_PAT_MASTER_INDEX.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_DICT.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_EXT.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_HISTORY.cs" />
+    <Compile Include="Origins\MED_PAT_MONITOR_DATA_LOG.cs" />
+    <Compile Include="Origins\MED_PAT_VISIT.cs" />
+    <Compile Include="Origins\MED_PERIOPERATIVE_EVENT_CONFIG.cs" />
+    <Compile Include="Origins\MED_PERIOPERATIVE_EVENT_INDEX.cs" />
+    <Compile Include="Origins\MED_PERMISSIONS.cs" />
+    <Compile Include="Origins\MED_POSTOPERATIVE_EXTENDED.cs" />
+    <Compile Include="Origins\MED_POSTPDF_SHOW.cs" />
+    <Compile Include="Origins\MED_PREOPERATIVE_EXPANSION.cs" />
+    <Compile Include="Origins\MED_PRICE_LIST.cs" />
+    <Compile Include="Origins\MED_PRIMARY_FIELD_MODIFY.cs" />
+    <Compile Include="Origins\MED_QC_AE.cs" />
+    <Compile Include="Origins\MED_QC_AE_BAK.cs" />
+    <Compile Include="Origins\MED_QC_ITEM.cs" />
+    <Compile Include="Origins\MED_QC_PATIENT_INFO.cs" />
+    <Compile Include="Origins\MED_QC_REPORT_DATA.cs" />
+    <Compile Include="Origins\MED_QC_REPORT_DATA_BAK.cs" />
+    <Compile Include="Origins\MED_QC_REPORT_IND.cs" />
+    <Compile Include="Origins\MED_QC_REPORT_LIST.cs" />
+    <Compile Include="Origins\MED_QIXIE_QINGDIAN.cs" />
+    <Compile Include="Origins\MED_QIXIE_TEMPLET_DETAIL.cs" />
+    <Compile Include="Origins\MED_QIXIE_TEMPLET_MASTER.cs" />
+    <Compile Include="Origins\MED_RESCUE_EXPERTS.cs" />
+    <Compile Include="Origins\MED_RESCUE_EXPERTS_GROUP.cs" />
+    <Compile Include="Origins\MED_RESCUE_GROUP.cs" />
+    <Compile Include="Origins\MED_RESCUE_GROUP_VS_DEPT.cs" />
+    <Compile Include="Origins\MED_RESCUE_MESSAGE_LOG.cs" />
+    <Compile Include="Origins\MED_ROLES.cs" />
+    <Compile Include="Origins\MED_ROLES_PERMISSIONS.cs" />
+    <Compile Include="Origins\MED_SAFETY_CHECKS.cs" />
+    <Compile Include="Origins\MED_SCREEN_MSG.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_DATA.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_FILES.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_MASTER.cs" />
+    <Compile Include="Origins\MED_SHIFT_OPERATION_SIGN.cs" />
+    <Compile Include="Origins\MED_STEWARD_MARK.cs" />
+    <Compile Include="Origins\MED_STEWARD_SCORING_RESULT.cs" />
+    <Compile Include="Origins\MED_TISS_SCORING_RESULT_DETAIL.cs" />
+    <Compile Include="Origins\MED_TRANSPORT_MESSAGE.cs" />
+    <Compile Include="Origins\MED_UNIT_DICT.cs" />
+    <Compile Include="Origins\MED_USERS.cs" />
+    <Compile Include="Origins\MED_USERS_ROLES.cs" />
+    <Compile Include="Origins\MED_USER_MESSAGES.cs" />
+    <Compile Include="Origins\MED_USER_NOTE.cs" />
+    <Compile Include="Origins\MED_VALUATION_ITEM_LIST.cs" />
+    <Compile Include="Origins\MED_WARD_DICT.cs" />
+    <Compile Include="Origins\MED_WECHAT_HOSPITALS.cs" />
+    <Compile Include="Origins\MED_WECHAT_OPERINFO.cs" />
+    <Compile Include="Origins\MED_WECHAT_PERMISSIONS.cs" />
+    <Compile Include="Origins\MED_WECHAT_QUANLITY.cs" />
+    <Compile Include="Origins\MED_WECHAT_STATISTICS.cs" />
+    <Compile Include="Origins\MED_WECHAT_USERS.cs" />
+    <Compile Include="Origins\SCHEDULEREPORTVIEW.cs" />
+    <Compile Include="Origins\SHIFT_OPERATION_INFO.cs" />
+    <Compile Include="Permissions\MDSD_ACTION.cs" />
+    <Compile Include="Permissions\MDSD_APPLICATION.cs" />
+    <Compile Include="Permissions\MDSD_FUNC.cs" />
+    <Compile Include="Permissions\MDSD_MENU.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen\ApiResultCode.cs" />
+    <Compile Include="Screen\QueryParams.cs" />
+    <Compile Include="Screen\QueryParamsType.cs" />
+    <Compile Include="Report\ReportChartInfo.cs" />
+    <Compile Include="Report\ReportColumn.cs" />
+    <Compile Include="Report\ReportCondition.cs" />
+    <Compile Include="Report\ReportInformation.cs" />
+    <Compile Include="Report\ReportSubCondition.cs" />
+    <Compile Include="Report\ReportTitle.cs" />
+    <Compile Include="RequestResult.cs" />
+    <Compile Include="Screen\AnesDict.cs" />
+    <Compile Include="Screen\ConstDic.cs" />
+    <Compile Include="Screen\DataResult.cs" />
+    <Compile Include="Screen\TableDict.cs" />
+    <Compile Include="TransactionParamsters.cs" />
+    <Compile Include="TransMessageManager.cs" />
+    <Compile Include="Utils\Hooogle.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\XmlUtil.cs" />
+    <Compile Include="ViewModule\MedicalBasicDoc.cs" />
+    <Compile Include="ViewModule\OperCancelAndDetailEntity.cs" />
+    <Compile Include="ViewModule\OperCancelEntity.cs" />
+    <Compile Include="ViewModule\OperNoticeEntity.cs" />
+    <Compile Include="ViewModule\OperScheduleEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

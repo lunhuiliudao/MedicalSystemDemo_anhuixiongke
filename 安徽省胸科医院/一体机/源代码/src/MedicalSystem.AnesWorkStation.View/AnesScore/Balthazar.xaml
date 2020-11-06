@@ -1,0 +1,53 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.AnesScore.Balthazar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+        xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:WinFormControls="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:Doc="clr-namespace:MedicalSystem.Anes.Document.Documents;assembly=MedicalSystem.Anes.FrameWork"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Loaded="BaseUserControl_Loaded"
+    >
+    <Grid>
+        <TabControl SelectionChanged="TabControl_SelectionChanged" >
+            <TabItem Header="Balthazar胰腺病变CT严重性指数评分" Height="35">
+                <WindowsFormsHost x:Name="winHostMain" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" >
+                    <WinFormControls:Panel x:Name="winPanelContent" Dock="Fill" AutoScroll="True"/>
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="Child-Pugh肝脏疾病患者手术危险性评分">
+                <WindowsFormsHost x:Name="winHostMain1" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" >
+                    <WinFormControls:Panel x:Name="winPanelContent1" Dock="Fill" AutoScroll="True" />
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="GOLDMAN心脏高危因素评分">
+                <WindowsFormsHost x:Name="winHostMain2" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"  >
+                    <WinFormControls:Panel x:Name="winPanelContent2" Dock="Fill" AutoScroll="True" />
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="Lutz麻醉危险性评分">
+                <WindowsFormsHost x:Name="winHostMain3" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"  >
+                    <WinFormControls:Panel x:Name="winPanelContent3" Dock="Fill" AutoScroll="True" />
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="PARS麻醉恢复评分">
+                <WindowsFormsHost x:Name="winHostMain4" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"  >
+                    <WinFormControls:Panel x:Name="winPanelContent4" Dock="Fill" AutoScroll="True"/>
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="APACHE2评分">
+                <WindowsFormsHost x:Name="winHostMain5" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"  >
+                    <WinFormControls:Panel x:Name="winPanelContent5" Dock="Fill" AutoScroll="True"/>
+                </WindowsFormsHost>
+            </TabItem>
+            <TabItem Header="TISS评分">
+                <WindowsFormsHost x:Name="winHostMain6" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"  >
+                    <WinFormControls:Panel x:Name="winPanelContent6" Dock="Fill" AutoScroll="True"/>
+                </WindowsFormsHost>
+            </TabItem>
+
+        </TabControl>
+        
+    </Grid>
+</local:BaseUserControl>
+

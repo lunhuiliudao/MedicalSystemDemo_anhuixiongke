@@ -1,0 +1,250 @@
+<?xml version="1.0" standalone="yes"?>
+<XMLData>
+  <xs:schema id="XMLData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XMLData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportInformation">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ReportTitle" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportTitle, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportColumnList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportColumn, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportSubConditionList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportSubCondition, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="SubReportInformationList" msdata:DataType="System.Collections.Generic.List`1[[MedicalSystem.AnesWorkStation.Domain.Report.ReportInformation, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" minOccurs="0" />
+                <xs:element name="ReportChartInfo" msdata:DataType="MedicalSystem.AnesWorkStation.Domain.Report.ReportChartInfo, MedicalSystem.AnesWorkStation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportInformation>
+    <ReportTitle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportName>手术量增长分析</ReportName>
+      <Menu>科研分析</Menu>
+      <StrSql>
+              select deptname,N2017 ,   N2018 ,  N2019 ,  N2020 ,   N2021 ,  N2022 
+                from (select a.dept_name deptname,
+                            TO_CHAR(A.in_date_time, 'YYYY') OYEAR,
+                            count(a.dept_name) nums
+                        from v_Operation_Master_V2 a
+                      WHERE a.oper_status_code &gt; 35
+                        and a.in_date_time is not null
+                        and TO_CHAR(A.in_date_time, 'YYYY') &gt;= :SYEAR
+                        AND TO_CHAR(A.in_date_time, 'YYYY') &lt;= :EYEAR
+                        AND (a.dept_code like '%' || :vdeptcode || '%' or :vdeptcode is null or a.dept_name like '%' || :vdeptcode || '%')
+                        and (a.OPER_ROOM = :VOPERROOM OR :VOPERROOM IS NULL)
+                      group by a.dept_name, TO_CHAR(A.in_date_time, 'YYYY')                      
+                      ) pivot(sum(nums) for Oyear in ('2017'  N2017 , '2018'  N2018 , '2019' N2019 , '2020' N2020 , '2021'  N2021 , '2022' N2022 ))
+                      order by deptname
+        </StrSql>
+      <PageSize>50</PageSize>
+      <SortNumber>11</SortNumber>
+      <ModelFileName />
+      <ShowSummary>true</ShowSummary>
+      <IsLinkButton>false</IsLinkButton>
+    </ReportTitle>
+    <ReportColumnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportColumn>
+        <FieldName>DEPTNAME</FieldName>
+        <Title>临床科室 </Title>
+        <Width>350</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>true</IsSort>
+        <IsSum>false</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2017</FieldName>
+        <Title>2017年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2018</FieldName>
+        <Title>2018年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2019</FieldName>
+        <Title>2019年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2020</FieldName>
+        <Title>2020年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2021</FieldName>
+        <Title>2021年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+      <ReportColumn>
+        <FieldName>N2022</FieldName>
+        <Title>2022年</Title>
+        <Width>0</Width>
+        <IsSHow>true</IsSHow>
+        <IsSort>false</IsSort>
+        <IsSum>true</IsSum>
+        <IsSubReportCondition>false</IsSubReportCondition>
+        <SubReportName>患者详细信息</SubReportName>
+        <IsExport>true</IsExport>
+        <Align>center</Align>
+        <ReportColumnList />
+      </ReportColumn>
+    </ReportColumnList>
+    <ReportConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ReportCondition>
+        <Title>开始年份</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>SYEAR</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>year</DateControlType>
+        <DateDefaultVal>FixedVal</DateDefaultVal>
+        <Value>2017-01-01</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>截止年份</Title>
+        <ControlType>DatePick</ControlType>
+        <FieldName>EYEAR</FieldName>
+        <DataType>DateTime</DataType>
+        <DictType>NurseDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>year</DateControlType>
+        <DateDefaultVal>CurrentFirstDate</DateDefaultVal>
+        <Value>2019-07-01</Value>
+      </ReportCondition>
+      <ReportCondition>
+        <Title>手术室</Title>
+        <ControlType>DropDownList</ControlType>
+        <FieldName>VOPERROOM</FieldName>
+        <DataType>String</DataType>
+        <DictType>DynamicDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName>med_anesthesia_input_dict</TableName>
+          <KeyColumn>item_code</KeyColumn>
+          <ValColumn>item_name</ValColumn>
+          <Condition>item_class='手术室'</Condition>
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+      <ReportCondition>
+        <Title>科室</Title>
+        <ControlType>TextBox</ControlType>
+        <FieldName>VDEPTCODE</FieldName>
+        <DataType>String</DataType>
+        <DictType>DeptDict</DictType>
+        <BindDict />
+        <DynamicDictDes>
+          <TableName />
+          <KeyColumn />
+          <ValColumn />
+          <Condition />
+        </DynamicDictDes>
+        <DateControlType>date</DateControlType>
+        <DateDefaultVal>CurrentDate</DateDefaultVal>
+        <Value />
+      </ReportCondition>
+    </ReportConditionList>
+    <ReportSubConditionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <SubReportInformationList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <ReportChartInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <ChartType>Bar</ChartType>
+      <SeriesData>
+        <SeriesDataSet>
+          <Title />
+          <Field>DEPTNAME</Field>
+        </SeriesDataSet>
+        <SeriesDataSet>
+          <Title>2017年</Title>
+          <Field>N2017</Field>
+        </SeriesDataSet>
+        <SeriesDataSet>
+          <Title>2018年</Title>
+          <Field>N2018</Field>
+        </SeriesDataSet>
+        <SeriesDataSet>
+          <Title>2019年</Title>
+          <Field>N2019</Field>
+        </SeriesDataSet>
+        <SeriesDataSet>
+          <Title>2020年</Title>
+          <Field>N2020</Field>
+        </SeriesDataSet>
+      </SeriesData>
+      <XAxisInfo>
+        <Type>category</Type>
+        <DataColumn>DEPTNAME</DataColumn>
+        <Data />
+      </XAxisInfo>
+      <YAxisInfo>
+        <Type>value</Type>
+        <DataColumn />
+        <Data />
+      </YAxisInfo>
+    </ReportChartInfo>
+  </ReportInformation>
+</XMLData>

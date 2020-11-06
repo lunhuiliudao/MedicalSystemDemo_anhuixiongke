@@ -1,0 +1,74 @@
+﻿
+bady
+{
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+a:link, a:visited
+{
+	font: 12px "宋体";
+	color: #1835d1;
+	text-decoration: none;
+}
+a:active, a:hover
+{
+	color: #f30;
+	text-decoration: none;
+	font-weight: bold;
+}
+form, ul, li, dl, dt, dd
+{
+	padding: 0px;
+	margin: 0px;
+}
+ul
+{
+	list-style-type: none;
+}
+
+#MainTopShow
+{
+	margin: 0px;
+	text-align: left;
+	background: url(./Images/digital_logo.gif) no-repeat left top;
+	padding: 23px 0px 0px 0px;
+}
+
+#MenuItems, #MenuItems li, #MenuItems a, #MenuItems a span
+{
+	height: 30px;
+	overflow: hidden;
+}
+
+#MenuItems
+{
+	margin: 0px 0px 0px 205px;
+}
+
+#MenuItems li
+{
+	float: left;
+	margin-right: 3px;
+}
+
+#MenuItems a
+{
+	display: block;
+	background: url(./Images/digital_left.gif) #ffefbd no-repeat left top;
+	float: left;
+	line-height: 20px;
+	text-decoration: none;
+}
+#MenuItems a span
+{
+	padding: 7px 13px 0px 13px;
+	display: block;
+	background: url(./Images/digital_side.gif) no-repeat right top;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+}
+
+
+

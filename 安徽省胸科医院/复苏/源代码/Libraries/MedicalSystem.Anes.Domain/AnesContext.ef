@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MedicalSystem.Anes.Domain
+{
+    public class AnesContext : DbContext
+    {
+        public AnesContext() { }
+        public AnesContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
+        {
+        }
+        public DbSet<MED_LOG_RECORD> MED_LOG_RECORDS { get; set; }
+        public DbSet<MED_DEPT_DICT> MED_DEPT_DICTS { get; set; }
+        public DbSet<MED_USERS> MED_USERS { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.HasDefaultSchema("MEDSURDERY");
+        }
+    }
+}

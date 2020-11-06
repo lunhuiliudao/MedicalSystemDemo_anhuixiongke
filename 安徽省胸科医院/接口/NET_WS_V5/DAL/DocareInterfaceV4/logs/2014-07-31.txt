@@ -1,0 +1,55 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 09:16:55,554   [5]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOraOLEDB hispatientidZ001425883500hisvisitid111
+2014-07-31 09:17:01,703   [5]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOraOLEDB
+2014-07-31 09:17:09,788   [9]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOraOLEDB
+2014-07-31 09:17:33,024   [5]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOraOLEDB
+2014-07-31 09:17:37,847   [4]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOraOLEDB hispatientidZ001425883500hisvisitid111
+2014-07-31 09:18:20,630   [10]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOraOLEDB hispatientidZ001425883500hisvisitid111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 09:23:26,963   [14]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracle hispatientidZ001425883500hisvisitid111
+2014-07-31 09:26:43,108   [13]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracle hispatientidZ001425883500hisvisitid111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 09:27:11,089   [13]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 09:27:47,156   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracle hispatientidZ001425883500hisvisitid111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 09:42:45,198   [4]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracle hispatientidZ001425883500hisvisitid111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 09:57:04,823   [13]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 09:57:47,008   [10]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 09:58:03,257   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 09:58:31,317   [10]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 09:59:49,166   [5]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 10:02:16,319   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracle hispatientidZ001425883500hisvisitid111
+2014-07-31 10:02:29,330   [16]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 10:04:02,033   [14]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+2014-07-31 10:05:15,882   [5]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracle
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2014-07-31 16:15:40,134   [7]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:15:45,001   [7]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid1
+2014-07-31 16:15:56,250   [10]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid1
+2014-07-31 16:16:00,993   [7]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:16:08,216   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:16:35,968   [9]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:16:58,775   [10]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:17:40,440   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid1
+2014-07-31 16:17:50,674   [9]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:18:16,429   [8]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:20:16,627   [8]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+2014-07-31 16:20:19,139   [8]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:20:51,123   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:21:14,430   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:25:28,675   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:26:10,031   [11]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:29:02,697   [14]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:29:37,921   [13]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:29:56,298   [4]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:31:31,980   [16]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count>0 DataServerTypeOracleOLE hispatientidZ001425883500hisvisitid111
+2014-07-31 16:39:43,045   [17]   DEBUG   File   [(null)]   <(null)>   -   medV2.Count=0 DataServerTypeOracleOLE
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

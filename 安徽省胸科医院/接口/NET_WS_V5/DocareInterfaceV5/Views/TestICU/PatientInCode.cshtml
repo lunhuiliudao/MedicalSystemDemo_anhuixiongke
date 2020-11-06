@@ -1,0 +1,49 @@
+﻿@model ViewModel.PatientInCode
+@{
+    ViewBag.Title = "PatientInCode";
+}
+<div class="form-horizontal">
+    <h2>单个患者入科测试</h2>
+    @using (Html.BeginForm("PatientInCode", "TestICU", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @readonly = true })
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PatientId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PatientId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InpNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.InpNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.InpNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="测试" />
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(model => model.Result, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Result, new { @class = "form-control ws" })
+            @Html.ValidationMessageFor(model => model.Result, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>

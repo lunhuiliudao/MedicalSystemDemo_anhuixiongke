@@ -1,0 +1,35 @@
+-- Create table
+create table MED_PATIENT_MONITOR_CONFIG
+(
+  PATIENT_ID VARCHAR2(20) not null,
+  VISIT_ID   NUMBER(2) not null,
+  OPER_ID    NUMBER(2) not null,
+  CONTENT    BLOB,
+  EVENT_NO   VARCHAR2(20) not null
+)
+tablespace TSP_MEDSURGERY
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 192K
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MED_PATIENT_MONITOR_CONFIG
+  add constraint MED_PATIENT_MONITOR_CONFIG primary key (PATIENT_ID, VISIT_ID, OPER_ID, EVENT_NO)
+  using index 
+  tablespace TSP_MEDSURGERY
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Grant/Revoke object privileges 
+grant select, insert, update, delete on MED_PATIENT_MONITOR_CONFIG to ROLE_DOCARE;

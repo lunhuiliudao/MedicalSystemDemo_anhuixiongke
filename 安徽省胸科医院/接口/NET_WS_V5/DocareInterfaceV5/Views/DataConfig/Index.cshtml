@@ -1,0 +1,71 @@
+﻿@model Entitys.DataConfig
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>本地数据库配置</h2>
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataServerType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.DataServerType, new { @class = "form-control", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.DataServerType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServerName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.ServerName,   new { @class = "form-control", @readOnly = "readOnly"  })
+                @Html.ValidationMessageFor(model => model.ServerName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" id="database">
+            @Html.LabelFor(model => model.DataBase, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.DataBase, new { @class = "form-control", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.DataBase, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.UserId, new { @class = "form-control", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PassWord,   new { @class = "form-control", @readOnly = "readOnly"  })
+                @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("编辑", "Edit")
+            </div>
+        </div>
+    </div>
+@section Scripts {
+   <script type="text/javascript">
+    $(function () {
+        var obj = new Object();
+        obj.DataServerType = $("#DataServerType").val();
+        if (obj.DataServerType == "ORACLE" || obj.DataServerType == "ORACLEOLE") {
+            $("#database").hide();
+            $("[for='ServerName']").html("服务名");
+        }
+        else {
+            $("#database").show();
+            $("[for='ServerName']").html("服务器");
+        }
+    });
+</script>
+}
+

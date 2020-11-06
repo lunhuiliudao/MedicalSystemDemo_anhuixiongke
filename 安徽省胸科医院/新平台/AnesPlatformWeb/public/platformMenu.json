@@ -1,0 +1,388 @@
+﻿[
+  {
+    "name": "首页",
+    "menuKey": "SY",
+    "icon": "main",
+    "haveLevel": 1,
+    "path": "/home",
+    "permission": false
+  },
+  {
+    "name": "文书管理",
+    "menuKey": "WSGL",
+    "icon": "richangchaxun",
+    "haveLevel": 1,
+    "path": "/DocManage",
+    "permission": false
+  },
+  {
+    "name": "质控管理",
+    "menuKey": "ZKGL",
+    "icon": "zhikong",
+    "haveLevel": 3,
+    "path": "/quality",
+    "permission": false,
+    "childMenuList": [
+      {
+        "name": "质控数据统计",
+        "menuKey": "ZKGL_ZKSJTJ",
+        "permission": false,
+        "childMenuList": []
+      },
+      {
+        "name": "质控上报",
+        "menuKey": "ZKGL_ZKSB",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "不良事件登记",
+            "menuKey": "ZKGL_ZKSB_BLSJDJ",
+            "path": "/quality/register",
+            "permission": false
+          },
+          {
+            "name": "质控数据统计",
+            "menuKey": "ZKGL_ZKSB_ZKSJTJ",
+            "path": "/quality/report",
+            "permission": false
+          },
+          {
+            "name": "上报数据维护",
+            "menuKey": "ZKGL_ZKSB_SBSJWH",
+            "path": "/quality/reportmaintain",
+            "permission": false
+          },
+          {
+            "name": "质控数据上报",
+            "menuKey": "ZKGL_ZKSB_ZKSJSB",
+            "path": "/quality/reported",
+            "permission": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "局麻登记",
+    "menuKey": "JMDJ",
+    "icon": "jumadengji",
+    "haveLevel": 1,
+    "path": "/localAnesRegister",
+    "permission": false
+  },
+  {
+    "name": "日常查询",
+    "menuKey": "RCCX",
+    "icon": "richangchaxun",
+    "haveLevel": 3,
+    "path": "/anesreport",
+    "permission": false,
+    "childMenuList": [
+      {
+        "name": "手术查询",
+        "menuKey": "RCCX_SSCX",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "demo",
+            "menuKey": "demo",
+            "path": "/anesreport/demo",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "日常统计",
+        "menuKey": "RCCX_RCTJ",
+        "permission": false,
+        "childMenuList": []
+      }
+    ]
+  },
+  {
+    "name": "系统设置",
+    "menuKey": "XTSZ",
+    "icon": "shezhi",
+    "haveLevel": 3,
+    "path": "/sysmanage",
+    "permission": false,
+    "childMenuList": [
+      {
+        "name": "基础数据管理",
+        "menuKey": "XTSZ_JCSJGL",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "采集项目字典维护",
+            "menuKey": "XTSZ_JCSJGL_CJXMZDWH",
+            "path": "/sysmanage/monitorfunctioncode",
+            "permission": false
+          },
+          {
+            "name": "采集仪器字典维护",
+            "menuKey": "XTSZ_JCSJGL_CJYQZDWH",
+            "path": "/sysmanage/monitordict",
+            "permission": false
+          },
+          {
+            "name": "常用术语维护",
+            "menuKey": "XTSZ_JCSJGL_CYSYWH",
+            "path": "/sysmanage/anesinputdict",
+            "permission": false
+          },
+          {
+            "name": "单位字典维护",
+            "menuKey": "XTSZ_JCSJGL_DWZDWH",
+            "path": "/sysmanage/unitdict",
+            "permission": false
+          },
+          {
+            "name": "给药途径字典维护",
+            "menuKey": "XTSZ_JCSJGL_GYTJZDWH",
+            "path": "/sysmanage/administrationdict",
+            "permission": false
+          },
+          {
+            "name": "科室字典维护",
+            "menuKey": "XTSZ_JCSJGL_KSZDWH",
+            "path": "/sysmanage/deptdict",
+            "permission": false
+          },
+          {
+            "name": "麻醉方法字典维护",
+            "menuKey": "XTSZ_JCSJGL_MZFFZDWH",
+            "path": "/sysmanage/anesmethoddict",
+            "permission": false
+          },
+          {
+            "name": "人员字典维护",
+            "menuKey": "XTSZ_JCSJGL_RYZDWH",
+            "path": "/sysmanage/hisuserdict",
+            "permission": false
+          },
+          {
+            "name": "手术间字典维护",
+            "menuKey": "XTSZ_JCSJGL_SSJZDWH",
+            "path": "/sysmanage/operatingroom",
+            "permission": false
+          },
+          {
+            "name": "手术名称字典维护",
+            "menuKey": "XTSZ_JCSJGL_SSMCZDWH",
+            "path": "/sysmanage/operationdict",
+            "permission": false
+          },
+          {
+            "name": "诊断字典维护",
+            "menuKey": "XTSZ_JCSJGL_ZDZDWH",
+            "path": "/sysmanage/diagnosisdict",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "术中用药管理",
+        "menuKey": "XTSZ_SZYYGL",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "拔管维护",
+            "menuKey": "XTSZ_SZYYGL_BGWH",
+            "path": "/sysmanage/pullpipeedit",
+            "permission": false
+          },
+          {
+            "name": "插管维护",
+            "menuKey": "XTSZ_SZYYGL_CGWH",
+            "path": "/sysmanage/putpipeedit",
+            "permission": false
+          },
+          {
+            "name": "出液维护",
+            "menuKey": "XTSZ_SZYYGL_CYWH",
+            "path": "/sysmanage/outliquidedit",
+            "permission": false
+          },
+          {
+            "name": "辅助呼吸维护",
+            "menuKey": "XTSZ_SZYYGL_FZHXWH",
+            "path": "/sysmanage/helpbreathedit",
+            "permission": false
+          },
+          {
+            "name": "控制呼吸维护",
+            "menuKey": "XTSZ_SZYYGL_KZHXWH",
+            "path": "/sysmanage/controlbreathedit",
+            "permission": false
+          },
+          {
+            "name": "麻药维护",
+            "menuKey": "XTSZ_SZYYGL_MYWH",
+            "path": "/sysmanage/anesdrugedit",
+            "permission": false
+          },
+          {
+            "name": "麻药常用剂量",
+            "menuKey": "XTSZ_SZYYGL_MYCYJLWH",
+            "path": "/sysmanage/anesdrugusualedit1?itemClass=2",
+            "permission": false
+          },
+          {
+            "name": "一般用药维护",
+            "menuKey": "XTSZ_SZYYGL_YBYYWH",
+            "path": "/sysmanage/drugedit",
+            "permission": false
+          },
+          {
+            "name": "一般用药常用剂量",
+            "menuKey": "XTSZ_SZYYGL_YBYYCYJLWH",
+            "path": "/sysmanage/anesdrugusualedit2?itemClass=C",
+            "permission": false
+          },
+          {
+            "name": "事件维护",
+            "menuKey": "XTSZ_SZYYGL_SJWH",
+            "path": "/sysmanage/eventedit",
+            "permission": false
+          },
+          {
+            "name": "输血维护",
+            "menuKey": "XTSZ_SZYYGL_SXWH",
+            "path": "/sysmanage/inbloodedit",
+            "permission": false
+          },
+          {
+            "name": "输血常用剂量",
+            "menuKey": "XTSZ_SZYYGL_SXCYJLWH",
+            "path": "/sysmanage/anesdrugusualedit4?itemClass=B",
+            "permission": false
+          },
+          {
+            "name": "输液维护",
+            "menuKey": "XTSZ_SZYYGL_SYWH",
+            "path": "/sysmanage/inliquidedit",
+            "permission": false
+          },
+          {
+            "name": "输液常用剂量",
+            "menuKey": "XTSZ_SZYYGL_SYCYJLWH",
+            "path": "/sysmanage/anesdrugusualedit3?itemClass=3",
+            "permission": false
+          },
+          {
+            "name": "输氧维护",
+            "menuKey": "XTSZ_SZYYGL_SYQWH",
+            "path": "/sysmanage/inoxygenedit",
+            "permission": false
+          },
+          {
+            "name": "自主呼吸维护",
+            "menuKey": "XTSZ_SZYYGL_ZZHXWH",
+            "path": "/sysmanage/freebreathedit",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "模板管理",
+        "menuKey": "XTSZ_MBGL",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "个人路径管理",
+            "menuKey": "XTSZ_MBGL_GRLJGL",
+            "path": "/sysmanage/eventtemplete",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "质控配置",
+        "menuKey": "XTSZ_ZKPZ",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "质控项目定义",
+            "menuKey": "XTSZ_ZKPZ_ZKXMDY",
+            "path": "/sysmanage/quanlityitemedit",
+            "permission": false
+          },
+          {
+            "name": "质控报表定义",
+            "menuKey": "XTSZ_ZKPZ_ZKBBDY",
+            "path": "/sysmanage/quanlityreportedit",
+            "permission": false
+          },
+          {
+            "name": "质控上报项目适配",
+            "menuKey": "XTSZ_ZKPZ_ZKSBXMSP",
+            "path": "/sysmanage/quanlityuploadconfig",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "收费配置",
+        "menuKey": "XTSZ_SFPZ",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "收费项目配置",
+            "menuKey": "XTSZ_SFPZ_SFXMPZ",
+            "path": "/sysmanage/chargeitemsconfig",
+            "permission": false
+          },
+          {
+            "name": "收费模板管理",
+            "menuKey": "XTSZ_SFPZ_SFMBGL",
+            "path": "/sysmanage/chargetemplateedit",
+            "permission": false
+          }
+        ]
+      },
+      {
+        "name": "其他配置",
+        "menuKey": "XTSZ_QTPZ",
+        "permission": false,
+        "childMenuList": [
+          {
+            "name": "导航配置",
+            "menuKey": "XTSZ_QTPZ_DHPZ",
+            "path": "/sysmanage/documentconfig",
+            "permission": false
+          },
+          {
+            "name": "工具",
+            "menuKey": "XTSZ_QTPZ_GJPZ",
+            "path": "/sysmanage/helpconfig",
+            "permission": false
+          },
+          {
+            "name": "默认体征配置",
+            "menuKey": "XTSZ_QTPZ_MRTZPZ",
+            "path": "/sysmanage/vitalsignsconfig",
+            "permission": false
+          },
+          {
+            "name": "数据归类",
+            "menuKey": "XTSZ_QTPZ_SJPZ",
+            "path": "/sysmanage/shujuconfig",
+            "permission": false
+          },
+          {
+            "name": "统计配置",
+            "menuKey": "XTSZ_QTPZ_TJPZ",
+            "path": "/sysmanage/customconfig",
+            "permission": false
+          },
+          {
+            "name": "一体机配置",
+            "menuKey": "XTSZ_QTPZ_YTJPZ",
+            "path": "/sysmanage/medconfig",
+            "permission": false
+          }
+        ]
+      }
+    ]
+  }
+]

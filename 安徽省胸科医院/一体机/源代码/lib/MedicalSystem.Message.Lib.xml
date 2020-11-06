@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MedicalSystem.Message.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:MedicalSystem.Message.Lib.Connection">
+            <summary>
+            连接调用类
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateConnectionClosed">
+            <summary>
+            失去连接
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateSendMessage">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateSendGroupMessage">
+            <summary>
+            分组消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateOnLine">
+            <summary>
+            上线消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateUnLine">
+            <summary>
+            下线消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateGetUserList">
+            <summary>
+            获取在线用户列表
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateGetGroupList">
+            <summary>
+            获取分组列表
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.DelegateUserUnLineMessage">
+            <summary>
+            用户不在线消息
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Message.Lib.Connection.ServerURI">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="ipAddress">ip地址:端口,默认为localhost:9999</param>
+            <param name="gropuName">分组信息，只允许加入1个分组</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.Connect">
+            <summary>
+            连接服务
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.Connection_Closed">
+            <summary>
+            失去连接
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendALLMessage(System.String)">
+            <summary>
+            群发消息
+            </summary>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendMessage(System.String,System.String)">
+            <summary>
+            指定用户发消息
+            </summary>
+            <param name="name">接受用户名</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendHeartBeatMessage">
+            <summary>
+            手动发送心跳包，建议5秒一次
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.SendGroupMessage(System.String)">
+            <summary>
+            分组消息
+            </summary>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.Close">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.GetUserList">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.CreateGroup(System.String)">
+            <summary>
+            创建分组
+            </summary>
+            <param name="groupName">分组名称</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.AddToGroup(System.String)">
+            <summary>
+            添加到分组
+            </summary>
+            <param name="groupName">分组名称</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.DeleteGroup(System.String)">
+            <summary>
+            删除分组
+            </summary>
+            <param name="groupName">分组名称</param>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.GetGroupList">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Message.Lib.Connection.ExitGroup">
+            <summary>
+            退出分组
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.GroupName">
+            <summary>
+            分组信息
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.ConnectionStatus">
+            <summary>
+            是否已经连接
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.HubProxy">
+            <summary>
+            代理类
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Message.Lib.Connection.hubConnection">
+            <summary>
+            代理连接类
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.ConnectionClosedDelegate">
+            <summary>
+            失去连接委托
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.SendAllMessageDelegate">
+            <summary>
+            发送消息委托
+            </summary>
+            <param name="sendConnectionId">连接ID</param>
+            <param name="sendName">用户名</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.SendMessageGroupDelegate">
+            <summary>
+            分组消息委托
+            </summary>
+            <param name="sendConnectionId">连接ID</param>
+            <param name="sendName">用户名</param>
+            <param name="groupName">分组名称</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.LineDelegate">
+            <summary>
+            上下线消息委托
+            </summary>
+            <param name="connectionId">连接ID</param>
+            <param name="name">用户名</param>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.UserListDelegate">
+            <summary>
+            获取在线用户列表委托
+            </summary>
+            <param name="msgUserList">用户列表</param>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.GroupListDelegate">
+            <summary>
+            获取分组列表委托
+            </summary>
+            <param name="groupList">分组列表</param>
+        </member>
+        <member name="T:MedicalSystem.Message.Lib.Connection.UserUnLineMessageDelegate">
+            <summary>
+            用户不在线消息委托
+            </summary>
+            <param name="userName">用户名</param>
+        </member>
+    </members>
+</doc>

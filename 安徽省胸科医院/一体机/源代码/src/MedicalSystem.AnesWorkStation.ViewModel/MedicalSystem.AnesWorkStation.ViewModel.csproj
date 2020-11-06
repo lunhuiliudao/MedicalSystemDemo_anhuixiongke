@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69254EAE-807F-419B-9917-4560E3B921A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.AnesWorkStation.ViewModel</RootNamespace>
+    <AssemblyName>MedicalSystem.AnesWorkStation.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper.ORM.v1.1, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Dapper.ORM.v1.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1">
+      <HintPath>..\..\lib\DevExpress.Data.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1">
+      <HintPath>..\..\lib\DevExpress.Utils.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1">
+      <HintPath>..\..\lib\DevExpress.XtraBars.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1">
+      <HintPath>..\..\lib\DevExpress.XtraEditors.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1">
+      <HintPath>..\..\lib\DevExpress.XtraGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1">
+      <HintPath>..\..\lib\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MedicalSystem.AnesWorkStationCoordination.Model">
+      <HintPath>..\..\lib\小麦助手\MedicalSystem.AnesWorkStationCoordination.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Coordination.Interface">
+      <HintPath>..\..\lib\小麦助手\MedicalSystem.Coordination.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Message.Common">
+      <HintPath>..\..\lib\MedicalSystem.Message.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Message.Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MedicalSystem.Message.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutViewModel.cs" />
+    <Compile Include="AnesGraphViewModel\TestViewModel.cs" />
+    <Compile Include="AnesScoreViewModel\BalthazarViewModel.cs" />
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="CommonViewModel\ImageHelper.cs" />
+    <Compile Include="CommonViewModel\StringHelper.cs" />
+    <Compile Include="GCExtension.cs" />
+    <Compile Include="InOperationViewModel\AnesEventEditorViewModel\AnesDrugEditorViewModel.cs" />
+    <Compile Include="InOperationViewModel\AnesEventEditorViewModel\AnesEventEditorViewModel.cs" />
+    <Compile Include="InOperationViewModel\AnesthesiaPathViewModel\AnesthesiaPathViewModel.cs" />
+    <Compile Include="InOperationViewModel\AnesthesiaPathViewModel\SaveAnesthesiaPathViewModel.cs" />
+    <Compile Include="InOperationViewModel\BaseViewModel\InOperationViewModel.cs" />
+    <Compile Include="InOperationViewModel\BaseViewModel\VitalSignYAxisViewModel.cs" />
+    <Compile Include="InOperationViewModel\BloodGasAnalysisViewModel\AddBloodGasMasterViewModel.cs" />
+    <Compile Include="InOperationViewModel\BloodGasAnalysisViewModel\BloodGasAnalysisViewModel.cs" />
+    <Compile Include="InOperationViewModel\CameraViewModel.cs" />
+    <Compile Include="InOperationViewModel\DrugGraphViewModel\DrugGraphViewModel.cs" />
+    <Compile Include="InOperationViewModel\EmergencyRegisterViewModel\EmergencyRegisterViewModel.cs" />
+    <Compile Include="InOperationViewModel\BaseViewModel\ScheduledTimeViewModel.cs" />
+    <Compile Include="InOperationViewModel\IndividuationVitalSignViewModel.cs" />
+    <Compile Include="InOperationViewModel\InHospitalRegisterViewModel\DateRegisterViewModel.cs" />
+    <Compile Include="InOperationViewModel\InHospitalRegisterViewModel\MonitorBindViewModel.cs" />
+    <Compile Include="InOperationViewModel\InHospitalRegisterViewModel\InHospitalRegisterViewModel.cs" />
+    <Compile Include="InOperationViewModel\InHospitalRegisterViewModel\OutHospitalRegisterViewModel.cs" />
+    <Compile Include="InOperationViewModel\IntensiveSignViewModel.cs" />
+    <Compile Include="InOperationViewModel\LoadReportViewModel\LoadReportViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\AnesFreeViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\AssayReportViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\ChangeOperRoomNoViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\ChargeSubmitViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\ChargeTemplateMethodViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\ChargeTempletViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationCanceledViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationInformationViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationInterfaceControlViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationJumpViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationRescueViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperationScreenViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\OperInfoViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\PacsInterfaceViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationInformationViewModel\PatConfirmControlViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationShiftViewModel\OperationShiftChangeViewModel.cs" />
+    <Compile Include="InOperationViewModel\OperationShiftViewModel\OperationShiftViewModel.cs" />
+    <Compile Include="InOperationViewModel\SignSwicthControlViewModel.cs" />
+    <Compile Include="InOperationViewModel\UnPostPDFControlViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignEditorViewModel\AddVitalSignTitleViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignEditorViewModel\RecordVitalSignViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignEditorViewModel\VitalSignEditorViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignGraphViewModel\BreathParaViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignGraphViewModel\EventMarkViewModel.cs" />
+    <Compile Include="InOperationViewModel\VitalSignGraphViewModel\VitalSignViewModel.cs" />
+    <Compile Include="KeyBoardCache\KeyBoardStateCache.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MessageTokens.cs" />
+    <Compile Include="OperationInformationViewModel\PACUQueryViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="QualityControl\QualityControlViewModel.cs" />
+    <Compile Include="ToolBarViewModel\BottomMenuItemDictionary.cs" />
+    <Compile Include="ToolBarViewModel\BottomMenuViewModel.cs" />
+    <Compile Include="TransMessageManager.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="WorkListViewModel\OperatingPatientViewModel.cs" />
+    <Compile Include="WorkListViewModel\SearchPatientListViewModel.cs" />
+    <Compile Include="WorkListViewModel\SearchViewModel.cs" />
+    <Compile Include="WorkListViewModel\TodaySurgeryViewModel.cs" />
+    <Compile Include="WorkListViewModel\TomorrowSurgeryViewModel.cs" />
+    <Compile Include="WorkListViewModel\WeekSurgeryViewModel.cs" />
+    <Compile Include="WorkListViewModel\WordListViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.Anes.CustomProject\MedicalSystem.Anes.CustomProject.csproj">
+      <Project>{0d688883-0fe9-4274-94a1-0be30460724e}</Project>
+      <Name>MedicalSystem.Anes.CustomProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.Document\MedicalSystem.Anes.Document.csproj">
+      <Project>{d8dbdd51-dac9-4add-a4a3-6b08115e4777}</Project>
+      <Name>MedicalSystem.Anes.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.FrameWork\MedicalSystem.Anes.FrameWork.csproj">
+      <Project>{2a23bda0-1f81-4779-b1c4-a874b2475750}</Project>
+      <Name>MedicalSystem.Anes.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.DataServices\MedicalSystem.AnesWorkStation.DataServices.csproj">
+      <Project>{95c5bb6a-6351-4382-90c9-938c9a3bf997}</Project>
+      <Name>MedicalSystem.AnesWorkStation.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Domain\MedicalSystem.AnesWorkStation.Domain.csproj">
+      <Project>{ee71da80-4e68-4a94-aefa-acbe2565be5e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.KeyBoard\MedicalSystem.AnesWorkStation.KeyBoard.csproj">
+      <Project>{5342b57a-ecc7-445a-8ea0-f4d191c9518e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.KeyBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Model\MedicalSystem.AnesWorkStation.Model.csproj">
+      <Project>{0b3a7dbd-f135-4c43-81b7-29ca55afdddd}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Wpf\MedicalSystem.AnesWorkStation.Wpf.csproj">
+      <Project>{f03c5a1f-f2ba-4783-b65e-56253b305de2}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Score\Score.csproj">
+      <Project>{3059098a-7f49-44c9-9f15-76aee0bb6f0b}</Project>
+      <Name>Score</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChargeViewModel\" />
+    <Folder Include="CoordinationViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

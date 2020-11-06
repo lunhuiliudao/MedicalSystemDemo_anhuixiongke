@@ -1,0 +1,186 @@
+{
+  "operNotice": [
+    {
+      "field": "SCHEDULEDDATETIME",
+      "lable": "时间",
+      "width": 80
+    },
+    {
+      "field": "OPERROOMNO",
+      "lable": "手术间",
+      "width": 90
+    },
+    {
+      "field": "SEQUENCE",
+      "lable": "台次",
+      "width": 70
+    },
+    {
+      "field": "INP_NO",
+      "lable": "住院号",
+      "width": 90
+    },
+    {
+      "field": "PATIENTNAME",
+      "lable": "姓名",
+      "width": 80
+    },
+    {
+      "field": "SEX",
+      "lable": "性别",
+      "width": 70
+    },
+    {
+      "field": "WARD_CODE_NAME",
+      "lable": "病区",
+      "width": 120
+    },
+    {
+      "field": "AGE",
+      "lable": "年龄",
+      "width": 70
+    },
+    {
+      "field": "BED_NO",
+      "lable": "床号",
+      "width": 70
+    },
+    {
+      "field": "DIAG_BEFORE_OPERATION",
+      "lable": "诊断",
+      "width": 120
+    },
+    {
+      "field": "OPERATION_NAME",
+      "lable": "手术名称",
+      "width": 120
+    },
+    {
+      "field": "ANES_METHOD",
+      "lable": "麻醉方式",
+      "width": 120
+    },
+    {
+      "field": "SURGEON_NAME",
+      "lable": "主刀医生",
+      "width": 100
+    },
+    {
+      "field": "ANES_DOCTOR_NAME",
+      "lable": "主麻",
+      "width": 90
+    },
+    {
+      "field": "FIRST_ANES_ASSISTANT_NAME",
+      "lable": "副麻",
+      "width": 90
+    },
+    {
+      "field": "FIRST_OPER_NURSE_NAME",
+      "lable": "洗手护士1",
+      "width": 110
+    },
+    {
+      "field": "FIRST_SUPPLY_NURSE_NAME",
+      "lable": "巡回护士1",
+      "width": 110
+    },
+    {
+      "field": "NOTES_ON_OPERATION",
+      "lable": "备注",
+      "width": 0
+    }
+  ],
+  "operNoticePrint": [
+    {
+      "field": ["OPERROOMNO","SEQUENCE"],
+      "lable": "手术间",
+      "separator":"—",
+      "width": "3%"
+    },
+    {
+      "field": ["INP_NO"],
+      "lable": "住院号",
+      "separator":"",
+      "width": "3%"
+    },
+    {
+      "field": ["PATIENTNAME"],
+      "lable": "姓名",
+      "separator":"",
+      "width": "4%"
+    },
+    {
+      "field": ["SEX"],
+      "lable": "性别",
+      "separator":"",
+      "width": "3%"
+    },
+    {
+      "field": ["WARD_CODE_NAME"],
+      "lable": "病区",
+      "separator":"",
+      "width": "3%"
+    },
+    {
+      "field": ["AGE"],
+      "lable": "年龄",
+      "separator":"",
+      "width": "3%"
+    },
+    {
+      "field": ["BED_NO"],
+      "lable": "床号",
+      "separator":"",
+      "width": "3%"
+    },
+    {
+      "field": ["DIAG_BEFORE_OPERATION"],
+      "lable": "诊断",
+      "separator":"",
+      "width": "10%"
+    },
+    {
+      "field": ["OPERATION_NAME"],
+      "lable": "手术名称",
+      "separator":"",
+      "width": "10%"
+    },
+    {
+      "field": ["ANES_METHOD"],
+      "lable": "麻醉方式",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["SURGEON_NAME"],
+      "lable": "主刀医生",
+      "separator":"",
+      "width": "5%"
+    },
+    {
+      "field": ["ANES_DOCTOR_NAME","FIRST_ANES_ASSISTANT_NAME"],
+      "lable": "麻醉医师",
+      "separator":" ",
+      "width": "7%"
+    },
+    {
+      "field": ["FIRST_OPER_NURSE_NAME","SECOND_OPER_NURSE_NAME"],
+      "lable": "洗手护士",
+      "separator":" ",
+      "width": "7%"
+    },
+    {
+      "field": ["FIRST_SUPPLY_NURSE_NAME","SECOND_SUPPLY_NURSE_NAME"],
+      "lable": "巡回护士",
+      "separator":" ",
+      "width": "7%"
+    },
+    {
+      "field": ["NOTES_ON_OPERATION"],
+      "lable": "备注",
+      "separator":"",
+      "width": "10%"
+    }
+  ]
+}

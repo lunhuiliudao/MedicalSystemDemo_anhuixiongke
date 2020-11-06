@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/UpdateServer/Views/Shared/_Page.cshtml";
+}
+
+<table id="dg" class="easyui-datagrid" title="" style="width:100%;height:100%"
+       data-options="rownumbers:true,singleSelect:true,pagination:true,pageSize:10,toolbar:'#tb'">
+    <thead>
+        <tr>
+            <th data-options="field:'APP_KEY',width:80">主键号</th>
+            <th data-options="field:'APP_NAME',width:150">应用程序名称</th>
+            <th data-options="field:'VER_NO',width:60,formatter:rowformater,onClickRow:delHsCode">版本号</th>
+            @*<th data-options="field:'IS_FORCIBLY',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:100">是否强制更新</th>
+            <th data-options="field:'IS_TEST',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:100">是否为测试版</th>*@
+            <th data-options="field:'ROLL_BACK',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:100">是否回退</th>
+            <th data-options="field:'ROLL_BACK_DESC',width:200,align:'left'">回退描述</th>
+            <th data-options="field:'DESCRIPTION',width:200,align:'left',formatter:formatCellTooltip">版本描述</th>
+            <th data-options="field:'DOWNLOAD_NUM',width:60">下载数量</th>
+            <th data-options="field:'UPDATED_NUM',width:60">更新数量</th>
+            <th data-options="field:'CREATER',width:100">创建人</th>
+            <th data-options="field:'CREATE_TIME',width:120,formatter:dateTime">创建时间</th>
+            <th data-options="field:'MODIFYER',width:100">修改人</th>
+            <th data-options="field:'MODIFY_TIME',width:120,formatter:dateTime">修改时间</th>
+        </tr>
+    </thead>
+</table>
+<div id="tb" style="padding:5px;height:auto">
+    <div style="margin-bottom:5px">
+        <select id="APP_ID" class="easyui-combogrid" name="APP_ID" style="width:350px" data-options="
+                panelWidth: 350,
+                idField: 'APP_ID' ,
+                textField: 'APP_NAME' ,
+                url: '/App/GetList' ,
+                method: 'post' ,
+                columns: [[
+                {field:'APP_KEY',title:'Key',width:80},
+                {field:'APP_NAME',title:'应用程序名称',width:200}
+                ]],
+                fitColumns: true,
+                prompt:'应用程序'"></select>
+        <a id="submit_search">查询</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="winOpen('修改应用程序', 800, 500, '/UpdateServer/Publish/Index', '#dg', 'VER_ID')">修改版本</a>
+        @*<a href="#" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="TipSubmitAjax('确定要改为强制更新？', '/UpdateServer/Version/UpdateVerInfoByForcibly', '#dg', 'VER_ID')">强制更新</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="TipSubmitAjax('确定要测试转正式版？', '/UpdateServer/Version/UpdateVerInfoByPublish', '#dg', 'VER_ID')">测试转正式版</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-back" plain="true" onclick="winOpen('回退版本', 500, 200, '/UpdateServer/Version/RollBackVerionView', '#dg', 'VER_ID')">回退版本</a>*@
+        <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="TipSubmitAjax('确定要此更新版？', '/UpdateServer/Version/Delete', '#dg', 'VER_ID')" title="只能删除没有更新记录的版，不管是测试版还是正式版，而且只能删除最近一个版">删除版本</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function getData() {
+        var jsonurl = "/UpdateServer/Version/GetList?&appID=" + $('#APP_ID').combogrid('getValue');
+        var data = "";
+        $.ajax({
+            url: jsonurl,
+            async: false,
+            type: "post",
+            success: function (json) {
+                data = json;
+            }
+        });
+        return data;
+    }
+
+    function rowformater(value, row, index) {
+        return '<a href="#" onclick="delHsCode(' + index + ')">' + value + '</a>';
+    }
+    function delHsCode(index) {
+        $('#dg').datagrid('selectRow', index);
+        var row = $('#dg').datagrid('getSelected');
+        if (row.VER_ID != null && row.VER_ID !== undefined)
+            winOpen('版本更新记录', 850, 500, '/UpdateServer/VerUpdateRec/VerUpdateRecView', '#dg', 'VER_ID');
+    }
+
+</script>

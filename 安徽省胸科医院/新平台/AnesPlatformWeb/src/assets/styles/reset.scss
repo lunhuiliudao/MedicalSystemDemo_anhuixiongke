@@ -1,0 +1,334 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  // border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: MicrosoftYaHei, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.mdsdCheckBox {
+  // element checkbox 全局样式修改
+  .el-checkbox {
+    background-color: rgb(247, 247, 247);
+  }
+
+  .el-checkbox.is-bordered {
+    padding: 7px 20px 9px 10px;
+  }
+
+  .el-checkbox__inner {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 1px solid rgba(220, 220, 220, 1);
+  }
+
+  .el-checkbox__input {
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-focus.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #fff;
+    border-color: #4ac773;
+  }
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: gainsboro;
+  }
+
+  .el-checkbox__inner::after {
+    border: 1px solid #4ac773;
+    border-left: 0;
+    border-top: 0;
+    height: 10px;
+    left: 6px;
+  }
+
+  .el-checkbox__inner:hover {
+    border-color: #dcdfe6;
+  }
+
+  .el-checkbox.is-bordered.is-checked {
+    border-color: #4ac773;
+    background-color: #c1eaca;
+  }
+
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #4ac773;
+  }
+
+  .el-checkbox__label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.mdsdCheckBoxNoBorder {
+  // element checkbox 全局样式修改;无边框情况
+  .el-checkbox {
+    background-color: transparent;
+  }
+
+  .el-checkbox__inner {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 1px solid rgba(220, 220, 220, 1);
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-focus.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #4ac773;
+    border-color: #4ac773;
+  }
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: gainsboro;
+  }
+
+  .el-checkbox__inner::after {
+    border: 2px solid white;
+    border-left: 0;
+    border-top: 0;
+    height: 10px;
+    left: 6px;
+  }
+
+  .el-checkbox__inner:hover {
+    border-color: #dcdfe6;
+  }
+
+  .el-checkbox.is-bordered.is-checked {
+    border-color: #4ac773;
+    background-color: #c1eaca;
+  }
+
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: rgba(101, 101, 101, 1);
+  }
+
+  .el-checkbox__label {
+    font-size: 12px;
+  }
+}
+
+.mdsdRadioSingle {
+  .el-radio__inner {
+    width: 16px;
+    height: 16px;
+  }
+
+  .el-radio__input.is-checked .el-radio__inner {
+    border-color: rgba(121, 228, 156, 1);
+
+    background: transparent;
+  }
+
+  .el-radio__inner:hover {
+    border-color: #dcdfe6;
+  }
+
+  .el-radio:focus:not(.is-focus):not(:active):not(.is-disabled)
+    .el-radio__inner {
+    -webkit-box-shadow: 0 0 0 0 #dcdfe6;
+    box-shadow: 0 0 0 0 #dcdfe6;
+  }
+
+  .el-radio__inner::after {
+    background-color: #7ce49e;
+    width: 8px;
+    height: 8px;
+  }
+  .el-radio__input.is-checked + .el-radio__label {
+    color: #656565;
+  }
+
+  .el-radio__label {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}
+
+.mdsdRadioSingle2 {
+  .el-radio__inner {
+    width: 16px;
+    height: 16px;
+  }
+
+  .el-radio__input.is-checked .el-radio__inner {
+    border-color: #4ac773;
+
+    background: #4ac773;
+  }
+
+  .el-radio__inner:hover {
+    border-color: #dcdfe6;
+  }
+
+  .el-radio:focus:not(.is-focus):not(:active):not(.is-disabled)
+    .el-radio__inner {
+    -webkit-box-shadow: 0 0 0 0 #dcdfe6;
+    box-shadow: 0 0 0 0 #dcdfe6;
+  }
+
+  .el-radio__input.is-checked .el-radio__inner::after {
+    -webkit-transform: rotate(45deg) scaleY(1);
+    transform: rotate(45deg) scaleY(1);
+  }
+
+  .el-radio__inner::after {
+    transform: rotate(45deg) scaleY(0);
+    background-color: #4ac773;
+    border: 1.5px solid white;
+    border-radius: 0;
+    width: 3px;
+    border-left: 0;
+    border-top: 0;
+    height: 10px;
+    left: 5px;
+    top: 0px;
+  }
+  .el-radio__input.is-checked + .el-radio__label {
+    color: #656565;
+  }
+
+  .el-radio__label {
+    font-size: 12px;
+    padding-left: 10px;
+    margin-right: 8px;
+  }
+}

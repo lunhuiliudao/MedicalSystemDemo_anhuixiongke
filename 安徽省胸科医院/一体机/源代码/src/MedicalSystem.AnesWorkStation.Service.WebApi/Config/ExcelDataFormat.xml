@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<DICT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <model>
+    <groupname>江苏省麻醉质控.xlsx</groupname>
+    <group>
+      <key>mdsd临床</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd昏迷</key>
+      <value>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>麻醉质控综合查询.xlsx</groupname>
+    <group>
+      <key>mdsd麻醉科医患比-分子</key>
+      <value>
+      </value>
+      <isShow>true</isShow>
+    </group>
+    <group>
+      <key>mdsd麻醉科医患比-分母</key>
+      <value>102</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-分子</key>
+      <value>SELECT  COUNT (*) FROM V_MED_ANES_INFO M WHERE M.START_DATE_TIME&gt;={0} AND  M.START_DATE_TIME&lt;{1}</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-分母</key>
+      <value>SELECT  COUNT (*) FROM V_MED_ANES_INFO M WHERE M.START_DATE_TIME&gt;={0} AND  M.START_DATE_TIME&lt;{1} AND M.ASA_GRADE_CLASS IS NOT NULL</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅰ级-分子</key>
+      <value>SELECT  COUNT (*) FROM V_MED_ANES_INFO M WHERE M.START_DATE_TIME&gt;={0} AND  M.START_DATE_TIME&lt;{1} AND M.ASA_GRADE_CLASS ='Ⅰ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅰ级-分母</key>
+      <value>SELECT  COUNT (*) FROM V_MED_ANES_INFO M WHERE M.START_DATE_TIME&gt;={0} AND  M.START_DATE_TIME&lt;{1} AND M.ASA_GRADE_CLASS IS NOT NULL</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅱ级-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS ='Ⅱ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅱ级-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅲ级-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS ='Ⅲ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅲ级-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsd麻醉科医患比-分子/mdsd麻醉科医患比-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-分子/mdsdASA分级麻醉患者比例-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅰ级-分子/mdsdASA分级麻醉患者比例-Ⅰ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅱ级-分子/mdsdASA分级麻醉患者比例-Ⅰ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅲ级-分子/mdsdASA分级麻醉患者比例-Ⅲ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅳ级-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS ='Ⅳ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅳ级-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅳ级-分子/mdsdASA分级麻醉患者比例-Ⅳ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅴ级-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS ='Ⅴ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅴ级-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅴ级-分子/mdsdASA分级麻醉患者比例-Ⅴ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅵ级-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS ='Ⅵ级'</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅵ级-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-Ⅵ级-分子/mdsdASA分级麻醉患者比例-Ⅵ级-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-其他-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ASA_GRADE_CLASS  not in ('Ⅵ级','Ⅰ级','Ⅱ级','Ⅲ级','Ⅳ级','Ⅴ级') </value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-其他-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ASA_GRADE_CLASS is not null</value>
+    </group>
+    <group>
+      <key>mdsdASA分级麻醉患者比例-其他-分子/mdsdASA分级麻醉患者比例-其他-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd急诊非择期麻醉比例-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.EINDICATOR='急诊'</value>
+    </group>
+    <group>
+      <key>mdsd急诊非择期麻醉比例-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd急诊非择期麻醉比例-分子/mdsd急诊非择期麻醉比例-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉方式比例-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD is not null</value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉方式比例-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉方式比例-分子/mdsd各类麻醉方式比例-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-椎管内麻醉-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD ='椎管内麻醉'</value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-椎管内麻醉-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-椎管内麻醉-分子/mdsd各类麻醉-椎管内麻醉-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-插管全麻-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD ='插管全麻'</value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-插管全麻-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-插管全麻-分子/mdsd各类麻醉-插管全麻-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-非插管全麻-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD like '%非插管全麻%'</value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-非插管全麻-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-非插管全麻-分子/mdsd各类麻醉-非插管全麻-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-复合麻醉-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD like '%复合麻醉%'</value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-复合麻醉-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-复合麻醉-分子/mdsd各类麻醉-复合麻醉-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-其他麻醉方式-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and m.ANESTHESIA_METHOD  not like '%非插管全麻%' and
+        m.ANESTHESIA_METHOD  not like '%插管全麻%'
+      </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-其他麻醉方式-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd各类麻醉-其他麻醉方式-分子/mdsd各类麻醉-其他麻醉方式-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后手术取消率-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.CANCELED_TYPE='1'</value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后手术取消率-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后手术取消率-分子/mdsd麻醉开始后手术取消率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉后监测治疗室（PACU）转出延迟率-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ANES_START_TIME is not null and IN_PACU_DATE_TIME is not null and OUT_PACU_DATE_TIME is not null</value>
+    </group>
+    <group>
+      <key>mdsd麻醉后监测治疗室（PACU）转出延迟率-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} </value>
+    </group>
+    <group>
+      <key>mdsd麻醉后监测治疗室（PACU）转出延迟率-分子/mdsd麻醉后监测治疗室（PACU）转出延迟率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsdPACU入室低体温率-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  PACU_TEMPERATURE =1 and  m.ANES_START_TIME is not null and IN_PACU_DATE_TIME is not null </value>
+    </group>
+    <group>
+      <key>mdsdPACU入室低体温率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ANES_START_TIME is not null
+        and IN_PACU_DATE_TIME is not null
+      </value>
+    </group>
+    <group>
+      <key>mdsdPACU入室低体温率-分子/mdsdPACU入室低体温率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd非计划转入ICU率-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  NO_PLAN_IN_ICU=1 and  m.ANES_START_TIME is not null and IN_PACU_DATE_TIME is not null </value>
+    </group>
+    <group>
+      <key>mdsd非计划转入ICU率-分母</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1}   and  IN_ICU =1 and ANES_START_TIME is not null </value>
+    </group>
+    <group>
+      <key>mdsd非计划转入ICU率-分子/mdsd非计划转入ICU率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd非计划二次气管插管率-分子</key>
+      <value>select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  TRACHEA_6H=1 and  m.ANES_START_TIME is not null and OPER_STATUS&gt;=35</value>
+    </group>
+    <group>
+      <key>mdsd非计划二次气管插管率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  TRACHEA_REMOVE=1 and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd非计划二次气管插管率-分子/mdsd非计划二次气管插管率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时死亡率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  ANES_START_24H_DEATH=1 and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时死亡率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时死亡率-分子/mdsd麻醉开始后24小时死亡率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时骤停率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  ANES_START_24H_STOP=1 and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时骤停率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉开始后24小时骤停率-分子/mdsd麻醉开始后24小时骤停率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd术中自体血输注率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and  m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd术中自体血输注率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1}  and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd术中自体血输注率-分子/mdsd术中自体血输注率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉期间严重过敏反应发生率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and ANES_ANAPHYLAXIS=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉期间严重过敏反应发生率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and   m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉期间严重过敏反应发生率-分子/mdsd麻醉期间严重过敏反应发生率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd椎管内麻醉后严重神经并发症发生率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and SPINAL_ANES=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd椎管内麻醉后严重神经并发症发生率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and SPINAL_ANES=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd椎管内麻醉后严重神经并发症发生率-分子/mdsd椎管内麻醉后严重神经并发症发生率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd中心静脉穿刺严重并发症发生率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and CENTRAL_VENOUS=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd中心静脉穿刺严重并发症发生率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1}  and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd中心静脉穿刺严重并发症发生率-分子/mdsd中心静脉穿刺严重并发症发生率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd全麻气管插管拔管后声音嘶哑发生率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and TRACHEA_HOARSE=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd全麻气管插管拔管后声音嘶哑发生率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and GEN_ANES_TRACHEA=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd全麻气管插管拔管后声音嘶哑发生率-分子/mdsd全麻气管插管拔管后声音嘶哑发生率-分母</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉后新发昏迷发生率-分子</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1} and AFTER_ANES_COMA=1 and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉后新发昏迷发生率-分母</key>
+      <value>
+        select  count (*) from V_MED_ANES_INFO m where m.start_date_time&gt;={0} and  m.start_date_time&lt;{1}  and m.ANES_START_TIME is not null
+        and OPER_STATUS&gt;=35
+      </value>
+    </group>
+    <group>
+      <key>mdsd麻醉后新发昏迷发生率-分子/mdsd麻醉后新发昏迷发生率-分母</key>
+      <value>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>新建 XLSX 工作表.xlsx.xlsx</groupname>
+  </model>
+  <model>
+    <groupname>23.xlsx</groupname>
+    <group>
+      <key>MDSD-QYRMYY-20170719</key>
+      <value>
+      </value>
+    </group>
+    <group>
+      <key>MDSD-ZSZYY-MZ02</key>
+      <value>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>3.xls</groupname>
+    <group>
+      <key>mdsdTest</key>
+      <value>
+      </value>
+      <isShow>true</isShow>
+    </group>
+  </model>
+  <model>
+    <groupname>222.xlsx</groupname>
+  </model>
+  <model>
+    <groupname>1234.xls</groupname>
+  </model>
+  <model>
+    <groupname>j1.xls</groupname>
+    <group>
+      <key>MDSD-QYRMYY-20170719</key>
+      <value>
+      </value>
+      <isShow>true</isShow>
+    </group>
+  </model>
+  <model>
+    <groupname>j2.xls</groupname>
+  </model>
+  <model>
+    <groupname>急诊-择期.xlsx</groupname>
+  </model>
+  <model>
+    <groupname>麻醉组医院客户化进度周报20120817.xls</groupname>
+  </model>
+  <model>
+    <groupname>麻醉组医院客户化进度周报20120915.xls</groupname>
+  </model>
+  <model>
+    <groupname>工作日加班统计表-沈志荣.xlsx</groupname>
+  </model>
+  <model>
+    <groupname>1.xlsx</groupname>
+  </model>
+</DICT>

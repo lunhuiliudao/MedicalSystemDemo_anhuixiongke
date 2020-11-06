@@ -1,0 +1,1483 @@
+
+  <Object type="System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="Form1" children="Controls">
+    <Object type="MedicalSystem.Anes.Document.Controls.MPanel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MPanel9" children="Controls">
+      <Object type="MedicalSystem.Anes.Document.Controls.MPanel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MPanel8" children="Controls">
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox24" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox24</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.记录者</Property>
+          <Property name="BindFieldName">术前病例讨论.记录者</Property>
+          <Property name="DictTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputValueColumnName">USER_JOB_ID</Property>
+          <Property name="DictValueFieldName">USER_JOB_ID</Property>
+          <Property name="CelerityInputCodeColumnName">USER_NAME</Property>
+          <Property name="DisplayFieldName">USER_NAME</Property>
+          <Property name="CelerityInputSqlWhere">USER_DEPT in %config_deptcodestr%</Property>
+          <Property name="DictWhereString">USER_DEPT in %config_deptcodestr%</Property>
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="BottomLineStyle">Dash</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">506, 934</Property>
+          <Property name="Name">MTextBox24</Property>
+          <Property name="Size">177, 21</Property>
+          <Property name="TabIndex">45</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox26" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox26</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_ANESTHESIA_PLAN</Property>
+          <Property name="SourceTableName">MED_ANESTHESIA_PLAN</Property>
+          <Property name="SourceFieldName">OPERATION_NAME</Property>
+          <Property name="BindFieldName">OPERATION_NAME</Property>
+          <Property name="DictTableName">MED_OPERATION_DICT</Property>
+          <Property name="CelerityInputTableName">MED_OPERATION_DICT</Property>
+          <Property name="CelerityInputValueColumnName">OPER_NAME</Property>
+          <Property name="DictValueFieldName">OPER_NAME</Property>
+          <Property name="CelerityInputCodeColumnName">OPER_NAME</Property>
+          <Property name="DisplayFieldName">OPER_NAME</Property>
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">486, 440</Property>
+          <Property name="Name">MTextBox26</Property>
+          <Property name="Size">255, 21</Property>
+          <Property name="TabIndex">53</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox25" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox25</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_OPERATION_MASTER</Property>
+          <Property name="SourceTableName">MED_OPERATION_MASTER</Property>
+          <Property name="SourceFieldName">DIAG_BEFORE_OPERATION</Property>
+          <Property name="BindFieldName">DIAG_BEFORE_OPERATION</Property>
+          <Property name="DictTableName">MED_DIAGNOSIS_DICT</Property>
+          <Property name="CelerityInputTableName">MED_DIAGNOSIS_DICT</Property>
+          <Property name="CelerityInputValueColumnName">DIAGNOSIS_NAME</Property>
+          <Property name="DictValueFieldName">DIAGNOSIS_NAME</Property>
+          <Property name="CelerityInputCodeColumnName">DIAGNOSIS_NAME</Property>
+          <Property name="DisplayFieldName">DIAGNOSIS_NAME</Property>
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">97, 440</Property>
+          <Property name="Name">MTextBox25</Property>
+          <Property name="Size">319, 21</Property>
+          <Property name="TabIndex">50</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox7" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox7</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.讨论时间</Property>
+          <Property name="BindFieldName">术前病例讨论.讨论时间</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format">yyyy-mm-dd HH:MM</Property>
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="BottomLineStyle">Dash</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">83, 55</Property>
+          <Property name="Name">MTextBox7</Property>
+          <Property name="Size">177, 21</Property>
+          <Property name="TabIndex">4</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox9" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox9</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.主管医师</Property>
+          <Property name="BindFieldName">术前病例讨论.主管医师</Property>
+          <Property name="DictTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputValueColumnName">USER_JOB_ID</Property>
+          <Property name="DictValueFieldName">USER_JOB_ID</Property>
+          <Property name="CelerityInputCodeColumnName">USER_NAME</Property>
+          <Property name="DisplayFieldName">USER_NAME</Property>
+          <Property name="CelerityInputSqlWhere">USER_DEPT in %config_deptcodestr% and user_job='D'</Property>
+          <Property name="DictWhereString">USER_DEPT in %config_deptcodestr% and user_job='D'</Property>
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="BottomLineStyle">Dash</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">456, 81</Property>
+          <Property name="Name">MTextBox9</Property>
+          <Property name="Size">177, 21</Property>
+          <Property name="TabIndex">7</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox8" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox8</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.主持医师</Property>
+          <Property name="BindFieldName">术前病例讨论.主持医师</Property>
+          <Property name="DictTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputTableName">MED_HIS_USERS</Property>
+          <Property name="CelerityInputValueColumnName">USER_JOB_ID</Property>
+          <Property name="DictValueFieldName">USER_JOB_ID</Property>
+          <Property name="CelerityInputCodeColumnName">USER_NAME</Property>
+          <Property name="DisplayFieldName">USER_NAME</Property>
+          <Property name="CelerityInputSqlWhere">USER_DEPT in %config_deptcodestr% and user_job='D'</Property>
+          <Property name="DictWhereString">USER_DEPT in %config_deptcodestr% and user_job='D'</Property>
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="BottomLineStyle">Dash</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">84, 82</Property>
+          <Property name="Name">MTextBox8</Property>
+          <Property name="Size">177, 21</Property>
+          <Property name="TabIndex">6</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MedMyLine, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MedMyLine4" children="Controls">
+          <Property name="NoPrint">False</Property>
+          <Property name="LineType">Horizontal</Property>
+          <Property name="LineStyle">Solid</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">1, 815</Property>
+          <Property name="Margin">0, 0, 0, 0</Property>
+          <Property name="Name">MedMyLine4</Property>
+          <Property name="Size">752, 1</Property>
+          <Property name="TabIndex">60</Property>
+          <Property name="Text">MedMyLine4</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MedMyLine, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MedMyLine3" children="Controls">
+          <Property name="NoPrint">False</Property>
+          <Property name="LineType">Horizontal</Property>
+          <Property name="LineStyle">Solid</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">1, 468</Property>
+          <Property name="Margin">0, 0, 0, 0</Property>
+          <Property name="Name">MedMyLine3</Property>
+          <Property name="Size">753, 1</Property>
+          <Property name="TabIndex">59</Property>
+          <Property name="Text">MedMyLine3</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MedMyLine, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MedMyLine2" children="Controls">
+          <Property name="NoPrint">False</Property>
+          <Property name="LineType">Horizontal</Property>
+          <Property name="LineStyle">Solid</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">1, 205</Property>
+          <Property name="Margin">0, 0, 0, 0</Property>
+          <Property name="Name">MedMyLine2</Property>
+          <Property name="Size">753, 1</Property>
+          <Property name="TabIndex">58</Property>
+          <Property name="Text">MedMyLine2</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox27" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox27</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.参与人员</Property>
+          <Property name="BindFieldName">术前病例讨论.参与人员</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="BottomLineStyle">Dash</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="Multiline">True</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">77, 115</Property>
+          <Property name="Name">MTextBox27</Property>
+          <Property name="Size">664, 84</Property>
+          <Property name="TabIndex">9</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MedMyLine, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MedMyLine1" children="Controls">
+          <Property name="NoPrint">False</Property>
+          <Property name="LineType">Horizontal</Property>
+          <Property name="LineStyle">Solid</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">0, 45</Property>
+          <Property name="Margin">0, 0, 0, 0</Property>
+          <Property name="Name">MedMyLine1</Property>
+          <Property name="Size">754, 1</Property>
+          <Property name="TabIndex">57</Property>
+          <Property name="Text">MedMyLine1</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483567" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">参与人员：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">13, 117</Property>
+          <Property name="Name">MLabel2147483567</Property>
+          <Property name="Size">66, 19</Property>
+          <Property name="TabIndex">8</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483575" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">记录者：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">440, 935</Property>
+          <Property name="Name">MLabel2147483575</Property>
+          <Property name="Size">60, 20</Property>
+          <Property name="TabIndex">44</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483597" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">主持医师：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">13, 84</Property>
+          <Property name="Name">MLabel2147483597</Property>
+          <Property name="Size">66, 19</Property>
+          <Property name="TabIndex">1</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MRichTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MRichTextBox2" children="Controls">
+          <Property name="AutoLineString" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MRichTextBox2</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">医师讨论意见</Property>
+          <Property name="BindFieldName">医师讨论意见</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="TempletFlag">None</Property>
+          <Property name="OtherTempletFlagString" />
+          <Property name="Multiline">True</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">15, 517</Property>
+          <Property name="Name">MRichTextBox2</Property>
+          <Property name="Size">726, 289</Property>
+          <Property name="TabIndex">56</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483645" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">姓名</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">24, 18</Property>
+          <Property name="Name">MLabel2147483645</Property>
+          <Property name="Size">32, 20</Property>
+          <Property name="TabIndex">0</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MRichTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MRichTextBox3" children="Controls">
+          <Property name="AutoLineString" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MRichTextBox3</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.主持医师综合意见</Property>
+          <Property name="BindFieldName">术前病例讨论.主持医师综合意见</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="TempletFlag">None</Property>
+          <Property name="OtherTempletFlagString" />
+          <Property name="Multiline">True</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">15, 840</Property>
+          <Property name="Name">MRichTextBox3</Property>
+          <Property name="Size">726, 86</Property>
+          <Property name="TabIndex">46</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483644" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">性别</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">185, 18</Property>
+          <Property name="Name">MLabel2147483644</Property>
+          <Property name="Size">32, 20</Property>
+          <Property name="TabIndex">2</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483576" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">主持医师（综合讨论意见）</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">2, 823</Property>
+          <Property name="Name">MLabel2147483576</Property>
+          <Property name="Size">170, 20</Property>
+          <Property name="TabIndex">0</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483589" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">医师（姓名、职称）</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">26, 500</Property>
+          <Property name="Name">MLabel2147483589</Property>
+          <Property name="Size">129, 20</Property>
+          <Property name="TabIndex">24</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483643" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">年龄</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">343, 18</Property>
+          <Property name="Name">MLabel2147483643</Property>
+          <Property name="Size">32, 20</Property>
+          <Property name="TabIndex">4</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483590" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">医师讨论意见：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">5, 475</Property>
+          <Property name="Name">MLabel2147483590</Property>
+          <Property name="Size">101, 20</Property>
+          <Property name="TabIndex">23</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483640" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">住院号</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">498, 18</Property>
+          <Property name="Name">MLabel2147483640</Property>
+          <Property name="Size">46, 20</Property>
+          <Property name="TabIndex">10</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483569" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">术前诊断</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 9.5pt</Property>
+          <Property name="Location">30, 444</Property>
+          <Property name="Name">MLabel2147483569</Property>
+          <Property name="Size">57, 20</Property>
+          <Property name="TabIndex">51</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox1" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox1</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceFieldName">NAME</Property>
+          <Property name="BindFieldName">NAME</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">  /</Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">1</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="ReadOnly">True</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">70, 14</Property>
+          <Property name="Name">MTextBox1</Property>
+          <Property name="Size">90, 21</Property>
+          <Property name="TabIndex">2</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483568" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">拟施手术</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 9.5pt</Property>
+          <Property name="Location">428, 444</Property>
+          <Property name="Name">MLabel2147483568</Property>
+          <Property name="Size">57, 20</Property>
+          <Property name="TabIndex">52</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox2" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox2</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceFieldName">SEX</Property>
+          <Property name="BindFieldName">SEX</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">  /</Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">1</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BackColor">Window</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="ForeColor">WindowText</Property>
+          <Property name="ReadOnly">True</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 9pt</Property>
+          <Property name="Location">226, 13</Property>
+          <Property name="Name">MTextBox2</Property>
+          <Property name="Size">78, 21</Property>
+          <Property name="TabIndex">12</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MRichTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MRichTextBox1" children="Controls">
+          <Property name="AutoLineString" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MRichTextBox1</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceTableName">MED_PREOPERATIVE_EXPANSION</Property>
+          <Property name="SourceFieldName">术前病例讨论.主管医师汇报病情</Property>
+          <Property name="BindFieldName">术前病例讨论.主管医师汇报病情</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">
+          </Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="TempletFlag">None</Property>
+          <Property name="OtherTempletFlagString" />
+          <Property name="Multiline">True</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">15, 235</Property>
+          <Property name="Name">MRichTextBox1</Property>
+          <Property name="Size">726, 199</Property>
+          <Property name="TabIndex">55</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox3" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox3</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceTableName">MED_PAT_MASTER_INDEX</Property>
+          <Property name="SourceFieldName">DATE_OF_BIRTH</Property>
+          <Property name="BindFieldName">DATE_OF_BIRTH</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format">datetoage</Property>
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">  /</Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">1</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BackColor">Window</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="ForeColor">WindowText</Property>
+          <Property name="ReadOnly">True</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 9pt</Property>
+          <Property name="Location">400, 13</Property>
+          <Property name="Name">MTextBox3</Property>
+          <Property name="Size">78, 21</Property>
+          <Property name="TabIndex">13</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MTextBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MTextBox6" children="Controls">
+          <Property name="SelectedData" />
+          <Property name="HasLookUpItems">False</Property>
+          <Property name="ErrorText" />
+          <Property name="ExamItemName" />
+          <Property name="LabItemName" />
+          <Property name="LabItemType" />
+          <Property name="SummaryName" />
+          <Property name="StoredValue" />
+          <Property name="BorderColor">LightGray</Property>
+          <Property name="LimitedString" />
+          <Property name="OldForeColor">WindowText</Property>
+          <Property name="Border3DStyle">Adjust</Property>
+          <Property name="FieldName">MTextBox6</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="ProgramChanging">False</Property>
+          <Property name="SelfValue" />
+          <Property name="SelfValueChanged">False</Property>
+          <Property name="Data" />
+          <Property name="LockInput">False</Property>
+          <Property name="InputType">General</Property>
+          <Property name="Minimum" />
+          <Property name="Maximum" />
+          <Property name="DotNumber">0</Property>
+          <Property name="LocationPoint">0</Property>
+          <Property name="NullAble">True</Property>
+          <Property name="IsTotalModel">False</Property>
+          <Property name="BindTableName">MED_PATS_IN_HOSPITAL</Property>
+          <Property name="SourceTableName">MED_PATS_IN_HOSPITAL</Property>
+          <Property name="SourceFieldName">INP_NO</Property>
+          <Property name="BindFieldName">INP_NO</Property>
+          <Property name="DictTableName" />
+          <Property name="CelerityInputTableName" />
+          <Property name="CelerityInputValueColumnName" />
+          <Property name="DictValueFieldName" />
+          <Property name="CelerityInputCodeColumnName" />
+          <Property name="DisplayFieldName" />
+          <Property name="CelerityInputSqlWhere" />
+          <Property name="DictWhereString" />
+          <Property name="BindList" />
+          <Property name="MultiSign">False</Property>
+          <Property name="MultiSelect">False</Property>
+          <Property name="Format" />
+          <Property name="InputNeededMessage" />
+          <Property name="InitValue" />
+          <Property name="DefaultPrintText">  /</Property>
+          <Property name="WantValueBeforePrint" />
+          <Property name="NoPrint">False</Property>
+          <Property name="NoPrintText">
+          </Property>
+          <Property name="BottomLine">True</Property>
+          <Property name="BottomLineStyle">Solid</Property>
+          <Property name="CanEdit">True</Property>
+          <Property name="PrintYOffSet">1</Property>
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintTail" />
+          <Property name="UnderLineOffset">0</Property>
+          <Property name="BorderType">None</Property>
+          <Property name="BorderWidth">1</Property>
+          <Property name="IsDrawBorder">False</Property>
+          <Property name="OnlyBottomLine">False</Property>
+          <Property name="BottomLineColor">Black</Property>
+          <Property name="BackColor">Window</Property>
+          <Property name="BorderStyle">FixedSingle</Property>
+          <Property name="ForeColor">WindowText</Property>
+          <Property name="ReadOnly">True</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 9pt</Property>
+          <Property name="Location">557, 14</Property>
+          <Property name="Name">MTextBox6</Property>
+          <Property name="Size">120, 21</Property>
+          <Property name="TabIndex">16</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483598" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">讨论时间：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">13, 57</Property>
+          <Property name="Name">MLabel2147483598</Property>
+          <Property name="Size">66, 19</Property>
+          <Property name="TabIndex">0</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483591" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">主管医师汇报病情：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Font">宋体, 10pt</Property>
+          <Property name="Location">21, 215</Property>
+          <Property name="Name">MLabel2147483591</Property>
+          <Property name="Size">129, 20</Property>
+          <Property name="TabIndex">20</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483596" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">地点：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">385, 55</Property>
+          <Property name="Name">MLabel2147483596</Property>
+          <Property name="Size">42, 19</Property>
+          <Property name="TabIndex">2</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483595" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">主管医师：</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">385, 84</Property>
+          <Property name="Name">MLabel2147483595</Property>
+          <Property name="Size">66, 19</Property>
+          <Property name="TabIndex">3</Property>
+        </Object>
+        <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483594" children="Controls">
+          <Property name="PrintXOffSet">0</Property>
+          <Property name="PrintYOffSet">0</Property>
+          <Property name="NoPrint">False</Property>
+          <Property name="MultiLine">False</Property>
+          <Property name="DotBorder">False</Property>
+          <Property name="VarKey" />
+          <Property name="SymbolType">None</Property>
+          <Property name="BottomLine">False</Property>
+          <Property name="AutoSize">True</Property>
+          <Property name="Text">麻醉科示教室</Property>
+          <Property name="UseCompatibleTextRendering">True</Property>
+          <Property name="BackColor">White</Property>
+          <Property name="DataBindings">
+            <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+          </Property>
+          <Property name="Location">427, 55</Property>
+          <Property name="Name">MLabel2147483594</Property>
+          <Property name="Size">79, 19</Property>
+          <Property name="TabIndex">5</Property>
+        </Object>
+        <Property name="BorderType">Rectangle</Property>
+        <Property name="BorderWidth">1</Property>
+        <Property name="BorderColor">Black</Property>
+        <Property name="IsDrawBorder">True</Property>
+        <Property name="PrintBackGround">False</Property>
+        <Property name="NoPrint">False</Property>
+        <Property name="BackColor">White</Property>
+        <Property name="DataBindings">
+          <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+        </Property>
+        <Property name="Location">1, 85</Property>
+        <Property name="Name">MPanel8</Property>
+        <Property name="Size">755, 969</Property>
+        <Property name="TabIndex">57</Property>
+      </Object>
+      <Object type="MedicalSystem.Anes.Document.Controls.NewPictureBox, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NewPictureBox1" children="Controls">
+        <Property name="NoPrint">False</Property>
+        <Property name="Image">
+          <Binary>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</Binary>
+        </Property>
+        <Property name="SizeMode">StretchImage</Property>
+        <Property name="TabStop">False</Property>
+        <Property name="TabIndex">20</Property>
+        <Property name="DataBindings">
+          <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+        </Property>
+        <Property name="Location">7, 12</Property>
+        <Property name="Name">NewPictureBox1</Property>
+        <Property name="Size">184, 40</Property>
+      </Object>
+      <Object type="MedicalSystem.Anes.Document.Controls.MLabel, MedicalSystem.Anes.Document, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MLabel2147483573" children="Controls">
+        <Property name="PrintXOffSet">0</Property>
+        <Property name="PrintYOffSet">0</Property>
+        <Property name="NoPrint">False</Property>
+        <Property name="MultiLine">False</Property>
+        <Property name="DotBorder">False</Property>
+        <Property name="VarKey" />
+        <Property name="SymbolType">None</Property>
+        <Property name="BottomLine">False</Property>
+        <Property name="AutoSize">True</Property>
+        <Property name="Text">疑难病例讨论记录单</Property>
+        <Property name="UseCompatibleTextRendering">True</Property>
+        <Property name="BackColor">White</Property>
+        <Property name="DataBindings">
+          <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+        </Property>
+        <Property name="Font">楷体, 21.75pt</Property>
+        <Property name="Location">236, 43</Property>
+        <Property name="Name">MLabel2147483573</Property>
+        <Property name="Size">279, 40</Property>
+        <Property name="TabIndex">18</Property>
+      </Object>
+      <Property name="BorderType">None</Property>
+      <Property name="BorderWidth">1</Property>
+      <Property name="BorderColor">Black</Property>
+      <Property name="IsDrawBorder">False</Property>
+      <Property name="PrintBackGround">False</Property>
+      <Property name="NoPrint">False</Property>
+      <Property name="BackColor">White</Property>
+      <Property name="DataBindings">
+        <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+      </Property>
+      <Property name="Location">0, 0</Property>
+      <Property name="Name">MPanel9</Property>
+      <Property name="Size">762, 1060</Property>
+      <Property name="TabIndex">4</Property>
+    </Object>
+    <Property name="AutoScroll">True</Property>
+    <Property name="BackColor">White</Property>
+    <Property name="FormBorderStyle">None</Property>
+    <Property name="ClientSize">1094, 788</Property>
+    <Property name="DataBindings">
+      <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+    </Property>
+    <Property name="Name">Form1</Property>
+  </Object>

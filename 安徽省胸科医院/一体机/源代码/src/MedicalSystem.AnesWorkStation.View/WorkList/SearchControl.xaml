@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="MedicalSystem.AnesWorkStation.View.WorkList.SearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:convert="clr-namespace:MedicalSystem.AnesWorkStation.View.WorkList"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="48" d:DesignWidth="620">
+    <UserControl.Resources>
+        <convert:textlenthToVisibilityConvert x:Key="_textlenthToVisibilityConvert" />
+        <ImageBrush x:Key="_imgbg" ImageSource="Assets/search/serchborder..png" />
+
+    </UserControl.Resources>
+    <Grid Margin="10,0,10,0" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column ="0" HorizontalAlignment="Center">
+            <Image Height="30px" Width="35px" Grid.Column="0"        
+               x:Name="_imgsearchTime" Panel.ZIndex="3"
+               Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/search/searchTime.png" >
+            </Image>
+            <Border BorderBrush="#FFFFFF" BorderThickness="0" CornerRadius="3" Height="28"  Background="White" Grid.Column="0"  Width="124px" Panel.ZIndex="2" Margin="-5,0,0,0">
+                <control:DatePickerEx x:Name="ScheduledTime" Grid.Column="0" Panel.ZIndex="2"
+                                  HorizontalAlignment="Left" VerticalAlignment="Center" Background="#EBF4F7" 
+                                  BorderThickness="0"
+                                  Focusable="{Binding IsTimeFocused}"
+                                  SelectedDate="{Binding SCHEDULED_DATE_TIME, Mode=TwoWay}"
+                                  StringFormat="yyyy-MM-dd" Height="28px" Width="124px" />
+            </Border>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column ="1" HorizontalAlignment="Center" Margin="10px,0,0,0">
+            <Image Height="30px" Width="35px" Grid.Column="1"        
+               x:Name="_imgsearchRoom" Panel.ZIndex="3"
+               Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/search/searchRoom.png" >
+            </Image>
+            <Border BorderBrush="#FFFFFF" BorderThickness="1" CornerRadius="3" Height="28"  Background="White" Grid.Column="0"  Width="88px" Panel.ZIndex="2" Margin="-3,0,0,0" >
+                <control:ComboBoxEx   Grid.Column="1"  Background="Transparent"  DisplayMemberPath="ROOM_NO"  
+                          IsEditable="True"   Panel.ZIndex="1" Margin="-3,0,0,0"    Width="88px"  TextCenter="True"
+                                        OriginalItemSource="{Binding MED_OPERATING_ROOM}" 
+                                        SelectedValueEx="{Binding OPER_ROOM_NO,Mode=TwoWay}"
+                                        SelectedValuePath="ROOM_NO"
+                                       SearchFieldName="ROOM_NO"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column ="2" HorizontalAlignment="Left" Margin="10,0,0,0">
+            <Border BorderBrush="#FFFFFF" BorderThickness="1" CornerRadius="3" Height="28"  Background="White" Grid.Column="2" Width="236px"  GotFocus="InputText_GotFocus"  >
+                <TextBox x:Name="_inputText"  Grid.Column="2" Height="28px" Background="Transparent"
+                 BorderThickness="0"   
+                  CaretBrush="Black"
+                 Foreground="#55A5C3"  Text="{Binding INPUT_TEXT, Mode=TwoWay}"
+                 VerticalAlignment="Center"  Width="236px"  GotFocus="InputText_GotFocus" LostFocus="InputText_LostFocus" PreviewKeyDown="InputText_PreviewKeyDown" RenderTransformOrigin="0.229,0.821" Margin="0" >
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.329"/>
+                            <TranslateTransform X="0.056" Y="0.368"/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding SearchTextChangedCommand}"
+                    			CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Border>
+            <Image Height="30px" Width="70px" Grid.Column="2"        
+               x:Name="_imgsearch" 
+               Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/search/searchIcom2.png" RenderTransformOrigin="0.543,0.933" Margin="-3,0,0,0" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <i:InvokeCommandAction Command="{Binding SearchCommand}" 
+                			CommandParameter="{Binding Text, ElementName=_inputText}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Image>
+            <TextBlock Text="请输入患者ID，姓名，住院号" x:Name="showInfo"
+                   Opacity=".7"  MouseEnter="InputText_GotFocus" MouseMove="InputText_GotFocus"
+                   Visibility="{Binding Text, Converter={StaticResource _textlenthToVisibilityConvert}, ElementName=_inputText}"
+                   TextAlignment="Left" VerticalAlignment="Center"   
+                   Foreground="#55A5C3" Height="20" Margin="-396,0,0,0" Width="200"/>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

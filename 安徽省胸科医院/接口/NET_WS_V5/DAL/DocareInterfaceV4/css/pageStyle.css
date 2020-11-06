@@ -1,0 +1,306 @@
+html{background:transparent;}
+BODY{
+	margin:0px;
+	font:12px verdana;
+	overflow:auto;
+	SCROLLBAR-FACE-COLOR: #BAD0FC;
+	SCROLLBAR-HIGHLIGHT-COLOR: #B8CBF6;
+	SCROLLBAR-SHADOW-COLOR: #F9F8F4; 
+	SCROLLBAR-3DLIGHT-COLOR: #F9F8F4; 
+	SCROLLBAR-ARROW-COLOR:  #4D6185; 
+	SCROLLBAR-TRACK-COLOR: #EFF6FF; 
+	SCROLLBAR-DARKSHADOW-COLOR: #B8CBF6;
+}
+div,td,span {
+	font-size:12px;
+}
+form{
+	margin:0px;
+	padding:0px;
+}
+/*框架内页面外观*/
+.framePageTab{
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	border-left:1px solid #FFF;
+	table-layout:fixed;
+}
+.framePageTab .header{
+	height:27px;
+	width:100%;
+	margin:0px;
+	background:url(../img/framePageHeader.gif);
+	padding:0 0 0 3;
+	margin:0px;
+}
+.framePageTab .header span{
+	height:26px;
+	background:url(../img/framePageHeader_mark.gif) no-repeat;
+	padding:8 0 0 36;
+	margin:0px;
+	color:#000;
+	font-weight:bold;
+	font-size:12px;
+	letter-spacing:3px;
+}
+.framePageTab .content{
+	width:100%;
+	background-color:#FCFEFF;
+	padding:5 4 2 4 ;
+}
+
+/*标签样式*/
+.tagStyle{
+	width:100%;
+	table-layout:fixed;
+}
+.tagStyle_header{
+	height:22px;
+	text-align:left;
+	padding:0px;
+
+}
+.tagStyle_header .tag{
+	width:110px;
+	height:22px;
+	background:url(../img/tag.gif) no-repeat;
+	text-align:center;
+	color:#000;
+	letter-spacing:1px;
+	padding:5 0 0 0;
+}
+.tagStyle_header .tagHover{
+	width:110px;
+	height:22px;
+	background:url(../img/tagHover.gif) no-repeat;
+	text-align:center;
+	color:#000;
+	font-weight:bold;
+	letter-spacing:1px;
+	padding:5 0 0 0;
+}
+.tagStyle_content{
+	padding:0px;
+}
+
+.blockStyle_wei{
+	border-bottom:1px solid #60A0E7;
+	width:30%;
+	height:24px;
+}
+
+.blockStyle_wei .toolwei a{
+	width:inherit;
+	height:18px;
+	text-decoration:none;
+	margin-left:5px;
+	padding:1 5;
+	float:left;
+	border-style:solid;
+	border-width:0px;
+	border-color:#518EDF;
+	cursor:hand;
+	color:#000;
+}
+.blockStyle_wei .toolwei{
+	float:center;
+	height:22px;
+	padding-top:3px;
+	text-align:center;
+}
+blockStyle_wei .toolwei img{
+	border:0px;
+	margin-right:3px;
+}
+.blockStyle_wei .toolwei a:hover{
+	width:inherit;
+	height:18px;
+	text-decoration:none;
+	margin-left:5px;
+	padding:0 4;
+	float:left;
+	border-style:solid;
+	border-width:1px;
+	border-color:#518EDF;
+	cursor:hand;
+	color:#000;
+	background:#E0F6FC;
+}
+/*区域样式*/
+.blockStyle{
+	border:1px solid #60A0E7;
+	width:100%;
+	table-layout:fixed;
+}
+.blockStyle .blockStyle_header{
+	border-bottom:1px solid #60A0E7;
+	background:url(../img/blockStyle_headerBg.gif);
+	width:100%;
+	height:24px;
+}
+.blockStyle .blockStyle_header .title{
+	float:left;
+	background:url(../img/blockStyle_headerMark.gif) no-repeat;
+	height:22px;
+	color:#000;
+	font-weight:bold;
+	font-size:12px;
+	padding-left:22px;
+	padding-top:6px;
+}
+.blockStyle .blockStyle_header .tool{
+	float:right;
+	height:22px;
+	padding-top:3px;
+	text-align:right;
+}
+.blockStyle .blockStyle_header .tool a{
+	width:inherit;
+	height:18px;
+	text-decoration:none;
+	margin-left:5px;
+	padding:1 5;
+	float:left;
+	border-style:solid;
+	border-width:0px;
+	border-color:#518EDF;
+	cursor:hand;
+	color:#000;
+}
+.blockStyle .blockStyle_header .tool img{
+	border:0px;
+	margin-right:3px;
+}
+.blockStyle .blockStyle_header .tool a:hover{
+	width:inherit;
+	height:18px;
+	text-decoration:none;
+	margin-left:5px;
+	padding:0 4;
+	float:left;
+	border-style:solid;
+	border-width:1px;
+	border-color:#518EDF;
+	cursor:hand;
+	color:#000;
+	background:#E0F6FC;
+}
+
+.blockStyle .blockStyle_header .trail{
+	float:right;
+	background:url(../img/blockStyle_headerTrail.gif) no-repeat;
+	width:34px;
+	height:22px;
+}
+
+.blockStyle .content{
+	background:#fff;
+	padding:6 3;
+	overflow:auto;
+}
+
+
+/*列表页面*/
+.listStyle{
+	width:100%;
+	height:100%;
+}
+/*列表*/
+.listTab{
+	width:100%;
+	background:#FFF;
+	border-collapse:collapse;
+}
+.listTab td{
+	height:22px;
+}
+.listTab .theadStyle{
+	background:#B5D1F6;
+	text-align:center;
+}
+/*分页设置*/
+.pageSetTd{
+	height:20px;
+}
+.pageSetTd .pageInf{
+	float:left;
+}
+.pageSetTd .pageTool{
+	float:right;
+}
+.pageSetTd .pageTool .buttonSpan{
+	color:#000000;
+	text-decoration:none;
+	margin-left:15px;
+}
+.pageSetTd .pageTool .buttonSpan:hover{
+	color:#FF0000;
+	text-decoration:underline;
+	margin-left:15px;
+}
+
+
+/*表单页面*/
+.fromTable{
+	width:100%;
+	padding:0px;
+	margin:0px;
+	background:#FFF;
+	border-collapse:collapse;
+}
+.fromTable td{
+	height:25px;
+	font-size:12px;
+	color:#000;
+	padding:0 3;
+}
+.fromTable td img{
+	border:0px;
+}
+.fromTable .theadStyle{
+	background:#B5D1F6;
+	font-weight:bold;
+	text-align:left;
+	padding-left:8px;
+}
+input{
+	border:1px solid #7F9DB9;
+	BACKGROUND-COLOR:#FFF;
+	color:#595959;
+	font-size:12px;
+	
+}
+textarea{
+	border:1px solid #7F9DB9;
+	BACKGROUND-COLOR:#FFF;
+	color:#595959;
+	font-size:12px;
+}
+.checkbox{
+	border:0px;
+	background:transparent;
+}
+
+.fromTable .buttonStyle2{
+	width:40px;
+	height:20px;
+	background:url(../img/buttonBg2.gif);
+	cursor:hand;
+	margin-right:20px;
+	text-align:center;
+	padding-top:3px;
+	border:0px;
+}
+
+.fromTable .buttonStyle4{
+	width:61px;
+	height:20px;
+	background:url(../img/buttonBg4.gif);
+	cursor:hand;
+	margin-right:20px;
+	text-align:center;
+	padding-top:3px;
+}

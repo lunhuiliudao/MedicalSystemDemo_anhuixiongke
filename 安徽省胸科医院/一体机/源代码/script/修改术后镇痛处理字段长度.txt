@@ -1,0 +1,9 @@
+-- Alter table 
+alter table MED_ANESTHESIA_INQUIRY
+  storage
+  (
+    next 1
+  )
+;
+-- Add/modify columns 
+alter table MED_ANESTHESIA_INQUIRY modify measure VARCHAR2(200);

@@ -1,0 +1,46 @@
+CREATE VIEW V_MEDICAL_OPER_INFO AS
+SELECT 
+--3个ID
+TOP 100 percent
+A.PATIENT_ID,A.VISIT_ID,A.OPER_ID,
+--姓名
+B.NAME AS PAT_NAME,
+--性别
+B.SEX,
+--住院号
+B.INP_NO,
+--年龄
+DATEDIFF(YEAR,GETDATE(),B.DATE_OF_BIRTH) AS PAT_AGE,
+--手术室科室代码
+A.OPERATING_ROOM,
+--手术间号
+A.OPERATING_ROOM_NO,
+--台次
+A.SEQUENCE,
+--手术日期
+A.SCHEDULED_DATE_TIME,
+--入手术室时间
+A.IN_DATE_TIME,
+--麻醉开始时间
+ISNULL(A.ANES_START_TIME ,A.START_DATE_TIME) AS ANES_START_TIME,
+--手术开始时间
+A.START_DATE_TIME,A.END_DATE_TIME,
+--麻醉结束时间
+ISNULL(A.ANES_END_TIME,A.END_DATE_TIME) AS ANES_END_TIME,
+--出手术室时间
+A.OUT_DATE_TIME,
+--急诊标志
+A.EMERGENCY_IND,
+--隔离标志                              
+A.ISOLATION_IND,
+--放射标志                                    
+A.RADIATE_IND,
+--感染标志                                      
+A.INFECTED_IND,                                     
+--手术状态
+A.OPER_STATUS
+FROM V_OPERATION_MASTER A
+LEFT OUTER JOIN V_PAT_MASTER_INDEX B ON A.PATIENT_ID = B.PATIENT_ID
+--筛选当天且非取消的手术信息
+WHERE convert(nvarchar(10),A.SCHEDULED_DATE_TIME,120) = convert(nvarchar(10),GETDATE(),120) AND A.OPER_STATUS > -80
+ORDER BY A.OPERATING_ROOM,A.OPERATING_ROOM_NO,A.IN_DATE_TIME,ISNULL(A.SEQUENCE,100);

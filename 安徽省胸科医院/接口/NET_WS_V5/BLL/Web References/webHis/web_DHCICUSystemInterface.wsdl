@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetDeptDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetDeptDictResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHisUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHisUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetHisUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInICUPatientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInICUPatientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetInICUPatientInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInPatientInfor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="VisitID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInPatientInforResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetInPatientInforResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetLabTestResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="ScheduleDateStart" type="s:string" />
+            <s:element minOccurs="0" name="ScheduleDateStop" type="s:string" />
+            <s:element minOccurs="0" name="PerformedCode" type="s:string" />
+            <s:element minOccurs="0" name="OperStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetOperationScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationScheduleName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="ScheduleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationScheduleNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetOperationScheduleNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutPatientMasterIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="PatientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutPatientMasterIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetOutPatientMasterIndexResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientLabTestMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientLabTestMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetPatientLabTestMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientMasterIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="PatientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientMasterIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetPatientMasterIndexResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetPatientOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="inPut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOperResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="UpdateOperResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOperStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="ScheduleID" type="s:string" />
+            <s:element minOccurs="0" name="OperStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOperStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="UpdateOperStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDeptDictSoapIn">
+    <wsdl:part name="parameters" element="s0:GetDeptDict" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptDictSoapOut">
+    <wsdl:part name="parameters" element="s0:GetDeptDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHisUsersSoapIn">
+    <wsdl:part name="parameters" element="s0:GetHisUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetHisUsersSoapOut">
+    <wsdl:part name="parameters" element="s0:GetHisUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInICUPatientInfoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetInICUPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetInICUPatientInfoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetInICUPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInPatientInforSoapIn">
+    <wsdl:part name="parameters" element="s0:GetInPatientInfor" />
+  </wsdl:message>
+  <wsdl:message name="GetInPatientInforSoapOut">
+    <wsdl:part name="parameters" element="s0:GetInPatientInforResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabTestResultSoapIn">
+    <wsdl:part name="parameters" element="s0:GetLabTestResult" />
+  </wsdl:message>
+  <wsdl:message name="GetLabTestResultSoapOut">
+    <wsdl:part name="parameters" element="s0:GetLabTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationScheduleSoapIn">
+    <wsdl:part name="parameters" element="s0:GetOperationSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationScheduleSoapOut">
+    <wsdl:part name="parameters" element="s0:GetOperationScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationScheduleNameSoapIn">
+    <wsdl:part name="parameters" element="s0:GetOperationScheduleName" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationScheduleNameSoapOut">
+    <wsdl:part name="parameters" element="s0:GetOperationScheduleNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutPatientMasterIndexSoapIn">
+    <wsdl:part name="parameters" element="s0:GetOutPatientMasterIndex" />
+  </wsdl:message>
+  <wsdl:message name="GetOutPatientMasterIndexSoapOut">
+    <wsdl:part name="parameters" element="s0:GetOutPatientMasterIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientLabTestMasterSoapIn">
+    <wsdl:part name="parameters" element="s0:GetPatientLabTestMaster" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientLabTestMasterSoapOut">
+    <wsdl:part name="parameters" element="s0:GetPatientLabTestMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientMasterIndexSoapIn">
+    <wsdl:part name="parameters" element="s0:GetPatientMasterIndex" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientMasterIndexSoapOut">
+    <wsdl:part name="parameters" element="s0:GetPatientMasterIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientOrderSoapIn">
+    <wsdl:part name="parameters" element="s0:GetPatientOrder" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientOrderSoapOut">
+    <wsdl:part name="parameters" element="s0:GetPatientOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOperSoapIn">
+    <wsdl:part name="parameters" element="s0:UpdateOper" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOperSoapOut">
+    <wsdl:part name="parameters" element="s0:UpdateOperResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOperStatusSoapIn">
+    <wsdl:part name="parameters" element="s0:UpdateOperStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOperStatusSoapOut">
+    <wsdl:part name="parameters" element="s0:UpdateOperStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AnInterfaceSoap">
+    <wsdl:operation name="GetDeptDict">
+      <wsdl:input message="s0:GetDeptDictSoapIn" />
+      <wsdl:output message="s0:GetDeptDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHisUsers">
+      <wsdl:input message="s0:GetHisUsersSoapIn" />
+      <wsdl:output message="s0:GetHisUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInICUPatientInfo">
+      <wsdl:input message="s0:GetInICUPatientInfoSoapIn" />
+      <wsdl:output message="s0:GetInICUPatientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInPatientInfor">
+      <wsdl:input message="s0:GetInPatientInforSoapIn" />
+      <wsdl:output message="s0:GetInPatientInforSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTestResult">
+      <wsdl:input message="s0:GetLabTestResultSoapIn" />
+      <wsdl:output message="s0:GetLabTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSchedule">
+      <wsdl:input message="s0:GetOperationScheduleSoapIn" />
+      <wsdl:output message="s0:GetOperationScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationScheduleName">
+      <wsdl:input message="s0:GetOperationScheduleNameSoapIn" />
+      <wsdl:output message="s0:GetOperationScheduleNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutPatientMasterIndex">
+      <wsdl:input message="s0:GetOutPatientMasterIndexSoapIn" />
+      <wsdl:output message="s0:GetOutPatientMasterIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientLabTestMaster">
+      <wsdl:input message="s0:GetPatientLabTestMasterSoapIn" />
+      <wsdl:output message="s0:GetPatientLabTestMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientMasterIndex">
+      <wsdl:input message="s0:GetPatientMasterIndexSoapIn" />
+      <wsdl:output message="s0:GetPatientMasterIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientOrder">
+      <wsdl:input message="s0:GetPatientOrderSoapIn" />
+      <wsdl:output message="s0:GetPatientOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOper">
+      <wsdl:input message="s0:UpdateOperSoapIn" />
+      <wsdl:output message="s0:UpdateOperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOperStatus">
+      <wsdl:input message="s0:UpdateOperStatusSoapIn" />
+      <wsdl:output message="s0:UpdateOperStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AnInterfaceSoap" type="s0:AnInterfaceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDeptDict">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetDeptDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHisUsers">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetHisUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInICUPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetInICUPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInPatientInfor">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetInPatientInfor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTestResult">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetLabTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSchedule">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetOperationSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationScheduleName">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetOperationScheduleName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutPatientMasterIndex">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetOutPatientMasterIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientLabTestMaster">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetPatientLabTestMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientMasterIndex">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetPatientMasterIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientOrder">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.GetPatientOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOper">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.UpdateOper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOperStatus">
+      <soap:operation soapAction="http://tempuri.org/web.DHCICUSystemInterface.UpdateOperStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AnInterface">
+    <wsdl:port name="AnInterfaceSoap" binding="s0:AnInterfaceSoap">
+      <soap:address location="http://192.192.10.125/TrakCareECP/web//web.DHCICUSystemInterface.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

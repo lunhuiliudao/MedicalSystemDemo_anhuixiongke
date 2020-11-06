@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{384542EB-5DA0-444A-ACEB-48C2E6078375}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.AnesWorkStation.View</RootNamespace>
+    <AssemblyName>MedicalSystem.AnesWorkStation.View</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\main-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls">
+      <HintPath>..\..\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\..\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.Data.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.Utils.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraBars.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraEditors.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.AnesWorkStationCoordination.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\小麦助手\MedicalSystem.AnesWorkStationCoordination.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon.DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon.Public, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.Public.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Common.Doricon.SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Common.Doricon.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Medicalsystem.Framework.Doricon.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Doricon\Medicalsystem.Framework.Doricon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Updater.Lib">
+      <HintPath>..\..\lib\Update\Lib\MedicalSystem.Updater.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls">
+      <HintPath>..\..\lib\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\..\lib\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\..\lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.102.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UpdateDLL">
+      <HintPath>..\..\lib\Update\网页版自动更新DLL\UpdateDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxing">
+      <HintPath>..\..\lib\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\..\lib\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\ClosePopupAction.cs" />
+    <Compile Include="Actions\ShowContentWindowAction.cs" />
+    <Compile Include="Actions\ShowPopupAction.cs" />
+    <Compile Include="AnesGraph\Axis.cs" />
+    <Compile Include="AnesGraph\DataPoint.cs" />
+    <Compile Include="AnesGraph\DataPointMarker.cs" />
+    <Compile Include="AnesGraph\DataRowDefine.cs" />
+    <Compile Include="AnesGraph\DateAxis.cs" />
+    <Compile Include="AnesGraph\DateAxisControl.xaml.cs">
+      <DependentUpon>DateAxisControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\DragDropAdorner.cs" />
+    <Compile Include="AnesGraph\InAndOutControl.xaml.cs">
+      <DependentUpon>InAndOutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\InOperationWindow.xaml.cs">
+      <DependentUpon>InOperationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\IntakeAndOutputControl.xaml.cs">
+      <DependentUpon>IntakeAndOutputControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\LineSeries.cs" />
+    <Compile Include="AnesGraph\PathHelper.cs" />
+    <Compile Include="AnesGraph\PopupEx.cs" />
+    <Compile Include="AnesGraph\Scale.cs" />
+    <Compile Include="AnesGraph\Symbol.cs" />
+    <Compile Include="AnesGraph\TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\VitalSignsControl.xaml.cs">
+      <DependentUpon>VitalSignsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnesGraph\XDate.cs" />
+    <Compile Include="AnesScore\Balthazar.xaml.cs">
+      <DependentUpon>Balthazar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseControl\ConfirmContentWindow.cs" />
+    <Compile Include="Base\BaseControl\ToolBoxContentWindow.cs" />
+    <Compile Include="Base\BaseUserControl.cs" />
+    <Compile Include="Base\ContentWindow.cs" />
+    <Compile Include="Base\IContentWindow.cs" />
+    <Compile Include="Behaviour\MouseBehaviour.cs" />
+    <Compile Include="Converters\AboutConverter.cs" />
+    <Compile Include="Converters\AssayReportConverter.cs" />
+    <Compile Include="Converters\BloodGasAnalysisControl.cs" />
+    <Compile Include="Converters\BtnOkCommandParameters.cs" />
+    <Compile Include="Converters\CalculateCenterConverter.cs" />
+    <Compile Include="Converters\ImgConverter.cs" />
+    <Compile Include="Converters\IsLoginToVisibilityConverter.cs" />
+    <Compile Include="Converters\DynamicPathColorConverter.cs" />
+    <Compile Include="Converters\DynamicPathConverter.cs" />
+    <Compile Include="Converters\DynamicPathMarginConverter.cs" />
+    <Compile Include="Converters\OperInfoTopControlImageConvert.cs" />
+    <Compile Include="Converters\DrawingMediaColorConverter.cs" />
+    <Compile Include="InOperation\AddBloodGasMaster.xaml.cs">
+      <DependentUpon>AddBloodGasMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\AddSignsControl.xaml.cs">
+      <DependentUpon>AddSignsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\AnesthesiaPathControl.xaml.cs">
+      <DependentUpon>AnesthesiaPathControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\AnesthesiaRouteControl.xaml.cs">
+      <DependentUpon>AnesthesiaRouteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\BloodGasAnalysisControl.xaml.cs">
+      <DependentUpon>BloodGasAnalysisControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\IndividuationVitalSignControl.xaml.cs">
+      <DependentUpon>IndividuationVitalSignControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\IntensiveSignControl.xaml.cs">
+      <DependentUpon>IntensiveSignControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\SignEntryControl.xaml.cs">
+      <DependentUpon>SignEntryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\SignMakeupControl.xaml.cs">
+      <DependentUpon>SignMakeupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\SignSwicthControl.xaml.cs">
+      <DependentUpon>SignSwicthControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InOperation\UnPostPDFControl.xaml.cs">
+      <DependentUpon>UnPostPDFControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\AfterOperationInformationControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AfterOperationInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\AnesFree.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AnesFree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\AssayReport.xaml.cs">
+      <DependentUpon>AssayReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\CameraControl.xaml.cs">
+      <DependentUpon>CameraControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\ChangeOperRoomNo.xaml.cs">
+      <DependentUpon>ChangeOperRoomNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\ChargeSubmitControl.xaml.cs">
+      <DependentUpon>ChargeSubmitControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\ChargeTemplateMethodControl.xaml.cs">
+      <DependentUpon>ChargeTemplateMethodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\ChargeTempletControl.xaml.cs">
+      <DependentUpon>ChargeTempletControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\EmergencyRegisterControl.xaml.cs">
+      <DependentUpon>EmergencyRegisterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\LoadReport.xaml.cs">
+      <DependentUpon>LoadReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationCanceled.xaml.cs">
+      <DependentUpon>OperationCanceled.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationEventNoteControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>OperationEventNoteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationInformationControl.xaml.cs">
+      <DependentUpon>OperationInformationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationInformationTopControl.xaml.cs">
+      <DependentUpon>OperationInformationTopControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationInterfaceControl.xaml.cs">
+      <DependentUpon>OperationInterfaceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationJump.xaml.cs">
+      <DependentUpon>OperationJump.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationMedNoteControl.xaml.cs">
+      <DependentUpon>OperationMedNoteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationRescue.xaml.cs">
+      <DependentUpon>OperationRescue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationScreen.xaml.cs">
+      <DependentUpon>OperationScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationShift.xaml.cs">
+      <DependentUpon>OperationShift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\OperationShiftChange.xaml.cs">
+      <DependentUpon>OperationShiftChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\PacsInterface.xaml.cs">
+      <DependentUpon>PacsInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\PACUQuery.xaml.cs">
+      <DependentUpon>PACUQuery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationInformation\PatConfirmControl.xaml.cs">
+      <DependentUpon>PatConfirmControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QualityControl\QualityControlRegistration.xaml.cs">
+      <DependentUpon>QualityControlRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\WindowBase.cs" />
+    <Compile Include="ToolBar\BottomMenu.xaml.cs">
+      <DependentUpon>BottomMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\Convert\InttoHeightConvert.cs" />
+    <Compile Include="WorkList\Convert\IntToVisibilityConvert.cs" />
+    <Compile Include="WorkList\Convert\OperTimeShowConvert.cs" />
+    <Compile Include="WorkList\Convert\textlenthToVisibilityConvert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\Convert\ThicknessToDoubleConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\DateRegister.xaml.cs">
+      <DependentUpon>DateRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\MonitorBind.xaml.cs">
+      <DependentUpon>MonitorBind.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\OperatingPatient.xaml.cs">
+      <DependentUpon>OperatingPatient.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\EQCard.xaml.cs">
+      <DependentUpon>EQCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\ImageSource.xaml.cs">
+      <DependentUpon>ImageSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\InHospitalRegister.xaml.cs">
+      <DependentUpon>InHospitalRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\OutRegister.xaml.cs">
+      <DependentUpon>OutRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\SearchPatientList.xaml.cs">
+      <DependentUpon>SearchPatientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\SequenceAndTimerControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\TodaySurgery.xaml.cs">
+      <DependentUpon>TodaySurgery.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\WordList.xaml.cs">
+      <DependentUpon>WordList.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\PatientCard.xaml.cs">
+      <DependentUpon>PatientCard.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\ProgressInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkList\TimeEdit.xaml.cs">
+      <DependentUpon>TimeEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\TomorrowSurgery.xaml.cs">
+      <DependentUpon>TomorrowSurgery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkList\WeekSurgery.xaml.cs">
+      <DependentUpon>WeekSurgery.xaml</DependentUpon>
+    </Compile>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnesGraph\DateAxisControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AnesGraph\InAndOutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnesGraph\InOperationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnesGraph\IntakeAndOutputControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnesGraph\TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnesGraph\VitalSignsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AnesScore\Balthazar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\AddBloodGasMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InOperation\AddSignsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\AnesthesiaPathControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\AnesthesiaRouteControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\BloodGasAnalysisControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\IndividuationVitalSignControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InOperation\IntensiveSignControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InOperation\SignEntryControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\SignMakeupControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\SignSwicthControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InOperation\UnPostPDFControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OperationInformation\AfterOperationInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\AnesFree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\AssayReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\CameraControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\ChangeOperRoomNo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\ChargeSubmitControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\ChargeTemplateMethodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\ChargeTempletControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\EmergencyRegisterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\LoadReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\OperationCanceled.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationEventNoteControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationInformationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\OperationInformationTopControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationInterfaceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\OperationJump.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationMedNoteControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationRescue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\OperationShift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationInformation\OperationShiftChange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\PacsInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\PACUQuery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OperationInformation\PatConfirmControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QualityControl\QualityControlRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ContentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\WindowBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolBar\BottomMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\DateRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\MonitorBind.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\OperatingPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\EQCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\ImageSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\InHospitalRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\OutRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\SearchPatientList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\TodaySurgery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\WordList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\PatientCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkList\TimeEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\TomorrowSurgery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkList\WeekSurgery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="Images\icon最小化.png" />
+    <Resource Include="Images\icon关于.png" />
+    <Resource Include="Images\InterBg.png" />
+    <Resource Include="Images\InterBg_Selected.png" />
+    <Resource Include="Images\InterDetailBg.png" />
+    <Resource Include="WorkList\Assets\search\searchIcom2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\search\searchRoom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\search\searchTime.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BottomMenu\麻醉计费-未选中.png" />
+    <Resource Include="Images\BottomMenu\麻醉计费-选中.png" />
+    <Resource Include="Images\MJSignTitle.png" />
+    <Resource Include="Images\rescue.png" />
+    <Resource Include="WorkList\Assets\icon\ASA6.png" />
+    <Resource Include="Images\ExtendAppContentOperRoomNoCheck.png" />
+    <Resource Include="Images\ExtendAppContentOperRoomNo.png" />
+    <Resource Include="WorkList\Assets\SearchSelectPatientBG.png" />
+    <Resource Include="WorkList\Assets\OperatingChoosed.png" />
+    <Resource Include="Images\icon关机.png" />
+    <Resource Include="Images\icon注销.png" />
+    <Resource Include="Images\icon锁屏.png" />
+    <Resource Include="Images\main-icon.ico" />
+    <Resource Include="Images\Coordination\min-user.png" />
+    <Resource Include="Images\Coordination\min-call-1.png" />
+    <Resource Include="Images\Coordination\min-call-2.png" />
+    <Resource Include="Images\Coordination\min-call-3.png" />
+    <Resource Include="WorkList\Assets\RegeisterBaseLine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\StatusFinish.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\FenGeLine.png" />
+    <Resource Include="WorkList\Assets\OperationIcon_Center.png" />
+    <Resource Include="WorkList\Assets\Operation_hover.png" />
+    <Resource Include="WorkList\Assets\Operation_normal.png" />
+    <Resource Include="WorkList\Assets\Operation_press.png" />
+    <Resource Include="WorkList\Assets\Operating.png" />
+    <EmbeddedResource Include="Images\BottomMenu\交班.png" />
+    <EmbeddedResource Include="Images\BottomMenu\密集体征.png" />
+    <EmbeddedResource Include="Images\BottomMenu\检查结果.png" />
+    <EmbeddedResource Include="Images\BottomMenu\检验结果.png" />
+    <EmbeddedResource Include="Images\BottomMenu\电子病历.png" />
+    <EmbeddedResource Include="Images\BottomMenu\设备采集.png" />
+    <EmbeddedResource Include="Images\BottomMenu\麻醉路径.png" />
+    <Resource Include="Images\Login\bg.png" />
+    <Resource Include="Images\Login\loginButton-hover.png" />
+    <Resource Include="Images\Login\loginButton-normal.png" />
+    <Resource Include="Images\Login\loginButton-press.png" />
+    <Resource Include="Images\Login\login.png" />
+    <Resource Include="Images\Login\logo.png" />
+    <Resource Include="Images\Login\password-icon.png" />
+    <Resource Include="Images\Login\user-icon.png" />
+    <Resource Include="Images\Login\X-normal.png" />
+    <Resource Include="Images\Login\X-press.png" />
+    <Resource Include="Images\Login\companyLogo.png" />
+    <Resource Include="Images\Login\title.png" />
+    <Resource Include="Images\Login\inputHover.png" />
+    <Resource Include="Images\Login\inputNormal.png" />
+    <Resource Include="WorkList\Assets\SelectPatientBG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\SelectPatientIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\SelectPatientOpen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Loginicon.png" />
+    <Resource Include="Images\logo_title.png" />
+    <Resource Include="Images\h-2.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\h-1.png" />
+    <Resource Include="Images\left.png" />
+    <Resource Include="Images\cross.png" />
+    <Resource Include="WorkList\Assets\IsProductUsed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\IsProductUsedWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\NoProductUsed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\NoProductUsedWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\outRegisterBaseLine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\outRegisterHighLine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\ProductUsedBg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\SettingButtonBg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LegendSetting.png" />
+    <Resource Include="Images\delnormal.png" />
+    <Resource Include="Images\delpress.png" />
+    <Resource Include="WorkList\Assets\OperatingInfo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\isCardChoosed.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\PatientCardBg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\baseLine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\emergencyRegister.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\EQCardBg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\EqDeleteIcon.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\finishList.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\highlightLine1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\highlightLine2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\huxiIcon.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\jianhuIcon.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\mazuiIcon.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\mouseDown.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\RegeisterStateBg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\TotolList.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\spread.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\tomorrowBg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="AnesGraph\SettingButtonBg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Coordination\list-callbutton-disabled.png" />
+    <Resource Include="Images\Coordination\list-callbutton-press.png" />
+    <Resource Include="Images\Coordination\list-callbutton.png" />
+    <Resource Include="Images\Coordination\list-called.png" />
+    <Resource Include="Images\Coordination\list-calling.png" />
+    <Resource Include="Images\Coordination\list-callover-press.png" />
+    <Resource Include="Images\Coordination\list-callover.png" />
+    <Resource Include="Images\Coordination\list-user.png" />
+    <Resource Include="Images\Coordination\av-background.png" />
+    <Resource Include="Images\Coordination\av-callbutton-press.png" />
+    <Resource Include="Images\Coordination\av-callbutton.png" />
+    <Resource Include="Images\Coordination\av-calling-circle.png" />
+    <Resource Include="Images\Coordination\av-calling.png" />
+    <Resource Include="Images\Coordination\av-calloverbutton-press.png" />
+    <Resource Include="Images\Coordination\av-calloverbutton.png" />
+    <Resource Include="Images\Coordination\av-free.png" />
+    <Resource Include="Images\Coordination\ico-connected.png" />
+    <Resource Include="Images\Coordination\microphone-mute.png" />
+    <Resource Include="Images\Coordination\microphone-normal.png" />
+    <Resource Include="Images\Coordination\sound-mute.png" />
+    <Resource Include="Images\Coordination\sound-normal.png" />
+    <Resource Include="Images\Coordination\track-thumb.png" />
+    <Resource Include="Images\Coordination\volume-background.png" />
+    <Resource Include="Images\Coordination\volume-value.png" />
+    <Resource Include="Images\Coordination\av-calling-accept.png" />
+    <Content Include="DocTemplate\DocInputFormTemplate\OperFollowUp.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\DocInputFormTemplate\PreoperativeInterview.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\DocInputFormTemplate\SafetyChecks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\Custom.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Fakes Include="Fakes\Microsoft.Expression.Controls.fakes" />
+    <Fakes Include="Fakes\Microsoft.Expression.Drawing.fakes" />
+    <Fakes Include="Fakes\Microsoft.Expression.Interactions.fakes" />
+    <None Include="MDEP.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search-icon.png" />
+    <Resource Include="WorkList\Assets\clock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\icon\IconAL.fw.png" />
+    <Resource Include="WorkList\Assets\icon\IconAsg.fw.png" />
+    <Resource Include="WorkList\Assets\icon\icondtr.fw.png" />
+    <Resource Include="WorkList\Assets\icon\iconH.fw.png" />
+    <Resource Include="WorkList\Assets\icon\IconOpr.fw.png" />
+    <Resource Include="WorkList\Assets\icon\iconR.fw.png" />
+    <Resource Include="WorkList\Assets\icon\IconX.fw.png" />
+    <Resource Include="WorkList\Assets\ItemBg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\NoOperation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\operationCount.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\OperationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\OperationListbg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\Optime.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\Progressbarbg.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\ProgressPoint.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\scrollBarBg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WorkList\Assets\search\searchBg.png" />
+    <Resource Include="WorkList\Assets\search\searchIcon.png" />
+    <Resource Include="WorkList\Assets\search\serchborder..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.Anes.CustomProject\MedicalSystem.Anes.CustomProject.csproj">
+      <Project>{0d688883-0fe9-4274-94a1-0be30460724e}</Project>
+      <Name>MedicalSystem.Anes.CustomProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.Document\MedicalSystem.Anes.Document.csproj">
+      <Project>{d8dbdd51-dac9-4add-a4a3-6b08115e4777}</Project>
+      <Name>MedicalSystem.Anes.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.FrameWork\MedicalSystem.Anes.FrameWork.csproj">
+      <Project>{2a23bda0-1f81-4779-b1c4-a874b2475750}</Project>
+      <Name>MedicalSystem.Anes.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.DataServices\MedicalSystem.AnesWorkStation.DataServices.csproj">
+      <Project>{95c5bb6a-6351-4382-90c9-938c9a3bf997}</Project>
+      <Name>MedicalSystem.AnesWorkStation.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Domain\MedicalSystem.AnesWorkStation.Domain.csproj">
+      <Project>{ee71da80-4e68-4a94-aefa-acbe2565be5e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.KeyBoard\MedicalSystem.AnesWorkStation.KeyBoard.csproj">
+      <Project>{5342b57a-ecc7-445a-8ea0-f4d191c9518e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.KeyBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Model\MedicalSystem.AnesWorkStation.Model.csproj">
+      <Project>{0b3a7dbd-f135-4c43-81b7-29ca55afdddd}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.ViewModel\MedicalSystem.AnesWorkStation.ViewModel.csproj">
+      <Project>{69254eae-807f-419b-9917-4560e3b921a4}</Project>
+      <Name>MedicalSystem.AnesWorkStation.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Wpf\MedicalSystem.AnesWorkStation.Wpf.csproj">
+      <Project>{f03c5a1f-f2ba-4783-b65e-56253b305de2}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Score\Score.csproj">
+      <Project>{3059098a-7f49-44c9-9f15-76aee0bb6f0b}</Project>
+      <Name>Score</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Charge\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DocTemplate\客户化医院\PACU护理记录单.xml" />
+    <Content Include="DocTemplate\客户化医院\复苏记录单.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\安全核查表.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="DocTemplate\客户化医院\不良后果告知书.xml" />
+    <Resource Include="DocTemplate\客户化医院\麻醉处方单.xml" />
+    <Content Include="DocTemplate\客户化医院\麻醉计划.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\麻醉记录单.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\麻醉质控指标单.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ContentWindow\close1.png" />
+    <Resource Include="Images\ContentWindow\close2.png" />
+    <Resource Include="Images\ContentWindow\Coevery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ContentWindow\close_icon02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\emergency.png" />
+    <Resource Include="Images\emergencycheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\insulate.png" />
+    <Resource Include="Images\insulatecheck.png" />
+    <Resource Include="Images\radiate.png" />
+    <Resource Include="Images\radiatecheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ContentWindow\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ASA1.png" />
+    <Resource Include="Images\ASA2.png" />
+    <Resource Include="Images\ASA3.png" />
+    <Resource Include="Images\ASA4.png" />
+    <Resource Include="Images\ASA5.png" />
+    <Resource Include="Images\dropdowblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oproombusy.png" />
+    <Resource Include="Images\oproomnormal.png" />
+    <Resource Include="Images\oproomnormalchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DocTemplate\客户化医院\恢复室记录单.xml" />
+    <Content Include="DocTemplate\客户化医院\手术清点单.xml" />
+    <Content Include="DocTemplate\客户化医院\手术风险评估单.xml" />
+    <Content Include="DocTemplate\客户化医院\术前访视.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\术后随访.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\输血知情同意书.xml" />
+    <Content Include="DocTemplate\客户化医院\镇痛观察.xml" />
+    <Content Include="DocTemplate\客户化医院\镇痛记录单.xml" />
+    <Content Include="DocTemplate\客户化医院\麻醉同意书.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocTemplate\客户化医院\麻醉总结单.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WorkList\Assets\icon\ASA1.png" />
+    <Resource Include="WorkList\Assets\icon\ASA2.png" />
+    <Resource Include="WorkList\Assets\icon\ASA3.png" />
+    <Resource Include="WorkList\Assets\icon\ASA4.png" />
+    <Resource Include="WorkList\Assets\icon\ASA5.png" />
+    <Resource Include="WorkList\Assets\icon\急救.png" />
+    <Resource Include="WorkList\Assets\icon\急救2.png" />
+    <Resource Include="WorkList\Assets\icon\放射.png" />
+    <Resource Include="WorkList\Assets\icon\放射2.png" />
+    <Resource Include="WorkList\Assets\icon\隔离.png" />
+    <Resource Include="WorkList\Assets\icon\隔离2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ToolBar\Assets\BottomItemBg.png" />
+    <Resource Include="ToolBar\Assets\BottomItemIcon1.fw.png" />
+    <Resource Include="ToolBar\Assets\BottomItemIcon2.fw.png" />
+    <Resource Include="ToolBar\Assets\bottomMenuBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ASA_None.png" />
+    <Resource Include="Images\ASA6.png" />
+    <EmbeddedResource Include="Images\BottomMenu\三方核查单-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\三方核查单.png" />
+    <EmbeddedResource Include="Images\BottomMenu\交班-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\个性化体征-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\个性化体征-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\仪器设置-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\保存模板.png" />
+    <EmbeddedResource Include="Images\BottomMenu\信息集成-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\同意书-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术信息-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术信息.png" />
+    <EmbeddedResource Include="Images\BottomMenu\仪器设置.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术取消-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术取消-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术查看-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术跳转-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术跳转-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\明日手术-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\更换手术间-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\更换手术间.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术中换室-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术中换室-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术中查看-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术中查看-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术前访视单-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术后随访单-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\检验结果-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\模板保存-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\模板调用-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\模板调用.png" />
+    <EmbeddedResource Include="Images\BottomMenu\信息集成.png" />
+    <Resource Include="ToolBar\Assets\缩回箭头图标--hover.png" />
+    <Resource Include="ToolBar\Assets\缩回箭头图标-normal.png" />
+    <EmbeddedResource Include="Images\BottomMenu\血气分析-未选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\血气分析-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\麻醉单-选中.png" />
+    <EmbeddedResource Include="Images\BottomMenu\麻醉同意书.png" />
+    <EmbeddedResource Include="Images\BottomMenu\手术查看.png" />
+    <EmbeddedResource Include="Images\BottomMenu\明日手术.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术前访视单.png" />
+    <EmbeddedResource Include="Images\BottomMenu\术后随访单.png" />
+    <EmbeddedResource Include="Images\BottomMenu\麻醉记录单.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(SolutionDir)\lib\Update\Client $(TargetDir) /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--删除多语言包【start】-->
+  <Target Name="AfterPackage" AfterTargets="CopyAllFilesToSingleFolderForPackage" />
+  <ItemGroup>
+    <FluentValidationExcludedCultures Include="cs;da;de;en;es;fa;fi;fr;it;ja;ko;mk;nl;pl;pt;ru;sv;tr;zh-CN;zh-Hans;zh-Hant">
+      <InProject>false</InProject>
+    </FluentValidationExcludedCultures>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Target Name="RemoveTranslationsAfterBuild" AfterTargets="AfterBuild">
+    <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(OutputPath)%(Filename)')" />
+  </Target>
+  <Target Name="RemoveTranslationsAfterPackage" AfterTargets="AfterPackage">
+    <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(_PackageTempDir)\$(OutputPath)%(Filename)')" />
+  </Target>
+  <!--删除多语言包【end】-->
+</Project>

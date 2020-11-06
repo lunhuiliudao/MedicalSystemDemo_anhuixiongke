@@ -1,0 +1,507 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.WorkList.OutRegister"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:cc="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Converters;assembly=MedicalSystem.AnesWorkStation.Wpf"
+                       xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+                       xmlns:localControl="clr-namespace:MedicalSystem.AnesWorkStation.View.WorkList"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       PreviewKeyDown="BaseUserControl_PreviewKeyDown" mc:Ignorable="d">
+    <Viewbox>
+        <Grid Width="1024" Height="1555" Background="White">
+            <Grid.Resources>
+                <cc:PlanWhereAbortsConverter x:Key="PlanWhereAbortsConverter1" />
+                <Style x:Key="CheckBoxStyle" TargetType="{x:Type CheckBox}">
+                    <Setter Property="SnapsToDevicePixels" Value="true" />
+                    <Setter Property="OverridesDefaultStyle" Value="False" />
+                    <Setter Property="FocusVisualStyle" Value="{DynamicResource CheckBoxFocusVisual}" />
+                    <Setter Property="Height" Value="25" />
+                    <Setter Property="IsChecked" Value="{Binding IsChecked}" />
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="CheckBox">
+                                <Grid x:Name="aaaa">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Width="{TemplateBinding Height}" Height="{TemplateBinding Height}">
+                                        <Rectangle x:Name="CheckBoxRectangle" Fill="#CDCDCD" Opacity="0.3" RadiusX="5"
+                                                   RadiusY="5" />
+                                        <Rectangle x:Name="CheckBoxRectangleOut" RadiusX="5" RadiusY="5" Stroke="#CDCDCD"
+                                                   StrokeThickness="1" />
+                                        <Grid x:Name="CheckedMark" Width="20" Height="20" Visibility="Collapsed">
+                                            <Path Data="M1,9 L10,17" SnapsToDevicePixels="False" Stroke="White"
+                                                  StrokeThickness="3" />
+                                            <Path Data="M8,17 L20,4" SnapsToDevicePixels="False" Stroke="White"
+                                                  StrokeThickness="3" />
+                                            <Grid.RenderTransform>
+                                                <RotateTransform x:Name="CheckBoxTransform" Angle="0" CenterX="10" CenterY="10" />
+                                            </Grid.RenderTransform>
+                                        </Grid>
+                                    </Grid>
+                                    <TextBlock Grid.Column="1" Margin="14,0,0,0" VerticalAlignment="Center" FontSize="18"
+                                               Foreground="White"
+                                               Text="{Binding Name}" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="CheckedMark" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="CheckBoxRectangle" Property="Fill" Value="#4DffA6" />
+                                        <Setter TargetName="CheckBoxRectangle" Property="Opacity" Value="1" />
+                                        <Setter TargetName="CheckBoxRectangleOut" Property="Stroke" Value="Transparent" />
+                                    </Trigger>
+                                    <EventTrigger RoutedEvent="Click">
+                                        <BeginStoryboard Name="storyBegin" HandoffBehavior="SnapshotAndReplace">
+                                            <Storyboard TargetProperty="Angle" TargetName="CheckBoxTransform">
+                                                <DoubleAnimation From="0" To="360" Duration="0:0:0.1" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+                                        <RemoveStoryboard BeginStoryboardName="storyBegin" />
+                                    </EventTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="_ListBoxItemStyle" TargetType="ListBoxItem">
+                    <Setter Property="Height" Value="25" />
+                    <Setter Property="Width" Value="400" />
+                    <Setter Property="Margin" Value="20,15,0,15" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Width="25" Height="25" Margin="10,0,0,0"
+                                              IsChecked="{Binding ITEM_VALUE}"
+                                              Style="{StaticResource CheckBoxStyle}" />
+                                    <TextBlock Margin="10,0,0,0"
+                                               Style="{StaticResource PopupWindowFontInfo}"
+                                               Text="{Binding ITEM_NAME}"
+                                               TextAlignment="Left" />
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="_listboxStyle" TargetType="ListBox">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="ItemContainerStyle" Value="{StaticResource _ListBoxItemStyle}" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBox">
+                                <WrapPanel IsItemsHost="True" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="_rigisterTextblockstyle" TargetType="TextBlock">
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="26" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style x:Key="_finishTextblockstyle" TargetType="TextBlock">
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="26" />
+                    <Setter Property="Foreground" Value="#199eae" />
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="130*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="380*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="710*" />
+                <RowDefinition Height="120*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#21C1D3" />
+            <Grid Grid.Row="1" Margin="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.RowSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowTopFontBig}" Text="手术间" />
+                    <TextBlock Width="100" Margin="8,0,0,0"
+                               Style="{StaticResource PopupWindowTopFontBig}"
+                               Text="{Binding OPER_ROOM_NO}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="12,0,0,0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="姓名" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding NAME}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="12,0,0,0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="性别" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding SEX}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="12,0,0,0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="年龄" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding AGE}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Margin="12,0,0,0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="床号" />
+                    <TextBox Margin="20,0,0,0"
+                             Style="{StaticResource TextBoxWithNoBorder}"
+                             Text="{Binding BED_NO}"  IsReadOnly="True"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,0,2,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="住院号" />
+                    <TextBlock Margin="3,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding INP_NO}"  />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Margin="12,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="患者ID" />
+                    <TextBlock Margin="3,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding PATIENT_ID}" />
+                </StackPanel>
+
+                <Grid Grid.Column="5">
+                    <Ellipse Width="25" Height="25" Fill="#25A4C9" />
+                    <TextBox Foreground="White"
+                             Style="{StaticResource TextBoxWithNoBorder}"
+                             Text="{Binding SEQUENCE}" IsReadOnly="True"/>
+                </Grid>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <StackPanel Margin="180,-5,0,0" Orientation="Horizontal">
+                    <TextBlock Width="28" Height="28" Foreground="White"
+                               Style="{StaticResource PopupWindowTopFontBlue}"
+                               Text="1" />
+                    <TextBlock Margin="10,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfoTitle}"
+                               Text="出室信息确认" />
+                </StackPanel>
+                <Image Width="311" Height="13" Source="Assets/outRegisterBaseLine.png" />
+                <Image Width="311" Height="13" Source="Assets/outRegisterHighLine.png"
+                       Visibility="{Binding OUTROOMTIMECHECK}" />
+                <StackPanel Margin="690,-5,0,0"
+                            IsEnabled="{Binding OUTROOMTIMECHECKBOOL}"
+                            Orientation="Horizontal">
+                    <TextBlock Width="28" Height="28" Foreground="White" Text="2">
+                        <TextBlock.Style>
+                            <Style BasedOn="{StaticResource PopupWindowTopFontBlue}" TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding OUTROOMTIMECHECKBOOL}" Value="false">
+                                        <Setter Property="Background" Value="LightGray" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <TextBlock Margin="10,0,0,0" Text="出室时间确认">
+                        <TextBlock.Style>
+                            <Style BasedOn="{StaticResource PopupWindowFontInfoTitle}" TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding OUTROOMTIMECHECKBOOL}" Value="false">
+                                        <Setter Property="Foreground" Value="LightGray" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" />
+
+            <Grid Grid.Row="3" Margin="115,40,50,20"
+                  Visibility="{Binding PATINFOCHECK}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontOrange}" Text="*" />
+                    <TextBlock Margin="0,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="术后患者去向" />
+                    <ListBox Name="lbEmergencyFlow" Height="30" Margin="80,0,0,0" Background="#EBF4F7"
+                             FontSize="20"
+                             ItemsSource="{Binding EmergencyFlow}"
+                             SelectedItem="{Binding PLAN_WHEREABORTS, Converter={StaticResource PlanWhereAbortsConverter1}, Mode=TwoWay}"
+                             Style="{StaticResource ListBoxRadioStyle}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="麻醉效果" />
+                    <ComboBox Width="226" Height="33" Margin="8,0,0,0" DisplayMemberPath="ITEM_NAME"
+                              FontSize="20" IsEditable="False"
+                              ItemsSource="{Binding MED_ANES_EFECT_DICT}"
+                              SelectedValue="{Binding ANES_EFFECT}"
+                              SelectedValuePath="ITEM_NAME" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="1" Margin="450,0,0,0" HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="术后镇痛" />
+                    <ComboBox Width="226" Height="33" Margin="8,0,0,0" DisplayMemberPath="ITEM_NAME"
+                              FontSize="20" IsEditable="False"
+                              ItemsSource="{Binding MED_AFTER_ANALGESIA_DICT}"
+                              SelectedValue="{Binding AFTER_ANALGESIA}"
+                              SelectedValuePath="ITEM_CODE" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="镇痛方式" />
+                    <ComboBox Width="676" Height="33" Margin="8,0,0,0" DisplayMemberPath="ITEM_NAME"
+                              FontSize="20" IsEditable="True" IsEnabled="True"
+                              ItemsSource="{Binding MED_ANALGESIA_METHOD_DICT}"
+                              SelectedValue="{Binding ANALGESIA_METHOD, Mode=TwoWay}"
+                              SelectedValuePath="ITEM_NAME" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4" Margin="115,20,157,20" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Left"
+                           Style="{StaticResource PopupWindowFontInfo}"
+                           Text="术中输液" />
+                <StackPanel Grid.Row="1" Grid.Column="0" Height="33" Margin="20,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="总入量" />
+                    <TextBlock Width="106" Margin="20,0,0,0" Background="#E7F3F3"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding ZONGRULIANG}" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="ML" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Height="33" Margin="20,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="总出量" />
+                    <TextBlock Width="106" Margin="20,0,0,0" Background="#E7F3F3"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding ZONGCHULIANG}" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="ML" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0" Height="33" Margin="20,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="输   血" />
+                    <TextBlock Width="106" Margin="20,0,0,0" Background="#E7F3F3"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding SHUXUE}" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="ML" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Height="33" Margin="20,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource PopupWindowFontInfo}" Text="自体血" />
+                    <TextBlock Width="106" Margin="20,0,0,0" Background="#E7F3F3"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="{Binding ZITIXUE}" />
+                    <TextBlock Margin="20,0,0,0"
+                               Style="{StaticResource PopupWindowFontInfo}"
+                               Text="ML" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Margin="115,50,0,20"
+                  Visibility="{Binding PATINFOCHECK}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="437" />
+                    <RowDefinition Height="6" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="140" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left"
+                           Style="{StaticResource PopupWindowFontInfo}"
+                           Text="麻醉期间非预期事件" Height="29" Margin="0,-34,0,5" Width="180" />
+                <ListBox Grid.Row="1" FontSize="20"
+                         ItemsSource="{Binding LIST_TEMP}"
+                         Style="{StaticResource _listboxStyle}" />
+
+                <TextBlock Grid.Row="3" HorizontalAlignment="Left"
+                           Style="{StaticResource PopupWindowFontInfo}"
+                           Text="发生原因" Height="24" Margin="0,7,0,5" Width="80" />
+                <TextBox Name="txtReason" Grid.Row="4" Width="760" Height="auto"
+                         HorizontalAlignment="Left" FontSize="20"
+                         Style="{StaticResource TextArea}"
+                         Text="{Binding UNEXPECT_EVENT_REASON}" Margin="10,0,0,0" />
+            </Grid>
+
+            <Grid Grid.Row="6" Margin="0,50,0,0">
+                <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top"
+                            Orientation="Horizontal">
+                    <Button Name="btnReset" Margin="0,0,20,0" Click="btnReset_Click"
+                            Command="{Binding ResetCommand}"
+                            Content="{Binding leftBtnText}"
+                            FontSize="20"
+                            Style="{StaticResource EllipseButtonStyleWhite}" />
+                    <Button x:Name="btnNext"
+                            Command="{Binding SaveCommand}"
+                            Content="{Binding rightBtnText}"
+                            FontSize="20" />
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Grid.Row="3" Grid.RowSpan="3"
+                  Visibility="{Binding OUTROOMTIMECHECK}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Margin="150,0,0,0" HorizontalAlignment="Left"
+                           VerticalAlignment="Top" FontSize="28" Foreground="#484B4C" Text="编辑出室时间" />
+                <Grid Grid.Row="1" Grid.RowSpan="2" Margin="38,42,-38,58">
+
+                    <Image Width="24" Height="743" Margin="526,30,473,0" VerticalAlignment="Top"
+                           Source="Assets/RegeisterBaseLine.png" />
+                    <Rectangle Width="6" Height="750" Margin="535,30,483,0" VerticalAlignment="Top"
+                               Fill="#23D1AA" Stroke="Transparent" />
+                    <Grid Height="51" Margin="299,10,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <!--<Image Source="Assets/RegeisterStateBg.fw.png" />-->
+                            <Image Height="32" Margin="0,10,7,9" HorizontalAlignment="Right"
+                                   Source="Assets/StatusFinish.png" />
+                            <TextBlock Text="入手术室">
+                                <TextBlock.Style>
+                                    <Style BasedOn="{StaticResource _finishTextblockstyle}" TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding InRoomEnable}" Value="false">
+                                                <Setter Property="Foreground" Value="#199eae" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding IN_DATE_TIME,Mode=TwoWay}" IsEnabled="False"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Margin="300,0,0,0" HorizontalAlignment="Left" Background="Transparent"
+                                              IsEnabled="False"
+                                              SelectedDate="{Binding IN_DATE_TIME, Mode=TwoWay}" />
+                    </Grid>
+
+                    <Grid Height="51" Margin="299,155,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <!--<Image Source="Assets/RegeisterStateBg.fw.png" />-->
+                            <Image Height="32" Margin="0,11,7,8" HorizontalAlignment="Right"
+                                   Source="Assets/StatusFinish.png" />
+                            <TextBlock Style="{StaticResource _finishTextblockstyle}" Text="麻醉开始" />
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding ANES_START_TIME,Mode=TwoWay}" IsEnabled="False"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Margin="300,0,0,0" HorizontalAlignment="Left" Background="Transparent"
+                                              IsEnabled="False"
+                                              SelectedDate="{Binding ANES_START_TIME, Mode=TwoWay}" />
+                    </Grid>
+
+                    <Grid Height="51" Margin="299,300,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <!--<Image Source="Assets/RegeisterStateBg.fw.png" />-->
+                            <Image Height="32" Margin="0,10,7,9" HorizontalAlignment="Right"
+                                   Source="Assets/StatusFinish.png" />
+                            <TextBlock Style="{StaticResource _finishTextblockstyle}" Text="手术开始" />
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding START_DATE_TIME,Mode=TwoWay}" IsEnabled="False"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Margin="300,0,0,0" HorizontalAlignment="Left" Background="Transparent"
+                                              IsEnabled="False"
+                                              SelectedDate="{Binding START_DATE_TIME, Mode=TwoWay}" />
+                    </Grid>
+
+                    <Grid Height="51" Margin="299,445,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <!--<Image Source="Assets/RegeisterStateBg.fw.png" />-->
+                            <Image Height="32" Margin="0,10,7,9" HorizontalAlignment="Right"
+                                   Source="Assets/StatusFinish.png" />
+                            <TextBlock Style="{StaticResource _finishTextblockstyle}" Text="手术结束" />
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding END_DATE_TIME,Mode=TwoWay}" IsEnabled="False"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Margin="300,0,0,0" HorizontalAlignment="Left" Background="Transparent"
+                                              IsEnabled="False"
+                                              SelectedDate="{Binding END_DATE_TIME, Mode=TwoWay}" />
+                    </Grid>
+
+                    <Grid Height="51" Margin="299,590,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <!--<Image Source="Assets/RegeisterStateBg.fw.png" />-->
+                            <Image Height="32" Margin="0,10,7,9" HorizontalAlignment="Right"
+                                   Source="Assets/StatusFinish.png" />
+                            <TextBlock Style="{StaticResource _finishTextblockstyle}" Text="麻醉结束" />
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding ANES_END_TIME,Mode=TwoWay}" IsEnabled="False"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Margin="300,0,0,0" HorizontalAlignment="Left" Background="Transparent"
+                                              IsEnabled="False"
+                                              SelectedDate="{Binding ANES_END_TIME, Mode=TwoWay}" />
+                    </Grid>
+
+                    <Grid Height="51" Margin="299,735,0,0" VerticalAlignment="Top">
+                        <Grid Width="262" HorizontalAlignment="Left">
+                            <Image Source="Assets/RegeisterStateBg.fw.png" />
+                            <!--<Image Source="Assets/StatusFinish.png" Height="32" HorizontalAlignment="Right" Margin="0,10,7,9" />-->
+                            <TextBlock Style="{StaticResource _rigisterTextblockstyle}" Text="出手术室" />
+                        </Grid>
+                        <!--<control:DatePickerEx SelectedDate="{Binding OUT_DATE_TIME,Mode=TwoWay}" IsEnabled="{Binding OutRoomEnable}"
+                                                      StringFormat="HH:mm" SpecialMode="True" Background="Transparent"  HorizontalAlignment="Left" Margin="300,0,0,0"/>-->
+                        <control:DateSelector Name="OutTime" Margin="300,0,0,0" HorizontalAlignment="Left"
+                                              Background="Transparent"
+                                              Focusable="{Binding OUTROOMTIMECHECKBOOL}"
+                                              SelectedDate="{Binding OUT_DATE_TIME, Mode=TwoWay}" />
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+    </Viewbox>
+</local:BaseUserControl>

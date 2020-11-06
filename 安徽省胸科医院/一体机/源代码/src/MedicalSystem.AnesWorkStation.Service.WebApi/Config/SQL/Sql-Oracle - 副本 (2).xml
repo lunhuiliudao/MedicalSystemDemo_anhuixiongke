@@ -1,0 +1,2701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DICT>
+  <model>
+    <groupname>平台SQL语句</groupname>
+    <group>
+      <key>LoginAcount</key>
+      <value>
+        <![CDATA[SELECT U.USER_ID,
+       U.USER_JOB_ID,
+       U.LOGIN_NAME,
+       U.USER_NAME,
+       U.IS_VALID,
+       NVL(D.DEPT_NAME, U.USER_DEPT_CODE) AS DEPT_NAME,
+       B.USER_JOB
+  FROM MED_USERS U
+  LEFT JOIN MED_HIS_USERS B ON U.USER_JOB_ID = B.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT D
+    ON U.USER_DEPT_CODE = D.DEPT_CODE WHERE U.LOGIN_NAME = :LoginName AND U.LOGIN_PWD =:LoginPwd]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetUserByUserJobId</key>
+      <value>
+        <![CDATA[SELECT U.USER_ID,
+       U.USER_JOB_ID,
+       U.LOGIN_NAME,
+       B.USER_NAME,
+       U.IS_VALID,
+       NVL(D.DEPT_NAME, U.USER_DEPT_CODE) AS DEPT_NAME,
+       B.USER_JOB
+  FROM MED_USERS U
+  LEFT JOIN MED_HIS_USERS B ON U.USER_JOB_ID = B.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT D
+    ON U.USER_DEPT_CODE = D.DEPT_CODE WHERE U.USER_JOB_ID = :USER_JOB_ID]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperListForDoctorIndex</key>
+      <value>
+        <![CDATA[  select 
+									       patient_id,
+									       visit_id,
+									       oper_id,
+									       inp_no,
+									       operating_room_no,
+									       sequence,
+									       name,
+									       sex,
+									       age,
+									       dept_name,
+									       operation_name,
+									       oper_status,
+									       opertime,
+									       surgeon,
+									       anesmethod,
+									       anesdoctor,
+									       anesdoctorids,
+									       anesthesia_doctor,
+									       anesdoctor1,
+									       anesdoctor2,
+									       nurse,
+									       asa,
+									       old_asa_grade,
+									       operation_scale,
+									       old_operation_scale,
+									       oper_date,
+									       EMERGENCY_IND,
+									       infected_ind,
+                         OUT_OPER_WHEREABORTS,
+									       case
+									         when m.ANESTHESIA_DOCTOR = :CurrentUserId then
+									          '主麻医生'
+									         when m.anesdoctor1 = :CurrentUserId then
+									          '副麻医生'
+									         when m.anesdoctor2 = :CurrentUserId then
+									          '副麻医生'
+									         else
+									          ''
+									       end AnesRole
+									  from v_operation_master_v2 m
+									 where m.OPERATING_ROOM_NO IS NOT NULL 
+                     AND (m.NAME LIKE '%' || :PatName || '%' OR :PatName IS NULL)
+									   AND (m.INP_NO LIKE '%' || :InpNo || '%' OR :InpNo IS NULL)
+									   AND (m.dept_code LIKE '%' || :OperDept || '%' OR :OperDept IS NULL)
+									   AND (m.OPERATION_NAME LIKE '%' || :OperName || '%' OR :OperName IS NULL)
+									   AND (m.AnesDoctorIds LIKE '%' || :AnesDoctor || '%' OR
+									       :AnesDoctor IS NULL)
+									   AND (m.OPER_DATE >= :StartDate OR :StartDate IS NULL)
+									   AND (m.OPER_DATE < :EndDate OR :EndDate IS NULL)
+    
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperListForNurseIndex</key>
+      <value>
+        <![CDATA[ select main.* from ( SELECT T.PATIENT_ID,
+       T.VISIT_ID,
+       T.OPER_ID,
+       INP_NO,
+       T.OPERATING_ROOM_NO, t.SEQUENCE,
+       NAME,
+       SEX,
+       AGE,
+       A.DEPT_NAME,
+       t.OPERATION_NAME,
+       case when T.Oper_status <5 then '术前' 
+when (T.Oper_status >=5 and T.Oper_status <35) then '术中' 
+when (T.Oper_status =35 or T.Oper_status >45 ) then '术后' 
+ when (T.Oper_status>=40  and T.Oper_status <=45) then '复苏'
+ else '其他' end as Oper_status,
+       TO_CHAR(TRUNC((NVL((t.END_DATE_TIME - t.START_DATE_TIME) * 24, 0) * 60) / 60,
+                     0)) || '小时' ||
+       TO_CHAR(ROUND(MOD((NVL((t.END_DATE_TIME - t.START_DATE_TIME) * 24, 0) * 60), 60),0)) || '分钟' AS OPERTIME,
+       nvl(c1.USER_NAME,e.SURGEON) SURGEON,
+       T.ANESTHESIA_METHOD AnesMethod,
+        nvl(b1.USER_NAME, T.anesthesia_assistant) AnesDoctor1,
+         nvl(b2.USER_NAME, T.second_anesthesia_assistant) AnesDoctor2,
+         nvl(b.USER_NAME, T.ANESTHESIA_DOCTOR) || ' '|| nvl(b1.USER_NAME, T.anesthesia_assistant) ||' '||  nvl(b2.USER_NAME, T.second_anesthesia_assistant) AnesDoctor,
+        ( T.FIRST_OPERATION_NURSE ||','||  T.SECOND_OPERATION_NURSE ||','|| T.FIRST_SUPPLY_NURSE ||','|| T.SECOND_SUPPLY_NURSE) NurseIds,
+       nvl(c.USER_NAME, T.FIRST_OPERATION_NURSE) ||' '|| nvl(n1.USER_NAME, T.SECOND_OPERATION_NURSE) ||' '|| nvl(n2.USER_NAME, T.FIRST_SUPPLY_NURSE) ||' '|| nvl(n3.USER_NAME, T.SECOND_SUPPLY_NURSE) Nurse,
+       case when ( T.FIRST_OPERATION_NURSE =:CurrentUserId or T.SECOND_OPERATION_NURSE = :CurrentUserId)  then '洗手护士' when  ( T.FIRST_SUPPLY_NURSE =:CurrentUserId or T.SECOND_SUPPLY_NURSE = :CurrentUserId)  then   '巡回护士'   else '' end NurseRole ,
+        CASE WHEN INSTR(',1,Ⅰ级,一,一级,Ⅰ,I级,I,1级,１,ⅠE,Ⅰ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅰ级'
+             WHEN INSTR(',2,Ⅱ级,二,二级,Ⅱ,II级,II,2级,11,２,１１,ⅡE,Ⅱ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅱ级'  
+             WHEN INSTR(',3,Ⅲ级,三,三级,Ⅲ,III级,III,3级,111,３,１１１,ⅢE,Ⅲ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅲ级'  
+             WHEN INSTR(',4,Ⅳ级,四,四级,Ⅳ,IV级,IV,4级,1111,４,ⅣE,Ⅳ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅳ级'  
+             WHEN INSTR(',5,Ⅴ级,五,五级,Ⅴ,V级,V,5级,11111,５,ⅤE,Ⅴ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅴ级'  
+             WHEN INSTR(',6,Ⅵ级,六,六级,Ⅵ,VI级,VI,6级,111111,６,ⅥE,Ⅵ-E, ',T.OLD_ASA_GRADE)>0 THEN 'Ⅵ级'  
+        ELSE '其他' END AS ASA,T.OLD_ASA_GRADE,
+        CASE WHEN INSTR(',1,Ⅰ级,一,一级,Ⅰ,I级,I,1级,１,小, ',T.OLD_OPERATION_SCALE)>0 THEN 'Ⅰ级'
+             WHEN INSTR(',2,Ⅱ级,二,二级,Ⅱ,II级,II,2级,２,１１,中, ',T.OLD_OPERATION_SCALE)>0 THEN 'Ⅱ级'  
+             WHEN INSTR(',3,Ⅲ级,三,三级,Ⅲ,III级,III,3级,３,１１１,大, ',T.OLD_OPERATION_SCALE)>0 THEN 'Ⅲ级'  
+             WHEN INSTR(',4,Ⅳ级,四,四级,Ⅳ,IV级,IV,4级,４,特, ',T.OLD_OPERATION_SCALE)>0 THEN 'Ⅳ级'    
+        ELSE '其他' END AS OPERATION_SCALE,T.OLD_OPERATION_SCALE,
+        nvl(e.in_date_time, e.SCHEDULED_DATE_TIME) OPER_DATE, t.EMERGENCY_INDICATOR,e.INFECTED_IND
+        FROM (
+        SELECT
+        PATIENT_ID, VISIT_ID, OPER_ID, DEPT_STAYED, OPERATING_ROOM, OPERATING_ROOM_NO, DIAG_BEFORE_OPERATION,
+        PATIENT_CONDITION, ','||TRIM(OPERATION_SCALE)||',' OLD_OPERATION_SCALE, DIAG_AFTER_OPERATION, EMERGENCY_INDICATOR, EINDICATOR, ISOLATION_INDICATOR,
+        OPERATION_CLASS, OPERATING_DEPT, OPER_DOC,SURGEON, FIRST_ASSISTANT, SECOND_ASSISTANT, THIRD_ASSISTANT,
+        FOURTH_ASSISTANT, ANESTHESIA_METHOD, ANES_DOC,ANESTHESIA_DOCTOR, ANESTHESIA_ASSISTANT, BLOOD_TRAN_DOCTOR,
+        FIRST_OPERATION_NURSE, SECOND_OPERATION_NURSE, FIRST_SUPPLY_NURSE, SECOND_SUPPLY_NURSE,
+        NURSE_SHIFT_INDICATOR, OPER_DATE, START_DATE_TIME, END_DATE_TIME, SATISFACTION_DEGREE, SMOOTH_INDICATOR,
+        IN_FLUIDS_AMOUNT, OUT_FLUIDS_AMOUNT, BLOOD_LOSSED, BLOOD_TRANSFERED, ENTERED_BY, THIRD_SUPPLY_NURSE,
+        ORDER_TRANSFER, CHARGE_TRANSFER, END_INDICATOR, RECK_GROUP, OPER_STATUS, SECOND_ANESTHESIA_ASSISTANT,
+        THIRD_ANESTHESIA_ASSISTANT, FOURTH_ANESTHESIA_ASSISTANT, OPERATION_POSITION, OPERATION_EQUIP_INDICATOR,
+        SECOND_ANESTHESIA_DOCTOR, THIRD_ANESTHESIA_DOCTOR, OTHER_IN_AMOUNT, OTHER_OUT_AMOUNT, IN_DATE_TIME,
+        OUT_DATE_TIME, BLOOD_WHOLE_SELF, BLOOD_WHOLE, BLOOD_RBC, BLOOD_PLASM, BLOOD_OTHER, SPECIAL_EQUIPMENT,
+        SPECIAL_INFECT, HEPATITIS_INDICATOR, ANES_START_DATE_TIME, RETURN_DATE_TIME, SEQUENCE, IN_PACU_DATE_TIME,
+        OUT_PACU_DATE_TIME,PACU_TIME, OPERATION_ID, BLOOD_REUSE, SELF_BLOOD, ENTERED_DATETIME, MEMO, ANESTHESIA_ID, XJ, AI,
+        AT, JT, BODY_AREA, GAS_PIPE, PAT_LEAVE_SHOW, WHOLE_ANES, STOP_ANES_AREA, STOP_ANES_AREA_MED,
+        HOLE_PIPLE_ANES, STOP_ANES_AREA_TECH, PIN_SIZE, PIPLE_UP, PIPLE_DOWN, IRRITATE_NERVE, ANES_RANGE,
+        BAK_MED, WATCH_ANES, ALL_ANES_MED_LEAD1, ALL_ANES_MED_LEAD2, ALL_ANES_MED_KEEP1, ALL_ANES_MED_KEEP2,
+        CHEST_WATER, ABDOMEN_WATER, INQUIRY_BEFORE_DATE, INQUIRY_AFTER_DATE, THIRD_OPERATION_NURSE, PACU_DOCTOR,
+        WATER_JT1, WATER_JT2, BLOOD_XB, COOL_THING, CRY_WATHER, RED_BLOOD, BLOOD_AMOUNT, SCHEDULED_DATE_TIME,
+        BED_NO, REQ_DATE_TIME, ','||TRIM(QIEKOU_CLASS)||',' OLD_QIEKOU_CLASS, QIEKOU_NUMBER, MEMO1, OPERATION_NAME, MEN_ZHEN, ANESTHESIA_RESULT,
+        SIMPLE_SICK, ISOLATION_NEED, DANBINGZHONG, YIBAO, FIRST_SHIFT_SUPPLY_NURSE, FIRST_SHIFT_OPERATION_NURSE,
+        FIRST_SHIFT_SUPPLY_DATETIME, FIRST_SHIFT_OPERATION_DATETIME, ANES_START_TIME, ANES_END_TIME,
+        INDUCE_START_TIME, INDUCE_END_TIME, PACU_START_TIME, PACU_END_TIME, DONE_DATE_TIME, CANCEL_DATE_TIME,
+        ANALGESIC_PUMPS, INP_NO, NAME, NAME_PHONETIC, SEX, AGE, DATE_OF_BIRTH, BIRTH_PLACE, CITIZENSHIP, NATION,
+        ID_NO, IDENTITY, CHARGE_TYPE, UNIT_IN_CONTRACT, MAILING_ADDRESS, ZIP_CODE, PHONE_NUMBER_HOME,
+        PHONE_NUMBER_BUSINESS, NEXT_OF_KIN, RELATIONSHIP, NEXT_OF_KIN_ADDR, NEXT_OF_KIN_ZIP_CODE,
+        NEXT_OF_KIN_PHONE, LAST_VISIT_DATE, VIP_INDICATOR, CREATE_DATE, OPERATOR, ','||TRIM(ASA_GRADE)||',' OLD_ASA_GRADE, CANCEL_REASON,
+        ENTERED_BY_CANCELED,CANCELED_DATE_TIME, CANCELED_TYPE, PACU_TEMPERATURE, IN_ICU, TRACHEA_6H, TRACHEA_REMOVE,
+        ANES_START_24H_DEATH, ANES_START_24H_STOP, ANES_ANAPHYLAXIS, SPINAL_ANES_COMP, CENTRAL_VENOUS,
+        SPINAL_ANES, TRACHEA_HOARSE, AFTER_ANES_COMA, GEN_ANES_TRACHEA, PACU_SITUATION, PACU_STEWARD,
+        PACU_DOCTOR_INPUT, PACU_NURSE, ANALGESIA_PUMP, ANALGESIA_METHOD, ANALGESIA_DRUGS, ANALGESIA_EFFECT,
+        EXTRA_CIRCULATION, ANALGESIA_THERAPY, AFTER_ANALGESIA, MONARY_RES, MONARY_RES_OK, CONS_DISTURBANCE,
+        OXYGEN_SATURATION, USE_REMINDERS, RES_TRACT_OBSTRUCE, ANES_DEATH, OTHER_NOT_EXP, DEATH_AFTER_OPER,NO_PLAN_IN_ICU,PAT_DIRECTION,
+        NULL AS DOSAGE,NULL AS ITEM_NAME,NULL AS DOSAGE_UNITS,NULL AS ANESTHESIA_METHOD_CLASS,NURSE_IDS
+        FROM V_MED_ANES_INFO
+        ) T
+        left join med_dept_dict A on t.DEPT_STAYED= a.dept_code
+        left join med_his_users B on t.ANESTHESIA_DOCTOR = b.USER_JOB_ID
+         left join med_his_users b1 on t.anesthesia_assistant = b1.USER_JOB_ID
+         left join med_his_users b2 on t.second_anesthesia_assistant = b2.USER_JOB_ID  
+         left join med_his_users c on t.FIRST_OPERATION_NURSE= c.USER_JOB_ID
+         left join med_his_users n1 on t.SECOND_OPERATION_NURSE= n1.USER_JOB_ID
+         left join med_his_users n2 on t.FIRST_SUPPLY_NURSE= n2.USER_JOB_ID
+         left join med_his_users n3 on t.SECOND_SUPPLY_NURSE= n3.USER_JOB_ID
+         left join med_operation_master e on e.patient_id= t.patient_id and e.oper_id = t.oper_id and e.visit_id=t.visit_id
+          left join med_his_users c1 on e.surgeon= c1.USER_JOB_ID
+        ) main
+
+       where  (NAME LIKE '%' || :PatName || '%' OR :PatName IS NULL ) AND 
+    ( INP_NO LIKE '%' || :InpNo || '%' OR :InpNo IS NULL ) AND 
+    ( DEPT_NAME LIKE '%' || :OperDept || '%' OR :OperDept IS NULL ) AND 
+     (AnesDoctor LIKE '%' || :OperDoctor || '%' OR :OperDoctor IS NULL ) AND 
+     (OPERATION_NAME LIKE '%' || :OperName || '%' OR :OperName IS NULL ) AND  
+     (NurseIds LIKE '%' || :Nurse || '%'  OR :Nurse IS NULL ) 
+       AND (OPER_DATE >= :StartDate OR  :StartDate IS NULL)
+   AND (OPER_DATE < :EndDate OR  :EndDate IS NULL)
+       
+      
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperSelfListForDoctorIndex</key>
+      <value>
+        <![CDATA[ select 
+									       patient_id,
+									       visit_id,
+									       oper_id,
+									       inp_no,
+									       operating_room_no,
+									       sequence,
+									       name,
+									       sex,
+									       age,
+									       dept_name,
+									       operation_name,
+									       oper_status,
+									       oper_status_code,
+									       opertime,
+									       surgeon,
+									       anesmethod,
+									       anesdoctor,
+									       anesdoctorids,
+									       anesthesia_doctor,
+									       anesdoctor1,
+									       anesdoctor2,
+									       nurse,
+									       asa,
+									       old_asa_grade,
+									       operation_scale,
+									       old_operation_scale,
+									       oper_date,
+									       EMERGENCY_IND,
+									       infected_ind,
+									       start_date_time,
+									       scheduled_date_time,
+									       out_pacu_date_time,
+									       in_pacu_date_time,
+									       end_date_time,
+									       anes_start_time,
+									       anes_end_time,
+									       operation_class,
+									       case
+									         when anesthesia_doctor = :CurrentUserId then
+									          '主麻医生'
+									         when anesdoctor1 = :CurrentUserId then
+									          '副麻医生'
+									         when anesdoctor2 = :CurrentUserId then
+									          '副麻医生'
+									         else
+									          ''
+									       end AnesRole
+									  from v_operation_master_v2 m
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperSelfListForNurseIndex</key>
+      <value>
+        <![CDATA[ select 
+									       patient_id,
+									       visit_id,
+									       oper_id,
+									       inp_no,
+									       operating_room_no,
+									       sequence,
+									       name,
+									       sex,
+									       age,
+									       dept_name,
+									       operation_name,
+									       oper_status,
+									       oper_status_code,
+									       opertime,
+									       surgeon,
+									       anesmethod,
+									       anesdoctor,
+									       anesdoctorids,
+									       anesthesia_doctor,
+									       anesdoctor1,
+									       anesdoctor2,
+									       nurse,
+									       nurseids,
+									       asa,
+									       old_asa_grade,
+									       operation_scale,
+									       old_operation_scale,
+									       oper_date,
+									       EMERGENCY_IND,
+									       infected_ind,
+									       start_date_time,
+									       scheduled_date_time,
+									       out_pacu_date_time,
+									       in_pacu_date_time,
+									       end_date_time,
+									       anes_start_time,
+									       anes_end_time,
+									       operation_class,
+									       case
+									         when (FIRST_OPER_NURSE = :CurrentUserId or
+									              SECOND_OPER_NURSE = :CurrentUserId) then
+									          '洗手护士'
+									         when (FIRST_SUPPLY_NURSE = :CurrentUserId or
+									              SECOND_SUPPLY_NURSE = :CurrentUserId) then
+									          '巡回护士'
+									         else
+									          ''
+									       end NurseRole
+									  from v_operation_master_v2 m
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryOperInfosForDoctorIndex</key>
+      <value>
+        <![CDATA[  with temp1 as
+											 (select *
+											    from v_operation_master_v2 m
+											   where to_char(nvl(m.in_date_time, .m.scheduled_date_time), 'YYYY-MM-DD') =
+											         to_char(:OperDate, 'YYYY-MM-DD')
+											     and (m.Anes_Doctor = :AnesDoctor or
+											          m.First_Anes_Assistant = :AnesDoctor or
+											          m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)),
+											
+											temp2 as
+											 (select *
+											    from v_operation_master_v2 m
+											   where m.start_date_time >= add_months(last_day(:OperDate), -1) + 1
+											     and m.start_date_time < (last_day(:OperDate)) + 1
+											     and m.oper_status_code >= 35
+											     and (m.Anes_Doctor = :AnesDoctor or
+											         m.First_Anes_Assistant = :AnesDoctor or
+											         m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL))
+											
+											select (select count(1) from temp1 t) as DayTotalCount,
+											       (select count(1) from temp1 t where t.Oper_Status_Code >= 35) as DayCompletedCount,
+											       (select count(1) from temp1 t where t.Oper_Status_Code = 65) as DayToICUCount,
+											       (select count(1)
+											          from temp1 t
+											         where t.Oper_Status_Code > 5
+											           and t.Oper_Status_Code < 35) as DayOperatingCount,
+											       (select count(1)
+											          from temp1 t
+											         where TRUNC((T.OUT_PACU_DATE_TIME - T.IN_PACU_DATE_TIME) * 1440) >= 120) as PacuCount,
+											       (select count(1) from temp2 t) as MonthTotalCount,
+											       (select round(sum((t.anes_end_time - t.anes_start_time) * 1440 / 60),
+											                     1)
+											          from temp2 t) as MonthTotalTime,
+											       (select count(1) from temp2 t where ISRESCURE = 1) as RescueCount,
+											       (select count(1) from temp2 t where Emergency_Ind = 1) as EmergencyCount
+											
+											  from dual
+
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryOperInfosForDoctorIndex1</key>
+      <value>
+        <![CDATA[
+        select (select count(1)
+						          from v_operation_master_v2 m
+						         where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+						               to_char(:OperDate, 'YYYY-MM-DD')
+						           and (m.ANES_DOCTOR = :AnesDoctor or
+						                m.First_Anes_Assistant = :AnesDoctor or
+						                m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)) as DayTotalCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where to_char(nvl(m.in_date_time,m.start_date_time), 'YYYY-MM-DD') =
+						               to_char(:OperDate, 'YYYY-MM-DD')
+						           and (m.Anes_Doctor = :AnesDoctor or
+						                m.First_Anes_Assistant = :AnesDoctor or
+						                m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and m.Oper_Status_Code >= 35) as DayCompletedCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where to_char(m.in_date_time, 'YYYY-MM-DD') =
+						               to_char(:OperDate, 'YYYY-MM-DD')
+						           and (m.Anes_Doctor = :AnesDoctor or
+						                m.First_Anes_Assistant = :AnesDoctor or
+						                m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and m.OUT_OPER_WHEREABORTS = 65) as DayToICUCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where to_char(m.in_date_time, 'YYYY-MM-DD') =
+						               to_char(:OperDate, 'YYYY-MM-DD')
+						           and (m.Anes_Doctor = :AnesDoctor or
+						                m.First_Anes_Assistant = :AnesDoctor or
+						                m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and m.Oper_Status_Code >= 5
+						           and m.Oper_Status_Code < 35) as DayOperatingCount,
+                       (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:OperDate, 'YYYY-MM-DD')
+                       and (m.Anes_Doctor = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+                       and ((m.Oper_Status_Code >= 0
+                       and m.Oper_Status_Code < 5) or  m.Oper_Status_Code is null )) as DayBeforeOperCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where to_char(m.in_date_time, 'YYYY-MM-DD') =
+						               to_char(:OperDate, 'YYYY-MM-DD')
+						           and (m.Anes_Doctor = :AnesDoctor or
+						                m.First_Anes_Assistant = :AnesDoctor or
+						                m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and TRUNC((m.OUT_PACU_DATE_TIME - m.IN_PACU_DATE_TIME) * 1440) >= 120) as PacuCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where m.in_date_time >= add_months(last_day(:OperDate), -1) + 1
+						           and m.in_date_time < (last_day(:OperDate)) + 1
+						           and m.Oper_Status_Code >= 35
+						           and (m.Anes_Doctor = :AnesDoctor or
+						               m.First_Anes_Assistant = :AnesDoctor or
+						               m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)) as MonthTotalCount,
+						       (select round(sum((nvl(m.ANES_END_TIME,end_date_time) - nvl(m.ANES_START_TIME,start_date_time)) * 1440 / 60),
+						                     1)
+						          from v_operation_master_v2 m
+						         where m.in_date_time >= add_months(last_day(:OperDate), -1) + 1
+						           and m.in_date_time <  (last_day(:OperDate)) + 1 
+						           and m.Oper_Status_Code >= 35
+						           and (m.Anes_Doctor = :AnesDoctor or
+						               m.First_Anes_Assistant = :AnesDoctor or
+						               m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)) as MonthTotalTime,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where m.in_date_time >= add_months(last_day(:OperDate), -1) + 1
+						           and m.in_date_time < (last_day(:OperDate)) + 1
+						           and m.Oper_Status_Code >= 35
+						           and (m.Anes_Doctor = :AnesDoctor or
+						               m.First_Anes_Assistant = :AnesDoctor or
+						               m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and m.ISRESCURE = 1 ) as RescueCount,
+						       (select count(1)
+						          from v_operation_master_v2 m
+						         where m.in_date_time >= add_months(last_day(:OperDate), -1) + 1
+						           and m.in_date_time < (last_day(:OperDate)) + 1
+						           and m.Oper_Status_Code >= 35
+						           and (m.Anes_Doctor = :AnesDoctor or
+						               m.First_Anes_Assistant = :AnesDoctor or
+						               m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)
+						           and m.EMERGENCY_IND = 1) as EmergencyCount,
+                       (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:TOperDate,'YYYY-MM-DD')
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)) as TomorrowTotalCount,
+           (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:YOperDate,'YYYY-MM-DD') and m.Oper_Status_Code >= 35
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL)) as YesterdayTotalCount,
+            (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:YOperDate,'YYYY-MM-DD') and m.Oper_Status_Code >= 35
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or 
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL) and m.EMERGENCY_IND = 1) as YesterdayEmergencyCount,      
+            (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:YOperDate,'YYYY-MM-DD') and m.Oper_Status_Code >= 35
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL) and TRUNC((m.OUT_PACU_DATE_TIME-m.IN_PACU_DATE_TIME)*1440 ) >= 120) as YesterdayPacuCount,
+           (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:YOperDate,'YYYY-MM-DD') and m.Oper_Status_Code >= 35
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL) and m.OUT_OPER_WHEREABORTS=65) as YesterdayToICUCount,
+            (select count(1)
+                      from v_operation_master_v2 m
+                     where to_char(nvl(m.in_date_time,m.scheduled_date_time), 'YYYY-MM-DD') =
+                           to_char(:YOperDate,'YYYY-MM-DD') and m.Oper_Status_Code >= 35
+                       and (m.ANES_DOCTOR = :AnesDoctor or
+                            m.First_Anes_Assistant = :AnesDoctor or
+                            m.Second_Anes_Assistant = :AnesDoctor or :AnesDoctor IS NULL) and( m.CANCELED_TYPE = '1' or m.PACU_TEMPERATURE =1 or m.CONS_DISTURBANCE =1
+                                                                or m.TRACHEA_6H = 1 or m.OXYGEN_SATURATION =1 or m.ANES_ANAPHYLAXIS =1 or
+                                                                m.ANES_DEATH = 1 or m.RES_TRACT_OBSTRUCE =1 or m.CENTRAL_VENOUS = 1
+                                                                or m.ANES_START_24H_DEATH = 1 or m.ANES_START_24H_STOP = 1 or m.SPINAL_ANES_COMP =1 
+                                                                or m.TRACHEA_HOARSE = 1 or m.AFTER_ANES_COMA = 1 or m.USE_REMINDERS = 1 or 
+                                                                m.RES_TRACT_OBSTRUCE = 1 or m.OTHER_NOT_EXP = 1 or m.NO_PLAN_IN_ICU = 1)) as YesterdayUnExpectCount
+						  from dual 
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryOperInfosForNurseIndex</key>
+      <value>
+        <![CDATA[    with temp1 as
+												 (select *
+												    from v_operation_master_v2 m
+												   where m.OPERATING_ROOM_NO IS NOT NULL  and 
+                           to_char(nvl(m.in_date_time, m.scheduled_date_time), 'YYYY-MM-DD') =
+												         to_char(:OperDate, 'YYYY-MM-DD')
+												     and ((m.First_Oper_Nurse = :Nurse or m.Second_Oper_Nurse = :Nurse or
+												          m.first_supply_nurse = :Nurse or m.second_supply_nurse = :Nurse) or
+												          :Nurse IS NULL)),
+												
+												temp2 as
+												 (select *
+												    from v_operation_master_v2 m
+												   where m.OPERATING_ROOM_NO IS NOT NULL 
+                             and m.in_date_time >= add_months(last_day(:OperDate), -1) + 1
+												     and m.in_date_time < (last_day(:OperDate)) + 1
+												     and m.Oper_Status_Code >= 35
+												     and ((m.First_Oper_Nurse = :Nurse or m.Second_Oper_Nurse = :Nurse or
+												         m.first_supply_nurse = :Nurse or m.second_supply_nurse = :Nurse) or
+												         :Nurse IS NULL))
+												
+												select (select count(1) from temp1 t) as DayTotalCount,
+												       (select count(1) from temp1 t where t.Oper_Status_Code >= 35) as DayCompletedCount,
+												       (select count(1) from temp1 t where t.Oper_Status_Code = 65) as DayToICUCount,
+												       (select count(1)
+												          from temp1 t
+												         where t.Oper_Status_Code > 5
+												           and t.Oper_Status_Code < 35) as DayOperatingCount,
+												       (select count(1)
+												          from temp1 t
+												         where TRUNC((T.OUT_PACU_DATE_TIME - T.IN_PACU_DATE_TIME) * 1440) >= 120) as PacuCount,
+												       (select count(1) from temp2 t) as MonthTotalCount,
+												       (select round(sum((t.end_date_time - t.start_date_time) * 1440 / 60),
+												                     1)
+												          from temp2 t) as MonthTotalTime,
+												       (select count(1) from temp2 t where ISRESCURE = 1 ) as RescueCount,
+												       (select count(1) from temp2 t where Emergency_Ind = 1) as EmergencyCount
+												
+												  from dual
+
+    
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryOperInfosForDirectorIndex</key>
+      <value>
+        <![CDATA[   with tempYesterday as (
+											select m.Oper_Status_Code,m.EMERGENCY_IND,m.Isolation_Ind,m.INFECTED_IND,m.out_pacu_date_time,m.in_pacu_date_time,m.operation_class,ISRESCURE 
+											  from v_operation_master_v2 m 
+											 where  to_char(m.start_date_time,'YYYY-MM-DD')=to_char(sysdate-1,'YYYY-MM-DD')
+											  and m.Oper_Status_Code>=35 and m.OPERATING_ROOM_NO IS NOT NULL 
+											 ),
+											
+											 tempToday as (
+											 select m.Oper_Status_Code,m.EMERGENCY_IND,m.Isolation_Ind,m.INFECTED_IND,m.out_pacu_date_time,m.in_pacu_date_time,m.operation_class,
+											        a.anes_death,a.death_after_oper,a.canceled_type,a.pacu_temperature,a.cons_disturbance,
+											        a.trachea_6h,a.oxygen_saturation,a.anes_anaphylaxis,
+											        a.res_tract_obstruce,a.central_venous,a.anes_start_24h_death,a.anes_start_24h_stop,a.spinal_anes_comp,
+											        a.trachea_hoarse,a.after_anes_coma,a.use_reminders,a.other_not_exp,a.no_plan_in_icu  
+											 from v_operation_master_v2 m left join MED_ANESTHESIA_INPUT_DATA a on m.patient_id=a.Patient_Id and m.visit_id = a.Visit_Id and m.oper_id=a.Oper_Id
+											  where  to_char(m.scheduled_date_time,'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD') and m.OPERATING_ROOM_NO IS NOT NULL
+                        )
+											 
+											select 
+											(select count(1) from tempToday t ) as TodayTotalCount,
+											(select count(1) from tempToday t  where t.Oper_Status_Code>=35) as TodayCompletedCount,
+											(select count(1) from tempToday t  where t.Oper_Status_Code>=5 and  t.Oper_Status_Code<35) as TodayOperatingCount,
+											(select count(1) from tempToday t  where t.Oper_Status_Code=-80) as TodayCancelCount,
+											(select count(1) from tempToday t  where t.Oper_Status_Code>=0 and Oper_Status_Code<5) as TodayWaitingCount,
+											(select count(1) from tempToday t where EMERGENCY_IND=1 ) as TodayEmergencyCount,
+											(select count(1) from tempToday t where Isolation_Ind = 1 or INFECTED_IND = 1 ) as TodayGLGRCount,
+											(select count(1) from tempToday t where ISRESCURE = 1 ) as TodayRescueCount,
+											(select count(1) from tempToday t where t.anes_death=1 and t.death_after_oper =1 ) as TodayDeathCount,
+											(select count(1) from tempToday t where CANCELED_TYPE = '1' or PACU_TEMPERATURE =1 or CONS_DISTURBANCE =1
+											                                        or TRACHEA_6H = 1 or OXYGEN_SATURATION =1 or ANES_ANAPHYLAXIS =1 or
+											                                        ANES_DEATH = 1 or RES_TRACT_OBSTRUCE =1 or CENTRAL_VENOUS = 1
+											                                        or ANES_START_24H_DEATH = 1 or ANES_START_24H_STOP = 1 or SPINAL_ANES_COMP =1 
+											                                        or TRACHEA_HOARSE = 1 or AFTER_ANES_COMA = 1 or USE_REMINDERS = 1 or 
+											                                        RES_TRACT_OBSTRUCE = 1 or OTHER_NOT_EXP = 1 or NO_PLAN_IN_ICU = 1) as TodayUnExpectCount,
+											(select count(1) from tempToday t  where t.Oper_Status_Code=65) as TodayToICUCount,
+											(select count(1) from tempToday t  where TRUNC((T.OUT_PACU_DATE_TIME-T.IN_PACU_DATE_TIME)*1440 ) >= 120) as TodayPacuCount,
+											(select count(1) from v_operation_master_v2 m where  to_char(m.scheduled_date_time,'YYYY-MM-DD')=to_char(sysdate+1,'YYYY-MM-DD') and m.OPERATING_ROOM_NO IS NOT NULL ) as TomorrowTotalCount,
+											(select count(1) from tempYesterday t ) as YesterdayTotalCount,
+											(select count(1) from tempYesterday t where Isolation_Ind = 1 or INFECTED_IND = 1 ) as YesterdayGLGRCount,
+											(select count(1) from tempYesterday t where ISRESCURE = 1 ) as YesterdayRescueCount,
+											(select count(1) from tempYesterday t  where t.Oper_Status_Code=65) as YesterdayToICUCount,
+											(select count(1) from tempYesterday t  where TRUNC((T.OUT_PACU_DATE_TIME-T.IN_PACU_DATE_TIME)*1440 ) >= 120) as YesterdayPacuCount
+											from dual
+
+    ]]>
+      </value>
+    </group>
+    <group>
+      <key>QueryEChartOperDetailForDirectorIndex</key>
+      <value>
+        <![CDATA[  select 
+									       patient_id,
+									       visit_id,
+									       oper_id,
+									       inp_no,
+									       operating_room_no,
+									       sequence,
+									       name,
+									       sex,
+									       age,
+									       dept_name,
+									       operation_name,
+									       oper_status,
+									       oper_status_code,
+									       opertime,
+									       surgeon,
+									       anesmethod,
+									       anesdoctor,
+									       anesdoctorids,
+									       anesthesia_doctor,
+									       anesdoctor1,
+									       anesdoctor2,
+									       anes_doctor,
+									       first_anes_assistant,
+									       second_anes_assistant,
+									       nurse,
+									       asa,
+									       old_asa_grade,
+									       operation_scale,
+									       old_operation_scale,
+									       oper_date,
+									       EMERGENCY_IND,
+									       infected_ind,
+									       start_date_time,
+									       scheduled_date_time,
+									       out_pacu_date_time,
+									       in_pacu_date_time,
+									       end_date_time,
+									       anes_start_time,
+									       anes_end_time,
+									       operation_class,
+									       isolation_ind
+									  from v_operation_master_v2 
+									 where OPERATING_ROOM_NO IS NOT NULL and {0}
+
+    ]]>
+      </value>
+    </group>
+    <group>
+      <key>QueryOperDetailForDirectorIndex</key>
+      <value>
+        <![CDATA[  select 
+									       patient_id,
+									       visit_id,
+									       oper_id,
+									       inp_no,
+									       operating_room_no,
+									       sequence,
+									       name,
+									       sex,
+									       age,
+									       dept_name,
+									       operation_name,
+									       oper_status,
+									       oper_status_code,
+									       opertime,
+									       surgeon,
+									       anesmethod,
+									       anesdoctor,
+									       anesdoctorids,
+									       anesthesia_doctor,
+									       anesdoctor1,
+									       anesdoctor2,
+									       anes_doctor,
+									       first_anes_assistant,
+									       second_anes_assistant,
+									       nurse,
+									       asa,
+									       old_asa_grade,
+									       operation_scale,
+									       old_operation_scale,
+									       oper_date,
+									       EMERGENCY_IND,
+									       infected_ind,
+									       start_date_time,
+									       scheduled_date_time,
+									       out_pacu_date_time,
+									       in_pacu_date_time,
+									       end_date_time,
+									       anes_start_time,
+									       anes_end_time,
+									       operation_class,
+									       isolation_ind
+									  from v_operation_master_v2 
+									 where OPERATING_ROOM_NO IS NOT NULL and {0} and {1}
+                                        ]]>
+      </value>
+    </group>
+    <group>
+      <key>QueryOperInfosForDirectorIndex1</key>
+      <value>
+        <![CDATA[    with tempYesterday as (
+												select m.Oper_Status_Code,m.EMERGENCY_IND,m.Isolation_Ind,m.INFECTED_IND,m.out_pacu_date_time,m.in_pacu_date_time,m.operation_class,ISRESCURE
+												  from v_operation_master_v2 m 
+												 where  to_char(m.start_date_time,'YYYY-MM-DD')=to_char(sysdate-1,'YYYY-MM-DD')
+												  and m.OPERATING_ROOM_NO IS NOT NULL 
+                         ),
+												
+												 tempToday as (
+												 select m.Oper_Status_Code,m.EMERGENCY_IND,m.Isolation_Ind,m.INFECTED_IND,m.out_pacu_date_time,m.in_pacu_date_time,m.operation_class,
+												        a.anes_death,a.death_after_oper,a.canceled_type,a.pacu_temperature,a.cons_disturbance,
+												        a.trachea_6h,a.oxygen_saturation,a.anes_anaphylaxis,
+												        a.res_tract_obstruce,a.central_venous,a.anes_start_24h_death,a.anes_start_24h_stop,a.spinal_anes_comp,
+												        a.trachea_hoarse,a.after_anes_coma,a.use_reminders,a.other_not_exp,a.no_plan_in_icu ,ISRESCURE  
+												 from v_operation_master_v2 m left join MED_ANESTHESIA_INPUT_DATA a on m.patient_id=a.Patient_Id and m.visit_id = a.Visit_Id and m.oper_id=a.Oper_Id
+												  where  to_char(nvl(m.in_date_time, m.scheduled_date_time),'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD') and m.OPERATING_ROOM_NO IS NOT NULL 
+                          )
+												 
+												select 
+												    (select count(1) from tempToday t ) as TodayTotalCount,
+												    (select count(1) from tempToday t  where t.Oper_Status_Code>=35) as TodayCompletedCount,
+												(select count(1) from tempToday t  where t.Oper_Status_Code>=5 and  t.Oper_Status_Code<35) as TodayOperatingCount,
+												(select count(1) from tempToday t  where t.Oper_Status_Code=-80) as TodayCancelCount,
+												(select count(1) from tempToday t  where t.Oper_Status_Code>=0 and Oper_Status_Code<5) as TodayWaitingCount,
+												(select count(1) from tempToday t where EMERGENCY_IND = 1 ) as TodayEmergencyCount,
+												(select count(1) from tempToday t where (Isolation_Ind = 1 or INFECTED_IND = 1) ) as TodayGLGRCount,
+												(select count(1) from tempToday t where ISRESCURE = 1 ) as TodayRescueCount,
+												(select count(1) from tempToday t where t.anes_death = 1  ) as TodayDeathCount,
+												(select count(1) from tempToday t where CANCELED_TYPE = '1' or PACU_TEMPERATURE =1 or CONS_DISTURBANCE =1
+												                                        or TRACHEA_6H = 1 or OXYGEN_SATURATION =1 or ANES_ANAPHYLAXIS =1 or
+												                                        ANES_DEATH = 1 or RES_TRACT_OBSTRUCE =1 or CENTRAL_VENOUS = 1
+												                                        or ANES_START_24H_DEATH = 1 or ANES_START_24H_STOP = 1 or SPINAL_ANES_COMP =1 
+												                                        or TRACHEA_HOARSE = 1 or AFTER_ANES_COMA = 1 or USE_REMINDERS = 1 or 
+												                                        RES_TRACT_OBSTRUCE = 1 or OTHER_NOT_EXP = 1 or NO_PLAN_IN_ICU = 1) as TodayUnExpectCount,
+												(select count(1) from tempToday t  where t.Oper_Status_Code=65) as TodayToICUCount,
+												(select count(1) from tempToday t  where TRUNC((T.OUT_PACU_DATE_TIME-T.IN_PACU_DATE_TIME)*1440 ) >= 120) as TodayPacuCount,
+												(select count(1) from v_operation_master_v2 m where  to_char(m.scheduled_date_time,'YYYY-MM-DD')=to_char(sysdate+1,'YYYY-MM-DD') 
+                          and m.OPERATING_ROOM_NO IS NOT NULL  ) as TomorrowTotalCount,
+												(select count(1) from tempYesterday t ) as YesterdayTotalCount,
+												(select count(1) from tempYesterday t where Isolation_Ind = 1 or INFECTED_IND = 1 ) as YesterdayGLGRCount,
+												(select count(1) from tempYesterday t where ISRESCURE = 1 ) as YesterdayRescueCount,
+												(select count(1) from tempYesterday t  where t.Oper_Status_Code=65) as YesterdayToICUCount,
+												(select count(1) from tempYesterday t  where TRUNC((T.OUT_PACU_DATE_TIME-T.IN_PACU_DATE_TIME)*1440 ) >= 120) as YesterdayPacuCount
+												from dual
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryLeftEChartReportForMonthDirectionIndex</key>
+      <value>
+        <![CDATA[   select a.s_date name, nvl(b.value, 0) value
+										  from (select rownum s_date
+										          from dual
+										        connect by rownum <= last_day(to_date(:StartDate, 'yyyy-mm-dd')) -
+										                   to_date(:StartDate, 'yyyy-mm-dd') + 1) a
+										  left join (select to_number(to_char(IN_DATE_TIME, 'dd')) name,
+										                    count(1) value
+										               from v_operation_master_v2
+										              where  Oper_Status_Code >= 35
+										                and to_char(IN_DATE_TIME, 'yyyy-MM') =
+										                    to_char(to_date(:StartDate, 'yyyy-MM-dd'), 'yyyy-MM')
+										              group by to_char(IN_DATE_TIME, 'dd')
+										              order by to_char(IN_DATE_TIME, 'dd')) b
+										    on a.s_date = b.name
+										 order by a.s_date
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryLeftEChartReportForYearDirectionIndex</key>
+      <value>
+        <![CDATA[  select a.mon name, nvl(b.value, 0) value
+										  from (select level mon from dual connect by level < 13) a
+										  left join (select to_number(to_char(IN_DATE_TIME, 'MM')) name,
+										                    count(1) value
+										               from v_operation_master_v2 a
+										              where OPERATING_ROOM_NO IS NOT NULL  and Oper_Status_Code >= 35
+										                and to_char(IN_DATE_TIME, 'yyyy') =
+										                    to_char(to_date(:StartDate, 'yyyy-MM-dd'), 'yyyy')
+										              group by to_char(IN_DATE_TIME, 'MM')
+										              order by to_char(IN_DATE_TIME, 'MM')) b
+										    on a.mon = b.name
+										 order by a.mon
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryLeftEChartInfosForMonthDirectionIndex</key>
+      <value>
+        <![CDATA[ with temp as
+								   (select m.EMERGENCY_IND,m.IN_DATE_TIME,to_char(m.IN_DATE_TIME,'yyyy-mm-dd') dateTime
+								      from V_OPERATION_MASTER_V2 m
+								     WHERE TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year
+								       AND TO_CHAR(IN_DATE_TIME, 'MM') = :Month  and m.Oper_Status_Code>=35 )
+								
+								  select 
+								  ( select count(1) from temp ) TotalCount,
+								  (select  round(avg(count(*)),0) operCount  from temp group by dateTime) DayAvgCount,
+								  (select dateTime  from  (select  dateTime,  count(1) operCount from temp group by dateTime order by count(1) desc) where rownum=1)  MostOperDate,
+								    (select  max(count(1)) operCount from temp group by dateTime )  MostOperCount,
+								  (select dateTime  from  (select  dateTime,  count(1) operCount from temp group by dateTime order by count(1) ) where rownum=1) LeastOperDate,
+								  (select  min(count(1)) operCount from temp group by dateTime )  LeastOperCount,
+								  ( select count(1) from temp where   to_char(IN_DATE_TIME,'day') ='星期六' or  to_char(IN_DATE_TIME,'day')='星期日' ) WeekOperCount,
+								  ( select count(1) from temp where EMERGENCY_IND=1 ) EmergencyCount
+								   from dual 
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryLeftEChartInfosForYearDirectionIndex</key>
+      <value>
+        <![CDATA[    with temp as
+							           (select m.EMERGENCY_IND,m.IN_DATE_TIME,to_char(m.IN_DATE_TIME,'yyyy-mm-dd') dateTime
+							              from V_OPERATION_MASTER_V2 m
+							             WHERE TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year and m.Oper_Status_Code>=35  )
+							
+							          select 
+							          ( select count(1) from temp ) TotalCount,
+							          (select  round(avg(count(*)),0) operCount  from temp group by dateTime) DayAvgCount,
+							          (select dateTime  from  (select  dateTime,  count(1) operCount from temp group by dateTime order by count(1) desc) where rownum=1)  MostOperDate,
+							          (select max(count(1)) operCount from temp group by dateTime)  MostOperCount,
+							          (select dateTime  from  (select  dateTime,  count(1) operCount from temp group by dateTime order by count(1) ) where rownum=1) LeastOperDate,
+							          (select  min(count(1))  operCount  from  temp group by dateTime )  LeastOperCount,
+							          ( select count(1) from temp where   to_char(IN_DATE_TIME,'day') ='星期六' or  to_char(IN_DATE_TIME,'day')='星期日' ) WeekOperCount,
+							          ( select count(1) from temp where EMERGENCY_IND=1 ) EmergencyCount
+							           from dual 
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryRightChartForASAForMonthDirectorIndex</key>
+      <value>
+        <![CDATA[ select ASA name, COUNT(1) value
+									  from (SELECT CASE
+									                 WHEN INSTR('{0}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{1}'
+									                 WHEN INSTR('{2}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{3}'
+									                 WHEN INSTR('{4}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{5}'
+									                 WHEN INSTR('{6}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{7}'
+									                 WHEN INSTR('{8}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{9}'
+									                 WHEN INSTR('{10}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{11}'
+									                 ELSE
+									                  '其他'
+									               END AS ASA
+									          FROM (SELECT START_DATE_TIME,
+									                       ',' || TRIM(ASA) || ',' OLD_ASA_GRADE
+									                  FROM v_operation_master_v2
+									                 WHERE  Oper_Status_Code>=35 and TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year
+									                   AND TO_CHAR(IN_DATE_TIME, 'MM') = :Month) T
+									        
+									        ) main
+									 group by Asa
+									 order by ASA
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryRightChartForASAForYearDirectorIndex</key>
+      <value>
+        <![CDATA[ select ASA name, COUNT(1) value
+									  from (SELECT CASE
+									                 WHEN INSTR('{0}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{1}'
+									                 WHEN INSTR('{2}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{3}'
+									                 WHEN INSTR('{4}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{5}'
+									                 WHEN INSTR('{6}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{7}'
+									                 WHEN INSTR('{8}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{9}'
+									                 WHEN INSTR('{10}', T.OLD_ASA_GRADE) > 0 THEN
+									                  '{11}'
+									                 ELSE
+									                  '其他'
+									               END AS ASA
+									          FROM (SELECT START_DATE_TIME,
+									                       ',' || TRIM(ASA) || ',' OLD_ASA_GRADE
+									                  FROM v_operation_master_v2
+									                 WHERE Oper_Status_Code>=35 and TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year) T
+									        
+									        ) main
+									 group by Asa
+									 order by ASA
+
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryRightChartForMethodForMonthDirectorIndex</key>
+      <value>
+        <![CDATA[ select nvl(mad.ANAESTHESIA_TYPE, '其他麻醉') name, COUNT(1) value
+								  from V_OPERATION_MASTER_V2 m
+								  left join (         
+SELECT '椎管内麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '椎管内麻醉大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '插管全麻' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '插管全麻大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '非插管全麻' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '非插管全麻大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '复合麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '复合麻醉大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '其他麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '其他麻醉方式大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID ) mad
+								    on m.AnesMethod = mad.Anaesthesia_Name
+								 WHERE m.oper_status_code >= 35
+								   and TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year
+								   AND TO_CHAR(IN_DATE_TIME, 'MM') = :Month
+								 group by nvl(mad.ANAESTHESIA_TYPE, '其他麻醉')
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryRightChartForMethodForYearDirectorIndex</key>
+      <value>
+        <![CDATA[ select nvl(mad.ANAESTHESIA_TYPE, '其他麻醉') name, COUNT(1) value
+								  from V_OPERATION_MASTER_V2 m
+								  left join (         
+SELECT '椎管内麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '椎管内麻醉大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '插管全麻' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '插管全麻大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '非插管全麻' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '非插管全麻大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '复合麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE  AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '复合麻醉大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID
+UNION     
+SELECT '其他麻醉' AS ANAESTHESIA_TYPE, C.ITEM_VALUE AS Anaesthesia_Name
+          FROM MED_ANESTHESIA_CONFIG C
+         START WITH C.ITEM_VALUE = '其他麻醉方式大类'
+        CONNECT BY PRIOR C.ITEM_ID = C.ITEM_PARENTID ) mad
+								    on m.AnesMethod = mad.Anaesthesia_Name
+								 WHERE m.oper_status_code >= 35
+								   and TO_CHAR(IN_DATE_TIME, 'YYYY') = :Year
+								 group by nvl(mad.ANAESTHESIA_TYPE, '其他麻醉')
+    ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryOperPatientProgress</key>
+      <value>
+        <![CDATA[ select a.patient_id,
+									       a.visit_id,
+									       a.oper_id,
+									       a.Name,
+									       a.Sex,
+									       a.AGE,
+									       a.Bed_No,
+									       a.Inp_No,
+									       e.ADMISSION_DATE_TIME,
+									       a.Dept_Name,
+									       a.AnesDoctor,
+									       a.SURGEON,
+									       a.DIAG_BEFORE_OPERATION,
+									       a.OPERATION_NAME,
+									       a.OPER_POSITION,
+									       A.OPERATION_SCALE Oper_Scale,
+									       a.Scheduled_Date_Time,
+									       f.Height,
+									       f.Weight,
+									       null before_BP1,
+									       null before_BP2,
+									       null before_P,
+									       null brfore_R,
+									       null before_XDT,
+									       null before_YWGMS,
+									       a.AnesMethod ANES_METHOD,
+									       a.ASA Asa_Grade,
+									       TO_CHAR(TRUNC((NVL((a.End_Date_Time - a.Start_Date_Time) * 24, 0) * 60) / 60,
+									                     0)) || '小时' ||
+									       TO_CHAR(ROUND(MOD((NVL((a.End_Date_Time - a.Start_Date_Time) * 24, 0) * 60),
+									                         60),
+									                     0)) || '分钟' AS OPERTIME,
+									       a.In_Date_Time,
+									       a.Out_Date_Time,
+									       a.Start_Date_Time,
+									       a.End_Date_Time,
+									       a.Anes_Start_Time,
+									       a.Anes_End_Time,
+									       a.In_Pacu_Date_Time,
+									       a.Out_Pacu_Date_Time,
+									       nvl(emr.Docs, '无') Docs
+									  from v_operation_master_v2 a
+									  left join Med_Pats_In_Hospital e
+									    on a.Patient_Id = e.Patient_Id
+									   and a.Visit_Id = e.Visit_Id
+									  left join MED_ANESTHESIA_PLAN_PMH f
+									    on a.Patient_Id = f.Patient_Id
+									   and a.Visit_Id = f.Visit_Id
+									   and a.Oper_Id = f.Oper_Id
+									  left join v_emr_archive_v2 emr
+									    on a.Patient_Id = emr.Patient_Id
+									   and a.Visit_Id = emr.Visit_Id
+									   and a.Oper_Id = emr.Oper_Id
+									 where a.patient_id = :PatientId
+									   and a.visit_Id = :VisitId
+									   and a.oper_Id = :OperId
+    ]]>
+      </value>
+    </group>
+    <group>
+      <key>OPERTINGPATIENTFOR</key>
+      <value>
+        <![CDATA[ SELECT MOS.PATIENT_ID,
+       MOS.VISIT_ID,
+       MOS.OPER_ID,
+       MOS.OPER_ROOM_NO,
+       B.NAME,
+       B.SEX,
+       fun_get_pat_age(B.DATE_OF_BIRTH, MOS.SCHEDULED_DATE_TIME) AS Age,
+       NVL(MDD.DEPT_NAME, MOS.DEPT_CODE) AS DEPT_NAME,
+       MOS.OPERATION_NAME,
+       MOS.ANES_METHOD,
+       NVL(C.USER_NAME, MOS.SURGEON) AS SURGEON_NAME,
+       NVL(D.USER_NAME, MOS.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+       MOS.IN_DATE_TIME,
+       MOS.ANES_START_TIME,
+       MOS.START_DATE_TIME,
+       MOS.END_DATE_TIME,
+       MOS.ANES_END_TIME,
+       MOS.OUT_DATE_TIME
+  FROM MED_OPERATION_MASTER MOS
+ INNER JOIN MED_OPERATING_ROOM MOR
+    ON MOS.PATIENT_ID = MOR.PATIENT_ID
+   AND MOS.VISIT_ID = MOR.VISIT_ID
+   AND MOS.OPER_ID = MOR.OPER_ID
+  LEFT JOIN MED_PAT_MASTER_INDEX B
+    ON B.PATIENT_ID = MOS.PATIENT_ID
+  LEFT JOIN MED_HIS_USERS C
+    ON MOS.SURGEON = C.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS D
+    ON MOS.ANES_DOCTOR = D.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT MDD
+    ON MDD.DEPT_CODE = MOS.DEPT_CODE
+ WHERE MOS.OPER_STATUS_CODE >= 5
+   AND MOS.OPER_STATUS_CODE <= 35 
+   ORDER BY MOS.OPER_ROOM_NO
+      ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperListForAnesQuery</key>
+      <value>
+        <![CDATA[ select m.patient_id,
+									       m.visit_id,
+									       m.oper_id,
+									       m.name,
+									       m.ANESTHESIA_DOCTOR anesDoctor,
+									       m.inp_no,
+									       m.anes_start_time
+									  from V_OPERATION_MASTER_V2 m
+									 where m.oper_status_code >= 35
+									   AND ((NAME LIKE '%' || :PatName || '%' OR :PatName IS NULL)
+									   OR (INP_NO LIKE '%' || :InpNo || '%' OR :InpNo IS NULL))
+									   AND (AnesDoctor LIKE '%' || :AnesDoctor || '%' OR
+									       AnesDoctorIds LIKE '%' || :AnesDoctor || '%' OR :AnesDoctor IS NULL)
+                     AND (m.OPER_ROOM LIKE '%' || :OperDept || '%' OR
+									       :OperDept IS NULL)
+									   AND (m.OPERATING_ROOM_NO LIKE '%' || :OperRoomNo || '%' OR :OperRoomNo IS NULL)
+									   AND (anes_start_time >= :StartDate OR  :StartDate IS NULL)
+									   AND (anes_start_time < :EndDate OR  :EndDate IS NULL)
+]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOutOperatingAnesRecord</key>
+      <value>
+        <![CDATA[  SELECT A.PATIENT_ID,
+       A.VISIT_ID,
+       A.OPER_ID,
+       D.INP_NO,
+       B.NAME,
+       B.SEX,
+       FUN_GET_PAT_AGE(B.DATE_OF_BIRTH, A.START_DATE_TIME) AGE, NVL(C.DEPT_NAME, A.DEPT_CODE) DEPTNAME,
+       A.OPERATION_NAME,
+       TO_CHAR(A.START_DATE_TIME, 'YYYY-MM-DD') OPERDATE,
+       TO_CHAR(A.START_DATE_TIME, 'HH24:MI') OPERTIME,
+       A.OPER_SCALE,
+       DECODE(A.EMERGENCY_IND, 1, '急诊', '择期') EMERGENCY_IND,
+       NVL(E.USER_NAME,A.SURGEON) SURGEON,
+       NVL(F.USER_NAME,A.FIRST_OPER_ASSISTANT) FIRST_OPER_ASSISTANT,
+       A.ANES_METHOD,
+       A.ASA_GRADE,
+       NVL(G.USER_NAME, A.ANES_DOCTOR) ANES_DOCTOR,
+       NVL(H.USER_NAME, A.FIRST_ANES_ASSISTANT) FIRST_ANES_ASSISTANT,
+       NVL(I.USER_NAME, A.FIRST_OPER_NURSE) FIRST_OPER_NURSE,
+       NVL(J.USER_NAME, A.FIRST_SUPPLY_NURSE) FIRST_SUPPLY_NURSE,
+       A.IN_DATE_TIME,A.OUT_DATE_TIME,
+       A.Start_Date_Time,a.End_Date_Time,
+       pmh.weight 
+  FROM MED_OPERATION_MASTER A
+  left join MED_PAT_MASTER_INDEX B
+    on A.PATIENT_ID = B.PATIENT_ID
+  left join MED_DEPT_DICT C
+    on A.DEPT_CODE = C.DEPT_CODE
+  left join med_pats_in_hospital D
+    on A.PATIENT_ID = D.PATIENT_ID
+   AND A.VISIT_ID = D.VISIT_ID
+  left join MED_HIS_USERS E
+    on A.SURGEON = E.USER_JOB_ID
+  left join MED_HIS_USERS F
+    on A.FIRST_OPER_ASSISTANT = F.USER_JOB_ID
+  left join MED_HIS_USERS G
+    on A.ANES_DOCTOR = G.USER_JOB_ID
+  left join MED_HIS_USERS H
+    on A.FIRST_ANES_ASSISTANT = H.USER_JOB_ID
+  left join MED_HIS_USERS I
+    on A.FIRST_OPER_NURSE = I.USER_JOB_ID
+  left join MED_HIS_USERS J
+    on A.FIRST_SUPPLY_NURSE = J.USER_JOB_ID
+  left join MED_ANESTHESIA_PLAN_PMH pmh 
+  on a.patient_id = pmh.patient_id and a.visit_id = pmh.visit_id and a.oper_id = pmh.oper_id 
+ WHERE(D.INP_NO LIKE '%' || :INP_NO || '%' OR :INP_NO IS NULL)
+   AND(A.IN_DATE_TIME >= :StartDate OR :StartDate IS NULL)
+   AND(A.IN_DATE_TIME < :EndDate OR :EndDate IS NULL)
+   and a.local_anesthesia = 1 
+   AND (A.ANES_DOCTOR =:ANES_DOCTOR OR :ANES_DOCTOR IS NULL)
+ ORDER BY B.NAME
+]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetMedHisUserDict</key>
+      <value>
+        <![CDATA[ SELECT A.*,B.DEPT_NAME AS USER_DEPT_NAME FROM MED_HIS_USERS A
+    LEFT JOIN MED_DEPT_DICT B ON A.USER_DEPT_CODE = B.DEPT_CODE
+    WHERE A.USER_STATUS = 1 AND A.USER_NAME LIKE '%' || :HisUserName || '%' ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMedHisUserDict2</key>
+      <value>
+        <![CDATA[ SELECT A.*,B.DEPT_NAME AS USER_DEPT_NAME FROM MED_HIS_USERS A
+    LEFT JOIN MED_DEPT_DICT B ON A.USER_DEPT_CODE = B.DEPT_CODE
+    WHERE (a.USER_NAME LIKE '%' || :HisUserName || '%' OR :HisUserName IS NULL)  and (b.DEPT_NAME LIKE '%' || :DetptName || '%' OR  :DetptName IS NULL) ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperatingRoomListAll</key>
+      <value>
+        <![CDATA[ SELECT A.*,B.DEPT_NAME ,CASE WHEN A.BED_TYPE = 0 THEN '手术间' 
+          WHEN A.BED_TYPE = 1 THEN 'PACU' ELSE '' END AS BED_TYPE_NAME,
+          CASE WHEN A.STATUS = 0 THEN '可用' WHEN  A.STATUS = 1 THEN '不可用' ELSE '' END AS STATUS_NAME
+          FROM MED_OPERATING_ROOM A 
+          LEFT JOIN MED_DEPT_DICT B ON A.DEPT_CODE = B.DEPT_CODE 
+          ORDER BY A.ROOM_NO,A.BED_TYPE ASC 
+          ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOperatingRoomList</key>
+      <value>
+        <![CDATA[ SELECT A.*,B.DEPT_NAME ,CASE WHEN A.BED_TYPE = 0 THEN '手术间' 
+          WHEN A.BED_TYPE = 1 THEN 'PACU' ELSE '' END AS BED_TYPE_NAME,
+          CASE WHEN A.STATUS = 0 THEN '可用' WHEN  A.STATUS = 1 THEN '不可用' ELSE '' END AS STATUS_NAME
+          FROM MED_OPERATING_ROOM A 
+          LEFT JOIN MED_DEPT_DICT B ON A.DEPT_CODE = B.DEPT_CODE
+          WHERE A.ROOM_NO LIKE '%' || :OperatingRoomNo || '%'  ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetMedEventDictExt</key>
+      <value>
+        <![CDATA[ SELECT A.EVENT_CLASS_CODE,
+       A.EVENT_ITEM_CODE,
+       A.EVENT_ITEM_NAME,
+       A.EVENT_ITEM_SPEC,
+       B.DOSAGE_NO,
+       B.STANDARD_DOSAGE,
+       B.DOSAGE_UNITS,
+       B.SORT_NO 
+  FROM MED_EVENT_DICT A
+  LEFT JOIN MED_EVENT_DICT_EXT B
+    ON A.EVENT_CLASS_CODE = B.EVENT_CLASS_CODE
+   AND A.EVENT_ITEM_CODE = B.EVENT_ITEM_CODE
+ WHERE A.EVENT_CLASS_CODE = :itemClass
+   AND (A.EVENT_ITEM_CODE = :itemCode OR :itemCode IS NULL)
+  ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>QueryAnesDocumentPDF</key>
+      <value>
+        <![CDATA[ select a.Patient_Id,
+            a.Visit_Id,
+            a.Archive_Key Oper_ID,a.Mr_Sub_Class DocName,
+            a.Archive_Access || a.Emr_File_Name DocSrc
+        from medsurgery.v_emr_archive_detial_v2 a
+        where a.Archive_Type = '正常' and a.ARCHIVE_STATUS='已归档'
+          and a.Patient_Id = :PatientId
+          and a.Visit_Id =:VisitId
+          and a.Archive_Key =:OperId 
+          and (a.Mr_Sub_Class=:DocName  or :DocName is null)
+        ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetAnesMethodOptions</key>
+      <value>
+        <![CDATA[ SELECT DISTINCT replace(M.ANES_METHOD,chr(10),'') ANES_METHOD
+          FROM MED_OPERATION_MASTER M
+          WHERE M.ANES_METHOD IS NOT NULL
+          AND replace(M.ANES_METHOD,chr(10),'') NOT IN
+          (SELECT C.ITEM_VALUE FROM MED_ANESTHESIA_CONFIG C )
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOutOperationRoomRecordByInpNo</key>
+      <value>
+        <![CDATA[select a.patient_id,
+                 a.visit_id,
+                 c.oper_id,
+                 a.inp_no,
+                 b.sex,a.bed_no, d.dept_name,
+                 b.name,FUN_GET_PAT_AGE( b.DATE_OF_BIRTH,C.SCHEDULED_DATE_TIME ) AGE,
+                 b.date_of_birth,c.EMERGENCY_IND,
+                 c.dept_code,c.asa_grade,c.anes_method,c.asa_grade,c.scheduled_date_time,
+                 c.diag_before_operation,c.operation_name,
+                 c.anes_doctor,FIRST_ANES_ASSISTANT,FIRST_OPER_NURSE,FIRST_OPER_ASSISTANT,SECOND_OPER_NURSE,c.surgeon,c.Start_Date_Time,c.End_Date_Time,c.in_date_time,c.out_date_time
+            from med_pats_in_hospital a
+            left join med_pat_master_index b
+              on a.patient_id = b.patient_id
+            left join med_operation_master c
+              on a.patient_id = c.patient_id
+             and a.visit_id = c.visit_id
+             left join med_dept_dict d on c.dept_code = d.dept_code
+          where a.patient_id = :InpNo or a.inp_no = :InpNo
+       ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetOutOperationRoomRecordByPatient</key>
+      <value>
+        <![CDATA[SELECT A.PATIENT_ID,
+                 A.VISIT_ID,
+                 C.OPER_ID,
+                 A.INP_NO,
+                 B.SEX,
+                 C.BED_NO,
+                 D.DEPT_NAME,
+                 B.NAME,
+                 FUN_GET_PAT_AGE(B.DATE_OF_BIRTH, C.SCHEDULED_DATE_TIME) AGE,
+                 B.DATE_OF_BIRTH,
+                 C.EMERGENCY_IND,
+                 C.DEPT_CODE,
+                 C.ASA_GRADE,
+                 C.ANES_METHOD,
+                 C.SCHEDULED_DATE_TIME,
+                 C.DIAG_BEFORE_OPERATION,
+                 C.OPERATION_NAME,
+                 C.ANES_DOCTOR,
+                 FIRST_ANES_ASSISTANT,
+                 FIRST_OPER_ASSISTANT,
+                 FIRST_OPER_NURSE,
+                 SECOND_OPER_NURSE,
+                 C.SURGEON,
+                 C.START_DATE_TIME,
+                 C.END_DATE_TIME,
+                 C.IN_DATE_TIME,
+                 C.OUT_DATE_TIME,
+                 C.OPER_ROOM,
+                 C.OPER_ROOM_NO,
+                 C.OPER_SCALE,
+                 PMH.WEIGHT 
+            FROM MED_PATS_IN_HOSPITAL A
+            LEFT JOIN MED_PAT_MASTER_INDEX B
+              ON A.PATIENT_ID = B.PATIENT_ID
+            LEFT JOIN MED_OPERATION_MASTER C
+              ON A.PATIENT_ID = C.PATIENT_ID
+             AND A.VISIT_ID = C.VISIT_ID
+            LEFT JOIN MED_DEPT_DICT D
+              ON C.DEPT_CODE = D.DEPT_CODE
+            LEFT JOIN MED_ANESTHESIA_PLAN_PMH PMH 
+            ON C.PATIENT_ID = PMH.PATIENT_ID AND C.VISIT_ID = PMH.VISIT_ID AND C.OPER_ID = PMH.OPER_ID 
+          WHERE A.PATIENT_ID = :PatientId and C.VISIT_ID = :VisitId and C.OPER_ID = :OperId
+          ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetMedDeptInOperRoomDict</key>
+      <value>
+        <![CDATA[ SELECT * FROM MED_DEPT_DICT WHERE DEPT_CODE in (SELECT DISTINCT DEPT_CODE FROM MED_OPERATING_ROOM)
+        ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetVAnesInfo</key>
+      <value>
+        <![CDATA[ SELECT T.*,
+        CASE WHEN INSTR('{0}',T.OLD_ASA_GRADE)>0 THEN '{1}'
+             WHEN INSTR('{2}',T.OLD_ASA_GRADE)>0 THEN '{3}'  
+             WHEN INSTR('{4}',T.OLD_ASA_GRADE)>0 THEN '{5}'  
+             WHEN INSTR('{6}',T.OLD_ASA_GRADE)>0 THEN '{7}'  
+             WHEN INSTR('{8}',T.OLD_ASA_GRADE)>0 THEN '{9}'  
+             WHEN INSTR('{10}',T.OLD_ASA_GRADE)>0 THEN '{11}'  
+        ELSE '其他' END AS ASA_GRADE_CLASS,T.OLD_ASA_GRADE AS ASA_GRADE,
+        CASE WHEN INSTR('{12}',T.OLD_OPERATION_SCALE)>0 THEN '{13}'
+             WHEN INSTR('{14}',T.OLD_OPERATION_SCALE)>0 THEN '{15}'  
+             WHEN INSTR('{16}',T.OLD_OPERATION_SCALE)>0 THEN '{17}'  
+             WHEN INSTR('{18}',T.OLD_OPERATION_SCALE)>0 THEN '{9}'    
+        ELSE '其他' END AS OPERATION_SCALE_CLASS,T.OLD_OPERATION_SCALE AS OPERATION_SCALE,
+        CASE WHEN INSTR('{20}',T.OLD_QIEKOU_CLASS)>0 THEN '{21}'
+             WHEN INSTR('{22}',T.OLD_QIEKOU_CLASS)>0 THEN '{23}'  
+             WHEN INSTR('{24}',T.OLD_QIEKOU_CLASS)>0 THEN '{25}'  
+             WHEN INSTR('{26}',T.OLD_QIEKOU_CLASS)>0 THEN '{27}'    
+        ELSE '其他' END AS QIEKOU_CLASS_CLASS,T.OLD_QIEKOU_CLASS AS QIEKOU_CLASS
+        FROM (
+        SELECT
+        PATIENT_ID, VISIT_ID, OPER_ID, DEPT_STAYED, OPERATING_ROOM, OPERATING_ROOM_NO, DIAG_BEFORE_OPERATION,
+        PATIENT_CONDITION, ','||TRIM(OPERATION_SCALE)||',' OLD_OPERATION_SCALE, DIAG_AFTER_OPERATION, EMERGENCY_INDICATOR, EINDICATOR, ISOLATION_INDICATOR,
+        OPERATION_CLASS, OPERATING_DEPT, OPER_DOC,SURGEON, FIRST_ASSISTANT, SECOND_ASSISTANT, THIRD_ASSISTANT,
+        FOURTH_ASSISTANT, ANESTHESIA_METHOD, ANES_DOC,ANESTHESIA_DOCTOR, ANESTHESIA_ASSISTANT, BLOOD_TRAN_DOCTOR,
+        FIRST_OPERATION_NURSE, SECOND_OPERATION_NURSE, FIRST_SUPPLY_NURSE, SECOND_SUPPLY_NURSE,
+        NURSE_SHIFT_INDICATOR, OPER_DATE, START_DATE_TIME, END_DATE_TIME, SATISFACTION_DEGREE, SMOOTH_INDICATOR,
+        IN_FLUIDS_AMOUNT, OUT_FLUIDS_AMOUNT, BLOOD_LOSSED, BLOOD_TRANSFERED, ENTERED_BY, THIRD_SUPPLY_NURSE,
+        ORDER_TRANSFER, CHARGE_TRANSFER, END_INDICATOR, RECK_GROUP, OPER_STATUS, SECOND_ANESTHESIA_ASSISTANT,
+        THIRD_ANESTHESIA_ASSISTANT, FOURTH_ANESTHESIA_ASSISTANT, OPERATION_POSITION, OPERATION_EQUIP_INDICATOR,
+        SECOND_ANESTHESIA_DOCTOR, THIRD_ANESTHESIA_DOCTOR, OTHER_IN_AMOUNT, OTHER_OUT_AMOUNT, IN_DATE_TIME,
+        OUT_DATE_TIME, BLOOD_WHOLE_SELF, BLOOD_WHOLE, BLOOD_RBC, BLOOD_PLASM, BLOOD_OTHER, SPECIAL_EQUIPMENT,
+        SPECIAL_INFECT, HEPATITIS_INDICATOR, ANES_START_DATE_TIME, RETURN_DATE_TIME, SEQUENCE, IN_PACU_DATE_TIME,
+        OUT_PACU_DATE_TIME,PACU_TIME, OPERATION_ID, BLOOD_REUSE, SELF_BLOOD, ENTERED_DATETIME, MEMO, ANESTHESIA_ID, XJ, AI,
+        AT, JT, BODY_AREA, GAS_PIPE, PAT_LEAVE_SHOW, WHOLE_ANES, STOP_ANES_AREA, STOP_ANES_AREA_MED,
+        HOLE_PIPLE_ANES, STOP_ANES_AREA_TECH, PIN_SIZE, PIPLE_UP, PIPLE_DOWN, IRRITATE_NERVE, ANES_RANGE,
+        BAK_MED, WATCH_ANES, ALL_ANES_MED_LEAD1, ALL_ANES_MED_LEAD2, ALL_ANES_MED_KEEP1, ALL_ANES_MED_KEEP2,
+        CHEST_WATER, ABDOMEN_WATER, INQUIRY_BEFORE_DATE, INQUIRY_AFTER_DATE, THIRD_OPERATION_NURSE, PACU_DOCTOR,
+        WATER_JT1, WATER_JT2, BLOOD_XB, COOL_THING, CRY_WATHER, RED_BLOOD, BLOOD_AMOUNT, SCHEDULED_DATE_TIME,
+        BED_NO, REQ_DATE_TIME, ','||TRIM(QIEKOU_CLASS)||',' OLD_QIEKOU_CLASS, QIEKOU_NUMBER, MEMO1, OPERATION_NAME, MEN_ZHEN, ANESTHESIA_RESULT,
+        SIMPLE_SICK, ISOLATION_NEED, DANBINGZHONG, YIBAO, FIRST_SHIFT_SUPPLY_NURSE, FIRST_SHIFT_OPERATION_NURSE,
+        FIRST_SHIFT_SUPPLY_DATETIME, FIRST_SHIFT_OPERATION_DATETIME, ANES_START_TIME, ANES_END_TIME,
+        INDUCE_START_TIME, INDUCE_END_TIME, PACU_START_TIME, PACU_END_TIME, DONE_DATE_TIME, CANCEL_DATE_TIME,
+        ANALGESIC_PUMPS, INP_NO, NAME, NAME_PHONETIC, SEX, AGE, DATE_OF_BIRTH, BIRTH_PLACE, CITIZENSHIP, NATION,
+        ID_NO, IDENTITY, CHARGE_TYPE, UNIT_IN_CONTRACT, MAILING_ADDRESS, ZIP_CODE, PHONE_NUMBER_HOME,
+        PHONE_NUMBER_BUSINESS, NEXT_OF_KIN, RELATIONSHIP, NEXT_OF_KIN_ADDR, NEXT_OF_KIN_ZIP_CODE,
+        NEXT_OF_KIN_PHONE, LAST_VISIT_DATE, VIP_INDICATOR, CREATE_DATE, OPERATOR, ','||TRIM(ASA_GRADE)||',' OLD_ASA_GRADE, CANCEL_REASON,
+        ENTERED_BY_CANCELED,CANCELED_DATE_TIME, CANCELED_TYPE, PACU_TEMPERATURE, IN_ICU, TRACHEA_6H, TRACHEA_REMOVE,
+        ANES_START_24H_DEATH, ANES_START_24H_STOP, ANES_ANAPHYLAXIS, SPINAL_ANES_COMP, CENTRAL_VENOUS,
+        SPINAL_ANES, TRACHEA_HOARSE, AFTER_ANES_COMA, GEN_ANES_TRACHEA, PACU_SITUATION, PACU_STEWARD,
+        PACU_DOCTOR_INPUT, PACU_NURSE, ANALGESIA_PUMP, ANALGESIA_METHOD, ANALGESIA_DRUGS, ANALGESIA_EFFECT,
+        EXTRA_CIRCULATION, ANALGESIA_THERAPY, AFTER_ANALGESIA, MONARY_RES, MONARY_RES_OK, CONS_DISTURBANCE,
+        OXYGEN_SATURATION, USE_REMINDERS, RES_TRACT_OBSTRUCE, ANES_DEATH, OTHER_NOT_EXP, DEATH_AFTER_OPER,NO_PLAN_IN_ICU,PAT_DIRECTION,
+        
+        NULL AS DOSAGE,NULL AS ITEM_NAME,NULL AS DOSAGE_UNITS,NULL AS ANESTHESIA_METHOD_CLASS,NURSE_IDS
+        FROM V_MED_ANES_INFO
+        ) T]]>
+      </value>
+    </group>
+    <!--<group>
+      <key>GetOperDetail</key>
+      <value>
+        <![CDATA[SELECT S.*,
+       TO_CHAR(S.SCHEDULED_DATE_TIME, 'hh24:mi') AS SCHEDULED_DATE_TIME_SHORT,
+       I.NAME,
+       FUN_GET_PAT_AGE(I.DATE_OF_BIRTH, S.SCHEDULED_DATE_TIME) AS AGE,
+       H.INP_NO,
+       S.BED_NO,
+       I.SEX,
+       NVL(U.USER_NAME, S.SURGEON) AS SURGEON_NAME,
+       NVL(U2.USER_NAME, S.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(U3.USER_NAME, S.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       NVL(U4.USER_NAME, S.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+       NVL(U5.USER_NAME, S.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+       NVL(U6.USER_NAME, S.FIRST_ANES_ASSISTANT) AS FIRST_ANES_ASSISTANT_NAME,
+       NVL(U7.USER_NAME, S.SECOND_ANES_ASSISTANT) AS SECOND_ANES_ASSISTANT_NAME,
+       NVL(U8.USER_NAME, S.FIRST_OPER_NURSE) AS FIRST_OPER_NURSE_NAME,
+       NVL(U9.USER_NAME, S.SECOND_OPER_NURSE) AS SECOND_OPER_NURSE_NAME,
+       NVL(U10.USER_NAME, S.FIRST_SUPPLY_NURSE) AS FIRST_SUPPLY_NURSE_NAME,
+       NVL(U11.USER_NAME, S.SECOND_SUPPLY_NURSE) AS SECOND_SUPPLY_NURSE_NAME,
+       DECODE(S.ISOLATION_IND, 1, '正常', 2, '隔离') AS ISOLATION_IND_NM,
+       NVL(D.DEPT_NAME, U.USER_DEPT_CODE) AS DEPT_NAME,
+       (select wm_concat(OSN.OPER_NAME) FROM MED_OPERATION_SCHEDULE_NAME OSN WHERE OSN.PATIENT_ID=S.PATIENT_ID AND OSN.VISIT_ID=S.VISIT_ID AND OSN.SCHEDULE_ID=S.SCHEDULE_ID) TEMP_OPER_NAME
+  FROM MED_OPERATION_SCHEDULE S
+  LEFT JOIN MED_PAT_MASTER_INDEX I
+    ON S.PATIENT_ID = I.PATIENT_ID
+  LEFT JOIN MED_PATS_IN_HOSPITAL H
+    ON S.PATIENT_ID = H.PATIENT_ID
+       AND S.VISIT_ID = H.VISIT_ID
+  LEFT JOIN MED_HIS_USERS U
+    ON S.SURGEON = U.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U2
+    ON S.FIRST_OPER_ASSISTANT = U2.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U3
+    ON S.SECOND_OPER_ASSISTANT = U3.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U4
+    ON S.THIRD_OPER_ASSISTANT = U4.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U5
+    ON S.ANES_DOCTOR = U5.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U6
+    ON S.FIRST_ANES_ASSISTANT = U6.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U7
+    ON S.SECOND_ANES_ASSISTANT = U7.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U8
+    ON S.FIRST_OPER_NURSE = U8.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U9
+    ON S.SECOND_OPER_NURSE = U9.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U10
+    ON S.FIRST_SUPPLY_NURSE = U10.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U11
+    ON S.SECOND_SUPPLY_NURSE = U11.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT D
+    ON S.DEPT_CODE = D.DEPT_CODE
+ WHERE S.PATIENT_ID = :PatientID 
+       AND S.VISIT_ID = :VisitID 
+       AND S.OPER_ID = :OperID 
+       ]]>
+      </value>
+    </group>-->
+
+    <!--<group>
+      <key>GetMaxOperCancelCancelID</key>
+      <value>
+        <![CDATA[SELECT NVL(MAX(CANCEL_ID),0) AS CANCEL_ID FROM MED_OPERATION_CANCELED WHERE PATIENT_ID = :PatientID AND VISIT_ID = :VisitID AND SCHEDULE_ID = :ScheduleID]]>
+      </value>
+    </group>-->
+  </model>
+  <model>
+    <groupname>质控SQL语句</groupname>
+    <group>
+      <key>GetQuanlityControlReportDataOut</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.REPORT_ID,A.QC_CODE,A.QC_VALUE,
+                  B.REPORT_MONTH,B.COUNT_DATE,B.REPORT_NAME,
+                  B.STATUS,B.REPORT_DATE,B.OPERATOR 
+                  FROM MED_QC_OUT_REPORT_DATA  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID 
+                  WHERE B.REPORT_MONTH = :REPORTMONTH ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportDataBakOut</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.* ,C.DETAILS_COUNT 
+                  FROM MED_QC_OUT_REPORT_DATA_BAK  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID  
+                  LEFT JOIN 
+                  (
+                       SELECT AA.REPORT_ID,AA.ITEM_CODE, COUNT(*) AS DETAILS_COUNT FROM MED_QC_OUT_AE_BAK AA
+                       GROUP BY AA.REPORT_ID,AA.ITEM_CODE 
+                  ) C ON A.REPORT_ID = C.REPORT_ID AND A.QC_CODE = C.ITEM_CODE
+                  WHERE B.REPORT_NAME = :REPORT_NAME ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakDataOut</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_OUT_AE_BAK WHERE REPORT_ID= :REPORT_ID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeDataOut</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_OUT_AE WHERE REPORT_ID= :REPORT_ID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportData</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.REPORT_ID,A.QC_CODE,A.QC_VALUE,
+                  B.REPORT_MONTH,B.COUNT_DATE,B.REPORT_NAME,
+                  B.STATUS,B.REPORT_DATE,B.OPERATOR 
+                  FROM MED_QC_REPORT_DATA  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID 
+                  WHERE B.REPORT_MONTH = :REPORTMONTH ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportDataBak</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.* ,C.DETAILS_COUNT 
+                  FROM MED_QC_REPORT_DATA_BAK  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID  
+                  LEFT JOIN 
+                  (
+                       SELECT AA.REPORT_ID,AA.ITEM_CODE, COUNT(*) AS DETAILS_COUNT FROM MED_QC_AE_BAK AA
+                       GROUP BY AA.REPORT_ID,AA.ITEM_CODE 
+                  ) C ON A.REPORT_ID = C.REPORT_ID AND A.QC_CODE = C.ITEM_CODE
+                  WHERE B.REPORT_NAME = :REPORT_NAME ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportDataBakByReportId</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.* ,C.DETAILS_COUNT 
+                  FROM MED_QC_REPORT_DATA_BAK  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID  
+                  LEFT JOIN 
+                  (
+                       SELECT AA.REPORT_ID,AA.ITEM_CODE, COUNT(*) AS DETAILS_COUNT FROM MED_QC_AE_BAK AA
+                       GROUP BY AA.REPORT_ID,AA.ITEM_CODE 
+                  ) C ON A.REPORT_ID = C.REPORT_ID AND A.QC_CODE = C.ITEM_CODE
+                  WHERE A.REPORT_ID = :REPORT_ID ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportList</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_REPORT_LIST ORDER BY GROUP_NO,REPORT_NO ASC 
+         ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportIndByReportId</key>
+      <value>
+        <![CDATA[SELECT A.REPORT_ID,A.REPORT_MONTH,A.COUNT_DATE,A.REPORT_NAME,
+                  A.STATUS,A.REPORT_DATE,NVL(B.USER_NAME,A.OPERATOR) AS  OPERATOR 
+                  FROM MED_QC_REPORT_IND A 
+                  LEFT JOIN MED_HIS_USERS B 
+                  ON A.OPERATOR = B.USER_JOB_ID
+                  WHERE A.REPORT_ID= :REPORT_ID
+         ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeData</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_AE WHERE REPORT_ID= :REPORT_ID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakData</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_AE_BAK WHERE REPORT_ID= :REPORT_ID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakDataByParams</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_AE_BAK 
+        WHERE REPORT_ID = :REPORT_ID 
+        AND PATIENT_ID = :PATIENT_ID 
+        AND VISIT_ID = :VISIT_ID 
+        AND OPER_ID = :OPER_ID
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakDataByParamsByReportNo</key>
+      <value>
+        <![CDATA[SELECT A.* FROM MED_QC_AE_BAK A
+                 LEFT JOIN MED_QC_REPORT_LIST B 
+                 ON A.ITEM_CODE = B.NMRTR_CODE 
+                 WHERE A.REPORT_ID = :REPORT_ID 
+                  AND A.PATIENT_ID = :PATIENT_ID 
+                  AND A.VISIT_ID = :VISIT_ID 
+                  AND A.OPER_ID = :OPER_ID
+                  
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakDataByReportName</key>
+      <value>
+        <![CDATA[SELECT A.* 
+                FROM MED_QC_AE_BAK  A
+                LEFT JOIN MED_QC_REPORT_IND B 
+                ON A.REPORT_ID = B.REPORT_ID 
+                WHERE REPORT_NAME= :REPORT_NAME
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakPatientInfoDataByReportName</key>
+      <value>
+        <![CDATA[SELECT A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,NVL(F.USER_NAME,C.ANES_DOCTOR) AS ANES_DOCTOR,
+                  C.SCHEDULED_DATE_TIME,wm_concat(NVL(G.SHORT_NAME,G.QC_NAME)) AS AE_DETAIL,wm_concat(G.QC_CODE) AS AE_DETAIL_CODE,B.REPORT_ID,
+                  I.INP_NO,C.ANES_END_TIME ,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH,CASE WHEN C.DIAG_AFTER_OPERATION IS NULL THEN C.DIAG_BEFORE_OPERATION ELSE C.DIAG_AFTER_OPERATION END AS DIAG_AFTER_OPERATION,
+                  J.UNEXPECT_EVENT_REASON,
+                   CASE WHEN J.OPER_EVENT =1 THEN '手术因素' || ',' END || CASE  WHEN J.ANES_EVENT = 1 THEN '麻醉因素' || ',' END || CASE  WHEN J.PAT_INDETIFICATION = 1 THEN '患者因素' END AS EventCause,
+                  J.OTHER_EVENT,J.EVENT_COURSE,I.BODY_HEIGHT,I.BODY_WEIGHT,J.PREVENT_STEP ,C.EMERGENCY_IND  ,J.EVENT_GRADE 
+                  FROM MED_QC_AE_BAK  A
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID = B.REPORT_ID 
+                  LEFT JOIN MED_OPERATION_MASTER C 
+                  ON A.PATIENT_ID = C.PATIENT_ID 
+                  AND A.VISIT_ID = C.VISIT_ID 
+                  AND A.OPER_ID = C.OPER_ID 
+                  LEFT JOIN MED_PAT_MASTER_INDEX D 
+                  ON C.PATIENT_ID = D.PATIENT_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_HIS_USERS F 
+                  ON C.ANES_DOCTOR = F.USER_JOB_ID
+                  LEFT JOIN MED_QC_ITEM G 
+                  ON A.ITEM_CODE = G.QC_CODE 
+                  LEFT JOIN MED_PATS_IN_HOSPITAL I
+                  ON C.PATIENT_ID = I.PATIENT_ID AND C.VISIT_ID = I.VISIT_ID 
+                  LEFT JOIN MED_ANESTHESIA_INPUT_DATA J 
+                  ON C.PATIENT_ID = J.PATIENT_ID AND C.VISIT_ID = J.VISIT_ID AND C.OPER_ID = J.OPER_ID 
+                  WHERE REPORT_NAME= :REPORT_NAME 
+                  GROUP BY  A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,C.DEPT_CODE,E.DEPT_NAME,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,C.ANES_DOCTOR,F.USER_NAME,
+                  C.SCHEDULED_DATE_TIME, B.REPORT_ID,I.INP_NO,C.ANES_END_TIME,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH, C.DIAG_AFTER_OPERATION , C.DIAG_BEFORE_OPERATION ,
+                  J.UNEXPECT_EVENT_REASON,
+                  J.OPER_EVENT , J.ANES_EVENT , J.PAT_INDETIFICATION ,
+                  J.OTHER_EVENT,J.EVENT_COURSE,I.BODY_HEIGHT,I.BODY_WEIGHT,J.PREVENT_STEP ,C.EMERGENCY_IND,J.EVENT_GRADE
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakPatientInfoDataByReportNameNoGroupBy</key>
+      <value>
+        <![CDATA[SELECT A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,NVL(F.USER_NAME,C.ANES_DOCTOR) AS ANES_DOCTOR,
+                  C.SCHEDULED_DATE_TIME,NVL(G.SHORT_NAME,G.QC_NAME) AS AE_DETAIL,G.QC_CODE AS AE_DETAIL_CODE,B.REPORT_ID,
+                  I.INP_NO,C.ANES_END_TIME ,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH,CASE WHEN C.DIAG_AFTER_OPERATION IS NULL THEN C.DIAG_BEFORE_OPERATION ELSE C.DIAG_AFTER_OPERATION END AS DIAG_AFTER_OPERATION,
+                  J.UNEXPECT_EVENT_REASON,
+                   CASE WHEN J.OPER_EVENT =1 THEN '手术因素' || ',' END || CASE  WHEN J.ANES_EVENT = 1 THEN '麻醉因素' || ',' END || CASE  WHEN J.PAT_INDETIFICATION = 1 THEN '患者因素' END AS EventCause,
+                  J.OTHER_EVENT,J.EVENT_COURSE,I.BODY_HEIGHT,I.BODY_WEIGHT,J.PREVENT_STEP ,C.EMERGENCY_IND ,G.REPORT_CODE,J.EVENT_GRADE 
+                  FROM MED_QC_AE_BAK  A
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID = B.REPORT_ID 
+                  LEFT JOIN MED_OPERATION_MASTER C 
+                  ON A.PATIENT_ID = C.PATIENT_ID 
+                  AND A.VISIT_ID = C.VISIT_ID 
+                  AND A.OPER_ID = C.OPER_ID 
+                  LEFT JOIN MED_PAT_MASTER_INDEX D 
+                  ON C.PATIENT_ID = D.PATIENT_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_HIS_USERS F 
+                  ON C.ANES_DOCTOR = F.USER_JOB_ID
+                  LEFT JOIN MED_QC_ITEM G 
+                  ON A.ITEM_CODE = G.QC_CODE 
+                  LEFT JOIN MED_PATS_IN_HOSPITAL I
+                  ON C.PATIENT_ID = I.PATIENT_ID AND C.VISIT_ID = I.VISIT_ID 
+                  LEFT JOIN MED_ANESTHESIA_INPUT_DATA J 
+                  ON C.PATIENT_ID = J.PATIENT_ID AND C.VISIT_ID = J.VISIT_ID AND C.OPER_ID = J.OPER_ID 
+                  WHERE REPORT_NAME= :REPORT_NAME AND A.UPLOAD = 1 
+                  GROUP BY  A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,C.DEPT_CODE,E.DEPT_NAME,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,C.ANES_DOCTOR,F.USER_NAME,
+                  C.SCHEDULED_DATE_TIME,G.QC_NAME,G.QC_CODE, B.REPORT_ID,I.INP_NO,C.ANES_END_TIME,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH, C.DIAG_AFTER_OPERATION , C.DIAG_BEFORE_OPERATION ,
+                  J.UNEXPECT_EVENT_REASON,
+                  J.OPER_EVENT , J.ANES_EVENT , J.PAT_INDETIFICATION ,
+                  J.OTHER_EVENT,J.EVENT_COURSE,I.BODY_HEIGHT,I.BODY_WEIGHT,J.PREVENT_STEP ,C.EMERGENCY_IND,G.SHORT_NAME ,G.REPORT_CODE,J.EVENT_GRADE
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakPatientInfoDataByReportNameAndReportNo</key>
+      <value>
+        <![CDATA[SELECT C.OPER_ROOM_NO, A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,FUN_GET_PAT_AGE(D.DATE_OF_BIRTH, C.SCHEDULED_DATE_TIME) AS AGE,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,NVL(F.USER_NAME,C.ANES_DOCTOR) AS ANES_DOCTOR,
+                  C.SCHEDULED_DATE_TIME,wm_concat(NVL(H.SHORT_NAME,H.QC_NAME)) AS AE_DETAIL,wm_concat(H.QC_CODE) AS AE_DETAIL_CODE,B.REPORT_ID
+                  FROM MED_QC_AE_BAK  A
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID = B.REPORT_ID 
+                  LEFT JOIN MED_OPERATION_MASTER C 
+                  ON A.PATIENT_ID = C.PATIENT_ID 
+                  AND A.VISIT_ID = C.VISIT_ID 
+                  AND A.OPER_ID = C.OPER_ID 
+                  LEFT JOIN MED_PAT_MASTER_INDEX D 
+                  ON C.PATIENT_ID = D.PATIENT_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_HIS_USERS F 
+                  ON C.ANES_DOCTOR = F.USER_JOB_ID
+                  LEFT JOIN MED_QC_REPORT_LIST G 
+                  ON A.ITEM_CODE = G.NMRTR_CODE 
+                  LEFT JOIN MED_QC_ITEM H 
+                  ON A.ITEM_CODE = H.QC_CODE 
+                  WHERE B.REPORT_NAME = :REPORT_NAME
+                    AND G.REPORT_NO = :REPORT_NO
+                  GROUP BY C.OPER_ROOM_NO, A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, D.NAME,D.SEX,FUN_GET_PAT_AGE(D.DATE_OF_BIRTH, C.SCHEDULED_DATE_TIME),C.DEPT_CODE,E.DEPT_NAME,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,C.ANES_DOCTOR,F.USER_NAME,
+                  C.SCHEDULED_DATE_TIME, B.REPORT_ID
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlAeBakPatientInfoDataByReportNameAndReportNoOut</key>
+      <value>
+        <![CDATA[SELECT '' AS OPER_ROOM_NO, A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, C.NAME,C.SEX,FUN_GET_PAT_AGE(C.DATE_OF_BIRTH, NVL(C.ANES_START_TIME,SYSDATE)) AS AGE,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,'' AS ANES_DOCTOR,
+                  wm_concat(NVL(H.SHORT_NAME,H.QC_NAME)) AS AE_DETAIL,wm_concat(H.QC_CODE) AS AE_DETAIL_CODE,B.REPORT_ID
+                  FROM MED_QC_OUT_AE_BAK  A
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID = B.REPORT_ID 
+                  LEFT JOIN MED_QC_OUT_PAT_INFO C 
+                  ON A.PATIENT_ID = C.PATIENT_ID 
+                  AND A.VISIT_ID = C.VISIT_ID 
+                  AND A.OPER_ID = C.OPER_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_QC_REPORT_LIST G 
+                  ON A.ITEM_CODE = G.NMRTR_CODE 
+                  LEFT JOIN MED_QC_ITEM H 
+                  ON A.ITEM_CODE = H.QC_CODE 
+                  WHERE B.REPORT_NAME = :REPORT_NAME
+                    AND G.REPORT_NO = :REPORT_NO
+                  GROUP BY  A.UPLOAD,A.PATIENT_ID,A.VISIT_ID,A.OPER_ID, C.NAME,C.SEX,FUN_GET_PAT_AGE(C.DATE_OF_BIRTH,NVL(C.ANES_START_TIME,SYSDATE)),C.DEPT_CODE,E.DEPT_NAME,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,B.REPORT_ID
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportInd</key>
+      <value>
+        <![CDATA[SELECT ROW_NUMBER() over(order by A.REPORT_MONTH DESC ) AS ROW_N,
+                    A.REPORT_ID,A.REPORT_MONTH,A.COUNT_DATE,A.REPORT_NAME,
+                    A.STATUS,A.REPORT_DATE,NVL(B.USER_NAME,A.OPERATOR) AS  OPERATOR 
+                    FROM MED_QC_REPORT_IND A 
+                    LEFT JOIN MED_HIS_USERS B 
+                    ON A.OPERATOR = B.USER_JOB_ID 
+                    WHERE A.REPORT_NAME IS NOT NULL 
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportIndByReportName</key>
+      <value>
+        <![CDATA[SELECT ROW_NUMBER() over(order by A.REPORT_MONTH DESC ) AS ROW_N,
+                    A.REPORT_ID,A.REPORT_MONTH,A.COUNT_DATE,A.REPORT_NAME,
+                    A.STATUS,A.REPORT_DATE,NVL(B.USER_NAME,A.OPERATOR) AS  OPERATOR 
+                    FROM MED_QC_REPORT_IND A 
+                    LEFT JOIN MED_HIS_USERS B 
+                    ON A.OPERATOR = B.USER_JOB_ID 
+                    WHERE A.REPORT_NAME IS NOT NULL  AND A.REPORT_NAME = :REPORT_NAME
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlReportInd2</key>
+      <value>
+        <![CDATA[SELECT ROW_NUMBER() over(order by A.REPORT_MONTH DESC ) AS ROW_N,
+                    A.REPORT_ID,A.REPORT_MONTH,A.COUNT_DATE,A.REPORT_NAME,
+                    A.STATUS,A.REPORT_DATE,NVL(B.USER_NAME,A.OPERATOR) AS  OPERATOR 
+                    FROM MED_QC_REPORT_IND A 
+                    LEFT JOIN MED_HIS_USERS B 
+                    ON A.OPERATOR = B.USER_JOB_ID 
+
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQuanlityControlItemList</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_QC_ITEM  ORDER BY SORT_NO ASC ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQCPatientBaseInfo</key>
+      <value>
+        <![CDATA[SELECT C.PATIENT_ID,C.VISIT_ID,C.OPER_ID, D.NAME,D.SEX,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,NVL(F.USER_NAME,C.ANES_DOCTOR) AS ANES_DOCTOR,
+                  C.SCHEDULED_DATE_TIME,
+                  I.INP_NO,C.ANES_END_TIME ,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH,CASE WHEN C.DIAG_AFTER_OPERATION IS NULL THEN C.DIAG_BEFORE_OPERATION ELSE C.DIAG_AFTER_OPERATION END AS DIAG_AFTER_OPERATION,
+                  I.BODY_HEIGHT,I.BODY_WEIGHT,C.EMERGENCY_IND 
+                  FROM MED_OPERATION_MASTER C 
+                  LEFT JOIN MED_PAT_MASTER_INDEX D 
+                  ON C.PATIENT_ID = D.PATIENT_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_HIS_USERS F 
+                  ON C.ANES_DOCTOR = F.USER_JOB_ID
+                  LEFT JOIN MED_PATS_IN_HOSPITAL I
+                  ON C.PATIENT_ID = I.PATIENT_ID AND C.VISIT_ID = I.VISIT_ID 
+                  WHERE I.INP_NO= :INP_NO 
+       ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetQCPatientBaseInfo2</key>
+      <value>
+        <![CDATA[SELECT C.PATIENT_ID,C.VISIT_ID,C.OPER_ID, D.NAME,D.SEX,NVL(E.DEPT_NAME,C.DEPT_CODE) AS DEPT_NAME,C.DEPT_CODE,
+                  C.OPERATION_NAME,C.ANES_METHOD,C.ASA_GRADE,NVL(F.USER_NAME,C.ANES_DOCTOR) AS ANES_DOCTOR,
+                  C.SCHEDULED_DATE_TIME,
+                  I.INP_NO,C.ANES_END_TIME ,C.ANES_START_TIME,
+                  D.DATE_OF_BIRTH,CASE WHEN C.DIAG_AFTER_OPERATION IS NULL THEN C.DIAG_BEFORE_OPERATION ELSE C.DIAG_AFTER_OPERATION END AS DIAG_AFTER_OPERATION,
+                  I.BODY_HEIGHT,I.BODY_WEIGHT,C.EMERGENCY_IND 
+                  FROM MED_OPERATION_MASTER C 
+                  LEFT JOIN MED_PAT_MASTER_INDEX D 
+                  ON C.PATIENT_ID = D.PATIENT_ID 
+                  LEFT JOIN MED_DEPT_DICT E 
+                  ON C.DEPT_CODE = E.DEPT_CODE
+                  LEFT JOIN MED_HIS_USERS F 
+                  ON C.ANES_DOCTOR = F.USER_JOB_ID
+                  LEFT JOIN MED_PATS_IN_HOSPITAL I
+                  ON C.PATIENT_ID = I.PATIENT_ID AND C.VISIT_ID = I.VISIT_ID 
+                  WHERE C.PATIENT_ID= :PATIENT_ID AND C.VISIT_ID = :VISIT_ID AND C.OPER_ID = :OPER_ID
+       ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMedAnesthesiaInputData</key>
+      <value>
+        <![CDATA[
+        SELECT * FROM MED_ANESTHESIA_INPUT_DATA  
+        WHERE PATIENT_ID = :PATIENT_ID AND VISIT_ID = :VISIT_ID AND OPER_ID = :OPER_ID 
+        ]]>
+      </value>
+    </group>
+  <group>
+      <key>GetMedAnesthesiaInputDataOut</key>
+      <value>
+        <![CDATA[
+        SELECT * FROM MED_ANESTHESIA_INPUT_DATA_OUT   
+        WHERE PATIENT_ID = :PATIENT_ID AND VISIT_ID = :VISIT_ID AND OPER_ID = :OPER_ID 
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOutPatInfoByInpNo</key>
+      <value>
+        <![CDATA[
+        SELECT * FROM MED_QC_OUT_PAT_INFO    
+        WHERE INP_NO = :INP_NO  
+        ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOutPatInfoByInpNo2</key>
+      <value>
+        <![CDATA[
+        SELECT * FROM MED_QC_OUT_PAT_INFO    
+        WHERE PATIENT_ID = :PATIENT_ID AND VISIT_ID = :VISIT_ID AND OPER_ID = :OPER_ID   
+        ]]>
+      </value>
+    </group>
+  <group>
+      <key>GetOutPatInfo</key>
+      <value>
+        <![CDATA[
+        SELECT * FROM MED_QC_OUT_PAT_INFO    
+        WHERE INP_NO = :INP_NO AND PATIENT_ID = :PATIENT_ID AND VISIT_ID = :VISIT_ID AND OPER_ID = :OPER_ID 
+        ]]>
+      </value>
+    </group>
+  <group>
+      <key>GetOutPatInfoMaxOperId</key>
+      <value>
+        <![CDATA[
+        SELECT MAX(OPER_ID) as OPER_ID FROM MED_QC_OUT_PAT_INFO 
+        WHERE INP_NO = :INP_NO  
+        ]]>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>微信端SQL语句</groupname>
+    <group>
+      <key>GetQuanlityControlReportDataBakForWeiXin</key>
+      <value>
+        <![CDATA[ SELECT 
+                  A.* ,C.DETAILS_COUNT 
+                  FROM MED_QC_REPORT_DATA_BAK  A 
+                  LEFT JOIN MED_QC_REPORT_IND B 
+                  ON A.REPORT_ID=B.REPORT_ID  
+                  LEFT JOIN 
+                  (
+                       SELECT AA.REPORT_ID,AA.ITEM_CODE, COUNT(*) AS DETAILS_COUNT FROM MED_QC_AE_BAK AA
+                       GROUP BY AA.REPORT_ID,AA.ITEM_CODE 
+                  ) C ON A.REPORT_ID = C.REPORT_ID AND A.QC_CODE = C.ITEM_CODE
+                  WHERE B.REPORT_MONTH = :REPORT_MONTH ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetChargePatientQuery</key>
+      <value>
+        <![CDATA[ SELECT A.IN_DATE_TIME AS OPER_DATE,C.NAME,D.INP_NO,NVL(E.USER_NAME,B.TECHNICIAN) AS ANES_DOC,B.STATUS, A.PATIENT_ID,A.VISIT_ID,A.OPER_ID ,
+C.SEX, fun_get_pat_age(C.DATE_OF_BIRTH, A.SCHEDULED_DATE_TIME) AS PAT_AGE,A.BED_NO,NVL(F.DEPT_NAME,A.DEPT_CODE) AS DEPT_NAME ,
+TO_CHAR(TRUNC((NVL((A.ANES_END_TIME - A.ANES_START_TIME) * 24, 0) * 60) / 60,0)) || '小时' || TO_CHAR(ROUND(MOD((NVL((A.ANES_END_TIME - A.ANES_START_TIME) * 24, 0) * 60), 60),0)) || '分钟' AS ANESTIME,
+A.OPERATION_NAME,A.ANES_METHOD AS AnesMethod
+ FROM MED_OPERATION_MASTER A
+LEFT JOIN (SELECT VA.PATIENT_ID,VA.VISIT_ID,VA.OPER_ID,VA.TECHNICIAN,VA.STATUS FROM MED_ANES_VALUATION_LIST VA GROUP BY VA.PATIENT_ID,VA.VISIT_ID,VA.OPER_ID,VA.TECHNICIAN,VA.STATUS) B ON A.PATIENT_ID=B.PATIENT_ID AND A.VISIT_ID=B.VISIT_ID AND A.OPER_ID=B.OPER_ID
+LEFT JOIN MED_PAT_MASTER_INDEX C ON A.PATIENT_ID=C.PATIENT_ID
+LEFT JOIN MED_PATS_IN_HOSPITAL D ON A.PATIENT_ID=D.PATIENT_ID AND A.VISIT_ID=D.VISIT_ID
+LEFT JOIN MED_HIS_USERS E ON B.TECHNICIAN=E.USER_JOB_ID 
+LEFT JOIN MED_DEPT_DICT F ON A.DEPT_CODE=F.DEPT_CODE
+WHERE (B.STATUS = :STATUS OR :STATUS IS NULL)
+      AND(C.NAME LIKE '%' || :PatName || '%' OR :PatName IS NULL)
+      AND(D.INP_NO LIKE '%' || :InpNo || '%' OR :InpNo IS NULL)
+      AND(E.USER_NAME LIKE '%' || :AnesDoctor || '%' OR :AnesDoctor IS NULL)
+      AND(A.IN_DATE_TIME >= :StartDate OR  :StartDate IS NULL)
+      AND(A.IN_DATE_TIME  < :EndDate OR  :EndDate IS NULL)]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAnesEventQuery</key>
+      <value>
+        <![CDATA[ SELECT B.EVENT_CLASS_NAME,A.* FROM MED_ANESTHESIA_EVENT A 
+LEFT JOIN MED_EVENT_ITEM_CLASS_DICT B ON A.EVENT_CLASS_CODE=B.EVENT_CLASS_CODE
+WHERE (A.PATIENT_ID = :patientID)
+      AND(A.VISIT_ID= :visitID)
+      AND(A.OPER_ID= :operID)]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAnesValuationQuery</key>
+      <value>
+        <![CDATA[SELECT C.BILL_INDICATOR,C.METHOD AS PRICE_METHOD,C.SPEC,C.BASE_TIME,C.ITEM_CODE_ADD,C.ITEM_CLASS AS PRICE_CLASS,D.BILL_CLASS_NAME AS PRICE_CLASS_NAME,E.ITEM_NAME AS ANES_ITEM_NAME,
+C.ITEM_CODE AS PRICE_CODE,C.ITEM_NAME AS PRICE_NAME,C.ITEM_SPEC AS PRICE_SPEC,C.PRICE,A.* FROM MED_ANES_VALUATION_LIST A 
+LEFT JOIN MED_ANES_VT_VS_CHARGE C ON A.ITEM_CLASS=C.VT_ITEM_CALSS AND A.ITEM_CODE=C.VT_ITEM_CODE
+LEFT JOIN MED_BILL_ITEM_CLASS_DICT D ON C.ITEM_CLASS=D.BILL_CLASS_CODE AND D.TYPE='1'
+LEFT JOIN MED_VALUATION_ITEM_LIST E ON A.ITEM_CLASS=E.ITEM_CLASS AND A.ITEM_CODE=E.ITEM_CODE
+WHERE (A.PATIENT_ID = :patientID)
+      AND(A.VISIT_ID= :visitID)
+      AND(A.OPER_ID= :operID)]]>
+      </value>
+    </group>
+    <group>
+      <key>GetBillDetailQuery</key>
+      <value>
+        <![CDATA[SELECT D.BILL_CLASS_NAME AS PRICE_CLASS_NAME,A.* FROM  MED_INP_BILL_DETAIL A  
+LEFT JOIN MED_BILL_ITEM_CLASS_DICT D ON A.ITEM_CLASS=D.BILL_CLASS_CODE AND D.TYPE='1'
+WHERE (A.PATIENT_ID = :patientID)
+      AND(A.VISIT_ID= :visitID)
+      AND(A.OPER_ID= :operID)]]>
+      </value>
+    </group>
+    <group>
+      <key>GetPriceListQuery</key>
+      <value>
+        <![CDATA[SELECT ROWID,'' AS INPUT_CODE,A.* FROM  MED_PRICE_LIST A WHERE A.ITEM_CLASS = :ITEMCLASS]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAddQuery</key>
+      <value>
+        <![CDATA[  SELECT A.ITEM_CLASS,A.ITEM_CODE, C.BILL_INDICATOR,C.METHOD AS PRICE_METHOD,C.SPEC,C.BASE_TIME,C.ITEM_CODE_ADD,C.ITEM_CLASS AS PRICE_CLASS,D.BILL_CLASS_NAME AS PRICE_CLASS_NAME,A.ITEM_NAME AS ANES_ITEM_NAME,
+C.ITEM_CODE AS PRICE_CODE,C.ITEM_NAME AS PRICE_NAME,C.ITEM_SPEC AS PRICE_SPEC,C.PRICE FROM MED_VALUATION_ITEM_LIST A
+      LEFT JOIN MED_ANES_VT_VS_CHARGE C ON A.ITEM_CLASS=C.VT_ITEM_CALSS AND A.ITEM_CODE=C.VT_ITEM_CODE
+      LEFT JOIN MED_BILL_ITEM_CLASS_DICT D ON C.ITEM_CLASS=D.BILL_CLASS_CODE AND D.TYPE='1'
+      WHERE A.ITEM_CODE= :ItemCode]]>
+      </value>
+    </group>
+
+  </model>
+  <model>
+    <groupname>CA签名SQL语句</groupname>
+    <group>
+      <key>QuerySignData</key>
+      <value>
+        <![CDATA[ SELECT A.* FROM MED_BJCA_SIGN A
+                  WHERE A.PATIENT_ID = :PATIENT_ID AND A.VISIT_ID = :VISIT_ID AND OPER_ID = :OPER_ID 
+                  AND SIGNDOCNAME = :SIGNDOCNAME AND CONTROLID = :CONTROLID ]]>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>文书SQL语句</groupname>
+    <group>
+      <key>GetPatientInfoList</key>
+      <value>
+        <![CDATA[ select m.patient_id,
+									       m.visit_id,
+									       m.oper_id,
+									       m.name,
+									       m.ANESTHESIA_DOCTOR anesDoctor,
+									       m.inp_no,
+									       m.anes_start_time,
+									       m.oper_status_code,
+									       m.OPERATING_ROOM_NO oper_room_no,
+                         m.oper_room,
+                         m.EMERGENCY_IND 
+									  from V_OPERATION_MASTER_V2 m
+									 where m.oper_status_code >= 0
+									   AND ((NAME LIKE '%' || :PatName || '%' OR :PatName IS NULL) OR
+									       (INP_NO LIKE '%' || :InpNo || '%' OR :InpNo IS NULL))
+									   AND (AnesDoctor LIKE '%' || :AnesDoctor || '%' OR
+									       AnesDoctorIds LIKE '%' || :AnesDoctor || '%' OR :AnesDoctor IS NULL)
+                     AND (m.OPER_ROOM LIKE '%' || :OperDept || '%' OR
+									       :OperDept IS NULL)
+									   AND (m.OPERATING_ROOM_NO LIKE '%' || :OperRoomNo || '%' OR
+									       :OperRoomNo IS NULL)
+									   AND (m.SCHEDULED_DATE_TIME >= :StartDate OR :StartDate IS NULL)
+									   AND (m.SCHEDULED_DATE_TIME < :EndDate OR :EndDate IS NULL)
+                     ORDER BY  m.oper_room,m.OPERATING_ROOM_NO,m.SEQUENCE 
+]]>
+      </value>
+    </group>
+    <group>
+      <key>GetPatientDetailInfo</key>
+      <value>
+        <![CDATA[ SELECT A.PATIENT_ID,
+       A.VISIT_ID,
+       A.OPER_ID,
+       A.OPER_ROOM_NO,
+       A.EMERGENCY_IND,
+       A.SEQUENCE,
+       B.NAME,
+       B.SEX,
+       FUN_GET_PAT_AGE(B.DATE_OF_BIRTH, A.SCHEDULED_DATE_TIME) AS AGE,
+       A.BED_NO,
+       E.INP_NO,
+       NVL(C.DEPT_NAME,A.DEPT_CODE) DEPT_NAME,
+       NVL(F.WARD_NAME,A.WARD_CODE) WARD_NAME,
+       NVL(D.USER_NAME, A.ANES_DOCTOR) ANESDOCTOR,
+       NVL(D1.USER_NAME, A.SURGEON) SURGEON,
+       DIAG_BEFORE_OPERATION,
+       OPERATION_NAME,
+       OPER_POSITION,
+       A.OPER_SCALE,
+       A.SCHEDULED_DATE_TIME,
+       A.ANES_METHOD,
+       A.ASA_GRADE,
+       A.IN_DATE_TIME,
+       A.OUT_DATE_TIME,
+       A.START_DATE_TIME,
+       A.END_DATE_TIME,
+       A.ANES_START_TIME,
+       A.ANES_END_TIME,
+       A.IN_PACU_DATE_TIME,
+       A.OUT_PACU_DATE_TIME,
+       A.SCHEDULED_DATE_TIME,G.BLOOD_TYPE
+  FROM MED_OPERATION_MASTER A
+  LEFT JOIN MED_PAT_MASTER_INDEX B
+    ON A.PATIENT_ID = B.PATIENT_ID
+  LEFT JOIN MED_DEPT_DICT C
+    ON A.DEPT_CODE = C.DEPT_CODE
+  LEFT JOIN MED_HIS_USERS D
+    ON A.ANES_DOCTOR = D.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS D1
+    ON A.SURGEON = D1.USER_JOB_ID
+  LEFT JOIN MED_PATS_IN_HOSPITAL E
+    ON A.PATIENT_ID = E.PATIENT_ID
+   AND A.VISIT_ID = E.VISIT_ID
+   LEFT JOIN MED_WARD_DICT F
+    ON A.WARD_CODE = F.WARD_CODE
+    Left join med_anesthesia_plan_pmh G
+     on a.patient_id=g.patient_id and a.visit_id = g.visit_id and a.oper_id = g.oper_id
+ WHERE A.PATIENT_ID = :PATIENTID
+   AND A.VISIT_ID = :VISITID
+   AND A.OPER_ID = :OPERID
+ ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMedicalBasicDocOperationMaster</key>
+      <value>
+        <![CDATA[SELECT A.* ,NVL(B.USER_NAME,A.SURGEON) AS SURGEON_NAME,
+NVL(C.USER_NAME,A.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+NVL(D.USER_NAME,A.ANES_DOCTOR) AS ANES_DOCTOR_NAME  
+FROM MED_OPERATION_MASTER A 
+LEFT JOIN MED_HIS_USERS B 
+ON A.SURGEON = B.USER_JOB_ID 
+LEFT JOIN MED_HIS_USERS C 
+ON A.FIRST_OPER_ASSISTANT = C.USER_JOB_ID 
+LEFT JOIN MED_HIS_USERS D 
+ON A.ANES_DOCTOR = D.USER_JOB_ID 
+WHERE A.PATIENT_ID = :PATIENT_ID AND A.VISIT_ID = :VISIT_ID AND A.OPER_ID = :OPER_ID
+]]>
+      </value>
+    </group>
+    <group>
+      <key>GetUnUploadPatientInfos</key>
+      <value>
+        <![CDATA[WITH TEMP AS
+                  (SELECT A.PATIENT_ID,
+                          A.VISIT_ID,
+                          A.OPER_ID,
+                          '手术护理单' AS DocName,
+                          A.Start_Date_Time,
+                          B.NAME
+                    FROM MED_OPERATION_MASTER A
+                    LEFT JOIN MED_PAT_MASTER_INDEX B
+                      ON A.PATIENT_ID = B.PATIENT_ID
+                    WHERE A.OPER_STATUS_CODE >= 35
+                      AND A.OUT_DATE_TIME IS NOT NULL
+                      AND (TO_CHAR(A.OUT_DATE_TIME, 'yyyy-MM-dd') >= :STARTDATE OR
+                          :STARTDATE is null)
+                      AND (TO_CHAR(A.OUT_DATE_TIME, 'yyyy-MM-dd') < :ENDDATE OR
+                          :ENDDATE is null)
+                      AND (A.FIRST_OPER_NURSE = :Nurse or A.FIRST_SUPPLY_NURSE = :Nurse)
+  
+                  UNION ALL
+  
+                  SELECT A.PATIENT_ID,
+                          A.VISIT_ID,
+                          A.OPER_ID,
+                          '患者交接单' AS DocName,
+                          A.Start_Date_Time,
+                          B.NAME
+                    FROM MED_OPERATION_MASTER A
+                    LEFT JOIN MED_PAT_MASTER_INDEX B
+                      ON A.PATIENT_ID = B.PATIENT_ID
+                    WHERE A.OPER_STATUS_CODE >= 35
+                      AND A.OUT_DATE_TIME IS NOT NULL
+                      AND (TO_CHAR(A.OUT_DATE_TIME, 'yyyy-MM-dd') >= :STARTDATE OR
+                          :STARTDATE is null)
+                      AND (TO_CHAR(A.OUT_DATE_TIME, 'yyyy-MM-dd') < :ENDDATE OR
+                          :ENDDATE is null)
+                      AND (A.FIRST_OPER_NURSE = :Nurse or A.FIRST_SUPPLY_NURSE = :Nurse)
+  
+                  ),
+                TEMP2 AS
+                  (SELECT B.PATIENT_ID,
+                          B.VISIT_ID,
+                          B.ARCHIVE_KEY,
+                          B.MR_SUB_CLASS AS DocName,
+                          C.START_DATE_TIME,
+                          D.NAME
+                    FROM MED_EMR_ARCHIVE_DETIAL B
+                    LEFT JOIN MED_OPERATION_MASTER C
+                      ON B.PATIENT_ID = C.PATIENT_ID
+                      AND B.VISIT_ID = C.VISIT_ID
+                      AND B.ARCHIVE_KEY = C.OPER_ID
+                    LEFT JOIN MED_PAT_MASTER_INDEX D
+                      ON B.PATIENT_ID = D.PATIENT_ID
+                    WHERE B.MR_CLASS = '麻醉'
+                      AND B.MR_SUB_CLASS IN ('手术护理单', '患者交接单'))
+
+                SELECT * FROM ( SELECT A.PATIENT_ID,
+                        A.VISIT_ID,
+                        A.OPER_ID AS ARCHIVE_KEY,
+                        A.DocName,
+                        A.Start_Date_Time,
+                        A.NAME
+                  FROM TEMP A
+                MINUS
+                SELECT B.PATIENT_ID,
+                        B.VISIT_ID,
+                        TO_NUMBER(B.ARCHIVE_KEY) AS ARCHIVE_KEY,
+                        B.DocName,
+                        B.Start_Date_Time,
+                        B.NAME
+                  FROM TEMP2 B) T ORDER BY T.Start_Date_Time
+]]>
+      </value>
+    </group>
+
+  </model>
+  <model>
+    <groupname>麻醉交班</groupname>
+    <group>
+      <key>GetAnesShiftInfoList</key>
+      <value>
+        <![CDATA[SELECT * FROM MEDSURGERY.MED_ANES_SHIFT_MASTER M
+                WHERE  (M.SHIFT_DATE >= :StartDate OR :StartDate IS NULL)
+                   AND (M.SHIFT_DATE < :EndDate OR :EndDate IS NULL)
+                   ORDER BY M.SHIFT_DATE DESC,M.SHIFT_TYUPE ASC ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAnesShiftDrugInfoList</key>
+      <value>
+        <![CDATA[SELECT * FROM MEDSURGERY.MED_ANES_SHIFT_DRUGS M
+                WHERE M.SHIFT_DATE = :SHIFT_DATE AND M.SHIFT_TYUPE = :SHIFT_TYUPE 
+                   ORDER BY M.DRUGS_NO ASC ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAnesShiftPatientInfoList</key>
+      <value>
+        <![CDATA[SELECT * FROM MEDSURGERY.MED_ANES_SHIFT_PATIENTINFO M
+                WHERE M.SHIFT_DATE = :SHIFT_DATE AND M.SHIFT_TYUPE = :SHIFT_TYUPE 
+                   ORDER BY M.PATIENT_NO ASC ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAnesShiftOperInfoList</key>
+      <value>
+        <![CDATA[SELECT A.INP_NO,
+                 A.NAME,
+                 A.DEPT_NAME,
+                 A.BED_NO,
+                 A.OPERATION_NAME,
+                 A.AnesMethod AS ANES_METHOD,
+                 decode(A.oper_status_code,
+                        35,
+                        '出手术室',
+                        40,
+                        '准备复苏',
+                        45,
+                        '入恢复室',
+                        55,
+                        '出恢复室',
+                        60,
+                        '转入病房',
+                        65,
+                        '转入ICU',
+                        66,
+                        '急诊',
+                        67,
+                        '离院',
+                        80,
+                        '病案归档',
+                        '') STATUS
+            FROM V_OPERATION_MASTER_V2 A
+           WHERE A.oper_status_code >= 35 AND A.EMERGENCY_IND = 1 
+            AND (A.start_date_time >= :StartDate OR :StartDate IS NULL)
+            AND (A.start_date_time < :EndDate OR :EndDate IS NULL)]]>
+      </value>
+    </group>
+  </model>
+  <model>
+    <groupname>手术排班</groupname>
+    <group>
+      <key>GetOperNoticeList</key>
+      <value>
+        <![CDATA[SELECT MOS.OPER_ROOM_NO OperRoomNo,
+            MOS.SEQUENCE,
+            TO_CHAR(MOS.SCHEDULED_DATE_TIME, 'HH24:mi') ScheduledDateTime,
+            MPMI.NAME PatientName,
+            MPMI.SEX,
+            FUN_GET_PAT_AGE(MPMI.DATE_OF_BIRTH, MOS.SCHEDULED_DATE_TIME) AS Age,
+            NVL(D.DEPT_NAME,MOS.DEPT_CODE) WARD_CODE_NAME,
+            MOS.BED_NO,
+            C.INP_NO,
+            MOS.DIAG_BEFORE_OPERATION,
+            MOS.OPERATION_NAME,
+            NVL(E.USER_NAME, MOS.SURGEON) AS SURGEON_NAME,
+            NVL(F.USER_NAME, MOS.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+            NVL(G.USER_NAME, MOS.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+            NVL(H.USER_NAME, MOS.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+            NVL(U1.USER_NAME, MOS.FIRST_OPER_NURSE) AS FIRST_OPER_NURSE_NAME,
+            NVL(U2.USER_NAME, MOS.FIRST_SUPPLY_NURSE) AS FIRST_SUPPLY_NURSE_NAME,
+            MOS.ANES_METHOD,
+            NVL(U3.USER_NAME, MOS.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+            NVL(U4.USER_NAME, MOS.FIRST_ANES_ASSISTANT) AS FIRST_ANES_ASSISTANT_NAME,
+            NVL(U5.USER_NAME, MOS.SECOND_OPER_NURSE) AS SECOND_OPER_NURSE_NAME,
+            NVL(U6.USER_NAME, MOS.SECOND_SUPPLY_NURSE) AS SECOND_SUPPLY_NURSE_NAME,
+            MOS.NOTES_ON_OPERATION,
+            DECODE(MOS.INFECTED_IND,1,'感染','') INFECTED_IND,
+            MOS.SPECIAL_INFECT
+        FROM MED_OPERATION_SCHEDULE MOS 
+      LEFT JOIN MED_PAT_MASTER_INDEX  MPMI ON MOS.PATIENT_ID=MPMI.PATIENT_ID
+      LEFT JOIN MED_PATS_IN_HOSPITAL  C ON MOS.PATIENT_ID = C.PATIENT_ID AND MOS.VISIT_ID = C.VISIT_ID
+      LEFT JOIN MED_DEPT_DICT D ON  MOS.DEPT_CODE=D.DEPT_CODE
+      LEFT JOIN MED_HIS_USERS E ON MOS.SURGEON = E.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS F ON MOS.FIRST_OPER_ASSISTANT = F.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS G ON MOS.SECOND_OPER_ASSISTANT = G.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS H ON MOS.THIRD_OPER_ASSISTANT = H.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U1 ON MOS.FIRST_OPER_NURSE = U1.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U2 ON MOS.FIRST_SUPPLY_NURSE = U2.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U3 ON MOS.ANES_DOCTOR = U3.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U4 ON MOS.FIRST_ANES_ASSISTANT = U4.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U5 ON MOS.SECOND_OPER_NURSE = U5.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U6 ON MOS.SECOND_SUPPLY_NURSE = U6.USER_JOB_ID
+      LEFT JOIN MED_OPERATING_ROOM MOR ON MOR.ROOM_NO = MOS.OPER_ROOM_NO
+      WHERE MOS.SCHEDULED_DATE_TIME>=:StartDateTime 
+        AND MOS.SCHEDULED_DATE_TIME <:ENDDateTime
+        AND MOS.OPER_STATUS_CODE IN (1,2,3,4)
+        ORDER BY MOR.SORT_NO, MOS.SEQUENCE]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperScheduleQueryList</key>
+      <value>
+        <![CDATA[SELECT MOS.OPER_ROOM_NO OperRoomNo,
+            MOS.SEQUENCE,
+            TO_CHAR(MOS.SCHEDULED_DATE_TIME, 'HH24:mi') ScheduledDateTime,
+            MPMI.NAME PatientName,
+            MPMI.SEX,
+            FUN_GET_PAT_AGE(MPMI.DATE_OF_BIRTH, MOS.SCHEDULED_DATE_TIME) AS Age,
+            NVL(D.DEPT_NAME,MOS.DEPT_CODE) WARD_CODE_NAME,
+            MOS.BED_NO,
+            C.INP_NO,
+            MOS.DIAG_BEFORE_OPERATION,
+            MOS.OPERATION_NAME,
+            NVL(E.USER_NAME, MOS.SURGEON) AS SURGEON_NAME,
+            NVL(F.USER_NAME, MOS.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+            NVL(G.USER_NAME, MOS.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+            NVL(H.USER_NAME, MOS.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+            NVL(U1.USER_NAME, MOS.FIRST_OPER_NURSE) AS FIRST_OPER_NURSE_NAME,
+            NVL(U2.USER_NAME, MOS.FIRST_SUPPLY_NURSE) AS FIRST_SUPPLY_NURSE_NAME,
+            MOS.ANES_METHOD,
+            NVL(U3.USER_NAME, MOS.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+            NVL(U4.USER_NAME, MOS.FIRST_ANES_ASSISTANT) AS FIRST_ANES_ASSISTANT_NAME,
+            NVL(U5.USER_NAME, MOS.SECOND_OPER_NURSE) AS SECOND_OPER_NURSE_NAME,
+            NVL(U6.USER_NAME, MOS.SECOND_SUPPLY_NURSE) AS SECOND_SUPPLY_NURSE_NAME,
+            MOS.NOTES_ON_OPERATION,
+            DECODE(MOS.INFECTED_IND,1,'感染','') INFECTED_IND,
+            MOS.SPECIAL_INFECT
+        FROM MED_OPERATION_SCHEDULE MOS 
+      LEFT JOIN MED_PAT_MASTER_INDEX  MPMI ON MOS.PATIENT_ID=MPMI.PATIENT_ID
+      LEFT JOIN MED_PATS_IN_HOSPITAL  C ON MOS.PATIENT_ID = C.PATIENT_ID AND MOS.VISIT_ID = C.VISIT_ID
+      LEFT JOIN MED_DEPT_DICT D ON  MOS.DEPT_CODE=D.DEPT_CODE
+      LEFT JOIN MED_HIS_USERS E ON MOS.SURGEON = E.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS F ON MOS.FIRST_OPER_ASSISTANT = F.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS G ON MOS.SECOND_OPER_ASSISTANT = G.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS H ON MOS.THIRD_OPER_ASSISTANT = H.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U1 ON MOS.FIRST_OPER_NURSE = U1.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U2 ON MOS.FIRST_SUPPLY_NURSE = U2.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U3 ON MOS.ANES_DOCTOR = U3.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U4 ON MOS.FIRST_ANES_ASSISTANT = U4.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U5 ON MOS.SECOND_OPER_NURSE = U5.USER_JOB_ID
+      LEFT JOIN MED_HIS_USERS U6 ON MOS.SECOND_SUPPLY_NURSE = U6.USER_JOB_ID
+      LEFT JOIN MED_OPERATING_ROOM MOR ON MOR.ROOM_NO = MOS.OPER_ROOM_NO
+      WHERE MOS.SCHEDULED_DATE_TIME>=:StartDateTime 
+        AND MOS.SCHEDULED_DATE_TIME <:ENDDateTime
+        AND (:OPER_ROOM IS NULL OR MOS.OPER_ROOM = :OPER_ROOM )
+        AND (:DOCTOR IS NULL OR MOS.SURGEON = :DOCTOR OR MOS.FIRST_OPER_ASSISTANT = :DOCTOR OR MOS.SECOND_OPER_ASSISTANT = :DOCTOR OR 
+        MOS.THIRD_OPER_ASSISTANT = :DOCTOR OR MOS.FOURTH_OPER_ASSISTANT = :DOCTOR OR MOS.ANES_DOCTOR = :DOCTOR OR 
+        MOS.FIRST_ANES_ASSISTANT = :DOCTOR OR MOS.SECOND_ANES_ASSISTANT = :DOCTOR OR MOS.THIRD_ANES_ASSISTANT = :DOCTOR OR MOS.FOURTH_ANES_ASSISTANT = :DOCTOR OR 
+        MOS.FIRST_ANES_NURSE = :DOCTOR OR MOS.SECOND_ANES_NURSE = :DOCTOR OR MOS.THIRD_ANES_NURSE = :DOCTOR OR MOS.FIRST_OPER_NURSE = :DOCTOR OR 
+        MOS.SECOND_OPER_NURSE = :DOCTOR OR MOS.THIRD_OPER_NURSE = :DOCTOR OR MOS.FOURTH_OPER_NURSE = :DOCTOR OR MOS.FIRST_SUPPLY_NURSE = :DOCTOR OR 
+        MOS.SECOND_SUPPLY_NURSE = :DOCTOR OR MOS.THIRD_SUPPLY_NURSE = :DOCTOR OR MOS.FOURTH_SUPPLY_NURSE = :DOCTOR )
+        AND MOS.OPER_STATUS_CODE IN (1,2,3,4)
+        ORDER BY MOR.SORT_NO, MOS.SEQUENCE]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperCancelList</key>
+      <value>
+        <![CDATA[SELECT A.PATIENT_ID,
+       A.VISIT_ID,
+       A.OPER_ID,
+       A.SCHEDULE_ID,
+       C.INP_NO,
+       TO_CHAR(A.SCHEDULED_DATE_TIME, 'HH24:mi') SCHEDULED_DATE_TIME,
+       B.NAME AS PAT_NAME,
+       FUN_GET_PAT_AGE(B.DATE_OF_BIRTH, A.SCHEDULED_DATE_TIME) AS AGE,
+       A.BED_NO,
+       B.SEX,
+       A.OPERATION_NAME,
+       NVL(D.USER_NAME, A.SURGEON) AS SURGEON_NAME,
+       A.ANES_METHOD ANESTHESIA_METHOD,
+       NVL(E.USER_NAME, A.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(F.USER_NAME, A.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       NVL(L.USER_NAME, A.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+       A.NOTES_ON_OPERATION
+  FROM MED_OPERATION_SCHEDULE A
+  LEFT OUTER JOIN MED_PAT_MASTER_INDEX B
+    ON A.PATIENT_ID = B.PATIENT_ID
+  LEFT JOIN MED_PATS_IN_HOSPITAL C
+    ON A.PATIENT_ID = C.PATIENT_ID
+       AND A.VISIT_ID = C.VISIT_ID
+  LEFT OUTER JOIN MED_HIS_USERS D
+    ON A.SURGEON = D.USER_JOB_ID
+  LEFT OUTER JOIN MED_HIS_USERS E
+    ON A.FIRST_OPER_ASSISTANT = E.USER_JOB_ID
+  LEFT OUTER JOIN MED_HIS_USERS F
+    ON A.SECOND_OPER_ASSISTANT = F.USER_JOB_ID
+  LEFT OUTER JOIN MED_HIS_USERS L
+    ON A.THIRD_OPER_ASSISTANT = L.USER_JOB_ID
+ WHERE A.SCHEDULED_DATE_TIME >= :STARTDATETIME
+       AND A.SCHEDULED_DATE_TIME < :ENDDATETIME
+       AND A.OPER_ROOM = :OperRoom
+       AND A.OPER_STATUS_CODE = -80
+ ORDER BY NVL(A.OPER_ROOM_NO, 0),
+       A.OPERATION_NAME]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperList</key>
+      <value>
+        <![CDATA[SELECT S.*,
+       TO_CHAR(S.SCHEDULED_DATE_TIME, 'hh24:mi') AS SCHEDULED_DATE_TIME_SHORT,
+       I.NAME,
+       FUN_GET_PAT_AGE(I.DATE_OF_BIRTH, S.SCHEDULED_DATE_TIME) AS AGE,
+       H.INP_NO,
+       S.BED_NO,
+       I.SEX,
+       NVL(U.USER_NAME, S.SURGEON) AS SURGEON_NAME,
+       NVL(U2.USER_NAME, S.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(U3.USER_NAME, S.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       NVL(U4.USER_NAME, S.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+       NVL(U5.USER_NAME, S.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+       NVL(U6.USER_NAME, S.FIRST_ANES_ASSISTANT) AS FIRST_ANES_ASSISTANT_NAME,
+       NVL(U7.USER_NAME, S.SECOND_ANES_ASSISTANT) AS SECOND_ANES_ASSISTANT_NAME,
+       NVL(U8.USER_NAME, S.FIRST_OPER_NURSE) AS FIRST_OPER_NURSE_NAME,
+       NVL(U9.USER_NAME, S.SECOND_OPER_NURSE) AS SECOND_OPER_NURSE_NAME,
+       NVL(U10.USER_NAME, S.FIRST_SUPPLY_NURSE) AS FIRST_SUPPLY_NURSE_NAME,
+       NVL(U11.USER_NAME, S.SECOND_SUPPLY_NURSE) AS SECOND_SUPPLY_NURSE_NAME,
+       DECODE(S.ISOLATION_IND, 1, '正常', 2, '隔离') AS ISOLATION_IND_NM,
+       NVL(D.DEPT_NAME, U.USER_DEPT_CODE) AS DEPT_NAME,
+       (select wm_concat(OSN.OPER_NAME) FROM MED_OPERATION_SCHEDULE_NAME OSN WHERE OSN.PATIENT_ID=S.PATIENT_ID AND OSN.VISIT_ID=S.VISIT_ID AND OSN.SCHEDULE_ID=S.SCHEDULE_ID) TEMP_OPER_NAME
+  FROM MED_OPERATION_SCHEDULE S
+  LEFT JOIN MED_PAT_MASTER_INDEX I
+    ON S.PATIENT_ID = I.PATIENT_ID
+  LEFT JOIN MED_PATS_IN_HOSPITAL H
+    ON S.PATIENT_ID = H.PATIENT_ID
+       AND S.VISIT_ID = H.VISIT_ID
+  LEFT JOIN MED_HIS_USERS U
+    ON S.SURGEON = U.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U2
+    ON S.FIRST_OPER_ASSISTANT = U2.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U3
+    ON S.SECOND_OPER_ASSISTANT = U3.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U4
+    ON S.THIRD_OPER_ASSISTANT = U4.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U5
+    ON S.ANES_DOCTOR = U5.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U6
+    ON S.FIRST_ANES_ASSISTANT = U6.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U7
+    ON S.SECOND_ANES_ASSISTANT = U7.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U8
+    ON S.FIRST_OPER_NURSE = U8.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U9
+    ON S.SECOND_OPER_NURSE = U9.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U10
+    ON S.FIRST_SUPPLY_NURSE = U10.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U11
+    ON S.SECOND_SUPPLY_NURSE = U11.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT D
+    ON S.DEPT_CODE = D.DEPT_CODE
+ WHERE S.SCHEDULED_DATE_TIME >= :StartDateTime 
+       AND S.SCHEDULED_DATE_TIME < :ENDDateTime 
+       AND S.OPER_STATUS_CODE IN (0,1,2,3,4) 
+       AND S.OPER_ROOM = :OperRoom 
+       ORDER BY SCHEDULED_DATE_TIME
+       ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperDetail</key>
+      <value>
+        <![CDATA[SELECT S.*,
+       TO_CHAR(S.SCHEDULED_DATE_TIME, 'hh24:mi') AS SCHEDULED_DATE_TIME_SHORT,
+       I.NAME,
+       FUN_GET_PAT_AGE(I.DATE_OF_BIRTH, S.SCHEDULED_DATE_TIME) AS AGE,
+       H.INP_NO,
+       S.BED_NO,
+       I.SEX,
+       NVL(U.USER_NAME, S.SURGEON) AS SURGEON_NAME,
+       NVL(U2.USER_NAME, S.FIRST_OPER_ASSISTANT) AS FIRST_OPER_ASSISTANT_NAME,
+       NVL(U3.USER_NAME, S.SECOND_OPER_ASSISTANT) AS SECOND_OPER_ASSISTANT_NAME,
+       NVL(U4.USER_NAME, S.THIRD_OPER_ASSISTANT) AS THIRD_OPER_ASSISTANT_NAME,
+       NVL(U5.USER_NAME, S.ANES_DOCTOR) AS ANES_DOCTOR_NAME,
+       NVL(U6.USER_NAME, S.FIRST_ANES_ASSISTANT) AS FIRST_ANES_ASSISTANT_NAME,
+       NVL(U7.USER_NAME, S.SECOND_ANES_ASSISTANT) AS SECOND_ANES_ASSISTANT_NAME,
+       NVL(U8.USER_NAME, S.FIRST_OPER_NURSE) AS FIRST_OPER_NURSE_NAME,
+       NVL(U9.USER_NAME, S.SECOND_OPER_NURSE) AS SECOND_OPER_NURSE_NAME,
+       NVL(U10.USER_NAME, S.FIRST_SUPPLY_NURSE) AS FIRST_SUPPLY_NURSE_NAME,
+       NVL(U11.USER_NAME, S.SECOND_SUPPLY_NURSE) AS SECOND_SUPPLY_NURSE_NAME,
+       DECODE(S.ISOLATION_IND, 1, '正常', 2, '隔离') AS ISOLATION_IND_NM,
+       NVL(D.DEPT_NAME, U.USER_DEPT_CODE) AS DEPT_NAME,
+       (select wm_concat(OSN.OPER_NAME) FROM MED_OPERATION_SCHEDULE_NAME OSN WHERE OSN.PATIENT_ID=S.PATIENT_ID AND OSN.VISIT_ID=S.VISIT_ID AND OSN.SCHEDULE_ID=S.SCHEDULE_ID) TEMP_OPER_NAME
+  FROM MED_OPERATION_SCHEDULE S
+  LEFT JOIN MED_PAT_MASTER_INDEX I
+    ON S.PATIENT_ID = I.PATIENT_ID
+  LEFT JOIN MED_PATS_IN_HOSPITAL H
+    ON S.PATIENT_ID = H.PATIENT_ID
+       AND S.VISIT_ID = H.VISIT_ID
+  LEFT JOIN MED_HIS_USERS U
+    ON S.SURGEON = U.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U2
+    ON S.FIRST_OPER_ASSISTANT = U2.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U3
+    ON S.SECOND_OPER_ASSISTANT = U3.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U4
+    ON S.THIRD_OPER_ASSISTANT = U4.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U5
+    ON S.ANES_DOCTOR = U5.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U6
+    ON S.FIRST_ANES_ASSISTANT = U6.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U7
+    ON S.SECOND_ANES_ASSISTANT = U7.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U8
+    ON S.FIRST_OPER_NURSE = U8.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U9
+    ON S.SECOND_OPER_NURSE = U9.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U10
+    ON S.FIRST_SUPPLY_NURSE = U10.USER_JOB_ID
+  LEFT JOIN MED_HIS_USERS U11
+    ON S.SECOND_SUPPLY_NURSE = U11.USER_JOB_ID
+  LEFT JOIN MED_DEPT_DICT D
+    ON S.DEPT_CODE = D.DEPT_CODE
+ WHERE S.PATIENT_ID = :PatientID 
+       AND S.VISIT_ID = :VisitID 
+       AND S.SCHEDULE_ID = :ScheduleID 
+       ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperRoomByDeptCode</key>
+      <value>
+        <![CDATA[SELECT * FROM MED_OPERATING_ROOM WHERE DEPT_CODE=:DEPT_CODE AND BED_TYPE='0' order by SORT_NO]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMaxOperID</key>
+      <value>
+        <![CDATA[SELECT NVL(MAX(OPER_ID),0) FROM MED_OPERATION_MASTER WHERE PATIENT_ID = :PatientID AND VISIT_ID = :VisitID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMaxOperationNo</key>
+      <value>
+        <![CDATA[SELECT NVL(MAX(OPER_NO),0) AS OPER_NO FROM MED_OPERATION_NAME WHERE PATIENT_ID = :PatientID AND VISIT_ID = :VisitID AND OPER_ID = :OperID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMaxOperCancelCancelID</key>
+      <value>
+        <![CDATA[SELECT NVL(MAX(CANCEL_ID),0) AS CANCEL_ID FROM MED_OPERATION_CANCELED WHERE PATIENT_ID = :PatientID AND VISIT_ID = :VisitID AND SCHEDULE_ID = :ScheduleID]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMedOrdersList</key>
+      <value>
+        <![CDATA[SELECT to_char(MO.ENTER_DATE_TIME,'YYYY-MM-dd HH24:mi') ENTER_DATE_TIME,
+                   MO.DOCTOR,
+                   DECODE(MO.REPEAT_INDICATOR,1,'长期医嘱',0,'临时医嘱','') REPEAT_INDICATOR,
+                   MO.ORDER_TEXT,
+                   to_char(MO.START_DATE_TIME,'YYYY-MM-dd HH24:mi') START_DATE_TIME,
+                   MO.NURSE,
+                   to_char(MO.STOP_DATE_TIME,'YYYY-MM-dd HH24:mi') STOP_DATE_TIME
+            FROM MED_ORDERS MO
+            WHERE MO.PATIENT_ID=:PatientID AND MO.VISIT_ID=:visitID ORDER BY MO.REPEAT_INDICATOR]]>
+      </value>
+    </group>
+  </model>
+
+  <model>
+    <groupname>大屏</groupname>
+    <group>
+      <key>GetOperProgressViewData</key>
+      <value>
+        <![CDATA[ SELECT * FROM V_OPER_PROGRESS_INFO ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetTodayOperInfo</key>
+      <value>
+        <![CDATA[ SELECT * FROM V_OPERATION_MASTER WHERE TO_CHAR(SCHEDULED_DATE_TIME,'YYYY-MM-DD') = TO_CHAR(SYSDATE,'YYYY-MM-DD') AND OPER_STATUS <> -80 ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetYesterdayOperInfo</key>
+      <value>
+        <![CDATA[ SELECT * FROM V_OPERATION_MASTER WHERE TO_CHAR(START_DATE_TIME,'YYYY-MM-DD') = TO_CHAR(SYSDATE - 1,'YYYY-MM-DD') AND OPER_STATUS <> -80 ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetYesterdayPacuOtInfo</key>
+      <value>
+        <![CDATA[ SELECT COUNT(1) PACU_OT_CONT,A.OPERATING_ROOM FROM V_OPERATION_MASTER A WHERE TRUNC((A.OUT_PACU_DATE_TIME-A.IN_PACU_DATE_TIME)*1440 ) >= 120 
+        AND TO_CHAR(A.SCHEDULED_DATE_TIME,'YYYY-MM-DD') = TO_CHAR(SYSDATE - 1,'YYYY-MM-DD') GROUP BY A.OPERATING_ROOM ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetTomorrowSchduleInfo</key>
+      <value>
+        <![CDATA[ SELECT * FROM V_OPERATION_SCHEDULE WHERE TO_CHAR(SCHEDULED_DATE_TIME,'YYYY-MM-DD') = TO_CHAR(SYSDATE + 1,'YYYY-MM-DD') AND STATE<> -1 ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperSeqenceInfo</key>
+      <value>
+        <![CDATA[ SELECT A.SEQUENCE,B.MAX_SEQ FROM V_OPERATION_MASTER A LEFT OUTER JOIN
+                  (SELECT MAX(V_OPERATION_MASTER.SEQUENCE) MAX_SEQ FROM V_OPERATION_MASTER 
+                  WHERE V_OPERATION_MASTER.OPERATING_ROOM = :OperDept AND V_OPERATION_MASTER.OPERATING_ROOM_NO = :OperRoomNo 
+                  AND TO_CHAR(V_OPERATION_MASTER.SCHEDULED_DATE_TIME,'YYYY-MM-DD') = TO_CHAR(SYSDATE,'YYYY-MM-DD')) B ON 1=1
+                  WHERE A.PATIENT_ID = :PatID AND A.VISIT_ID = :VisitID AND A.OPER_ID = :OperID ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMonitorAlarmInfo</key>
+      <value>
+        <![CDATA[ SELECT * FROM V_ANES_ALARM_MESSAGE WHERE PATIENT_ID = :PatID AND VISIT_ID = :VisitID AND OPER_ID =:OperID ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetTotalProInfo</key>
+      <value>
+        <![CDATA[ SELECT A.* FROM V_MEDICAL_OPER_INFO A WHERE A.IN_DATE_TIME >= :StartTime AND A.IN_DATE_TIME <= :EndTime OR OPER_STATUS_CODE = 0 ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetOperInfoByDeptAndRoom</key>
+      <value>
+        <![CDATA[ SELECT A.* FROM V_OPER_ROOM_INFOS A WHERE A.OPER_DEPT_CODE = :OperDeptCode AND A.OPERATING_ROOM_NO = :RoomRoomNo ORDER BY NVL(A.IN_DATE_TIME,SYSDATE-1) DESC,A.SEQUENCE ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetScreenViewNormal</key>
+      <value>
+        <![CDATA[ SELECT * FROM VIEW_OPERATION_LIST WHERE OPERATING_ROOM = :OperDept ORDER BY BED_LABEL,SEQUENCE,SCHEDULED_DATE_TIME ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetValidMsgDataByNo</key>
+      <!--根据编号和是否使用获取大屏通告数据-->
+      <value>
+        <![CDATA[ SELECT S.SCREEN_NO,S.MSG_ID,S.SEQ_NO,S.MSG_CONTENT,S.IS_USE FROM MED_SCREEN_STATIC_MSG S
+                      WHERE S.SCREEN_NO = :ScreenNo AND S.IS_USE = 1 ORDER BY S.SEQ_NO ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetNoticeMsgData</key>
+      <value>
+        <![CDATA[ SELECT * FROM MED_SCREEN_MSG WHERE DEPT_CODE = :OperDept AND TYPE = :Type AND COUNTS > 0 ORDER BY INSERT_TIME ]]>
+      </value>
+    </group>
+
+    <group>
+      <key>GetScreenDict</key>
+      <!--获取大屏字典表-->
+      <value><![CDATA[SELECT S.SCREEN_NO,S.SCREEN_TYPE,S.SCREEN_LABEL,S.FULL_SCREEN,S.SCREEN_WIDTH,S.SCREEN_HEIGHT FROM MED_SMART_SCREEN_DICT S ORDER BY S.SCREEN_NO ]]> </value>
+    </group>
+
+    <group>
+      <key>GetScreenDictByNo</key>
+      <!--根据大屏编号获取大屏字典表-->
+      <value>
+        <![CDATA[SELECT S.SCREEN_NO,S.SCREEN_TYPE,S.SCREEN_LABEL,S.FULL_SCREEN,S.SCREEN_WIDTH,S.SCREEN_HEIGHT FROM MED_SMART_SCREEN_DICT S 
+                    WHERE S.SCREEN_NO = :ScreenNo ORDER BY S.SCREEN_NO ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetAllScreenConfig</key>
+      <!--获取全部大屏配置表-->
+      <value>
+        <![CDATA[SELECT S.SCREEN_NO,S.SCREEN_TYPE,S.OPER_DEPT_CODE,S.OPERROOM_FILTER,S.REFRESH_TIME,S.ROW_COUNT,S.VOICE_BROADCAST,S.SHOW_MODE,S.MARK_SPEC,S.SHOW_TV,S.PROTECT_PRIVATE,S.SKIN FROM MED_SMART_SCREEN_CONFIG S ORDER BY S.SCREEN_NO ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetScreenConfigByNo</key>
+      <!--根据大屏编号获取大屏配置表-->
+      <value>
+        <![CDATA[SELECT S.SCREEN_NO,S.SCREEN_TYPE,S.OPER_DEPT_CODE,S.OPERROOM_FILTER,S.REFRESH_TIME,S.ROW_COUNT,S.VOICE_BROADCAST,S.SHOW_MODE,S.MARK_SPEC,S.SHOW_TV,S.PROTECT_PRIVATE,S.SKIN FROM MED_SMART_SCREEN_CONFIG S
+                      WHERE S.SCREEN_NO = :ScreenNo ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetScreenViewEmptyData</key>
+      <!--获取空的大屏视图-->
+      <value>
+        <![CDATA[SELECT * FROM VIEW_OPERATION_LIST ]]>
+      </value>
+    </group>
+    <group>
+      <key>GetFieldsDataByNo</key>
+      <!--根据编号获取字段数据-->
+      <value>
+        <![CDATA[SELECT S.SCREEN_NO,S.ORDER_NO,S.FIELD_NAME,S.CAPTION,S.COL_PERCENT,S.SEQ_SHOW FROM MED_SCREEN_FIELDS S
+                      WHERE S.SCREEN_NO = :ScreenNo ORDER BY S.ORDER_NO]]>
+      </value>
+    </group>
+    <group>
+      <key>GetMsgDataByNo</key>
+      <!--根据编号获取大屏通告数据-->
+      <value>
+        <![CDATA[ SELECT S.SCREEN_NO,S.MSG_ID,S.SEQ_NO,S.MSG_CONTENT,S.IS_USE FROM MED_SCREEN_STATIC_MSG S
+                      WHERE S.SCREEN_NO = :ScreenNo ORDER BY S.SEQ_NO ]]>
+      </value>
+    </group>
+  </model>
+</DICT>

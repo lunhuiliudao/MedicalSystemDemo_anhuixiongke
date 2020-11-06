@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8DBDD51-DAC9-4ADD-A4A3-6B08115E4777}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.Anes.Document</RootNamespace>
+    <AssemblyName>MedicalSystem.Anes.Document</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MedicalSystem.Anes.Document.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\MedicalSystem.Anes.Document.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.XTXAppCOMLib">
+      <HintPath>..\..\lib\AxInterop.XTXAppCOMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.Data.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.Utils.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.XtraBars.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.XtraEditors.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.XtraGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevExpress.v10.1\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.BJCA_SVS_CLIENTCOMLib">
+      <HintPath>..\..\lib\Interop.BJCA_SVS_CLIENTCOMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.BJCA_TS_CLIENTCOMLib">
+      <HintPath>..\..\lib\Interop.BJCA_TS_CLIENTCOMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.GetKeyPicLib">
+      <HintPath>..\..\lib\Interop.GetKeyPicLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.XTXAppCOMLib">
+      <HintPath>..\..\lib\Interop.XTXAppCOMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MedicalSystem.Common">
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnesClassType.cs" />
+    <Compile Include="AnesEventDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurations\MedicalDocCollection.cs" />
+    <Compile Include="Configurations\MedicalDocElement.cs" />
+    <Compile Include="Configurations\MedicalDocSection.cs" />
+    <Compile Include="Configurations\MedicalDocSettings.cs" />
+    <Compile Include="Constants\ContextMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constants\ContextMenuForm.designer.cs">
+      <DependentUpon>ContextMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants\EventNames.cs" />
+    <Compile Include="Constants\FunctionNames.cs" />
+    <Compile Include="Constants\MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constants\MessageBoxForm.designer.cs">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Base\AnesBand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Base\AnesBand.designer.cs">
+      <DependentUpon>AnesBand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Base\AnesGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Base\AnesGraph.designer.cs">
+      <DependentUpon>AnesGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Base\AssemblyHelper.cs" />
+    <Compile Include="Controls\Base\DrugItem.cs" />
+    <Compile Include="Controls\Base\EventItem.cs" />
+    <Compile Include="Controls\Base\FileHelper.cs" />
+    <Compile Include="Controls\Base\GraphHelper.cs" />
+    <Compile Include="Controls\Base\ICheckable.cs" />
+    <Compile Include="Controls\Base\IPrintable.cs" />
+    <Compile Include="Controls\Base\MemberDetail.cs" />
+    <Compile Include="Controls\Base\ShowHelper.cs" />
+    <Compile Include="Controls\Base\StringManage.cs" />
+    <Compile Include="Controls\Base\Sundries.cs" />
+    <Compile Include="Controls\BJCAControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BJCAControl.designer.cs">
+      <DependentUpon>BJCAControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BloodGas\BloodGasDetail.cs" />
+    <Compile Include="Controls\BloodGas\BloodGasMaster.cs" />
+    <Compile Include="Controls\BloodGas\MedBloodGasGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BloodGas\MedBloodGasGraph.designer.cs">
+      <DependentUpon>MedBloodGasGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BloodGas\MedBloodGasItem.cs" />
+    <Compile Include="Controls\BloodGas\MedBloodGasRecord.cs" />
+    <Compile Include="Controls\DownMenuDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownMenuDoc.Designer.cs">
+      <DependentUpon>DownMenuDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlAddEvent.cs" />
+    <Compile Include="Controls\CustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControl.designer.cs">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DockBarManager\MDockBarManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DrugContent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DrugGraph\LineParameter.cs" />
+    <Compile Include="Controls\DrugGraph\MedDrugCurve.cs" />
+    <Compile Include="Controls\DrugGraph\MedDrugGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DrugGraph\MedDrugGraph.designer.cs">
+      <DependentUpon>MedDrugGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DrugGraph\MedDrugPoint.cs" />
+    <Compile Include="Controls\DrugGraph\NormalDrugUnitShowType.cs" />
+    <Compile Include="Controls\DrugGraph\ProLongedDrugUnitShowType.cs" />
+    <Compile Include="Controls\DrugGraph\TotalType.cs" />
+    <Compile Include="Controls\GridGraph\GridRowAliasName.cs" />
+    <Compile Include="Controls\GridGraph\MedGridGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GridGraph\MedGridGraph.designer.cs">
+      <DependentUpon>MedGridGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridGraph\MedGridGraphRow.cs" />
+    <Compile Include="Controls\GridGraph\MedGridGraphSavedCell.cs" />
+    <Compile Include="Controls\GridGraph\MedGridPoint.cs" />
+    <Compile Include="Controls\GridGraph\MedGridType.cs" />
+    <Compile Include="Controls\FocusHelper.cs" />
+    <Compile Include="Controls\LiquidStat\MedLiquidDetail.cs" />
+    <Compile Include="Controls\LiquidStat\MedLiquidItem.cs" />
+    <Compile Include="Controls\LiquidStat\MedLiquidStat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LiquidStat\MedLiquidStat.designer.cs">
+      <DependentUpon>MedLiquidStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedAnesDocDetails\AnesDrugShowType.cs" />
+    <Compile Include="Controls\MedAnesDocDetails\LastColumnLineItem.cs" />
+    <Compile Include="Controls\MedAnesDocDetails\MedAnesSheetDetailCollection.cs" />
+    <Compile Include="Controls\MedAnesDocDetails\MedAnesSheetDetailPoint.cs" />
+    <Compile Include="Controls\MedAnesDocDetails\MedAnesSheetDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedAnesDocDetails\MedAnesSheetDetails.designer.cs">
+      <DependentUpon>MedAnesSheetDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedDateTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedGraph\MedAxis.cs" />
+    <Compile Include="Controls\MedGraph\MedAxisList.cs" />
+    <Compile Include="Controls\MedGraph\MedCurve.cs" />
+    <Compile Include="Controls\MedGraph\MedCurveList.cs" />
+    <Compile Include="Controls\MedGraph\MedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedGraph\MedGraph.designer.cs">
+      <DependentUpon>MedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedGraph\MedGraphPanel.cs" />
+    <Compile Include="Controls\MedGraph\MedGridRow.cs" />
+    <Compile Include="Controls\MedGraph\MedGridRowList.cs" />
+    <Compile Include="Controls\MedGraph\MedLegend.cs" />
+    <Compile Include="Controls\MedGraph\MedPoint.cs" />
+    <Compile Include="Controls\MedGraph\MedPointList.cs" />
+    <Compile Include="Controls\MedGraph\MedSymbol.cs" />
+    <Compile Include="Controls\MedGridView\DateEditingCell.cs" />
+    <Compile Include="Controls\MedGridView\DateEditingColumn.cs" />
+    <Compile Include="Controls\MedGridView\DateEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedGridView\MaskedTextBoxCell.cs" />
+    <Compile Include="Controls\MedGridView\MaskedTextBoxColumn.cs" />
+    <Compile Include="Controls\MedGridView\MaskedTextBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedGridView\MedGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedGridView\MedGridViewColumn.cs" />
+    <Compile Include="Controls\MedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedLegengGraph.cs" />
+    <Compile Include="Controls\MedLegengGraph.designer.cs">
+      <DependentUpon>MedLegengGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedReportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MedScrollbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedSheet\MedSheet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedSheet\MedSheet.designer.cs">
+      <DependentUpon>MedSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedSheet\MedSheetCell.cs" />
+    <Compile Include="Controls\MedSheet\MedSheetCol.cs" />
+    <Compile Include="Controls\MedSheet\MedSheetDetail.cs" />
+    <Compile Include="Controls\MedSheet\MedSheetRow.cs" />
+    <Compile Include="Controls\MedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NewAnesthesiaEvent\NewAnesthesiaEvent.cs" />
+    <Compile Include="Controls\NewonitorData\NewMonitorData.cs" />
+    <Compile Include="Controls\NewonitorData\NewMonitorDataItem.cs" />
+    <Compile Include="Controls\NewPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SheetGrid\SheetGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VitalSignGraph\CPBTimeItem.cs" />
+    <Compile Include="Controls\VitalSignGraph\EventMark.cs" />
+    <Compile Include="Controls\VitalSignGraph\InterValControlType.cs" />
+    <Compile Include="Controls\VitalSignGraph\LegengType.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedCurveShowType.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedShowTimeInterval.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedSymbolCurveDetail.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignBreathControlTime.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignCurve.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignCurveDetail.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignGraph.designer.cs">
+      <DependentUpon>MedVitalSignGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignPoint.cs" />
+    <Compile Include="Controls\VitalSignGraph\MedVitalSignYAxis.cs" />
+    <Compile Include="Controls\VitalSignGraph\Symbol.cs" />
+    <Compile Include="Controls\VitalSignGraph\TextItem.cs" />
+    <Compile Include="Controls\VitalSignGraph\VitalSignPointEventArgs.cs" />
+    <Compile Include="Controls\VitalSignGraph\YAxisBorderType.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="CustomSetting\CustomSettingContext.cs" />
+    <Compile Include="CustomSetting\ICustomSetting.cs" />
+    <Compile Include="DateTimeRange.cs" />
+    <Compile Include="Designer\CodeDomHostLoader.cs" />
+    <Compile Include="Designer\CodeGen.cs" />
+    <Compile Include="Designer\Container\DesignerContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Container\DesignerContainerItem.cs" />
+    <Compile Include="Designer\Container\DesignerContainerItemCollection.cs" />
+    <Compile Include="Designer\Container\DesignerContainerTab.cs" />
+    <Compile Include="Designer\Container\DesignerContainerTabCollection.cs" />
+    <Compile Include="Designer\Container\DesignerContainerUIManagerVS.cs" />
+    <Compile Include="Designer\Container\DesignerContainerXmlManager.cs" />
+    <Compile Include="Designer\Controler\ControlerSurface.cs" />
+    <Compile Include="Designer\Controler\ControlerSurfaceManager.cs" />
+    <Compile Include="Designer\Controler\DesignerControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Controler\TableCreatorDlg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Controler\TableCreatorDlg.designer.cs">
+      <DependentUpon>TableCreatorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\Controler\TableSize.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Controler\TableSize.designer.cs">
+      <DependentUpon>TableSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\DesignerShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\DesignerShellForm.designer.cs">
+      <DependentUpon>DesignerShellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\DevDesignerShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\DevDesignerShellForm.designer.cs">
+      <DependentUpon>DevDesignerShellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\Editor\AliasName.cs" />
+    <Compile Include="Designer\Editor\AliasNamesDropDownEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Editor\DialogEditor.cs" />
+    <Compile Include="Designer\Editor\DictFieldNamesDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\DictTableNamesDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\DropDownEditor.cs" />
+    <Compile Include="Designer\Editor\DropDownEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Editor\FieldNamesDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\FieldNamesOfMonitorFunctionCodeDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\KeyValue.cs" />
+    <Compile Include="Designer\Editor\ListDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\ListDropDownEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Editor\MedGridViewColumnsEditor.cs" />
+    <Compile Include="Designer\Editor\MedGridViewDefaultDatasEditor\MedGridViewDefaultDatasEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Editor\MedGridViewDefaultDatasEditor\MedGridViewDefaultDatasEditControl.designer.cs">
+      <DependentUpon>MedGridViewDefaultDatasEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\Editor\MedGridViewDefaultDatasEditor\MedGridViewDefaultDatasEditor.cs" />
+    <Compile Include="Designer\Editor\SourceFieldNamesDropDownEditor.cs" />
+    <Compile Include="Designer\Editor\TableNamesDropDownEditor.cs" />
+    <Compile Include="Designer\MyClipBoard.cs" />
+    <Compile Include="Designer\MyPasteHelper.cs" />
+    <Compile Include="Designer\Other\MyTopLevelComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Other\NameCreationService.cs" />
+    <Compile Include="Designer\Other\OutputWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Other\RandomUtil.cs" />
+    <Compile Include="Designer\Other\SolutionExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Other\TypeResolutionService.cs" />
+    <Compile Include="Designer\ReportViewProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\SolutionExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\SolutionExplorer.designer.cs">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\Viewer\BasicDesignerViewer.cs" />
+    <Compile Include="ExceptionHandler.cs" />
+    <Compile Include="LookUpEditItem.cs" />
+    <Compile Include="MessageQueue.cs" />
+    <Compile Include="PageDesc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="Utilities\CommonSysemHelper.cs" />
+    <Compile Include="Utilities\ConfigurationHelper.cs" />
+    <Compile Include="Utilities\CustomSelection.cs" />
+    <Compile Include="Utilities\Dialog.cs" />
+    <Compile Include="Utilities\GridViewHelper.cs" />
+    <Compile Include="Utilities\InputStruct.cs" />
+    <Compile Include="Utilities\KeyPairCollections.cs" />
+    <Compile Include="Utilities\WinAPI.cs" />
+    <Compile Include="Views\BaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseView.Designer.cs">
+      <DependentUpon>BaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LabValueTrendChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LabValueTrendChart.Designer.cs">
+      <DependentUpon>LabValueTrendChart.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Constants\ContextMenuForm.resx">
+      <DependentUpon>ContextMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constants\MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BJCAControl.resx">
+      <DependentUpon>BJCAControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BloodGas\MedBloodGasGraph.resx">
+      <DependentUpon>MedBloodGasGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DownMenuDoc.resx">
+      <DependentUpon>DownMenuDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomControl.resx">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DrugGraph\MedDrugGraph.resx">
+      <DependentUpon>MedDrugGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GridGraph\MedGridGraph.resx">
+      <DependentUpon>MedGridGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LiquidStat\MedLiquidStat.resx">
+      <DependentUpon>MedLiquidStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedAnesDocDetails\MedAnesSheetDetails.resx">
+      <DependentUpon>MedAnesSheetDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedGraph\MedGraph.resx">
+      <DependentUpon>MedGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedLegengGraph.resx">
+      <DependentUpon>MedLegengGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedReportView.resx">
+      <DependentUpon>MedReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedScrollbar.resx">
+      <DependentUpon>MedScrollbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VitalSignGraph\MedVitalSignGraph.resx">
+      <DependentUpon>MedVitalSignGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Container\DesignerContainer.resx">
+      <DependentUpon>DesignerContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Controler\DesignerControler.resx">
+      <DependentUpon>DesignerControler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Controler\TableCreatorDlg.resx">
+      <DependentUpon>TableCreatorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Controler\TableSize.resx">
+      <DependentUpon>TableSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\DesignerShellForm.resx">
+      <DependentUpon>DesignerShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\DevDesignerShellForm.resx">
+      <DependentUpon>DevDesignerShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Editor\MedGridViewDefaultDatasEditor\MedGridViewDefaultDatasEditControl.resx">
+      <DependentUpon>MedGridViewDefaultDatasEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Other\MyTopLevelComponent.resx">
+      <DependentUpon>MyTopLevelComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Other\OutputWindow.resx">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Other\SolutionExplorer.resx">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\SolutionExplorer.resx">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LabValueTrendChart.resx">
+      <DependentUpon>LabValueTrendChart.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Designer\App.ico" />
+    <Content Include="Resources\双面打印1.png" />
+    <Content Include="Resources\双面打印2.png" />
+    <Content Include="Resources\打印当前页1.png" />
+    <Content Include="Resources\打印当前页2.png" />
+    <None Include="app.config" />
+    <None Include="Resources\文书_勾1.png" />
+    <None Include="Resources\文书_勾2.png" />
+    <None Include="Resources\文书-下拉箭头1.png" />
+    <None Include="Resources\文书-下拉箭头2.png" />
+    <None Include="Resources\文书_未选中.png" />
+    <None Include="Resources\文书_选中.png" />
+    <None Include="Resources\uparrow.png" />
+    <None Include="Resources\ThumbTop.png" />
+    <None Include="Resources\ThumbSpanTop.png" />
+    <None Include="Resources\ThumbSpanBottom.png" />
+    <None Include="Resources\ThumbMiddle.png" />
+    <None Include="Resources\ThumbBottom.png" />
+    <None Include="Resources\downarrow.png" />
+    <None Include="Resources\下页2.png" />
+    <None Include="Resources\下页1.png" />
+    <None Include="Resources\调用模版2.png" />
+    <None Include="Resources\调用模版1.png" />
+    <None Include="Resources\缩放2.png" />
+    <None Include="Resources\缩放1.png" />
+    <None Include="Resources\上页2.png" />
+    <None Include="Resources\上页1.png" />
+    <None Include="Resources\配置2.png" />
+    <None Include="Resources\配置1.png" />
+    <None Include="Resources\集中打印2.png" />
+    <None Include="Resources\集中打印1.png" />
+    <None Include="Resources\归档2.png" />
+    <None Include="Resources\归档1.png" />
+    <None Include="Resources\打印2.png" />
+    <None Include="Resources\打印1.png" />
+    <None Include="Resources\保存模版2.png" />
+    <None Include="Resources\保存模版1.png" />
+    <None Include="Resources\保存2.png" />
+    <None Include="Resources\保存1.png" />
+    <None Include="Resources\预览2.png" />
+    <None Include="Resources\预览1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.DataServices\MedicalSystem.AnesWorkStation.DataServices.csproj">
+      <Project>{95c5bb6a-6351-4382-90c9-938c9a3bf997}</Project>
+      <Name>MedicalSystem.AnesWorkStation.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Domain\MedicalSystem.AnesWorkStation.Domain.csproj">
+      <Project>{ee71da80-4e68-4a94-aefa-acbe2565be5e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

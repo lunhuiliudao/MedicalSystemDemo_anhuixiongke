@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MedicalSystem.QC.WebInterfaceModel</name>
+    </assembly>
+    <members>
+        <member name="T:MedicalSystem.QC.WebInterfaceModel.DataModel">
+            <summary>
+            数据主体
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.DataModel.UserModel">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.DataModel.ReportModel">
+            <summary>
+            质控报告
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.DataModel.PatientsModel">
+            <summary>
+            不良事件患者
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.QC.WebInterfaceModel.UserModel">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.UserModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.UserModel.UserPwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.QC.WebInterfaceModel.ReportModel">
+            <summary>
+            质控报告数据模型
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ReportDate">
+            <summary>
+            报告时间（ex: 2016/12）
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.IndexConfig">
+            <summary>
+            指标配置版本
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ReportDetailJson">
+            <summary>
+            报告明细项JSON
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Doctor">
+            <summary>
+            麻醉科固定在岗医师总数（人）
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Anesthesia">
+            <summary>
+            麻醉科完成麻醉总数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAI">
+            <summary>
+            ASA I级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAII">
+            <summary>
+            ASA II级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAIII">
+            <summary>
+            ASA III级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAIV">
+            <summary>
+            ASA IV级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAV">
+            <summary>
+            ASA V级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAVI">
+            <summary>
+            ASA VI级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ASAOther">
+            <summary>
+            ASA 未定级麻醉患者数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ER">
+            <summary>
+            急诊非择期麻醉例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.SpinalAnesth">
+            <summary>
+            椎管内麻醉例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.CannulaAnesth">
+            <summary>
+            插管（喉罩）全麻例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.NonCannulaAnesth">
+            <summary>
+            非插管全麻例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.CombinedAnesth">
+            <summary>
+            复合麻醉例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.OtherAnesth">
+            <summary>
+            其他麻醉方式例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Cancel">
+            <summary>
+            麻醉开始后手术取消例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.PACUDelay">
+            <summary>
+            麻醉后PACU转出延迟例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.PACULow">
+            <summary>
+            PACU入室低体温例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.PACUTotal">
+            <summary>
+            入PACU患者总数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.UnPlanICU">
+            <summary>
+            非计划转入ICU例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.ICUTotal">
+            <summary>
+            转入ICU患者总数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.UnPlanTwoIntubation">
+            <summary>
+            非计划二次插管例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.PullOutIntubation">
+            <summary>
+            术后气管插管拔除患者总数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.DeathIn24">
+            <summary>
+            麻醉开始后24小时内死亡例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.CAIn24">
+            <summary>
+            麻醉开始后24小时内心跳骤停例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.AutoBlood400">
+            <summary>
+            麻醉中接收400ml及以上自体血（包括自体全血及自体红细胞）患者例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Blood400">
+            <summary>
+            麻醉中接受400ml及以上输血治疗的患者总数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Allergy">
+            <summary>
+            麻醉期间严重过敏反应发生例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.NerveComplication">
+            <summary>
+            椎管内麻醉后严重神经并发症发生例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.SpinalTotal">
+            <summary>
+            椎管内麻醉总例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.CVPComplication">
+            <summary>
+            中心静脉穿刺严重并发症发生例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.CVPTotal">
+            <summary>
+            中心静脉穿刺总例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.Hoarseness">
+            <summary>
+            全麻气管插管拔管后声音嘶哑发生例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.GATITotal">
+            <summary>
+            全麻气管插管总例数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.ReportModel.NewComa">
+            <summary>
+            麻醉后新发昏迷发生例数
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.QC.WebInterfaceModel.PatientModel">
+            <summary>
+            不良事件病人信息模型
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.PatientModel.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.PatientName">
+            <summary>
+            患者姓名
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.DoctorTitle">
+            <summary>
+            麻醉医生职称
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.AdamissionNo">
+            <summary>
+            住院/门诊号
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Visit">
+            <summary>
+            住院次数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Oper">
+            <summary>
+            手术次数
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Birth">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Height">
+            <summary>
+            身高
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Weight">
+            <summary>
+            体重
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.OperDept">
+            <summary>
+            手术科室
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.OperMode">
+            <summary>
+            手术类别
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.OperName">
+            <summary>
+            手术名称
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Method">
+            <summary>
+            麻醉方式
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.ASA">
+            <summary>
+            ASA分级
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Diagnosis">
+            <summary>
+            诊断
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.AnesthStart">
+            <summary>
+            麻醉开始时间
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.AnesthEnd">
+            <summary>
+            麻醉结束时间
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventTime">
+            <summary>
+            不良时间
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventProcedure">
+            <summary>
+            不良事件发生经过
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventType">
+            <summary>
+            不良事件类型
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventOtherType">
+            <summary>
+            不良事件“其它”类型（质控标准包括的不良事件类型，但手麻系统没有该类型） 
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventLevel">
+            <summary>
+            不良事件分级
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventCause">
+            <summary>
+            不良事件发生原因
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.EventAnalysis">
+            <summary>
+            不良事件发生原因分析
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.Measure">
+            <summary>
+            预防措施
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.QC.WebInterfaceModel.PatientModel.FolderId">
+            <summary>
+            不良事件文件夹ID
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.QC.WebInterfaceModel.SecurityHelper">
+            <summary>
+            通用加密算法
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Key">
+            <summary>
+            私钥
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Iv">
+            <summary>
+            获取向量
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Encrypt(System.String)">
+            <summary>
+            通用加密算法
+            </summary>
+            <param name="source">待加密字符串</param>
+            <returns>加密后结果</returns>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Decrypt(System.String)">
+            <summary>
+            通用解密算法
+            </summary>
+            <param name="source">待解密字符串</param>
+            <returns>解密后结果</returns>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.AesEncrypt(System.String,System.String)">
+            <summary>
+            AES加密算法
+            </summary>
+            <param name="key">私钥</param>        
+            <param name="source">待加密字符串</param>
+            <returns>加密后结果</returns>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.AesDecrypt(System.String,System.String)">
+            <summary>
+            AES解密算法
+            </summary>
+            <param name="key">私钥</param>        
+            <param name="source">待解密字符串</param>
+            <returns>解密后结果</returns>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Base64Encrypt(System.String)">
+            <summary>
+            Base64加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.QC.WebInterfaceModel.SecurityHelper.Base64Decrypt(System.String)">
+            <summary>
+            Base64解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

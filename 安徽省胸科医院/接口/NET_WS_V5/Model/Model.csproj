@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E77192FA-0788-4DA3-AEB8-F0FAD459E247}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NET_WS_V5</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnumDataBase.cs" />
+    <Compile Include="MedAnesthesiaEvent.cs" />
+    <Compile Include="MedAnesthesiaPlan.cs" />
+    <Compile Include="MedBedRec.cs" />
+    <Compile Include="MedBillItemClassDict.cs" />
+    <Compile Include="MedBillItemClassVsHis.cs" />
+    <Compile Include="MedBloodGasMaster.cs" />
+    <Compile Include="MedDeptDict.cs" />
+    <Compile Include="MedDiagnosisDict.cs" />
+    <Compile Include="MedDrugDict.cs" />
+    <Compile Include="MedDrugNameDict.cs" />
+    <Compile Include="MedEmrArchiveDetial.cs" />
+    <Compile Include="MedEmrArchiveDetialExt.cs" />
+    <Compile Include="MedEmrUsers.cs" />
+    <Compile Include="MedEmrWorkPath.cs" />
+    <Compile Include="MedHisUserInfo.cs" />
+    <Compile Include="MedHisUsers.cs" />
+    <Compile Include="MedIfHisViewSql.cs" />
+    <Compile Include="Medicalcases.cs" />
+    <Compile Include="MedIcuConfig.cs" />
+    <Compile Include="MedIfHisViewSql2.cs" />
+    <Compile Include="MedIfRunConfigDict.cs" />
+    <Compile Include="MedIfTransDict.cs" />
+    <Compile Include="MedInitDict.cs" />
+    <Compile Include="MedInOrOutRec.cs" />
+    <Compile Include="MedLabResult.cs" />
+    <Compile Include="MedLabTestItems.cs" />
+    <Compile Include="MedLabTestMaster.cs" />
+    <Compile Include="MedMonitorFunctionCode.cs" />
+    <Compile Include="MedMtrlDict.cs" />
+    <Compile Include="MedMtrlImportDetail.cs" />
+    <Compile Include="MedMtrlImportMaster.cs" />
+    <Compile Include="MedMtrlSupplierCatalog.cs" />
+    <Compile Include="MedOperationBillItems.cs" />
+    <Compile Include="MedOperationCanceled.cs" />
+    <Compile Include="MedOperationDict.cs" />
+    <Compile Include="MedOperationMaster.cs" />
+    <Compile Include="MedOperationName.cs" />
+    <Compile Include="MedOperationNameCanceled.cs" />
+    <Compile Include="MedOperationSchedule.cs" />
+    <Compile Include="MedOrders.cs" />
+    <Compile Include="MedPackageDetail.cs" />
+    <Compile Include="MedPackageMaster.cs" />
+    <Compile Include="MedPatInicuInformation.cs" />
+    <Compile Include="MedPatMasterIndex.cs" />
+    <Compile Include="MedPatMonitorData.cs" />
+    <Compile Include="MedPatsInHospital.cs" />
+    <Compile Include="MedPatVisit.cs" />
+    <Compile Include="MedPerformDefaultSchedule.cs" />
+    <Compile Include="MedPriceList.cs" />
+    <Compile Include="MedScheduledOperationName.cs" />
+    <Compile Include="MedTransfer.cs" />
+    <Compile Include="MedVitalSignsRecTemp.cs" />
+    <Compile Include="MedVsHisDepId.cs" />
+    <Compile Include="MedVsHisOperApplyV2.cs" />
+    <Compile Include="MedVsHisOperationMaster.cs" />
+    <Compile Include="MedVsHisOperationSchedule.cs" />
+    <Compile Include="MedVsHisOperBillConsts.cs" />
+    <Compile Include="MedVsHisOperBillItems.cs" />
+    <Compile Include="MedVsHisOrderClass.cs" />
+    <Compile Include="MedVsHisOrders.cs" />
+    <Compile Include="MedVsHisPat.cs" />
+    <Compile Include="MedIfLog.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="Patients.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MedMonitorDict.cs" />
+    <Compile Include="MedTableStruct.cs" />
+    <Compile Include="Users.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,269 @@
+========[Header]========
+
+2020-04-09 17:12:55,164   [75]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:12:55,164   [104]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:15:14,227   [140]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:15:14,244   [75]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:15:35,517   [75]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:15:42,381   [104]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:18:51,523   [119]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:18:51,556   [75]   ERROR - WebApi错误：/Api/PlatformAnesQuery/GetReportColumList?pkey=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&isSubReport=true
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderImpl(IDbConnection cnn, CommandDefinition& command, CommandBehavior commandBehavior, IDbCommand& cmd) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 3501
+   在 Dapper.SqlMapper.ExecuteReader(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1423
+   在 Dapper.Data.DapperContext.Fill(String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 350
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 2212
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.GetReportColumList(String pkey, Boolean isSubReport, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 405
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:20:05,399   [75]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:21:25,878   [140]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-01036: 非法的变量名/编号
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleParameterBinding.Bind(OciStatementHandle statementHandle, NativeBuffer parameterBuffer, OracleConnection connection, Boolean& mustRelease, SafeHandle& handleToBind)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:38:46,625   [140]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "USERID": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-04-09 17:38:53,150   [65]   ERROR - WebApi错误：/Api/PlatformAnesQuery/ExecSubSql?key=%E6%89%8B%E6%9C%AF%E5%8C%BB%E7%94%9F%E6%9C%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%BB%9F%E8%AE%A1&subkey=%E6%82%A3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&CurrentPage=1&PageSize=10
+System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "USERID": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 Dapper.Data.DapperContext.Query[TEntity](String sql, Object param) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperContext.cs:行号 302
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.ExecSubSql(String key, String subkey, ReportInformation reportInformation) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 1184
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.ExecSubSql(String key, String subkey, ReportInformation reportInformation, Int32 CurrentPage, Int32 PageSize) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 348
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)

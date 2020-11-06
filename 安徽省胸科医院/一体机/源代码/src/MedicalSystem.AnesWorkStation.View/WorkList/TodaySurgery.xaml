@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="MedicalSystem.AnesWorkStation.View.WorkList.TodaySurgery"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:convert="clr-namespace:MedicalSystem.AnesWorkStation.View.WorkList"     
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             d:DesignHeight="220" d:DesignWidth="1080">
+    <UserControl.Resources>
+        <ImageBrush x:Key="_imgbg" ImageSource="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/operationCount.png" />
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="微软雅黑" />
+            <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter" />
+            <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave" />
+        </Style>
+        <convert:PercentToAngleConverter  x:Key="PercentToAngleConverter" />
+        <convert:ThicknessToDoubleConverter  x:Key="ThicknessToDoubleConverter"/>
+        <Style x:Key="_progressbarStyle" TargetType="ProgressBar">
+            <Setter Property="Background" Value="#C1D1DE"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="BorderBrush" Value="#7FCBCD"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Maximum" Value="1"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Value" Value="0"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="IsHitTestVisible" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Viewbox Stretch="Uniform"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Grid SnapsToDevicePixels="True" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" >
+                                <ed:Arc Margin="{TemplateBinding Margin}" Opacity="0.6" 
+                                        ArcThickness="8" StartAngle="0" 
+                                        Fill="{TemplateBinding Background}" 
+                                        EndAngle="360" Stretch="None" x:Name="arcOuter">
+                                </ed:Arc>
+                                
+                                <ed:Arc Margin="{TemplateBinding Margin}" x:Name="arcValue"  RenderTransformOrigin="0.5,0.5"
+                                    ArcThickness="8"
+                                    StartAngle="0" Fill="{TemplateBinding BorderBrush}" 
+                                    Stretch="None"  Panel.ZIndex="2"
+                                    EndAngle="{TemplateBinding Value, Converter={StaticResource PercentToAngleConverter}}" >
+                                    <ed:Arc.RenderTransform>
+                                        <RotateTransform x:Name="arcOuterRotateTransform" />
+                                    </ed:Arc.RenderTransform>
+                                </ed:Arc>
+
+                                <TextBlock x:Name="tbMsg" Text="完成比例" Width="80" Foreground="#535353" Opacity="0.7" Height="26" Margin="0,0,0,40" FontSize="19"/>
+
+                                <TextBlock FontSize="22" x:Name="tbPercent"
+                                           Margin="0,42,0,0"
+                                           Foreground="#535353"
+                                           Text="{Binding Value,Mode=OneWay,RelativeSource={RelativeSource TemplatedParent},StringFormat={}{0:p1}}" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Viewbox>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="arcOuter" Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.5" />
+                                            <DoubleAnimation Storyboard.TargetName="tbMsg" Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.5" />
+                                            <DoubleAnimation Storyboard.TargetName="arcOuterRotateTransform" Storyboard.TargetProperty="Angle" To="360" Duration="0:0:1.0" RepeatBehavior="Forever" />
+                                            <DoubleAnimation Storyboard.TargetName="tbPercent" Storyboard.TargetProperty="FontSize" To="30" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="arcOuter" Storyboard.TargetProperty="Opacity" To="0.6" Duration="0:0:0.5" />
+                                            <DoubleAnimation Storyboard.TargetName="tbMsg" Storyboard.TargetProperty="Opacity" To="0.7" Duration="0:0:0.5" />
+                                            <DoubleAnimation Storyboard.TargetName="arcOuterRotateTransform" Storyboard.TargetProperty="Angle" To="0" Duration="0:0:0.7" />
+                                            <DoubleAnimation Storyboard.TargetName="tbPercent" Storyboard.TargetProperty="FontSize" To="22" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Canvas Background="{StaticResource _imgbg}">
+        <TextBlock FontSize="33"  Text="今日手术" Canvas.Left="390" Canvas.Top="33" Opacity="0.7">
+            <!--<TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Border.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="40" />
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Opacity" To="1.0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Border.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="33" />
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Opacity" To="0.7" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>-->
+        </TextBlock>
+        <TextBlock FontSize="22" Text="共  计" Foreground="#505758" Canvas.Top="110" Canvas.Left="398" Opacity="0.8"/>
+        <TextBlock FontSize="22" Text="已完成" Foreground="#12898D" Canvas.Left="532" Canvas.Top="110" Opacity="0.8"/>
+        <TextBlock FontSize="24" Text="未完成"  Foreground="#F7A78D" Canvas.Left="670" Canvas.Top="108" Opacity="0.8"/>
+        <TextBlock FontSize="48" Text="{Binding TodaySurgeryModelProperty.TodaySurgeryNum }"
+                   x:Name="_total" Width="60" Opacity="0.8"
+                   TextDecorations="Underline" Canvas.Left="395" Canvas.Top="146" Foreground="#535353"/>
+
+        <TextBlock FontSize="22" Text="例"  Canvas.Left="455" Canvas.Top="170" Foreground="#535353" Opacity="0.8"/>
+
+        <TextBlock FontSize="48" Text="{Binding TodaySurgeryModelProperty.FinishSurgeryNum}" 
+                   x:Name="_finish" Width="60" Opacity="0.8"
+                   TextDecorations="Underline" Canvas.Left="540" Canvas.Top="146" Foreground="#47C9D1"/>
+
+        <TextBlock FontSize="22" Text="例"  Canvas.Left="596" Canvas.Top="170" Foreground="#47C9D1" Opacity="0.8"/>
+
+        <TextBlock FontSize="48" Text="{Binding TodaySurgeryModelProperty.UnFinishSurgeryNum}"
+                   x:Name="_remain" Width="60" Opacity="0.8"
+                   TextDecorations="Underline" Canvas.Left="675" Canvas.Top="146" Foreground="#F98F7B"/>
+
+        <TextBlock FontSize="22" Text="例"  Canvas.Left="730" Canvas.Top="170" Foreground="#F98F7B" Opacity="0.8"/>
+
+        <ProgressBar Style="{StaticResource _progressbarStyle}" 
+                     x:Name="_progress"
+                     Value="{Binding TodaySurgeryModelProperty.FinishPercent}"
+                     Height="156" Width="156" Canvas.Left="800" Canvas.Top="50" />
+        
+    </Canvas>
+</UserControl>

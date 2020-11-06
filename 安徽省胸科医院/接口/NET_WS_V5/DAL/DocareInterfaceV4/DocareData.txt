@@ -1,0 +1,11 @@
+[1000]
+Type=自费
+[2000]
+Type=公费
+[6031]
+Type=车祸
+[SCHEDULED_DATE_TIME]
+DateType=2
+//1-SCHEDULED_DATE_TIME取HIS的手术安排时间 0-SCHEDULED_DATE_TIME取HIS的手术申请时间 2-SCHEDULED_DATE_TIME取HIS的手术申请时间+1天
+
+

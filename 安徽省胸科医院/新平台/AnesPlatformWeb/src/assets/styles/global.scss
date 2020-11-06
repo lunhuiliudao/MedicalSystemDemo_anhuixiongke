@@ -1,0 +1,15 @@
+@import 'reset';
+
+$maxWidth: 1920px;
+$minWidth: 768px;
+$fontSize: 19.2;
+
+@function px2rem($px) {
+  @return ($px / $fontSize) + rem;
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

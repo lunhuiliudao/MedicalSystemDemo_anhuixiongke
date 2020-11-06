@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MedicalSystem.Permission.DataServices</name>
+    </assembly>
+    <members>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.PERMISSION">
+            <summary>
+            权限对象
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.Domain.PERMISSION.CheckedMenu(System.String)">
+            <summary>
+            检查是否有菜单权限
+            </summary>
+            <param name="menuKey">菜单KEY</param>
+            <returns></returns>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.BaseService`1">
+            <summary>
+            数据服务类，客户端采用AOP获取当前的请求，所有方法都必须是虚方法，否则无法请求，必须手动操作。
+            </summary>
+            <typeparam name="T">服务</typeparam>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.IBaseService">
+            <summary>
+            数据服务接口
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Permission.DataServices.BaseService`1.dapper">
+            <summary>
+            Dapper数据库对象
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.BaseService`1.#ctor">
+            <summary>
+            动态代理的构造方法，必须是无参数的，且标记为protected。
+            </summary>
+            <remarks>如果没有参数的且使用一个构造方法，则比较为public或不写构造方法即可。</remarks>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.BaseService`1.#ctor(Dapper.Data.IDapperContext)">
+            <summary>
+            IOC容器使用的构造方法，必须标记为public，供外部使用。
+            </summary>
+            <param name="context">数据连接对象</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.BaseService`1.LoadServiceConfig">
+            <summary>
+            设置配置信息
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.UserService.#ctor">
+            <summary>
+            动态代理的构造方法，必须是无参数的，且标记为protected。
+            </summary>
+            <remarks>如果没有参数的且使用一个构造方法，则比较为public或不写构造方法即可。</remarks>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.UserService.#ctor(Dapper.Data.IDapperContext,MedicalSystem.Permission.DataServices.IPermissionService)">
+            <summary>
+            IOC容器使用的构造方法，必须标记为public，供外部使用。
+            </summary>
+            <param name="context">数据连接对象</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.UserService.Login(System.String,System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.ICommDictService">
+            <summary>
+            通用接口
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.ICommDictService.GetHisUserDict(System.String,MedicalSystem.Permission.DataServices.RegistType)">
+            <summary>
+            获取HIS用户
+            </summary>
+            <param name="idOrName">工号或名称</param>
+            <param name="registType">-1:没有注册, 0: 全部, 1:已经注册</param>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.RegistType">
+            <summary>
+            HIS用户是否注册登陆用户的枚举
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Permission.DataServices.RegistType.UnRegistered">
+            <summary>
+            没有注册
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Permission.DataServices.RegistType.Default">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:MedicalSystem.Permission.DataServices.RegistType.Registered">
+            <summary>
+            已经注册
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.CommDictService">
+            <summary>
+            通用类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommDictService.#ctor">
+            <summary>
+            动态代理的构造方法，必须是无参数的，且标记为protected。
+            </summary>
+            <remarks>如果没有参数的且使用一个构造方法，则比较为public或不写构造方法即可。</remarks>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommDictService.#ctor(Dapper.Data.IDapperContext)">
+            <summary>
+            IOC容器使用的构造方法，必须标记为public，供外部使用。
+            </summary>
+            <param name="context">数据连接对象</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommDictService.GetHisUserDict(System.String,MedicalSystem.Permission.DataServices.RegistType)">
+            <summary>
+            获取HIS用户
+            </summary>
+            <param name="idOrName">工号或名称</param>
+            <param name="registType">-1:没有注册, 0: 不区分, 1:已经注册</param>
+            <returns></returns>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.ICommonService">
+            <summary>
+            通用接口
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.ICommonService.TestNet">
+            <summary>
+            测试连接
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.ICommonService.TestDbConn">
+            <summary>
+            测试数据库连接
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.CommonService">
+            <summary>
+            通用类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommonService.#ctor">
+            <summary>
+            动态代理的构造方法，必须是无参数的，且标记为protected。
+            </summary>
+            <remarks>如果没有参数的且使用一个构造方法，则比较为public或不写构造方法即可。</remarks>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommonService.#ctor(Dapper.Data.IDapperContext)">
+            <summary>
+            IOC容器使用的构造方法，必须标记为public，供外部使用。
+            </summary>
+            <param name="context">数据连接对象</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommonService.TestNet">
+            <summary>
+            测试连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.CommonService.TestDbConn">
+            <summary>
+            测试数据库连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.BaseModel">
+            <summary>
+            实体对象
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_APPLICATION">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC_ACTION_RELATION">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_MENU">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_MODULE">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_PERMISSION_RELATION">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MDSD_PERMISSION_RELATION.RELATION_TYPE">
+            <summary>
+            0: App, 1: Menu, 2: Func....? , f: Func
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_RELATION">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_ROLE">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_USER_ROLE">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MED_HIS_USERS">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_HIS_USERS.USER_JOB_ID">
+            <summary>
+            医护人员工号	;医护人员工号
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_HIS_USERS.USER_DEPT_CODE">
+            <summary>
+            所在科室	;对应科室代码表
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_HIS_USERS.USER_JOB">
+            <summary>
+            职别	;医生、护士
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_HIS_USERS.USER_STATUS">
+            <summary>
+            用户状态;1 正常，0 停用
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MED_USERS">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.USER_ID">
+            <summary>
+            用户ID	
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.USER_DEPT_CODE">
+            <summary>
+            用户科室代码		对应科室代码表
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.IS_VALID">
+            <summary>
+            停用标识	;	T 有效    F无效
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.STOP_DATE">
+            <summary>
+            停用日期
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.RUN_MODE">
+            <summary>
+            登录模式;0-手术间模式，1-办公室模式
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.Domain.MED_USERS.RUN_ADDRESS">
+            <summary>
+            登录位置信息说明;手术间模式下记录手术间号
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MDSD_ACTION">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Domain.MED_DEPT_DICT">
+            <summary>
+            实体 
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.IPermissionService">
+            <summary>
+            数据服务接口
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetAppPermission(System.String,System.String)">
+            <summary>
+            获取当前用户的应用权限
+            </summary>
+            <param name="appKey">应用</param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveGroup(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP)">
+            <summary>
+            保存用户组
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteGroup(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP)">
+            <summary>
+            删除用户组
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetGroupList">
+            <summary>
+            获取用户组列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetUserGroupRelations(System.String)">
+            <summary>
+            获取用户组关系列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveUserGroupRelations(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_RELATION})">
+            <summary>
+            保存用户组关系列表
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveRole(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_ROLE)">
+            <summary>
+            保存用户角色
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteRole(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_ROLE)">
+            <summary>
+            删除用户角色
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetRoleList">
+            <summary>
+            获取用户角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetGroupRoleList(System.String)">
+            <summary>
+            获取用户角色关联列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveGroupRoleList(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_ROLE})">
+            <summary>
+            保存用户角色关系列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveApp(MedicalSystem.Permission.DataServices.Domain.MDSD_APPLICATION)">
+            <summary>
+            保存应用
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteApp(MedicalSystem.Permission.DataServices.Domain.MDSD_APPLICATION)">
+            <summary>
+            删除应用
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetAppList">
+            <summary>
+            获取应用列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetPermissionList(System.String)">
+            <summary>
+            获取用户组角色关系关联列表
+            </summary>
+            <param name="roleCode">角色代码 必传 否侧返回数据为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SavePermissionList(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_PERMISSION_RELATION})">
+            <summary>
+            批量保存用户组角色关系关联列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveMenu(MedicalSystem.Permission.DataServices.Domain.MDSD_MENU)">
+            <summary>
+            保存菜单
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteMenu(MedicalSystem.Permission.DataServices.Domain.MDSD_MENU)">
+            <summary>
+            删除菜单
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveFunc(MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC)">
+            <summary>
+            保存功能
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteFunc(MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC)">
+            <summary>
+            删除功能
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveModule(MedicalSystem.Permission.DataServices.Domain.MDSD_MODULE)">
+            <summary>
+            保存模块
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteModule(MedicalSystem.Permission.DataServices.Domain.MDSD_MODULE)">
+            <summary>
+            删除模块
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetModuleList">
+            <summary>
+            获取
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveAction(MedicalSystem.Permission.DataServices.Domain.MDSD_ACTION)">
+            <summary>
+            保存行为
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.DeleteAction(MedicalSystem.Permission.DataServices.Domain.MDSD_ACTION)">
+            <summary>
+            删除行为
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.GetFuncActionRelationList(System.String)">
+            <summary>
+            获取功能行为关系关联列表
+            </summary>
+            <param name="funcCode">功能代码 必传 否侧返回数据为空</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.IPermissionService.SaveFuncActionRelations(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC_ACTION_RELATION})">
+            <summary>
+            批量保存功能行为关系关联列表
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.PermissionService">
+            <summary>
+            权限数据模块
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.#ctor">
+            <summary>
+            动态代理的构造方法，必须是无参数的，且标记为protected。
+            </summary>
+            <remarks>如果没有参数的且使用一个构造方法，则比较为public或不写构造方法即可。</remarks>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.#ctor(Dapper.Data.IDapperContext)">
+            <summary>
+            IOC容器使用的构造方法，必须标记为public，供外部使用。
+            </summary>
+            <param name="context">数据连接对象</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetAppPermission(System.String,System.String)">
+            <summary>
+            获取当前用户的应用权限
+            </summary>
+            <param name="appKey">应用</param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.RemoveMenu(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_MENU},System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_PERMISSION_RELATION},System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_MENU},System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC})">
+            <summary>
+            整理菜单和功能的对应关系
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetUserGroupRelations(System.String)">
+            <summary>
+            获取用户组关系列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveUserGroupRelations(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_RELATION})">
+            <summary>
+            保存用户组关系列表
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveRole(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_ROLE)">
+            <summary>
+            保存用户角色
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteRole(MedicalSystem.Permission.DataServices.Domain.MDSD_USER_ROLE)">
+            <summary>
+            删除用户角色
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetRoleList">
+            <summary>
+            获取用户角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetGroupRoleList(System.String)">
+            <summary>
+            获取用户角色关联列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveGroupRoleList(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_USER_GROUP_ROLE})">
+            <summary>
+            保存用户角色关系列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveApp(MedicalSystem.Permission.DataServices.Domain.MDSD_APPLICATION)">
+            <summary>
+            保存应用
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteApp(MedicalSystem.Permission.DataServices.Domain.MDSD_APPLICATION)">
+            <summary>
+            删除应用
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetAppList">
+            <summary>
+            获取应用列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetPermissionList(System.String)">
+            <summary>
+            获取用户组角色关系关联列表
+            </summary>
+            <param name="roleCode">角色代码 必传 否侧返回数据为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SavePermissionList(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_PERMISSION_RELATION})">
+            <summary>
+            批量保存用户组角色关系关联列表
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveMenu(MedicalSystem.Permission.DataServices.Domain.MDSD_MENU)">
+            <summary>
+            保存菜单
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteMenu(MedicalSystem.Permission.DataServices.Domain.MDSD_MENU)">
+            <summary>
+            删除菜单
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveFunc(MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC)">
+            <summary>
+            保存功能
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteFunc(MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC)">
+            <summary>
+            删除功能
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveModule(MedicalSystem.Permission.DataServices.Domain.MDSD_MODULE)">
+            <summary>
+            保存模块
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteModule(MedicalSystem.Permission.DataServices.Domain.MDSD_MODULE)">
+            <summary>
+            删除模块
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetModuleList">
+            <summary>
+            获取
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveAction(MedicalSystem.Permission.DataServices.Domain.MDSD_ACTION)">
+            <summary>
+            保存行为
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.DeleteAction(MedicalSystem.Permission.DataServices.Domain.MDSD_ACTION)">
+            <summary>
+            删除行为
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.GetFuncActionRelationList(System.String)">
+            <summary>
+            获取功能行为关系关联列表
+            </summary>
+            <param name="funcCode">功能代码 必传 否侧返回数据为空</param>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionService.SaveFuncActionRelations(System.Collections.Generic.List{MedicalSystem.Permission.DataServices.Domain.MDSD_FUNC_ACTION_RELATION})">
+            <summary>
+            批量保存功能行为关系关联列表
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.PermissionInstaller">
+            <summary>
+            权限安装配置服务
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionInstaller.RegistConfig">
+            <summary>
+            必须在程序启动前，注册配置信息。
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionInstaller.GetConfig">
+            <summary>
+            获取当前配置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.PermissionInstaller.GetExecutingAssembly">
+            <summary>
+            获取当前程序集信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.PermissionConfig">
+            <summary>
+            配置文件类
+            </summary>
+        </member>
+        <member name="P:MedicalSystem.Permission.DataServices.PermissionConfig.NodeName">
+            <summary>
+            当前节点名称, <c>英文字符串，首字母小写。</c>
+            </summary>
+        </member>
+        <member name="T:MedicalSystem.Permission.DataServices.Program">
+            <summary>
+            控制台应用程序
+            </summary>
+        </member>
+        <member name="M:MedicalSystem.Permission.DataServices.Program.Main(System.String[])">
+            <summary>
+            Main入口方法
+            </summary>
+            <param name="args">参数</param>
+        </member>
+    </members>
+</doc>

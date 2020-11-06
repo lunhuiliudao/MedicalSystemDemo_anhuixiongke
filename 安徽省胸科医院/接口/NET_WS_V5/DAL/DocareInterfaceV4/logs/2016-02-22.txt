@@ -1,0 +1,20 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2016-02-22 14:33:32,059   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2016-02-22 14:33:31，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS201
+2016-02-22 14:33:32,094   [10]   DEBUG   File   [(null)]   <(null)>   -   strSystemClass:HISDateTypeHIS:SQLServerdoCareDict.DbmsMSS Microsoft SQL Server
+2016-02-22 14:33:32,133   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步patientId=ALL,startdatetime=2016022104,stopdatetime=2016022604的手术申请信息
+2016-02-22 14:33:32,171   [10]   DEBUG   File   [(null)]   <(null)>   -   config.HisConnection:Data Source=192.168.0.97;Initial Catalog=rjmz;Password=test;User ID=test;
+2016-02-22 14:35:58,367   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2016-02-22 14:35:58，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS999
+2016-02-22 14:35:58,934   [10]   DEBUG   File   [(null)]   <(null)>   -   strSystemClass:HISDateTypeHIS:SQLServerdoCareDict.DbmsMSS Microsoft SQL Server
+2016-02-22 14:36:05,344   [10]   DEBUG   File   [(null)]   <(null)>   -   begin initanes:11111
+2016-02-22 14:36:05,461   [10]   DEBUG   File   [(null)]   <(null)>   -   sqlMaster:select patient_id,visit_id,oper_id,oper_room from med_operation_master where start_date_time> to_date('2016/2/22 6:00:00','yyyy-MM-dd HH24:mi:ss')
+2016-02-22 14:36:05,468   [10]   DEBUG   File   [(null)]   <(null)>   -   masterList:System.Collections.Generic.List`1[MedicalSytem.Soft.Model.MedOperationMaster]
+2016-02-22 14:36:05,475   [10]   DEBUG   File   [(null)]   <(null)>   -   str:11111
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2016-02-22 16:40:27,492   [5]   DEBUG   File   [(null)]   <(null)>   -   时间=2016-02-22 16:40:27，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS999
+2016-02-22 16:40:27,711   [5]   DEBUG   File   [(null)]   <(null)>   -   strSystemClass:HISDateTypeHIS:SQLServerdoCareDict.DbmsMSS Microsoft SQL Server
+2016-02-22 16:40:27,782   [5]   DEBUG   File   [(null)]   <(null)>   -   begin initanes:2300
+2016-02-22 16:40:28,086   [5]   DEBUG   File   [(null)]   <(null)>   -   sqlMaster:select patient_id,visit_id,oper_id,oper_room from med_operation_master where start_date_time> to_date('2016/2/22 6:00:00','yyyy-MM-dd HH24:mi:ss')
+2016-02-22 16:40:28,157   [5]   DEBUG   File   [(null)]   <(null)>   -   masterList:System.Collections.Generic.List`1[MedicalSytem.Soft.Model.MedOperationMaster]
+2016-02-22 16:40:28,237   [5]   DEBUG   File   [(null)]   <(null)>   -   str:2300
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

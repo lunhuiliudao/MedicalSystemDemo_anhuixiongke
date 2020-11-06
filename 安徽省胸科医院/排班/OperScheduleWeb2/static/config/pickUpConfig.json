@@ -1,0 +1,116 @@
+{
+  "pickUp": [
+    {
+      "field": "SCHEDULEDDATETIME",
+      "lable": "时间",
+      "width": 0
+    },
+    {
+      "field": "OPERROOMNO",
+      "lable": "手术间",
+      "width": 0
+    },
+    {
+      "field": "SEQUENCE",
+      "lable": "台次",
+      "width": 0
+    },
+    {
+      "field": "INP_NO",
+      "lable": "住院号",
+      "width": 0
+    },
+    {
+      "field": "PATIENTNAME",
+      "lable": "姓名",
+      "width": 0
+    },
+    {
+      "field": "SEX",
+      "lable": "性别",
+      "width": 0
+    },
+    {
+      "field": "WARD_CODE_NAME",
+      "lable": "病区",
+      "width": 0
+    },
+    {
+      "field": "AGE",
+      "lable": "年龄",
+      "width": 0
+    },
+    {
+      "field": "BED_NO",
+      "lable": "床号",
+      "width": 0
+    },
+    {
+      "field": "OPERATION_NAME",
+      "lable": "手术名称",
+      "width": 0
+    }
+  ],
+  "pickUpPrint": [
+    {
+      "field": ["SCHEDULEDDATETIME"],
+      "lable": "时间",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["OPERROOMNO"],
+      "lable": "手术间",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["SEQUENCE"],
+      "lable": "台次",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["INP_NO"],
+      "lable": "住院号",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["PATIENTNAME"],
+      "lable": "姓名",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["SEX"],
+      "lable": "性别",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["WARD_CODE_NAME"],
+      "lable": "病区",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["AGE"],
+      "lable": "年龄",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["BED_NO"],
+      "lable": "床号",
+      "separator":"",
+      "width": 0
+    },
+    {
+      "field": ["OPERATION_NAME"],
+      "lable": "手术名称",
+      "separator":"",
+      "width": 0
+    }
+  ]
+}

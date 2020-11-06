@@ -1,0 +1,55 @@
+﻿@model ViewModel.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-10"><h2>麦迪斯顿系统集成平台</h2></div>
+    </div> 
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LogId, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-3">
+                            @Html.TextBoxFor(m => m.LogId, new { @class = "form-control"})
+                            @Html.ValidationMessageFor(m => m.LogId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PassWord, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-3">
+                            @Html.PasswordFor(m => m.PassWord, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.PassWord, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("", new { @class = "col-md-3 control-label" })
+                        <div class="col-md-offset-4 col-md-2">
+                            <input type="submit" value="登录" class="btn btn-default" />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                   }
+            </section>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</body>
+</html>

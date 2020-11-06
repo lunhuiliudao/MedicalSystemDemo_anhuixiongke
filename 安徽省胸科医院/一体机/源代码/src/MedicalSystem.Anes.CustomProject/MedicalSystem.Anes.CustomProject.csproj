@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MedicalSystem.Anes.Client.CustomProject.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\MedicalSystem.Anes.Client.CustomProject.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D688883-0FE9-4274-94A1-0BE30460724E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.Anes.CustomProject</RootNamespace>
+    <AssemblyName>MedicalSystem.Anes.CustomProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraBars.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MedicalSystem.Common">
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Doc\AnalgesicRecordDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnalgesicRecordDoc.Designer.cs">
+      <DependentUpon>AnalgesicRecordDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext.cs" />
+    <Compile Include="Doc\AnesAfterVisiterDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesAfterVisiterDoc.Designer.cs">
+      <DependentUpon>AnesAfterVisiterDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesAgreementDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesAgreementDoc.designer.cs">
+      <DependentUpon>AnesAgreementDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesChuFangDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesChuFangDoc.Designer.cs">
+      <DependentUpon>AnesChuFangDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesDoc\AnesDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesDoc\AnesDoc.designer.cs">
+      <DependentUpon>AnesDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\AnesSheetDetailsHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\DrugGraphHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\GridGraphHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\LegengGraphHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\PopupDrugSelector.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\SHATMedSheetHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesDocHandlers\VitalSignGraphHandler.cs" />
+    <Compile Include="Doc\AnesDoc\AnesVisitDocHandlers\SYRMGridViewCellValueChangeEventArgs.cs" />
+    <Compile Include="Doc\AnesDoc\AnesVisitDocHandlers\SYRMGridViewHandler.cs" />
+    <Compile Include="Doc\AnesDoc\DocHandlers\SDLabelHandler.cs" />
+    <Compile Include="Doc\AnesDoc\DocHandlers\SDPanelHandler.cs" />
+    <Compile Include="Doc\AnesDoc\DocHandlers\SDTextBoxHandler.cs" />
+    <Compile Include="Doc\AnesDoc\PACUDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesDoc\PACUDoc.Designer.cs">
+      <DependentUpon>PACUDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesPlanDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesPlanDoc.Designer.cs">
+      <DependentUpon>AnesPlanDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesQualityControlDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesQualityControlDoc.Designer.cs">
+      <DependentUpon>AnesQualityControlDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesSummaryDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesSummaryDoc.Designer.cs">
+      <DependentUpon>AnesSummaryDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\AnesVisitDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\AnesVisitDoc.Designer.cs">
+      <DependentUpon>AnesVisitDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\ConsultationRecordDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\ConsultationRecordDoc.Designer.cs">
+      <DependentUpon>ConsultationRecordDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\PacuNursingDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\PacuNursingDoc.designer.cs">
+      <DependentUpon>PacuNursingDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\PatientHandoverDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\PatientHandoverDoc.designer.cs">
+      <DependentUpon>PatientHandoverDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\PreoperativeCaseDiscussion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\PreoperativeCaseDiscussion.designer.cs">
+      <DependentUpon>PreoperativeCaseDiscussion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\RiskAssessmentDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\RiskAssessmentDoc.Designer.cs">
+      <DependentUpon>RiskAssessmentDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\TransfusionEvaluateDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\TransfusionEvaluateDoc.Designer.cs">
+      <DependentUpon>TransfusionEvaluateDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CustomBaseDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Framework\CustomBaseDoc.designer.cs">
+      <DependentUpon>CustomBaseDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomSetting\CustomSetting.cs" />
+    <Compile Include="Doc\ExtendCustomControlHandler.cs" />
+    <Compile Include="Doc\MultiPrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc\MultiPrintFrm.designer.cs">
+      <DependentUpon>MultiPrintFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\OperationCheckDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\OperationCheckDoc.Designer.cs">
+      <DependentUpon>OperationCheckDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\OperationInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\OperationInformation.Designer.cs">
+      <DependentUpon>OperationInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\OperCheckGridViewHandler.cs" />
+    <Compile Include="Doc\RegisterAfterOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\RegisterAfterOperation.Designer.cs">
+      <DependentUpon>RegisterAfterOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\SafetyCheckDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\SafetyCheckDoc.Designer.cs">
+      <DependentUpon>SafetyCheckDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CustomPrinter.cs" />
+    <Compile Include="Framework\CustomDoublePrinter.cs" />
+    <Compile Include="Framework\CustomSinglePrinter.cs" />
+    <Compile Include="OperationDocLib.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DateMoth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DateMoth.designer.cs">
+      <DependentUpon>DateMoth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DateYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DateYear.designer.cs">
+      <DependentUpon>DateYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DictTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\EditEventItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EditEventItem.Designer.cs">
+      <DependentUpon>EditEventItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControl_BreathParas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControl_BreathParas.Designer.cs">
+      <DependentUpon>UserControl_BreathParas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VitalSignShowEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\VitalSignShowEditor.Designer.cs">
+      <DependentUpon>VitalSignShowEditor.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.Anes.Document\MedicalSystem.Anes.Document.csproj">
+      <Project>{d8dbdd51-dac9-4add-a4a3-6b08115e4777}</Project>
+      <Name>MedicalSystem.Anes.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.FrameWork\MedicalSystem.Anes.FrameWork.csproj">
+      <Project>{2A23BDA0-1F81-4779-B1C4-A874B2475750}</Project>
+      <Name>MedicalSystem.Anes.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.DataServices\MedicalSystem.AnesWorkStation.DataServices.csproj">
+      <Project>{95c5bb6a-6351-4382-90c9-938c9a3bf997}</Project>
+      <Name>MedicalSystem.AnesWorkStation.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Domain\MedicalSystem.AnesWorkStation.Domain.csproj">
+      <Project>{ee71da80-4e68-4a94-aefa-acbe2565be5e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Model\MedicalSystem.AnesWorkStation.Model.csproj">
+      <Project>{0b3a7dbd-f135-4c43-81b7-29ca55afdddd}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EMRFSRVS.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Doc\AnesAgreementDoc.resx">
+      <DependentUpon>AnesAgreementDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc\AnesDoc\AnesDoc.resx">
+      <DependentUpon>AnesDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc\MultiPrintFrm.resx">
+      <DependentUpon>MultiPrintFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc\PacuNursingDoc.resx">
+      <DependentUpon>PacuNursingDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Views\DateMoth.resx">
+      <DependentUpon>DateMoth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DateYear.resx">
+      <DependentUpon>DateYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditEventItem.resx">
+      <DependentUpon>EditEventItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControl_BreathParas.resx">
+      <DependentUpon>UserControl_BreathParas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VitalSignShowEditor.resx">
+      <DependentUpon>VitalSignShowEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

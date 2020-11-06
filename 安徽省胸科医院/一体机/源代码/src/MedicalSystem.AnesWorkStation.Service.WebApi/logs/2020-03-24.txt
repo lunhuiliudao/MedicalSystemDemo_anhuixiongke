@@ -1,0 +1,255 @@
+========[Header]========
+
+2020-03-24 09:01:13,804   [8]   ERROR - WebApi错误：/Api/PlatformAnesQuery/QueryOperListForDoctorIndex
+System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "DIAG_AFTER_OPERATION": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Data.DapperSet`1.Query(String sql, Object param, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 299
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformAnesQueryService.GetOperListForDoctorIndex(OperQueryParaModel model) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformAnesQueryService.cs:行号 321
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformAnesQueryController.QueryOperListForDoctorIndex(OperQueryParaModel model) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformAnesQueryController.cs:行号 42
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:02:57,613   [7]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005396&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingAfter(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 513
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 758
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:03:46,743   [39]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005396&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingAfterShiftPacu(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 533
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 759
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:04:09,120   [40]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005735&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingAfterShiftWard(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 553
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 760
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:04:31,777   [50]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005735&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingBeforeAssess(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 573
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 761
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:04:54,314   [6]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005670&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingBeforeShift(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 593
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 762
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:05:22,084   [6]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005627&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingQdNurse(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 613
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 763
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:05:42,563   [56]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019004582&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Data.DapperSet`1.Select(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 200
+   在 Dapper.Data.DapperSet`1.Select(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 189
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingTour(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 633
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 764
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:06:03,055   [7]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005670&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Extension.DbConnectionExtensions.Single[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 289
+   在 Dapper.Data.DapperSet`1.Single(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 232
+   在 Dapper.Data.DapperSet`1.Single(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 221
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingYwAssess(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 661
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 765
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+2020-03-24 09:06:25,049   [56]   ERROR - WebApi错误：/Api/PlatformNurseManage/QueryMedicalBasicDoc?PATIENTID=2019005828&VISITID=1&OPERID=1&StatusType=1&DocName=%E6%8A%A4%E7%90%86%E8%AE%B0%E5%BD%95%E5%8D%95
+System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__11`1.MoveNext() 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1634
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\SqlMapper.cs:行号 1524
+   在 Dapper.Extension.DbConnectionExtensions.Select[TEntity,TFields](IDbConnection dbConn, Func`2 onlyFields, Expression`1 where, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Extension\DbConnectionExtensions.cs:行号 271
+   在 Dapper.Data.DapperSet`1.Select(Func`2 onlyFields, Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 200
+   在 Dapper.Data.DapperSet`1.Select(Expression`1 where) 位置 d:\NewProjects\基础开发组件平台库\MDK\Common\Dapper.ORM\Data\DapperSet.cs:行号 189
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.GetMedNursingQingDian(String PATIENTID, Int32 VISITID, Int32 OPERID) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 681
+   在 MedicalSystem.AnesWorkStation.DataServices.PlatformNurseManageService.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.DataServices\Platform\PlatformNurseManageService.cs:行号 766
+   在 MedicalSystem.AnesWorkStation.Service.WebApi.Controllers.Platform.PlatformNurseManageController.QueryMedicalBasicDoc(String PATIENTID, Int32 VISITID, Int32 OPERID, String StatusType, String DocName) 位置 D:\Code\MedicalSystem\客户化\华东\安徽省胸科医院\一体机\源代码\src\MedicalSystem.AnesWorkStation.Service.WebApi\Controllers\Platform\PlatformNurseManageController.cs:行号 145
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)

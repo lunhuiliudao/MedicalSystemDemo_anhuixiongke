@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.Wpf">   
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/RadioButton.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/TextBox.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/ComboBox.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/TextBlock.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/SearchTextBox.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/Button.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/CheckBox.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/DataGrid.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/ConfirmMessageBox.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/TreeView.xaml"/>
+        <ResourceDictionary Source="/MedicalSystem.AnesWorkStation.Wpf;component/Themes/Default/Calendar.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

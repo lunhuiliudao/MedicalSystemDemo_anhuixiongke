@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "VerUpdateAllView";
+    Layout = "~/Areas/UpdateServer/Views/Shared/_Page.cshtml";
+}
+
+<table id="dg" class="easyui-datagrid" title="" style="width:100%;height:100%"
+       data-options="rownumbers:true,singleSelect:true,pagination:true,pageSize:10,toolbar:'#tb'">
+    <thead>
+        <tr>
+            <th data-options="field:'APP_KEY',width:80">主键号</th>
+            <th data-options="field:'APP_NAME',width:150">应用程序名称</th>
+            <th data-options="field:'VER_NO',width:80">版本号</th>
+            <th data-options="field:'SYSTEM_NAME',width:120">机器名</th>
+            <th data-options="field:'IP',width:100">IP</th>
+            <th data-options="field:'APP_NAME',width:120">应用程序名称</th>
+            <th data-options="field:'IS_DOWNLOAD',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:60">是否下载</th>
+            <th data-options="field:'DOWNLOAD_TIME',width:100,formatter:dateTime">下载时间</th>
+            <th data-options="field:'IS_UPDATED',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:60">是否更新</th>
+            <th data-options="field:'UPDATED_TIME',width:100,formatter:dateTime">更新时间</th>
+            <th data-options="field:'ROLL_BACK',formatter:function(value){if(value==1){return '是'}else{return '否'}},width:60">是否回退</th>
+            <th data-options="field:'ROLL_BACK_TIME',width:100,formatter:dateTime">回退时间</th>
+            <th data-options="field:'CREATE_TIME',width:100,formatter:dateTime">创建时间</th>
+        </tr>
+    </thead>
+</table>
+<div id="tb" style="padding:5px;height:auto">
+    <div style="margin-bottom:5px">
+        <select id="APP_ID" class="easyui-combogrid" name="APP_ID" style="width:250px" data-options="
+                panelWidth: 250,
+                idField: 'APP_ID' ,
+                textField: 'APP_NAME' ,
+                url: '/App/GetList' ,
+                method: 'post' ,
+                columns: [[
+                {field:'APP_KEY',title:'Key',width:80},
+                {field:'APP_NAME',title:'应用程序名称',width:200}
+                ]],
+                fitColumns: true,
+                prompt:'应用程序'"></select>
+        <select id="VER_ID" class="easyui-combogrid" name="VER_ID" style="width:250px" data-options="
+                panelWidth: 250,
+                idField: 'VER_ID' ,
+                textField: 'VER_NO' ,
+                url: '/Version/GetList?appID=null',
+                method: 'post' ,
+                columns: [[
+                {field:'VER_NO',title:'版本号',width:80},
+                {field:'DESCRIPTION',title:'描述',width:200}
+                ]],
+                fitColumns: true,
+                prompt:'发布版本'"></select>
+        <a id="submit_search">查询</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function getData() {
+        var jsonurl = "/VerUpdateRec/VerUpdateAllList?&appID=" + $('#APP_ID').combogrid('getValue') + '&verionID=' + $('#VER_ID').combogrid('getValue');
+        var data = "";
+        $.ajax({
+            url: jsonurl,
+            async: false,
+            type: "post",
+            success: function (json) {
+                data = json;
+            }
+        });
+        return data;
+    }
+
+    $(document).ready(function () {
+        $("#APP_ID").combogrid({
+            onSelect: function (n, o) {
+                $('#VER_ID').combogrid('clear');
+                $('#VER_ID').combogrid('grid').datagrid('options').url = '/UpdateServer/Version/GetAllList?appID=' + o.APP_ID + "";
+                $('#VER_ID').combogrid('grid').datagrid('reload');
+            }
+        });
+    });
+</script>

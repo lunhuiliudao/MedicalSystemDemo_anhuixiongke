@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95C5BB6A-6351-4382-90C9-938C9A3BF997}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.AnesWorkStation.DataServices</RootNamespace>
+    <AssemblyName>MedicalSystem.AnesWorkStation.DataServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\lib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.ORM.v1.1">
+      <HintPath>..\..\lib\Dapper.ORM.v1.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.3.115.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="InterFaceV4">
+      <HintPath>..\..\lib\InterFaceV4.dll</HintPath>
+    </Reference>
+    <Reference Include="InterFaceV5">
+      <HintPath>..\..\lib\InterFaceV5.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Common">
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Permission.DataServices">
+      <HintPath>..\..\lib\MedicalSystem.Permission.DataServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountService.cs" />
+    <Compile Include="AnesInfoService.cs" />
+    <Compile Include="AnesScoreService.cs" />
+    <Compile Include="AnesWorkStationInstaller.cs" />
+    <Compile Include="AsyncHandleData.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="CareDocService.cs" />
+    <Compile Include="CASignedService.cs" />
+    <Compile Include="ChargeInfoService.cs" />
+    <Compile Include="CommonService.cs" />
+    <Compile Include="ConfigService.cs" />
+    <Compile Include="ContactManager .cs" />
+    <Compile Include="DictService.cs" />
+    <Compile Include="ExcelUtil\ExcelToHtml.cs" />
+    <Compile Include="Pacu\PacuOperationScheduleService.cs" />
+    <Compile Include="Pacu\PacuQueryService.cs" />
+    <Compile Include="Pacu\PacuShiftOperationInfoService.cs" />
+    <Compile Include="Pacu\PacuSyncInfoService.cs" />
+    <Compile Include="Pacu\PacuUserService.cs" />
+    <Compile Include="Pacu\PacuAccountService.cs" />
+    <Compile Include="Pacu\PacuAnesEventService.cs" />
+    <Compile Include="Pacu\PacuCommDictService.cs" />
+    <Compile Include="Pacu\PacuCommonService.cs" />
+    <Compile Include="Pacu\PacuCoordinationService.cs" />
+    <Compile Include="Pacu\PacuDailyScheduleService.cs" />
+    <Compile Include="Pacu\PacuOperationInfoService.cs" />
+    <Compile Include="Pacu\PacuPatientInfoService.cs" />
+    <Compile Include="Pacu\PacuPermissionService.cs" />
+    <Compile Include="Pacu\PacuPOPEventService.cs" />
+    <Compile Include="PatInfoService.cs" />
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="Platform\PlatformAccountService.cs" />
+    <Compile Include="Platform\PlatformAnesInfoService.cs" />
+    <Compile Include="Platform\PlatformAnesPlatformInstaller.cs" />
+    <Compile Include="Platform\PlatformAnesQueryService.cs" />
+    <Compile Include="Platform\PlatformAnesShiftService.cs" />
+    <Compile Include="Platform\PlatformAsyncHandleData.cs" />
+    <Compile Include="Platform\PlatformCASignedService.cs" />
+    <Compile Include="Platform\PlatformChargeInfoService.cs" />
+    <Compile Include="Platform\PlatformCommonService.cs" />
+    <Compile Include="Platform\PlatformDataService.cs" />
+    <Compile Include="Platform\PlatformNurseManageService.cs" />
+    <Compile Include="Platform\PlatformPatientRecordService.cs" />
+    <Compile Include="Platform\PlatformQcDictXMLHelper.cs" />
+    <Compile Include="Platform\PlatformQuanlityControlService.cs" />
+    <Compile Include="Platform\PlatformSendWeChatDataService.cs" />
+    <Compile Include="Platform\PlatformSurgicalMonitorService.cs" />
+    <Compile Include="Platform\PlatformSysConfigServices.cs" />
+    <Compile Include="Platform\PlatformWeChatCloudService.cs" />
+    <Compile Include="Platform\PlatformWeChatHospitalService.cs" />
+    <Compile Include="Platform\PlatformWeChatPermissionService.cs" />
+    <Compile Include="Platform\PlatformWeChatUserService.cs" />
+    <Compile Include="Platform\PlatformWeiXinService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\ScheduleAccountService.cs" />
+    <Compile Include="Schedule\ScheduleCommonService.cs" />
+    <Compile Include="Schedule\ScheduleOperCancelService.cs" />
+    <Compile Include="Schedule\ScheduleOperScheduleInstaller.cs" />
+    <Compile Include="Schedule\ScheduleOperScheduleService.cs" />
+    <Compile Include="Schedule\ScheduleSyncInfoService.cs" />
+    <Compile Include="Screen\AAAStatistics.cs" />
+    <Compile Include="Screen\ConvertSqlHelper.cs" />
+    <Compile Include="Screen\OperProgressService.cs" />
+    <Compile Include="Screen\ScreenCommonService.cs" />
+    <Compile Include="Screen\ScreenConfigService.cs" />
+    <Compile Include="Screen\ScreenService.cs" />
+    <Compile Include="SyncInfoService.cs" />
+    <Compile Include="UpdateService.cs" />
+    <Compile Include="WebApi\BaseRepository.cs" />
+    <Compile Include="WebApi\MyHttpClienHanlder.cs" />
+    <Compile Include="WebApi\WebApiRepository.cs" />
+    <Compile Include="WebApi\WebApiSetting.cs" />
+    <Compile Include="WebApi\WebApiVisitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.AnesWorkStation.Domain\MedicalSystem.AnesWorkStation.Domain.csproj">
+      <Project>{ee71da80-4e68-4a94-aefa-acbe2565be5e}</Project>
+      <Name>MedicalSystem.AnesWorkStation.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

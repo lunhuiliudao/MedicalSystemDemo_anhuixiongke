@@ -1,0 +1,54 @@
+﻿@model Entitys.DataConfig
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>本地数据库配置</h2>
+@using (Html.BeginForm("Edit"))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebServerUrlA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WebServerUrlA, new { @class = "form-control ws", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.WebServerUrlA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebServerUrlB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WebServerUrlB, new { @class = "form-control ws", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.WebServerUrlB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="database">
+            @Html.LabelFor(model => model.WebServerUrlC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WebServerUrlC, new { @class = "form-control ws", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.WebServerUrlC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebServerUrlD, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WebServerUrlD, new { @class = "form-control ws", @readOnly = "readOnly" })
+                @Html.ValidationMessageFor(model => model.WebServerUrlD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebServerUrlE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WebServerUrlE, new { @class = "form-control ws", @readOnly = "readOnly"})
+                @Html.ValidationMessageFor(model => model.WebServerUrlE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+               @Html.ActionLink("编辑", "Edit")
+            </div>
+        </div>
+    </div>
+}
+ 
+

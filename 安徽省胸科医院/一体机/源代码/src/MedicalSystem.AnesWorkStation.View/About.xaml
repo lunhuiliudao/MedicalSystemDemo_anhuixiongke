@@ -1,0 +1,44 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+             xmlns:convert="clr-namespace:MedicalSystem.AnesWorkStation.View.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="230" d:DesignWidth="500">
+    <UserControl.Resources>
+        <convert:AboutConverter x:Key="AboutConverter" />
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="Images/main-icon.ico" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="128" Height="128"/>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="0" VerticalAlignment="Center"  Margin="20,0">
+            <TextBlock Text="麻醉信息工作站" Grid.Row="0" Margin="0,5"
+                   HorizontalAlignment="Left" FontSize="20"
+                   Style="{StaticResource PopupWindowTopFont}" />
+            <TextBlock Text="麦迪斯顿医疗科股份有限公司" Grid.Row="0"
+                   HorizontalAlignment="Left" FontSize="13"
+                   Style="{StaticResource PopupWindowTopFont}" />
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="20,0" VerticalAlignment="Center" >
+            <TextBlock FontSize="13" Margin="0,5" Text="{Binding MainVersionInfo}" />
+            <TextBlock FontSize="13" Margin="0,5" Text="{Binding LatestVersionInfo}"  Foreground="{Binding HasDiff,Converter={StaticResource AboutConverter}}"/>
+            <TextBlock FontSize="13" Margin="0,5" Text="Copyright MedicalSystem Co.,Ltd." />
+        </StackPanel>
+
+    </Grid>
+</local:BaseUserControl>

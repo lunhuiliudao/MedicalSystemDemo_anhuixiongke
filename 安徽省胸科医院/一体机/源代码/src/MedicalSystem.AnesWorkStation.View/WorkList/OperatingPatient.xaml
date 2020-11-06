@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="MedicalSystem.AnesWorkStation.View.WorkList.OperatingPatient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.View.WorkList"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="388" d:DesignWidth="1080">
+    <UserControl.Resources>
+        <control:OperTimeShowConvert x:Key="operTimeShowConvert" />
+        <Style TargetType="TextBlock"  x:Key="_textsubtitlestyle">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#486B4C" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="_itemTitile">
+            <Setter Property="Margin" Value="9,0,0,0" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource _itemTitile}" x:Key="_itemsubTitle">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ListBoxItem" x:Key="_listboxItemStyle">
+
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="90" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid>
+                            <Grid.Background>
+                                <ImageBrush ImageSource="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/ItemBg.fw.png" />
+                            </Grid.Background>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding ItemName}" Style="{StaticResource _itemTitile}" Grid.Row="0" />
+                            <TextBlock Text="{Binding ItemValue}" Style="{StaticResource _itemsubTitle}"
+                                       HorizontalAlignment="Center"
+                                       TextAlignment="Center" Grid.Row="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ListBox" x:Key="_listBoxStyle" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemContainerStyle" Value="{StaticResource _listboxItemStyle}" />
+        </Style>
+
+        <Style x:Key="ButtonStyle34" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent" Margin="0,0,0,0" >
+                            <ContentPresenter />
+                            <Image Name="ImgBtnBg3"  Visibility="Collapsed" Opacity=".5" 
+                                   Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Operation_press.png" Stretch="Fill"/>
+                            <Image Name="ImgBtnBg4"  Visibility="Collapsed" Opacity=".5" 
+                                   Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Operation_hover.png" Stretch="Fill"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Visibility" Value="Visible" TargetName="ImgBtnBg3"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Visibility" Value="Visible" TargetName="ImgBtnBg4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#FFFFFF" MouseDown="Grid_MouseDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270*" />
+            <ColumnDefinition Width="750*" />
+            <ColumnDefinition Width="60*" />
+        </Grid.ColumnDefinitions>
+        <Border x:Name="Ischoosed" Visibility="{Binding IsSelectedBorderVisibility}"  Grid.ColumnSpan="3">
+            <Border.Background>
+                <ImageBrush ImageSource="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/OperatingChoosed.png" />
+            </Border.Background>
+        </Border>
+        <Canvas Grid.Column="0" Visibility="{Binding HasOperationVisibility}">
+            <Image Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/OperationIcon.png" Canvas.Left="60" Width="169"  Canvas.Top="80" />
+            <Image Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/OperationIcon_Center.png" 
+                   Canvas.Left="60" Width="169" Height="180"  Canvas.Top="130" />
+            <Image Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Operating.png" Canvas.Left="60" Width="169"  Canvas.Top="80" />
+            <TextBlock Text="手术间" FontSize="25" Canvas.Right="0" Canvas.Top="48" Foreground="#7FCBCC" Canvas.Left="65" Width="150" Height="30"/>
+            <TextBlock x:Name="operRoomNo" FontSize="25" Text="{Binding Path= CurPatientModel.OperRoomNo}"
+                       Canvas.Right="0" Canvas.Top="48" Foreground="#7FCBCC" Canvas.Left="145" Width="80" Height="30"/>
+
+            <Grid Width="82" Height="22" Canvas.Top="332" Canvas.Left="60">
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding AnesMachineVisibility}"
+                       Source="Assets/IsProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding MonitorVisibility}"
+                       Source="Assets/NoProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding MonitorAndAnesMachineVis}"
+                       Source="Assets/NoProductUsedWhite.png" />
+                <TextBlock  FontSize="14" Text="麻醉机" TextAlignment="Left"
+                            VerticalAlignment="Center" Foreground="White" Margin="23,1,0,3"/>
+            </Grid>
+            
+            <Grid Width="82" Height="22" Visibility="Collapsed" Canvas.Top="288" Canvas.Left="60">
+                <Image Source="Assets/ProductUsedBg.fw.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left"  
+                       Source="Assets/IsProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5"                     
+                     HorizontalAlignment="Left"
+                   
+                Source="Assets/NoProductUsedWhite.png" />
+                <TextBlock  FontSize="14" Text="麻醉机" TextAlignment="Left"
+                            VerticalAlignment="Center" Foreground="White" Margin="23,1,0,3"/>
+            </Grid>
+
+            <Grid Width="82"  Visibility="Collapsed" Height="22" Canvas.Top="288" Canvas.Left="60">
+                <Image Source="Assets/ProductUsedBg.fw.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left"  
+                       Source="Assets/IsProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5"                     
+                     HorizontalAlignment="Left"
+                   
+                Source="Assets/NoProductUsedWhite.png" />
+                <TextBlock  FontSize="14" Text="监护仪" TextAlignment="Left"
+                            VerticalAlignment="Center" Foreground="White" Margin="23,1,0,3"/>
+            </Grid>
+
+            <Grid Width="82" Height="22" Canvas.Top="332" Canvas.Left="148">
+                <Image Height="16" Width="16" Margin="2,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding MonitorVisibility}"
+                       Source="Assets/IsProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding AnesMachineVisibility}"               
+                       Source="Assets/NoProductUsedWhite.png" />
+                <Image Height="16" Width="16" Margin="3,2.5,0,3.5" HorizontalAlignment="Left" Visibility="{Binding MonitorAndAnesMachineVis}"
+                       Source="Assets/NoProductUsedWhite.png" />
+                <TextBlock  FontSize="14" Text="监护仪" TextAlignment="Left"
+                            VerticalAlignment="Center" Foreground="White" Margin="23,1,0,3"/>
+            </Grid>
+
+         
+
+        </Canvas>
+        <Grid Margin="5,0,0,0" Grid.Column="1" Visibility="{Binding HasOperationVisibility}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="105*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="104*" />
+                <RowDefinition Height="80*" />
+            </Grid.RowDefinitions>
+            <StackPanel  Orientation="Vertical" Grid.Row="1">
+                <control:SequenceAndTimerControl Width="103" x:Name="sequenceAndTimerControl" 
+                                                 CurPatientModel="{Binding CurPatientModel}"
+                                                 Height="30" HorizontalAlignment="Right">
+                    <control:SequenceAndTimerControl.Background>
+                        <ImageBrush ImageSource="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Optime.png" />
+                    </control:SequenceAndTimerControl.Background>
+                </control:SequenceAndTimerControl>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="name" Text="{Binding Path=CurPatientModel.Name }"  FontSize="30" VerticalAlignment="Top"  TextAlignment="Left" />
+                    <TextBlock x:Name="sex" Text="{Binding Path=CurPatientModel.Sex }" Margin="45,0,0,0" Style="{StaticResource _textsubtitlestyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="age" Text="{Binding Path= CurPatientModel.Age}" Margin="45,0,0,0" Style="{StaticResource _textsubtitlestyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="inpNo" Text="{Binding Path= CurPatientModel.InpNo}" Margin="45,0,0,0" Style="{StaticResource _textsubtitlestyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="bedNo" Text="{Binding Path= CurPatientModel.BedNo}" Margin="45,0,0,0" Style="{StaticResource _textsubtitlestyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="operDeptName" Text="{Binding Path= CurPatientModel.DeptCodeName }" Margin="45,0,0,0" Style="{StaticResource _textsubtitlestyle}" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="operationName" Text="{Binding Path= CurPatientModel.OperationName }"
+                               Style="{StaticResource _textsubtitlestyle}"
+                               FontSize="20" 
+                               Foreground="#1EB2AA"
+                               Width="690" />
+                    <TextBlock x:Name="operScale" Text="{Binding Path= CurPatientModel.OperScale}" 
+                               VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0,0"
+                               Style="{StaticResource _textsubtitlestyle}" />
+                </StackPanel>
+                <TextBlock Height="5" />
+                <Image Name="fenGe" VerticalAlignment="Bottom" Visibility="Visible" Source="Assets/FenGeLine.png" />
+            </StackPanel>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*" />
+                    <ColumnDefinition Width="600*" />
+                    <ColumnDefinition Width="90*" />
+                </Grid.ColumnDefinitions>
+                <Image Height="24" Width="24" HorizontalAlignment="Left" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/icon/IconAsg.fw.png" />
+                <Image Height="24" Width="24" Grid.Row="1" HorizontalAlignment="Left" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/icon/icondtr.fw.png" />
+                <TextBlock x:Name="anesMethod" Grid.Column="1" Text="{Binding Path= CurPatientModel.AnesMethod}" VerticalAlignment="Center" 
+                           Foreground="#5B5B5B"
+                           HorizontalAlignment="Left" Style="{StaticResource _textsubtitlestyle}" />
+                <!--ASA分级-->
+                <control:ImageSource ImagePathValue="{Binding CurPatientModel.AsaGrade}" CurEnumImagePath="AsaGrade"
+                                     Grid.Column="2" x:Name="asaGrade" Width="40" Height="40" VerticalAlignment="Bottom" Margin="10,0,0,0" />
+
+                <StackPanel VerticalAlignment="Center"  Orientation="Horizontal"  Grid.Column="1" Grid.Row="1">
+                    <TextBlock x:Name="surgeonAndAss" Text="{Binding Path= CurPatientModel.SurgeonAndAss}"  
+                                    Foreground="#5B5B5B"
+                           HorizontalAlignment="Left" Style="{StaticResource _textsubtitlestyle}" />
+                    <TextBlock x:Name="anesDocAndAss" Text="{Binding Path= CurPatientModel.AnesDocAndAss}"    Margin="30,0,0,0"                  
+                                    Foreground="#5B5B5B"
+                           HorizontalAlignment="Left" Style="{StaticResource _textsubtitlestyle}" />
+
+                </StackPanel>
+                <TextBlock x:Name="operPosition" Grid.Column="2"  Grid.Row="1"  Text="{Binding Path= CurPatientModel.OperPosition }" VerticalAlignment="Center"   
+                           HorizontalAlignment="Left" Style="{StaticResource _textsubtitlestyle}" />
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Image VerticalAlignment="Top" Visibility="Visible" Source="Assets/FenGeLine.png" />
+                <TextBlock Text="手术进程" Foreground="#5B5B5B" 
+                      FontWeight="Bold"
+                     Width="80" HorizontalAlignment="Left" FontSize="18"                            
+                      VerticalAlignment="Center"/>
+                <Grid Margin="100,0,0,0">
+                    <Image Margin="30,0,0,0" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Progressbarbg.fw.png" Width="450" HorizontalAlignment="Left" />
+                    <control:ProgressInfo Margin="30,0,0,0" Width="450" HorizontalAlignment="Left" x:Name="_progressState" CurOperStatusCode="{Binding CurPatientModel.OperStatusCode}" />
+                    <StackPanel Height="23" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,21,0,0">
+                        <TextBlock Text="入手术室" Margin="5,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+                        <TextBlock Text="麻醉开始" Margin="15,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+
+                        <TextBlock Text="手术开始" Margin="20,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+
+                        <TextBlock Text="手术结束" Margin="30,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+
+                        <TextBlock Text="麻醉结束" Margin="20,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+
+                        <TextBlock Text="出手术室" Margin="35,0,0,0" FontSize="16" Foreground="#5B5B5B" />
+                    </StackPanel>
+                    <StackPanel Height="26" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock x:Name="inDateTime" Text="{Binding Path= CurPatientModel.InDateTime, StringFormat=HH:mm}" 
+                                   FontFamily="黑体" Margin="5,0,0,0" FontSize="18" Foreground="#5B5B5B" 
+                                   Visibility="{Binding ElementName=inDateTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+                        <TextBlock x:Name="anesStartTime" Text="{Binding Path= CurPatientModel.AnesStartTime, StringFormat=HH:mm}" 
+                                   Width="48" Margin="45,0,0,0" FontSize="16" Foreground="#5B5B5B" 
+                                   Visibility="{Binding ElementName=anesStartTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+                        <StackPanel x:Name="X1" Width="88">
+                        <TextBlock x:Name="startDateTime" Text="{Binding Path= CurPatientModel.StartDateTime, StringFormat=HH:mm }" 
+                                   Width="48" Margin="40,0,0,0" FontSize="16" Foreground="#5B5B5B"
+                                   Visibility="{Binding ElementName=startDateTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+                        </StackPanel>
+                        <StackPanel x:Name="X2" Width="88">
+                            <TextBlock x:Name="endDateTime" Text="{Binding Path= CurPatientModel.EndDateTime, StringFormat=HH:mm }" 
+                                   Width="48" Margin="40,0,0,0" FontSize="16" Foreground="#5B5B5B"
+                                   Visibility="{Binding ElementName=endDateTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+                        </StackPanel>
+                        <TextBlock x:Name="anesEndTime" Text="{Binding Path= CurPatientModel.AnesEndTime, StringFormat=HH:mm }" 
+                                   Width="48" Margin="35,0,0,0" FontSize="16" Foreground="#5B5B5B" 
+                                   Visibility="{Binding ElementName=anesEndTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+
+                        <TextBlock x:Name="outDateTime" Text="{Binding Path= CurPatientModel.OutDateTime, StringFormat=HH:mm }" 
+                                   Width="48" Margin="35,0,0,0" FontSize="16" Foreground="#5B5B5B" 
+                                   Visibility="{Binding ElementName=outDateTime, Path=Text, Converter={StaticResource operTimeShowConvert}}"/>
+                    </StackPanel>
+                    <!--手术时长-->
+                    <TextBlock Text="{Binding OperationLength}" Margin="550, 30, 10, 30 " FontSize="16" Foreground="#fa907c" />
+                </Grid>
+                <Image VerticalAlignment="Bottom" Visibility="Visible" Source="Assets/FenGeLine.png" />
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <TextBlock Text="实时体征" Foreground="#5B5B5B" 
+                      FontWeight="Bold"
+                     Width="80" HorizontalAlignment="Left" FontSize="18"                            
+                      VerticalAlignment="Center"/>
+                <Grid Margin="100,0,0,0">
+                    <ListBox x:Name="_list" Style="{StaticResource _listBoxStyle}" ItemsSource="{Binding Path= Signinfolist}">
+                    </ListBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 0, 10">
+                        <!--放射标识-->
+                        <control:ImageSource ImagePathValue="{Binding CurPatientModel.RadiateInd}" 
+                                             CurEnumImagePath="RadiateInd"
+                                             x:Name="radiateInd" Width="22" Height="22" VerticalAlignment="Bottom"/>
+                        <!--隔离标识-->
+                        <control:ImageSource ImagePathValue="{Binding CurPatientModel.IsolationInd}" 
+                                             CurEnumImagePath="IsolationInd"
+                                             x:Name="isolationInd" Width="22" Height="22" VerticalAlignment="Bottom" Margin="10,0,0,0" />
+                        <!--急诊-->
+                        <control:ImageSource ImagePathValue="{Binding CurPatientModel.EmergencyInd}" 
+                                             CurEnumImagePath="EmergencyInd"
+                                             x:Name="emergencyInd" Width="22" Height="22" VerticalAlignment="Bottom" Margin="10,0,0,0" />
+                        
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <!--查看正在手术的患者信息-->
+        <Button x:Name="btnShowOperation" Grid.Column="2" Height="45" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"
+                Style="{StaticResource ButtonStyle34}" Command="{Binding ShowOperatingInfoCommand}" 
+                Visibility="{Binding HasOperationVisibility}" >
+            <Image Margin="0" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Operation_normal.png" />
+        </Button>
+        <!--<Image Grid.Column="2" Height="45" Width="45" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/Operation_normal.png" />-->
+
+        <!--当前没有患者手术时显示的背景图片-->
+        <Image Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/NoOperation.png" 
+               Visibility="{Binding NoOperationVisibility}"  Height="257" Width="293" Grid.ColumnSpan="3"/>
+    </Grid>
+</UserControl>

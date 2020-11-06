@@ -1,0 +1,13 @@
+-- Alter table 
+alter table MED_ANESTHESIA_EVENT_TEMPLET
+  storage
+  (
+    next 1
+  )
+;
+-- Add/modify columns 
+alter table MED_ANESTHESIA_EVENT_TEMPLET modify administrator VARCHAR2(20);
+
+-- Add/modify columns 
+alter table MED_ANESTHESIA_EVENT_TEMPLET modify event_item_name VARCHAR2(60);
+

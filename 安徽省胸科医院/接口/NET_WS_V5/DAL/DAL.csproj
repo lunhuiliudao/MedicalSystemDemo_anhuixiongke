@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAA049A9-086A-4352-9224-BA37A22E6964}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DALMedAnesthesiaEvent.cs" />
+    <Compile Include="DALMedAnesthesiaEventOLE.cs" />
+    <Compile Include="DALMedAnesthesiaPlan.cs" />
+    <Compile Include="DALMedBloodGasMaster.cs" />
+    <Compile Include="DALMedDiagnosisDict.cs" />
+    <Compile Include="DALMedDiagnosisDictOLE.cs" />
+    <Compile Include="DALMedEmrArchiveDetial.cs" />
+    <Compile Include="DALMedEmrArchiveDetialExt.cs" />
+    <Compile Include="DALMedEmrUsers.cs" />
+    <Compile Include="DALMedEmrWorkPath.cs" />
+    <Compile Include="DALMedIFHisViewSql.cs" />
+    <Compile Include="DALMedIfHisViewSql2.cs" />
+    <Compile Include="DALMedIFHisViewSqlOLE.cs" />
+    <Compile Include="DALMedicalcases.cs" />
+    <Compile Include="DALMedIcuConfig.cs" />
+    <Compile Include="DALMedIFLog.cs" />
+    <Compile Include="DALMedIfRunConfigDict.cs" />
+    <Compile Include="DALMedIfRunConfigDictOLE.cs" />
+    <Compile Include="DALMedIfTransDict.cs" />
+    <Compile Include="DALMedIfTransDictOLE.cs" />
+    <Compile Include="DALMedInOrOutRec.cs" />
+    <Compile Include="DALMedOperationBillItemsOLE.cs" />
+    <Compile Include="DALMedOperationNameCanceled.cs" />
+    <Compile Include="DALMedOrdersOLE.cs" />
+    <Compile Include="DALMedDrugDict.cs" />
+    <Compile Include="DALMedDrugNameDict.cs" />
+    <Compile Include="DALMedHisUserInfo.cs" />
+    <Compile Include="DALMedMtrlDict.cs" />
+    <Compile Include="DALMedMtrlImportDetail.cs" />
+    <Compile Include="DALMedMtrlImportMaster.cs" />
+    <Compile Include="DALMedMtrlSupplierCatalog.cs" />
+    <Compile Include="DALMedOperationNameOLE.cs" />
+    <Compile Include="DALMedBedRecOLE.cs" />
+    <Compile Include="DALMedPackageDetail.cs" />
+    <Compile Include="DALMedPackageDetailOLE.cs" />
+    <Compile Include="DALMedPackageMaster.cs" />
+    <Compile Include="DALMedPackageMasterOLE.cs" />
+    <Compile Include="DALMedPatInicuInformation.cs" />
+    <Compile Include="DALMedPatMasterIndexOLE.cs" />
+    <Compile Include="DALMedOperationCanceledOLE.cs" />
+    <Compile Include="DALMedPatMonitorData.cs" />
+    <Compile Include="DALMedPerformDefaultSchedule.cs" />
+    <Compile Include="DALMedPerformDefaultScheduleOLE.cs" />
+    <Compile Include="DALMedPriceListOLE.cs" />
+    <Compile Include="DALMedOperationMasterAndNameOLE.cs" />
+    <Compile Include="DALMedInitDictOLE.cs" />
+    <Compile Include="DALMedBedRec.cs" />
+    <Compile Include="DALMedBillItemClassDict.cs" />
+    <Compile Include="DALMedBillItemClassVsHis.cs" />
+    <Compile Include="DALMedDeptDict.cs" />
+    <Compile Include="DALMedDeptDictOLE.cs" />
+    <Compile Include="DALMedHisUsers.cs" />
+    <Compile Include="DALMedHisUsersOLE.cs" />
+    <Compile Include="DALMedInitDict.cs" />
+    <Compile Include="DALMedLabResult.cs" />
+    <Compile Include="DALMedLabTestItems.cs" />
+    <Compile Include="DALMedLabTestMaster.cs" />
+    <Compile Include="DALMedOperationBillItems.cs" />
+    <Compile Include="DALMedOperationCanceled.cs" />
+    <Compile Include="DALMedOperationDict.cs" />
+    <Compile Include="DALMedOperationMaster.cs" />
+    <Compile Include="DALMedOperationMasterOLE.cs" />
+    <Compile Include="DALMedOperationName.cs" />
+    <Compile Include="DALMedOperationSchedule.cs" />
+    <Compile Include="DALMedOperationScheduleOLE.cs" />
+    <Compile Include="DALMedOrders.cs" />
+    <Compile Include="DALMedPatMasterIndex.cs" />
+    <Compile Include="DALMedPatsInHospital.cs" />
+    <Compile Include="DALMedPatsInHospitalOLE.cs" />
+    <Compile Include="DALMedPatVisit.cs" />
+    <Compile Include="DALMedPatVisitOLE.cs" />
+    <Compile Include="DALMedScheduledOperationName.cs" />
+    <Compile Include="DALMedScheduledOperationNameOLE.cs" />
+    <Compile Include="DALMedTransfer.cs" />
+    <Compile Include="DALMedTransferOLE.cs" />
+    <Compile Include="DALMedVitalSignsRecTemp.cs" />
+    <Compile Include="DALMedVsHisDepId.cs" />
+    <Compile Include="DALMedVsHisOperApplyV2.cs" />
+    <Compile Include="DALMedVsHisOperApplyV2OLE.cs" />
+    <Compile Include="DALMedVsHisOperationMaster.cs" />
+    <Compile Include="DALMedVsHisOperationSchedule.cs" />
+    <Compile Include="DALMedVsHisOperBillConsts.cs" />
+    <Compile Include="DALMedVsHisOperBillItems.cs" />
+    <Compile Include="DALMedVsHisOperBillItemsOLE.cs" />
+    <Compile Include="DALMedVsHisOrderClass.cs" />
+    <Compile Include="DALMedVsHisOrderClassOLE.cs" />
+    <Compile Include="DALMedVsHisOrders.cs" />
+    <Compile Include="DALMedVsHisOrdersOLE.cs" />
+    <Compile Include="DALMedVsHisPat.cs" />
+    <Compile Include="DALMedOperationMasterAndName.cs" />
+    <Compile Include="DALMedPriceList.cs" />
+    <Compile Include="DALMedVsHisPatOLE.cs" />
+    <Compile Include="DALPatients.cs" />
+    <Compile Include="DALUsers.cs" />
+    <Compile Include="DALWebConfig.cs" />
+    <Compile Include="LogDALA.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="OdbcHelper.cs" />
+    <Compile Include="OleDbHelper.cs" />
+    <Compile Include="OracleHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="DALMedVsHisOrdersTrans.cs" />
+    <Compile Include="DALMedVsHisOrderClassTrans.cs" />
+    <Compile Include="DALMedOrdersTrans.cs" />
+    <Compile Include="DALMedPerformDefaultScheduleTrans.cs" />
+    <Compile Include="DALMedHisUsersTrans.cs" />
+    <Compile Include="DALMedHisUserInfoTrans.cs" />
+    <Compile Include="DALMedPriceListTrans.cs" />
+    <Compile Include="DALMedDeptDictTrans.cs" />
+    <Compile Include="DALMedBillItemClassVsHisTrans.cs" />
+    <Compile Include="DALMedPatsInHospitalTrans.cs" />
+    <Compile Include="DALMedPatVisitTrans.cs" />
+    <Compile Include="DALMedPatMasterIndexTrans.cs" />
+    <Compile Include="DALMedBedRecTrans.cs" />
+    <Compile Include="DALMedTransferTrans.cs" />
+    <Compile Include="DALMedOperationScheduleTrans.cs" />
+    <Compile Include="DALMedScheduledOperationNameTrans.cs" />
+    <Compile Include="DALMedLabTestMasterTrans.cs" />
+    <Compile Include="DALMedLabResultTrans.cs" />
+    <Compile Include="DALMedOperationNameCanceledOLE.cs" />
+    <Compile Include="DALMedEmrArchiveDetialOLE.cs" />
+    <Compile Include="DALMedLabResultOLE.cs" />
+    <Compile Include="DALMedLabTestMasterOLE.cs" />
+    <Compile Include="DALMedEmrWorkPathOLE.cs" />
+    <Compile Include="DALMedVsHisDepIdOLE.cs" />
+    <Compile Include="DALMedPatInicuInformationOLE.cs" />
+    <Compile Include="DALMedPatInicuInformationTrans.cs" />
+    <Compile Include="DALMedMonitorDict.cs" />
+    <Compile Include="DALMedMonitorDictOLE.cs" />
+    <Compile Include="DALMedIcuConfigOLE.cs" />
+    <Compile Include="DALMedicalcasesOLE.cs" />
+    <Compile Include="DALPatientsOLE.cs" />
+    <Compile Include="DALUsersOLE.cs" />
+    <Compile Include="DALMedInOrOutRecOLE.cs" />
+    <Compile Include="DALMedVitalSignsRecTempOLE.cs" />
+    <Compile Include="DALMedOperationDictOLE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{E77192FA-0788-4DA3-AEB8-F0FAD459E247}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

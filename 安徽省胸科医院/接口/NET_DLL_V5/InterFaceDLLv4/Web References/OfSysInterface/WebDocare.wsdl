@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ofsysteminterface">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paraIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OfsysteminterfaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OfsysteminterfaceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocareSysInterface">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="domain" type="tns:ParamInputDomain" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamInputDomain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Patient" type="tns:Patient" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatorBase" type="tns:OperatorBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operation" type="tns:Operation" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bar" type="tns:Bar" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmrDocUpLoad" type="tns:EmrDocUpLoad" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrInfo" type="tns:ErrInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LabTest" type="tns:LabTest" />
+          <s:element minOccurs="0" maxOccurs="1" name="Coltd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Route" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HospitalBranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reserved10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenClient" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Patient">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PatientId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitId" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="InpNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WardCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StopDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OperatorBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Operator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatorDept" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OperateTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Operation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ScheduleId" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OperId" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDataTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StopDataTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillAtr" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperStep" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OperStatus" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Performedcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HisVisitId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HisScheduleId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Bar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BarCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BarParm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmrDocUpLoad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MrClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MrSubClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArchiveKey" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArchiveTimes" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmrFileIndex" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmrFileName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Flag" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LabTest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TestNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DocareSysInterfaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocareSysInterfaceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="OfsysteminterfaceSoapIn">
+    <wsdl:part name="parameters" element="tns:Ofsysteminterface" />
+  </wsdl:message>
+  <wsdl:message name="OfsysteminterfaceSoapOut">
+    <wsdl:part name="parameters" element="tns:OfsysteminterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocareSysInterfaceSoapIn">
+    <wsdl:part name="parameters" element="tns:DocareSysInterface" />
+  </wsdl:message>
+  <wsdl:message name="DocareSysInterfaceSoapOut">
+    <wsdl:part name="parameters" element="tns:DocareSysInterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebDocareSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ofsysteminterface">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">系统集成入口，仅限麦迪斯顿内部接口,客户端调用，入参为json 字符串</wsdl:documentation>
+      <wsdl:input message="tns:OfsysteminterfaceSoapIn" />
+      <wsdl:output message="tns:OfsysteminterfaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocareSysInterface">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">麦迪斯顿集成入口，仅限麦迪斯顿内部接口，服务端调用,入参为domain 实体类</wsdl:documentation>
+      <wsdl:input message="tns:DocareSysInterfaceSoapIn" />
+      <wsdl:output message="tns:DocareSysInterfaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">麦迪斯顿集成入口，仅限麦迪斯顿内部接口，服务端调用</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebDocareSoap" type="tns:WebDocareSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ofsysteminterface">
+      <soap:operation soapAction="http://tempuri.org/Ofsysteminterface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocareSysInterface">
+      <soap:operation soapAction="http://tempuri.org/DocareSysInterface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebDocareSoap12" type="tns:WebDocareSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ofsysteminterface">
+      <soap12:operation soapAction="http://tempuri.org/Ofsysteminterface" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocareSysInterface">
+      <soap12:operation soapAction="http://tempuri.org/DocareSysInterface" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebDocare">
+    <wsdl:port name="WebDocareSoap" binding="tns:WebDocareSoap">
+      <soap:address location="http://192.168.0.199:8012/WebService/WebDocare.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebDocareSoap12" binding="tns:WebDocareSoap12">
+      <soap12:address location="http://192.168.0.199:8012/WebService/WebDocare.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

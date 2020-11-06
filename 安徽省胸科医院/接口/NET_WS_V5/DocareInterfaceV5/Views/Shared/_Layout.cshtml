@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    
+     <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+           
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">
+                            WebConfig
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("数据库信息", "Index", "DataConfig")</li>
+                            <li> @Html.ActionLink("Web服务地址", "Index", "WebConfig")</li>
+                         
+                        </ul>
+                    </li>
+                    <li> @Html.ActionLink("TransDict表配置", "Index", "TransDict", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li> @Html.ActionLink("RunConfig表配置", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li> @Html.ActionLink("ViewSQL表配置", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>
+                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">
+                            字典同步
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("科室字典", "Index", "DataConfig")</li>
+                            <li> @Html.ActionLink("人员字典", "Index", "WebConfig")</li>
+                            <li> @Html.ActionLink("药品字典", "Index", "WebConfig")</li>
+                            <li> @Html.ActionLink("手术名称", "Index", "WebConfig")</li>
+                            <li> @Html.ActionLink("诊断字典", "Index", "WebConfig")</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">
+                            重症测试
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("同步医嘱", "Index", "TestICU")</li>
+                            <li> @Html.ActionLink("科室同步人员", "PatientInCode", "TestICU")</li>
+                            <li> @Html.ActionLink("患者入科", "Index", "TestICU")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown">
+                            麻醉测试
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("同步手术申请", "Index", "DataConfig")</li>
+                            <li> @Html.ActionLink("急诊登记", "Index", "WebConfig")</li>
+                            <li> @Html.ActionLink("同步医嘱", "Index", "WebConfig")</li>
+                            <li> @Html.ActionLink("同步检验", "Index", "WebConfig")</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div> 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

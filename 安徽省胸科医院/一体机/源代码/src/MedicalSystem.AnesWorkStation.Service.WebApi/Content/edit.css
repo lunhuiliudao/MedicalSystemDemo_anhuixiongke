@@ -1,0 +1,7 @@
+﻿/*表单样式*/
+.f1{ background-color:#f0f9fa; font:12px "宋体";}
+.t2 {width:100%; clear:both;border: 1px solid #c9dae4; border-collapse:collapse;}
+.t2 tr{margin:0;border-spacing:0;padding:0;border:0;}
+.t2 tr th { color:#000; padding: 5px 0px 5px 10px; border-bottom: 1px solid #e6e6e6; font-weight: normal; background: #f7fafc; text-align:left; border-right: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; }
+.t2 tr td{ border-bottom: 1px solid #e6e6e6;border-right: 1px solid #e6e6e6;border-left: 1px solid #e6e6e6;  padding: 5px 0px 5px 10px;}
+.t2 tr th em, .t2 tr td em{ font-weight:bold; color:Red;}

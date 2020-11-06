@@ -1,0 +1,43 @@
+﻿<div class="jumbotron">
+    <h2>客户端配置说明</h2>
+    <p class="lead" style="text-indent:2em">
+        DoCare麻醉信息工作站在客户端的配置文件【MedicalSystem.AnesWorkStation.View.exe.config】中修改<b><u>WebApiUri</u></b>地址为【<span class="url">@ViewBag.Url</span>】。
+        <br />
+        <i style="font-size: 16px; color: red;">备注：如果地址中包含localhost,则用IP地址替换掉。</i>
+        <br />
+        <i style="font-size: 16px; color: red;">提醒注意：在IIS中发布网站时，不能用中文名称发布网站。</i>
+        <br />
+    </p>
+    <p><a href="http://www.medicalsystem.cn/" class="btn btn-primary btn-large">更多 &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-3" style="width: 250px">
+        <h2>如何使用</h2>
+        <p>@Html.ActionLink("如何使用，请参考说明手册。", "Index", "Help", new { area = "" }, null)</p>
+        <p><a class="btn btn-default" href="http://www.medicalsystem.cn/">更多 &raquo;</a></p>
+    </div>
+    <div class="col-md-4" >
+        <h2>参考资料</h2>
+        <p>
+            1.《DoCare麻醉临床信息系统开发计划书》；<br />
+            2.《DoCare麻醉临床信息系统需求分析报告》；<br />
+            3.卫生部1985年《全国医院工作条例》；<br />
+            4.卫生部2002年9月1日实施的《医疗机构病历管理规定》；<br />
+            5.《病历书写规范》；<br />
+            6.卫生部《全国卫生信息化发展规划纲要（2003－2010）》；<br />
+            7.《国家计算机标准和文件模板》；<br />
+            8.《卫生部统一麻醉记录单规范》；
+        </p>
+        <p><a class="btn btn-default" href="http://www.medicalsystem.cn/">更多 &raquo;</a></p>
+    </div>
+    <div class="col-md-5">
+        <h2>开发组</h2>
+        <p>
+            开发组：薛侠森，蔡海萍，周旭翔，彭长超，许文龙，段世昱，丛亮平，沈志荣，吴文蛟<br />
+            前端组：袁乐，王成，孙家富<br />
+            设计组：张永航，谷伯涛，龚星<br />
+            UI  组：王文捷
+        </p>
+        <p><a class="btn btn-default" href="http://www.medicalsystem.cn/">更多 &raquo;</a></p>
+    </div>
+</div>

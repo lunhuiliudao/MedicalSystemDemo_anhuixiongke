@@ -1,0 +1,9 @@
+-----------------------------------------------------------
+接口日志：时间 20170712 08:44:29
+UPDATE MED_IF_TRANS_DICT SET TRANS_NAME='HIS5',DBMS='ORACLE',SERVER_NAME='orcl222',DATABASE='',LOG_ID='system',LOG_PASS='docare',NLS_LANG='his2',DBPARM='Persist Security Info=True;Data Source=orcl222;Password=docare;User ID=system;Unicode=True;',MEMO='' WHERE TRANS_NAME='his2'-----------------------------------------------------------
+接口日志：时间 20170712 08:44:40
+UPDATE MED_IF_TRANS_DICT SET TRANS_NAME='HIS6',DBMS='ORACLE',SERVER_NAME='orcl222',DATABASE='',LOG_ID='system',LOG_PASS='docare',NLS_LANG='HIS5',DBPARM='Persist Security Info=True;Data Source=orcl222;Password=docare;User ID=system;Unicode=True;',MEMO='' WHERE TRANS_NAME='HIS5'-----------------------------------------------------------
+接口日志：时间 20170712 08:47:24
+UPDATE MED_IF_TRANS_DICT SET TRANS_NAME='HIS7',DBMS='ORACLE',SERVER_NAME='orcl',DATABASE='',LOG_ID='system',LOG_PASS='docare',NLS_LANG='HIS6',DBPARM='Persist Security Info=True;Data Source=orcl;Password=docare;User ID=system;Unicode=True;',MEMO='' WHERE TRANS_NAME='HIS6'-----------------------------------------------------------
+接口日志：时间 20170712 08:54:25
+UPDATE MED_IF_TRANS_DICT SET TRANS_NAME='HIS6',DBMS='SQLSERVER',SERVER_NAME='localhost',DATABASE='lisdb',LOG_ID='sa',LOG_PASS='sa',NLS_LANG='LIS',DBPARM='Data Source = localhost; Initial Catalog = lisdb; User Id = sa; Password = sa;',MEMO='' WHERE TRANS_NAME='LIS'

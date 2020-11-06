@@ -1,0 +1,180 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.OperationInformation.PacsInterface"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter="clr-namespace:MedicalSystem.AnesWorkStation.View.Converters"
+             d:DesignHeight="620" d:DesignWidth="600">
+    <!--自定义样式-->
+    <UserControl.Resources>
+        <Style x:Key="normalTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="#5B5B5B" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
+        <Style x:Key="patientInfoTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="#2EA7B5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
+        <Style x:Key="normalRadioButtonStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="#20C1D5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+        <converter:BtnOkCommandParameters x:Key="BtnOkCommandParameters" />
+    </UserControl.Resources>
+
+    <Grid  Background="White" x:Name="mainGird">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="480" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="58" />
+        </Grid.RowDefinitions>
+
+        <!--患者基本信息-->
+        <Grid Grid.Row="0" Margin="30, 0, 30, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="姓名" Style="{StaticResource normalTextBlock}"/>
+                <TextBlock Text="{Binding Path=CurPatientModel.Name }" Width="100" 
+                           Style="{StaticResource ResourceKey=patientInfoTextBlock}"
+                           Margin="10, 0, 10, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="性别" Style="{StaticResource ResourceKey=normalTextBlock}"/>
+                <TextBlock Text="{Binding Path=CurPatientModel.Sex}" Width="100" 
+                           Style="{StaticResource patientInfoTextBlock}"
+                           Margin="10, 0, 10, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Text="年龄" Style="{StaticResource ResourceKey=normalTextBlock}"/>
+                <TextBlock Text="{Binding Path=CurPatientModel.Age}" Width="100" 
+                           Style="{StaticResource patientInfoTextBlock}"
+                           Margin="10, 0, 10, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="住院号" Style="{StaticResource ResourceKey=normalTextBlock}"/>
+                <TextBlock Text="{Binding Path=CurPatientModel.InpNo}" Width="100" 
+                           Style="{StaticResource patientInfoTextBlock}"
+                           Margin="10, 0, 10, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="台次" Style="{StaticResource ResourceKey=normalTextBlock}" />
+                <TextBlock Text="{Binding CurPatientModel.Sequence}" Style="{StaticResource patientInfoTextBlock}" Margin="10, 0, 10, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Text="科室" Style="{StaticResource ResourceKey=normalTextBlock}" />
+                <TextBlock Text="{Binding CurPatientModel.DeptCodeName}" Style="{StaticResource patientInfoTextBlock}" Margin="10, 0, 10, 0"/>
+            </StackPanel>
+        </Grid>
+
+        <!--分割线-->
+        <Image Grid.Row="1" Visibility="Visible" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/FenGeLine.png"/>
+
+        <!--大屏呼叫常用事项-->
+        <Grid Grid.Row="2" Margin="30,5,30,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="8*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="41*" />
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="135*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="AliceBlue" Orientation="Horizontal" >
+                <TextBlock Text="检查列表" Style="{StaticResource ResourceKey=patientInfoTextBlock}"
+                           FontWeight="Bold" Margin="10, 7, 20, 7"/>
+            </StackPanel>
+
+            <ListBox x:Name="Lv" Grid.Row="1" Grid.ColumnSpan="3"  BorderThickness="0" Background="Transparent" Margin="3,8,3,0"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ItemsSource="{Binding PacsNoAndTypeList}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding DataContext.LeftEventDoubleClick,RelativeSource={RelativeSource AncestorType=local:BaseUserControl}}"
+                                               CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource AncestorType=ListBox}}">
+                        </i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <StackPanel x:Name="bg" Orientation="Horizontal" Background="Transparent"
+                                                Margin="0,0,3,3">
+                                        <TextBlock x:Name="tb" Width="5" Background="#D5E2E3" HorizontalAlignment="Left" Height="45"/>
+
+                                        <TextBlock Text="检验编号：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15" Foreground="#616365"/>
+                                        <TextBlock Text="{Binding RepNo}" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15"
+                                                   Foreground="#616365"/>
+                                        
+                                        <TextBlock Text="检验类型：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15" Foreground="#616365"/>
+                                        <TextBlock Text="{Binding RepLb}" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15"
+                                                   Foreground="#616365"/>
+                                    </StackPanel>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="bg" Property="Background" Value="#BDF0EE"/>
+                                            <Setter TargetName="tb" Property="Background" Value="#15b9c3"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+        </Grid>
+
+        <!--分割线-->
+        <Image Grid.Row="3" Visibility="Visible" Source="/MedicalSystem.AnesWorkStation.View;component/WorkList/Assets/FenGeLine.png"/>
+
+        <!--手术大屏呼叫其他事项-->
+
+        <!--确定取消按钮-->
+        <Grid Grid.Row="4" Margin="30, 0, 30, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="120" Content="取消" 
+                    Command="{Binding BtnCancelCommand}" />
+
+            <Button Grid.Column="1" Width="120" Content="确定" IsEnabled="True"
+                    Command="{Binding Path=BtnOKCommand}" CommandParameter="{Binding ElementName=tbReason}">
+            </Button>
+        </Grid>
+
+    </Grid>
+</local:BaseUserControl>

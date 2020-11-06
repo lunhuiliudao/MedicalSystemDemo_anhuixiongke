@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>麻醉单浏览系统</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN"/>
+<meta content="all" name="robots" /> 
+<meta name="author" content="sj" />
+<meta name="Copyright" content="sj" />
+<link rel="stylesheet" href="../css/frameStyle.css" type="text/css"/>
+<script src="../public/public.js"></script>
+<script src="../public/design.js"></script>
+
+</HEAD>
+<BODY style="border:5px solid buttonface;overflow:hidden">
+
+
+<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
+
+<div dojoType="TreeSelector" widgetId="treeSelector"></div>
+
+
+<div dojoType="TreeContextMenu" toggle="explode" contextMenuForWindow="false" widgetId="treeContextMenu">
+	<div dojoType="TreeMenuItem" treeActions="addChild" iconSrc="static/createsmall.gif" widgetId="treeContextMenuCreate" caption="Create"></div>
+	<div dojoType="TreeMenuItem" treeActions="remove" iconSrc="static/removesmall.gif" caption="Remove" widgetId="treeContextMenuRemove"></div>
+	<div dojoType="TreeMenuItem" treeActions="move" iconSrc="static/downsmall.png" caption="Up" widgetId="treeContextMenuUp"></div>
+	<div dojoType="TreeMenuItem" treeActions="move" iconSrc="static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
+</div>
+<table cellspacing="0" cellpadding="0" border="0" class="frameTab">
+	<tr>
+<td id="bannerTd">
+    <table  style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="46%" background="image/top_mid.jpg"><img src="image/top_left.jpg" width="463" height="100" /></td>
+        <td width="54%" align="right" background="image/top_mid.jpg">
+         <table width="407" height="100" border="0" align="right" cellpadding="0" cellspacing="0" background="image/top_right.jpg">
+          <tr>
+            <td valign="top">
+            <table width="371" height="68" border="0" align="right" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="62" height="71" valign="middle" ><a href="mainFrame.htm" ><img src="image/but_01.jpg" border="0" ></a></td>
+                <td width="17">&nbsp;</td>
+                <td width="35"><a href="configuration.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image33','','./image/but_07a.jpg',1)"><img src="./image/but_07.jpg" name="Image33" width="68" height="60" border="0" id="Image33"   alt="配置"/></a></td>
+                <td width="36"></td>
+                <td width="35"><a href="../LoginIn.aspx"    onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image32','','./image/but_05a.jpg',1)"><img src="./image/but_05.jpg" name="Image32" width="68" height="60" border="0" id="Image32"   alt="退出"/></a></td>
+                <td width="36">&nbsp;</td>
+              </tr>
+            </table>
+              <br />
+              <br />
+              <br />
+              <br />
+           </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+</td>
+    </tr>
+	<tr>
+		<td valign="top" id="middle">
+			<table cellspacing="0" cellpadding="0" border="0" id="frame_middleTab">
+				<tr>
+					<td class="leftPart" valign="top" id="SysMenuBar">
+						<div class="sigmaQQ" id="SigmaQQ">
+						
+							<div id="4" class="mMenu" onClick="try{mMenuEvent(this);}catch(e){alert(e.message);}"><span class="mark">4</span><span class="text">查询病历</span></div>
+							<div id="sMenu4" class="sMenuBlock">
+								<a href="default.aspx" target="workAreaFame" class="sMenu" >查询病历备用功能</a><br>
+								<a href="defaultSubClassB.aspx" target="workAreaFame" class="sMenu" >Docare系统自查询功能</a><br>
+								<a href="defaultSubClassA.aspx" target="workAreaFame" class="sMenu" >第三方厂商查询功能</a><br>
+							</div>
+							
+					  </div>
+					</td>
+					<td class="controller">
+						<img src="../img/controlNavTip_close.gif" width="7" style="position:relative;top:-50;" ondrag="return false" onMouseDown="this.style.marginTop=1" onMouseUp="this.style.marginTop=0" height="40" onMouseOver="this.src=this.src.replace(/.gif/ig,'')+'_hover.gif'" onMouseOut="this.src=this.src.replace(/_hover.gif/ig,'.gif',this)" onClick="document.all.SysMenuBar.show=show;document.all.SysMenuBar.hide=hide;(this.open=!this.open)?document.all.SysMenuBar.hide():document.all.SysMenuBar.show();this.src=!this.open?this.src.replace(/open/ig,'close'):this.src.replace(/close/ig,'open');"> 
+					</td>
+					<td class="page"><iframe width="100%" height="100%" frameborder="0"  src="welcomePage.htm" name="workAreaFame">&nbsp;</iframe></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td id="bottomTd">
+			<div id="bottomBar">
+				<div id="copyRightInf">Copyright&copy; 版权所有</div>
+				<div class="inf">建议分辨率1024*768  IE 6.0</div>
+				<div id="loadDate">1111</div>
+			</div>
+		</td>
+	</tr>
+</table>
+<script>
+	var now = new Date() ;
+	var week1;
+	switch(now.getDay()){
+	case 0:
+			week1="星期日";
+			break;
+	case 1:
+			week1="星期一";
+			break;
+	case 2:
+			week1="星期二";
+			break;
+	case 3:
+			week1="星期三";
+			break;
+	case 4:
+			week1="星期四";
+			break;
+	case 5:
+			week1="星期五";
+			break;
+	case 6:
+			week1="星期六";
+			break;
+	}
+	var year = now.getYear() ;
+	var month = now.getMonth()+1 ;
+	var day = now.getDate() ;
+	var taday1= year+"年"+month+"月"+day+"日";
+	document.all.loadDate.innerText=taday1+"    "+week1;
+function show()
+{
+	this.style.display = "block"
+}
+function hide()
+{
+	this.style.display = "none"
+
+}
+</script>
+</BODY>
+</HTML>

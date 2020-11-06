@@ -1,0 +1,16 @@
+如果不注册一下内容则必须把
+相关代码屏蔽
+
+注册一下下面内容:
+1.zsdxfsdyyy\reg.bat
+2.anyihis\bin\reg.bat
+
+
+
+
+
+
+
+卸载用:
+1.zsdxfsdyyy\reg-u.bat
+2.anyihis\bin\reg-u.bat

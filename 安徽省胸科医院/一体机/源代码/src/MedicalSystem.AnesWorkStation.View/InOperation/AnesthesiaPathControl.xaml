@@ -1,0 +1,133 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.InOperation.AnesthesiaPathControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+             xmlns:cc="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Converters;assembly=MedicalSystem.AnesWorkStation.Wpf"
+             xmlns:helper="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Helper;assembly=MedicalSystem.AnesWorkStation.Wpf"
+             xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="900">
+
+    <UserControl.Resources>
+        <cc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <helper:BindingProxy x:Key="BindingProxy" Data="{Binding}" />
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="85"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0,0,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--左选择栏-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="模板名称" FontSize="16" FontWeight="Bold" Margin="10,0,0,0"/>
+                <!--分割线-->
+                <TextBlock Height="2" Background="#EBF4F7" VerticalAlignment="Bottom"
+                           Margin="0,0,10,0"/>
+                <!--选择栏-->
+                <TreeView Name="treeView" Grid.Row="1" ItemsSource="{Binding TreeViewData.RootNodes}"
+                          HorizontalContentAlignment="Left" Margin="0,0,0,0" PreviewMouseRightButtonDown="TreeView_PreviewMouseRightButtonDown">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate  ItemsSource="{Binding ChildNodes}"/>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </Grid>
+
+            <!--右详细-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--<control:DatePickerEx SelectedDate="{Binding ApplyTime,Mode=TwoWay}" StringFormat="yyyy-MM-dd HH:mm" Width="200"
+                                      BorderThickness="0" Background="#EBF4F7" Height="25" HorizontalAlignment="Left"/>-->
+                <TextBlock HorizontalAlignment="Left" Text="模版应用开始时间：" Foreground="#21C1D4" Margin="0,0,10,0"/>
+                <control:DateSelector SelectedDate="{Binding ApplyTime,Mode=TwoWay}" FontSize="13px"
+                                BorderThickness="0"    Background="Transparent" HorizontalAlignment="Left"
+                                      Margin="120,0,10,0"/>
+
+                <TextBlock HorizontalAlignment="Right" Text="{Binding TotalCount}" Foreground="#21C1D4" Margin="0,0,10,0"/>
+
+                <!--分割线-->
+                <TextBlock Height="2" Background="#EBF4F7" VerticalAlignment="Bottom"
+                           Margin="10,0,10,0"/>
+
+                <DataGrid Grid.Row="1" IsReadOnly="True" BorderThickness="0" ItemsSource="{Binding AnesEventTemplet}" CanUserAddRows="False"
+                          Margin="0,10,0,0" Name="datagrid">
+                    <DataGrid.Resources>
+                        <ResourceDictionary>
+                            <cc:ItemClassConverter x:Key="ItemClassConverter"/>
+                        </ResourceDictionary>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="23" Visibility="{Binding Data.IsPrivateTemplet, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Width="16" Height="16" Click="ButtonDeleteItem_Click">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid>
+                                                    <Image x:Name="img" Width="16" Height="16" HorizontalAlignment="Right"
+                                                       Source="/MedicalSystem.AnesWorkStation.View;component/Images/delnormal.png" />
+                                                </Grid>
+
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="img" Property="Source" Value="/MedicalSystem.AnesWorkStation.View;component/Images/delpress.png" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn Binding="{Binding EVENT_ITEM_NO}" Header="序&#13;号" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding EVENT_ITEM_CLASS,Converter={StaticResource ItemClassConverter}}" Header="分类" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding EVENT_ITEM_NAME}" Header="事件名称" Width="2*"/>
+                        <DataGridTextColumn Binding="{Binding DOSAGE}" Header="剂量" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding DOSAGE_UNITS}" Header="单位" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding CONCENTRATION}" Header="浓度" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding CONCENTRATION_UNIT}" Header="单位" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding PERFORM_SPEED}" Header="流速" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding SPEED_UNIT}" Header="单位" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding ADMINISTRATOR}" Header="途径" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding START_AFTER_INPUT}" Header="间隔&#13;分钟" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding DURATIVE}" Header="持续&#13;分钟" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <!--分割线-->
+        <Image Source="/MedicalSystem.AnesWorkStation.View;component/Images/line.png" Height="4" Margin="20,0,20,0"
+               Grid.Row="1" VerticalAlignment="Top" Stretch="Fill" />
+        <!--按钮区域-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Style="{StaticResource EllipseButtonStyleWhite}" Content="取 消" Margin="0,0,60,0"
+                    Command="{Binding ResetCommand}" IsEnabled="{Binding IsBtnEnabled}" Height="30" FontSize="14" Width="200"/>
+
+            <Button Style="{StaticResource EllipseButtonStyleWhite}" Content="保 存" Margin="0,0,60,0"
+                    Command="{Binding DeleteSaveCommand}" IsEnabled="{Binding IsDeleteSaveEnable}" Height="30" FontSize="14" Width="200"/>
+            
+            <Button Content="套 用" Command="{Binding SaveCommand}" IsEnabled="{Binding IsBtnEnabled}" Height="30" FontSize="14" Width="200"/>
+        </StackPanel>
+    </Grid>
+</local:BaseUserControl>

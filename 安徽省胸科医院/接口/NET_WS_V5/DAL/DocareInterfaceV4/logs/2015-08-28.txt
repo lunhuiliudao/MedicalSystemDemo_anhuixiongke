@@ -1,0 +1,181 @@
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:31:34,803   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:31:34，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:31:35,009   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:32:50,019   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:32:50，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:32:50,031   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:36:08,639   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:36:08，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:36:08,715   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:36:09,188   [12]   DEBUG   File   [(null)]   <(null)>   -   列“BILLING_ATTR”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.hospitalbaseStandNewOle.GetOrdersEntity(String type, DataSet ds) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 3097
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2871
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+
+2015-08-28 15:36:09,406   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2015-08-28 15:36:55,321   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:36:55，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:36:55,330   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:38:02,873   [12]   DEBUG   File   [(null)]   <(null)>   -   列“BILLING_ATTR”不属于表 Table。调用堆栈上的桢的字符串表现形式:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 BLL.hospitalbaseStandNewOle.GetOrdersEntity(String type, DataSet ds) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 3097
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2871
+引发当前异常的函数为:GetDataColumn
+导致错误的应用程序或对象的名称为:System.Data
+
+2015-08-28 15:38:02,882   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:40:06,662   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:40:06，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:40:06,742   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:40:18,375   [12]   DEBUG   File   [(null)]   <(null)>   -   未能比较数组中的两个元素。调用堆栈上的桢的字符串表现形式:   在 System.Collections.Generic.ArraySortHelper`1.Sort(T[] keys, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Array.Sort[T](T[] array, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Collections.Generic.List`1.Sort(Comparison`1 comparison)
+   在 BLL.hospitalbaseStandNewOle.SortByLambda(List`1 exeOrderList) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2985
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2876
+引发当前异常的函数为:Sort
+导致错误的应用程序或对象的名称为:mscorlib
+
+2015-08-28 15:40:18,431   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2015-08-28 15:40:23,890   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:40:23，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:40:23,902   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:40:45,251   [12]   DEBUG   File   [(null)]   <(null)>   -   未能比较数组中的两个元素。调用堆栈上的桢的字符串表现形式:   在 System.Collections.Generic.ArraySortHelper`1.Sort(T[] keys, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Array.Sort[T](T[] array, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Collections.Generic.List`1.Sort(Comparison`1 comparison)
+   在 BLL.hospitalbaseStandNewOle.SortByLambda(List`1 exeOrderList) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2985
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2876
+引发当前异常的函数为:Sort
+导致错误的应用程序或对象的名称为:mscorlib
+
+2015-08-28 15:40:45,265   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+2015-08-28 15:40:48,930   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:40:48，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:40:48,941   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:41:02,175   [12]   DEBUG   File   [(null)]   <(null)>   -   未能比较数组中的两个元素。调用堆栈上的桢的字符串表现形式:   在 System.Collections.Generic.ArraySortHelper`1.Sort(T[] keys, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Array.Sort[T](T[] array, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Collections.Generic.List`1.Sort(Comparison`1 comparison)
+   在 BLL.hospitalbaseStandNewOle.SortByLambda(List`1 exeOrderList) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2985
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2876
+引发当前异常的函数为:Sort
+导致错误的应用程序或对象的名称为:mscorlib
+
+2015-08-28 15:41:02,191   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:42:29,354   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:42:28，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:42:29,454   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:42:30,235   [12]   DEBUG   File   [(null)]   <(null)>   -   未能比较数组中的两个元素。调用堆栈上的桢的字符串表现形式:   在 System.Collections.Generic.ArraySortHelper`1.Sort(T[] keys, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Array.Sort[T](T[] array, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Collections.Generic.List`1.Sort(Comparison`1 comparison)
+   在 BLL.hospitalbaseStandNewOle.SortByLambda(List`1 exeOrderList)
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId)
+引发当前异常的函数为:Sort
+导致错误的应用程序或对象的名称为:mscorlib
+
+2015-08-28 15:42:30,260   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:43:41,649   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:43:40，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:43:41,728   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:44:03,149   [12]   DEBUG   File   [(null)]   <(null)>   -   未能比较数组中的两个元素。调用堆栈上的桢的字符串表现形式:   在 System.Collections.Generic.ArraySortHelper`1.Sort(T[] keys, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Array.Sort[T](T[] array, Int32 index, Int32 length, IComparer`1 comparer)
+   在 System.Collections.Generic.List`1.Sort(Comparison`1 comparison)
+   在 BLL.hospitalbaseStandNewOle.SortByLambda(List`1 exeOrderList) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2989
+   在 BLL.hospitalbaseStandNewOle.GetIcuPatientOrdersRec(Config config, MedInitDict dict, String patientId, Decimal visitId) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\BLL\模板\hospitalbaseStandNewOle.cs:行号 2876
+引发当前异常的函数为:Sort
+导致错误的应用程序或对象的名称为:mscorlib
+
+2015-08-28 15:44:03,167   [12]   DEBUG   File   [(null)]   <(null)>   -   ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 MedicalSytem.Soft.DAL.OracleHelper.ExecuteNonQuery(String connectionString, String cmdText, OracleParameter[] commandParameters) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\OracleHelper.cs:行号 34
+   在 MedicalSytem.Soft.DAL.DALMedIFLog.InsertMedifLog(MedIfLog entity) 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\DAL\DALMedIFLog.cs:行号 208
+   在 InitDocare.LogA.LogCommit() 位置 E:\接口版本\接口最近版本集合\NET-WS-V420140904(国庆前修改版本）\NET-WS-V420140904\InitDocare\LogA.cs:行号 342
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:48:09,881   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:48:08，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:48:09,961   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:50:59,931   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:50:59，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:51:00,008   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 15:52:38,208   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:52:38，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:52:38,219   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 15:57:43,050   [12]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 15:57:39，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 15:57:43,158   [12]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 
+--麦迪斯顿（北京）医疗科技有限公司接口程序记录----
+2015-08-28 16:08:37,087   [13]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 16:08:36，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 16:08:39,991   [13]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+2015-08-28 16:08:46,786   [10]   DEBUG   File   [(null)]   <(null)>   -   时间=2015-08-28 16:08:46，接收到由系统ANESMGR传递过来的调用信息.申请类型为HIS，接口类型为HIS103
+2015-08-28 16:08:46,800   [10]   DEBUG   File   [(null)]   <(null)>   -   开始同步病人医嘱信息...
+--如有需要请联系麦迪斯顿（北京）医疗科技有限公司 产品部 

@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OUTKEYBOARD !UNSAFEKEYBOARD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MedicalSystem.Anes.Client.FrameWork.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\MedicalSystem.Anes.Client.FrameWork.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A23BDA0-1F81-4779-B1C4-A874B2475750}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalSystem.Anes.Client.FrameWork</RootNamespace>
+    <AssemblyName>MedicalSystem.Anes.Client.FrameWork</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;OUTKEYBOARD !UNSAFEKEYBOARD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="InterFaceV4">
+      <HintPath>..\..\packages\InterFaceV4.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\packages\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MedicalSystem.Common">
+      <HintPath>..\..\lib\MedicalSystem.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConfiguration.cs" />
+    <Compile Include="BaseFrom\BaseFormWithTitlePC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\BaseFormWithTitlePC.Designer.cs">
+      <DependentUpon>BaseFormWithTitlePC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\DialogBaseDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\DialogBaseDocForm.Designer.cs">
+      <DependentUpon>DialogBaseDocForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostMainFormPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostMainFormPC.designer.cs">
+      <DependentUpon>DialogHostMainFormPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostFormPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostFormPC.designer.cs">
+      <DependentUpon>DialogHostFormPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\MessageBoxFormPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\MessageBoxFormPC.Designer.cs">
+      <DependentUpon>MessageBoxFormPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\BaseFocusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\IBaseView.cs" />
+    <Compile Include="BaseFrom\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\DialogHostForm.designer.cs">
+      <DependentUpon>DialogHostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\ExceptionMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\ExceptionMessageBox.designer.cs">
+      <DependentUpon>ExceptionMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrom\MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\BaseFormWithTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrom\BaseFormWithTitle.Designer.cs">
+      <DependentUpon>BaseFormWithTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonColor.Designer.cs">
+      <DependentUpon>ButtonColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonDownMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonDownMenu.Designer.cs">
+      <DependentUpon>ButtonDownMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckEditControl.Designer.cs">
+      <DependentUpon>CheckEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoginText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginText.Designer.cs">
+      <DependentUpon>LoginText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MedMessage.Designer.cs">
+      <DependentUpon>MedMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableControlMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TableControlMenu.Designer.cs">
+      <DependentUpon>TableControlMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonMenu.Designer.cs">
+      <DependentUpon>ButtonMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MTextBoxBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelNoFlash.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LableBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommDict.cs" />
+    <Compile Include="Common\DateDifference.cs" />
+    <Compile Include="Common\ImageManage.cs" />
+    <Compile Include="Common\StringManage.cs" />
+    <Compile Include="Controls\DataGridViewTextBoxGridViewPopupColumn.cs" />
+    <Compile Include="Controls\GridTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GridViewPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MyKeyEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchTextBox.Designer.cs">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeControl.Designer.cs">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeViewExtend.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeViewExtend.Designer.cs">
+      <DependentUpon>TreeViewExtend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\BaseDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doc\BaseDoc.designer.cs">
+      <DependentUpon>BaseDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\DefaultHandlers\CustomControlHandler.cs" />
+    <Compile Include="Doc\DefaultHandlers\GridViewHandler.cs" />
+    <Compile Include="Doc\DefaultHandlers\LabelHandler.cs" />
+    <Compile Include="Doc\DefaultHandlers\RichTextBoxHandler.cs" />
+    <Compile Include="Doc\DefaultHandlers\TextBoxHandler.cs" />
+    <Compile Include="Doc\IUIElementHandler.cs" />
+    <Compile Include="Doc\UIElementHandler.cs" />
+    <Compile Include="Doc\UIElementPrinter.cs" />
+    <Compile Include="Enum\AnesEventType.cs" />
+    <Compile Include="Enum\ApplicationType.cs" />
+    <Compile Include="Enum\InputMethodType.cs" />
+    <Compile Include="Enum\KeyCode.cs" />
+    <Compile Include="Enum\OperationAction.cs" />
+    <Compile Include="Enum\OperationStatus.cs" />
+    <Compile Include="Enum\ProgramStatus.cs" />
+    <Compile Include="ExtendApplicationContext.cs" />
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Helper\ModelHelper.cs" />
+    <Compile Include="Helper\PinYinConverter.cs" />
+    <Compile Include="InputMethod\AILearnInputUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IParentForm.cs" />
+    <Compile Include="OperationStatus\OperationStatusHelper.cs" />
+    <Compile Include="PatientContext.cs" />
+    <Compile Include="Permissions\AccessControl.cs" />
+    <Compile Include="Permissions\PermissionContext.cs" />
+    <Compile Include="Permissions\PermissionProvider.cs" />
+    <Compile Include="ProgramProcess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\DesSecurity.cs" />
+    <Compile Include="Utilities\XmlUtil.cs" />
+    <Compile Include="ViewChangedEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseFrom\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\BaseFormWithTitlePC.resx">
+      <DependentUpon>BaseFormWithTitlePC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\DialogBaseDocForm.resx">
+      <DependentUpon>DialogBaseDocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\DialogHostMainFormPC.resx">
+      <DependentUpon>DialogHostMainFormPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\DialogHostFormPC.resx">
+      <DependentUpon>DialogHostFormPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\DialogHostForm.resx">
+      <DependentUpon>DialogHostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\ExceptionMessageBox.resx">
+      <DependentUpon>ExceptionMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\BaseFormWithTitle.resx">
+      <DependentUpon>BaseFormWithTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrom\MessageBoxFormPC.resx">
+      <DependentUpon>MessageBoxFormPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ButtonColor.resx">
+      <DependentUpon>ButtonColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ButtonDownMenu.resx">
+      <DependentUpon>ButtonDownMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckEditControl.resx">
+      <DependentUpon>CheckEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoginText.resx">
+      <DependentUpon>LoginText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MedMessage.resx">
+      <DependentUpon>MedMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TableControlMenu.resx">
+      <DependentUpon>TableControlMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ButtonMenu.resx">
+      <DependentUpon>ButtonMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridViewTextBoxGridViewPopupColumn.resx">
+      <DependentUpon>DataGridViewTextBoxGridViewPopupColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTextBox.resx">
+      <DependentUpon>DateTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchTextBox.resx">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeControl.resx">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc\BaseDoc.resx">
+      <DependentUpon>BaseDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\MedicalSystem.Anes.Document\MedicalSystem.Anes.Document.csproj">
+      <Project>{23bb8369-e355-4b84-8684-e7f2f142008d}</Project>
+      <Name>MedicalSystem.Anes.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\MedicalSystem.Anes.Domain\MedicalSystem.Anes.Domain.csproj">
+      <Project>{929df7a2-d882-4502-ab10-5c49ed5be1df}</Project>
+      <Name>MedicalSystem.Anes.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.Anes.Client.Repository\MedicalSystem.Anes.Client.Repository.csproj">
+      <Project>{cb228156-2dff-45d7-b8af-0204c4dc4646}</Project>
+      <Name>MedicalSystem.Anes.Client.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\文书_选中.png" />
+    <None Include="Resources\文书_未选中.png" />
+    <None Include="Resources\文书_勾2.png" />
+    <None Include="Resources\文书_勾1.png" />
+    <None Include="Resources\检验1.png" />
+    <None Include="Resources\电子病历1.png" />
+    <None Include="Resources\麻醉下文书1.png" />
+    <None Include="Resources\麻醉下文书2.png" />
+    <None Include="Resources\展开箭头2.png" />
+    <None Include="Resources\展开箭头1.png" />
+    <None Include="Resources\麻醉首页2.png" />
+    <None Include="Resources\麻醉首页1.png" />
+    <None Include="Resources\预览2.png" />
+    <None Include="Resources\预览1.png" />
+    <None Include="Resources\下页2.png" />
+    <None Include="Resources\下页1.png" />
+    <None Include="Resources\文书-下拉箭头2.png" />
+    <None Include="Resources\文书-下拉箭头1.png" />
+    <None Include="Resources\调用模版2.png" />
+    <None Include="Resources\调用模版1.png" />
+    <None Include="Resources\缩放2.png" />
+    <None Include="Resources\缩放1.png" />
+    <None Include="Resources\上页2.png" />
+    <None Include="Resources\上页1.png" />
+    <None Include="Resources\配置2.png" />
+    <None Include="Resources\配置1.png" />
+    <None Include="Resources\集中打印2.png" />
+    <None Include="Resources\集中打印1.png" />
+    <None Include="Resources\归档2.png" />
+    <None Include="Resources\归档1.png" />
+    <None Include="Resources\打印2.png" />
+    <None Include="Resources\打印1.png" />
+    <None Include="Resources\保存模版2.png" />
+    <None Include="Resources\保存模版1.png" />
+    <None Include="Resources\保存2.png" />
+    <None Include="Resources\保存1.png" />
+    <None Include="Resources\login_用户名1.png" />
+    <None Include="Resources\login_删除2.png" />
+    <None Include="Resources\login_删除1.png" />
+    <None Include="Resources\login_密码_2.png" />
+    <None Include="Resources\login_密码_1.png" />
+    <None Include="Resources\login_用户名2.png" />
+    <None Include="Resources\uparrow.png" />
+    <None Include="Resources\ThumbTop.png" />
+    <None Include="Resources\ThumbSpanTop.png" />
+    <None Include="Resources\ThumbSpanBottom.png" />
+    <None Include="Resources\ThumbMiddle.png" />
+    <None Include="Resources\ThumbBottom.png" />
+    <None Include="Resources\downarrow.png" />
+    <None Include="Resources\信息.png" />
+    <None Include="Resources\警告.png" />
+    <None Include="Resources\错误.png" />
+    <None Include="Resources\询问.png" />
+    <None Include="Resources\绿2.png" />
+    <None Include="Resources\绿1.png" />
+    <None Include="Resources\绿3.png" />
+    <None Include="Resources\蓝2.png" />
+    <None Include="Resources\蓝1.png" />
+    <None Include="Resources\灰3.png" />
+    <None Include="Resources\灰2.png" />
+    <None Include="Resources\灰1.png" />
+    <None Include="Resources\蓝3.png" />
+    <None Include="Resources\x2_1.png" />
+    <None Include="Resources\x2_3.png" />
+    <None Include="Resources\x2_2.png" />
+    <None Include="Resources\术中操作_2.png" />
+    <None Include="Resources\术中操作_1.png" />
+    <None Include="Resources\患者文书_3.png" />
+    <None Include="Resources\患者文书_2.png" />
+    <None Include="Resources\患者文书_1.png" />
+    <None Include="Resources\病历病程_null.png" />
+    <None Include="Resources\病历病程_3.png" />
+    <None Include="Resources\病历病程_2.png" />
+    <None Include="Resources\病历病程_1.png" />
+    <None Include="Resources\术中操作_3.png" />
+    <None Include="Resources\title2.png" />
+    <None Include="Resources\title1.png" />
+    <None Include="Resources\展开箭头_3.png" />
+    <None Include="Resources\展开箭头_2.png" />
+    <None Include="Resources\展开箭头_1.png" />
+    <None Include="Resources\搜索2.png" />
+    <None Include="Resources\搜索1.png" />
+    <None Include="Resources\搜索3.png" />
+    <None Include="Resources\功能按钮底图.png" />
+    <None Include="Resources\功能按钮箭头.png" />
+    <None Include="Resources\title_bg_需拉伸.png" />
+    <None Include="Resources\最小化3.png" />
+    <None Include="Resources\最小化2.png" />
+    <None Include="Resources\最小化1.png" />
+    <None Include="Resources\窗口3.png" />
+    <None Include="Resources\窗口2.png" />
+    <None Include="Resources\窗口1.png" />
+    <None Include="Resources\x3.png" />
+    <None Include="Resources\x2.png" />
+    <None Include="Resources\x1.png" />
+    <None Include="Resources\icon_术前访视.png" />
+    <None Include="Resources\icon_手术信息.png" />
+    <None Include="Resources\icon_检验.png" />
+    <None Include="Resources\icon_急诊登记.png" />
+    <None Include="Resources\icon_定位.png" />
+    <None Include="Resources\icon_PACU进程.png" />
+    <None Include="Resources\icon_质控管理.png" />
+    <None Include="Resources\icon_仪器确认.png" />
+    <None Include="Resources\icon_医嘱.png" />
+    <None Include="Resources\icon_信息集成.png" />
+    <None Include="Resources\icon_搜索.png" />
+    <None Include="Resources\icon_换台.png" />
+    <None Include="Resources\icon_对话.png" />
+    <None Include="Resources\icon_安全核查.png" />
+    <None Include="Resources\弹出框标题栏__05.png" />
+    <None Include="Resources\弹出框标题栏__03.png" />
+    <None Include="Resources\弹出框标题栏__01.png" />
+    <None Include="Resources\icon_error.png" />
+    <None Include="Resources\icon_warning.png" />
+    <None Include="Resources\icon_打印.png" />
+    <None Include="Resources\icon_麻醉事件.png" />
+    <None Include="Resources\icon_时间确认.png" />
+    <None Include="Resources\icon_提示信息.png" />
+    <None Include="Resources\icon_体征数据.png" />
+    <None Include="Resources\icon_系统设置.png" />
+    <None Include="Resources\icon_疑问.png" />
+    <None Include="Resources\icon_字典.png" />
+    <None Include="Resources\InputMethodRight2.png" />
+    <None Include="Resources\InputMethodLeft1.png" />
+    <None Include="Resources\InputMethodlogo.png" />
+    <None Include="Resources\InputMethodRight1.png" />
+    <None Include="Resources\InputMethodLeft2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\选中.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

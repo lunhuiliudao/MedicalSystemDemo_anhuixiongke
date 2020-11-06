@@ -1,0 +1,27 @@
+﻿@model UpdateEntity.SystemConfig
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/UpdateServer/Views/Shared/_Page.cshtml";
+}
+
+<div style="width:100%;height:100%;">
+    <form id="form" method="post">
+        <table class="t2" cellpadding="0">
+            <tr>
+                <td class="f1">客户端轮训时间长（分）:</td>
+                <td>
+                    <input id="SYS_ID" type="hidden" name="APP_ID" value="@ViewBag.SYS_ID">
+                    <input id="TimingUpdateTime" class="easyui-numberbox" type="text" name="TimingUpdateTime" data-options="required:true,validType:['englishNumber']" style="width:350px;" value="@Model.TimingUpdateTime">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" class="btn">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="submitFormNoClose(this, '/UpdateServer/SystemManagement/Modify')">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" onclick="clearForm(this)">重置</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="closeWin()">关闭</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+

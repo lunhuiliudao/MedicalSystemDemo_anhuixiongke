@@ -1,0 +1,16 @@
+@mixin buttonStyle($width,$height,$bgcolor,$hbgcolor,$color:white) {
+  width: $width;
+  height: $height;
+  border: 0px;
+  background: $bgcolor;
+  color: $color;
+  box-shadow: 0px 0px 1px 0px #2e353852;
+  border-radius: 3px;
+  font-size:12px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  margin-left: 16px;
+  &:hover {
+    background: $hbgcolor;
+  }
+}

@@ -1,0 +1,9 @@
+-- Alter table 
+alter table MED_OPERATION_ANALGESIC_MASTER
+  storage
+  (
+    next 1
+  )
+;
+-- Add/modify columns 
+alter table MED_OPERATION_ANALGESIC_MASTER modify first_dosage varchar2(100);

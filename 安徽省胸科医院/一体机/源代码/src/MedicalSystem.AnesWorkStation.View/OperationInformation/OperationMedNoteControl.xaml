@@ -1,0 +1,440 @@
+﻿<local:BaseUserControl x:Class="MedicalSystem.AnesWorkStation.View.OperationInformation.OperationMedNoteControl"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:ba="clr-namespace:MedicalSystem.AnesWorkStation.View.Behaviour"
+                       xmlns:cc="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Converters;assembly=MedicalSystem.AnesWorkStation.Wpf"
+                       xmlns:control="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Controls;assembly=MedicalSystem.AnesWorkStation.Wpf"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:helper="clr-namespace:MedicalSystem.AnesWorkStation.Wpf.Helper;assembly=MedicalSystem.AnesWorkStation.Wpf"
+                       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                       xmlns:local="clr-namespace:MedicalSystem.AnesWorkStation.View"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       d:DesignHeight="560" d:DesignWidth="1000" mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="cusKey" TargetType="{x:Type DataGridCell}">
+            <Style.Triggers>
+                <!--<Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="IsEditing" Value="True"/>
+                </Trigger>-->
+            </Style.Triggers>
+        </Style>
+
+        <cc:TrueToFalseConverter x:Key="TrueToFalseConverter" />
+        <helper:BindingProxy x:Key="BindingProxy" Data="{Binding}" />
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--  搜索框  -->
+            <control:SearchTextBox Name="txtBoxSearch" Width="130" Height="30" Margin="10,0,10,0"
+                                   Background="#E4E9F0" BorderThickness="0" GotFocus="TxtBoxSearch_GotFocus"
+                                   PreviewKeyDown="TxtBoxSearch_PreviewKeyDown">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SearchClick">
+                        <i:InvokeCommandAction Command="{Binding SearchClick}" CommandParameter="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type control:SearchTextBox}}}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchTextBoxTextChanged}" CommandParameter="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type control:SearchTextBox}}}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </control:SearchTextBox>
+
+            <!--  药品列表  -->
+            <ListView x:Name="lvMed" Grid.Row="1" Margin="3,0,3,0" Background="Transparent"
+                      BorderBrush="White" BorderThickness="0,0,1,0"
+                      ItemsSource="{Binding DrugDictData}"
+                      PreviewKeyDown="LvMed_PreviewKeyDown"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding DataContext.LeftDrugDoubleClick, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.LeftDrugClick, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <StackPanel x:Name="bg" Height="45" Margin="0,0,3,3" Background="Transparent"
+                                                Orientation="Horizontal">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="PreviewMouseDown">
+                                                <i:InvokeCommandAction Command="{Binding DataContext.LeftDrugClick, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock x:Name="tb" Width="5" Height="45" HorizontalAlignment="Left"
+                                                   Background="#D5E2E3" />
+                                        <StackPanel Margin="10,10,0,0">
+                                            <TextBlock x:Name="tbEventItemName" HorizontalAlignment="Left" FontSize="14"
+                                                       Foreground="#616365"
+                                                       Text="{Binding EVENT_ITEM_NAME}" />
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="bg" Property="Background" Value="#BDF0EE" />
+                                            <Setter TargetName="tb" Property="Background" Value="#15b9c3" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+
+        <!--  输入量和明细  -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--  入量列表  -->
+            <TextBlock Margin="20,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       FontSize="15" Foreground="#616365" Text="剂量" />
+            <ListBox x:Name="lvInCount" Margin="45,45,30,0" VerticalAlignment="Top"
+                     Background="Transparent" BorderThickness="0"
+                     ItemsSource="{Binding DrugDictExtData}"
+                     PreviewKeyDown="LvInCount_PreviewKeyDown"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5" Rows="2" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <StackPanel>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="PreviewMouseDown">
+                                                <i:InvokeCommandAction Command="{Binding DataContext.RefenceDosageClick, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                        <TextBlock x:Name="tb" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   FontSize="14" Foreground="#616365">
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0}{1}">
+                                                    <Binding Path="STANDARD_DOSAGE" />
+                                                    <Binding Path="DOSAGE_UNITS" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        <TextBlock x:Name="tbBottom"
+                                                   Width="{Binding ElementName=tb, Path=ActualWidth}"
+                                                   Height="3" Margin="0,3,0,0" Background="#F8B257" Visibility="Collapsed" />
+                                    </StackPanel>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="tbBottom" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="tb" Property="Foreground" Value="#F8B257" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <StackPanel Margin="0,0,50,5" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        Orientation="Horizontal">
+                <RadioButton FontSize="20" Foreground="#20C1D5"
+                             IsChecked="{Binding NormalMode}">
+                    详细
+                </RadioButton>
+                <RadioButton FontSize="20" Foreground="#20C1D5"
+                             IsChecked="{Binding NormalMode, Converter={StaticResource TrueToFalseConverter}}">
+                    简单
+                </RadioButton>
+            </StackPanel>
+
+            <!--  分割线  -->
+            <TextBlock Grid.Row="1" Height="1" Margin="0,0,5,0" VerticalAlignment="Top"
+                       Background="White" />
+
+            <!--  防止包含滚动条时焦点乱跳，设置EnableRowVirtualization=false  -->
+            <DataGrid x:Name="datagrid" Grid.Row="1" Margin="5" BeginningEdit="Datagrid_BeginningEdit"
+                      CanUserAddRows="False" EnableRowVirtualization="False" IsReadOnly="False"
+                      ItemsSource="{Binding AnesEvent}"
+                      PreviewKeyDown="Datagrid_PreviewKeyDown"
+                      PreviewMouseLeftButtonDown="Datagrid_PreviewMouseLeftButtonDown"
+                      SelectedIndex="{Binding SelectedIndex}"
+                      SelectedItem="{Binding SelectItem}"
+                      SelectionChanged="Datagrid_SelectionChanged" SelectionMode="Single">
+                <DataGrid.Resources>
+                    <ResourceDictionary>
+                        <cc:DurativeConverter x:Key="DurativeConverter" />
+                        <cc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                    </ResourceDictionary>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="23">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="16" Height="16" Click="ButtonDeleteItem_Click">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Image x:Name="img" Width="16" Height="16" HorizontalAlignment="Right"
+                                                       Source="/MedicalSystem.AnesWorkStation.View;component/Images/delnormal.png" />
+                                            </Grid>
+
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="img" Property="Source" Value="/MedicalSystem.AnesWorkStation.View;component/Images/delpress.png" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1.6*" Header="项目">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EVENT_ITEM_NAME}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox Name="tbEventItemName" Margin="0"
+                                         Text="{Binding EVENT_ITEM_NAME, UpdateSourceTrigger=PropertyChanged}" />
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="tbEventItemName" Property="IsVisible" Value="True">
+                                        <Setter TargetName="tbEventItemName" Property="FocusManager.FocusedElement" Value="{Binding ElementName=tbEventItemName}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!--<DataGridTemplateColumn Width="1.6*" Header="开始时间">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <control:DateSelector HorizontalAlignment="Center"
+                                                      Command="{Binding}"
+                                                      CommandParameter="{Binding}"
+                                                      ConsumerFontSize="13" InputTextWidth="10"
+                                                      SelectedDate="{Binding START_TIME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>-->
+
+                    <control:DataGridDateSelectorColumn Width="1.6*"
+                                                        Binding="{Binding START_TIME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        Header="开始时间" />
+
+                    <DataGridTemplateColumn Width="0.8*" Header="{Binding Data.StrDosageColumnHeader, Source={StaticResource BindingProxy}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DOSAGE}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <!--
+                                    剂量绑定属性使用UpdateSourceTrigger=LostFocus，是为了可以录入小数点，使用propertychanged是不能录入小数点的。
+                                    同时为了实现propertyChanged功能，需要在TextChanged事件中去手动更新
+                                -->
+                                <TextBox Name="tbDosage" Margin="0" PreviewKeyDown="TextBox_PreviewKeyDown"
+                                         Text="{Binding DOSAGE, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                         TextChanged="TbDosage_TextChanged" />
+
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="tbDosage" Property="IsVisible" Value="True">
+                                        <Setter TargetName="tbDosage" Property="FocusManager.FocusedElement" Value="{Binding ElementName=tbDosage}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="40" Header="单位">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DOSAGE_UNITS}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox Name="cbDosageUnits" Width="100" Margin="0" DisplayMemberPath="UNIT_NAME"
+                                          DropDownClosed="ComboBox_DropDownClosed"
+                                          DropDownOpened="ComboBox_DropDownOpened"
+                                          ItemsSource="{Binding DataContext.DosageUnitDict, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          PreviewKeyDown="ComboBox_PreviewKeyDown"
+                                          PreviewMouseLeftButtonDown="ComboBox_PreviewMouseLeftButtonDown"
+                                          SelectedValue="{Binding DOSAGE_UNITS, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedValuePath="UNIT_NAME" SelectionChanged="ComboBox_SelectionChanged" />
+
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="cbDosageUnits" Property="IsVisible" Value="True">
+                                        <Setter TargetName="cbDosageUnits" Property="FocusManager.FocusedElement" Value="{Binding ElementName=cbDosageUnits}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="0.7*" Header="浓度"
+                                            Visibility="{Binding Data.NormalMode, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CONCENTRATION}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox Name="tbConcentration" Margin="0" PreviewKeyDown="TextBox_PreviewKeyDown"
+                                         Text="{Binding CONCENTRATION, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                         TextChanged="TbConcentration_TextChanged" />
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="tbConcentration" Property="IsVisible" Value="True">
+                                        <Setter TargetName="tbConcentration" Property="FocusManager.FocusedElement" Value="{Binding ElementName=tbConcentration}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="40" Header="单位"
+                                            Visibility="{Binding Data.NormalMode, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CONCENTRATION_UNIT}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbConcentrationUnit" Width="100" Margin="0"
+                                          DisplayMemberPath="UNIT_NAME" DropDownClosed="ComboBox_DropDownClosed"
+                                          DropDownOpened="ComboBox_DropDownOpened"
+                                          ItemsSource="{Binding DataContext.ConcentrationUnitDict, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          PreviewKeyDown="ComboBox_PreviewKeyDown"
+                                          PreviewMouseLeftButtonDown="ComboBox_PreviewMouseLeftButtonDown"
+                                          SelectedValue="{Binding CONCENTRATION_UNIT, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedValuePath="UNIT_NAME" SelectionChanged="ComboBox_SelectionChanged" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="0.7*" Header="速度"
+                                            Visibility="{Binding Data.NormalMode, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PERFORM_SPEED}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox Name="tbSpeed" Margin="0" PreviewKeyDown="TextBox_PreviewKeyDown"
+                                         Text="{Binding PERFORM_SPEED, TargetNullValue='', UpdateSourceTrigger=LostFocus}"
+                                         TextChanged="TbSpeed_TextChanged" />
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="tbSpeed" Property="IsVisible" Value="True">
+                                        <Setter TargetName="tbSpeed" Property="FocusManager.FocusedElement" Value="{Binding ElementName=tbSpeed}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="40" Header="单位"
+                                            Visibility="{Binding Data.NormalMode, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SPEED_UNIT}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbSpeedUnit" Width="100" Margin="0" DisplayMemberPath="UNIT_NAME"
+                                          DropDownClosed="ComboBox_DropDownClosed"
+                                          DropDownOpened="ComboBox_DropDownOpened"
+                                          ItemsSource="{Binding DataContext.SpeedUnitDict, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          PreviewKeyDown="ComboBox_PreviewKeyDown"
+                                          PreviewMouseLeftButtonDown="ComboBox_PreviewMouseLeftButtonDown"
+                                          SelectedValue="{Binding SPEED_UNIT, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedValuePath="UNIT_NAME" SelectionChanged="ComboBox_SelectionChanged" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*" Header="途径"
+                                            Visibility="{Binding Data.IsShowAdministratorColumn, Source={StaticResource BindingProxy}, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ADMINISTRATOR}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbAdministrator" Width="100" Margin="0"
+                                          DisplayMemberPath="ADMINISTRATION_NAME" DropDownClosed="ComboBox_DropDownClosed"
+                                          DropDownOpened="ComboBox_DropDownOpened"
+                                          ItemsSource="{Binding DataContext.AdministrationDict, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          PreviewKeyDown="ComboBox_PreviewKeyDown"
+                                          PreviewMouseLeftButtonDown="ComboBox_PreviewMouseLeftButtonDown"
+                                          SelectedValue="{Binding ADMINISTRATOR, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedValuePath="ADMINISTRATION_NAME"
+                                          SelectionChanged="ComboBox_SelectionChanged" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="0.7*" Header="持续">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DURATIVE_INDICATOR, Converter={StaticResource DurativeConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbDurativeIndicator"
+                                          Width="{Binding Path=Width, RelativeSource={RelativeSource AncestorType=DataGridTemplateColumn}}"
+                                          Margin="0" DisplayMemberPath="ItemName" DropDownClosed="ComboBox_DropDownClosed"
+                                          DropDownOpened="ComboBox_DropDownOpened"
+                                          ItemsSource="{Binding DataContext.DurativeIndicatorList, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                          PreviewKeyDown="ComboBox_PreviewKeyDown"
+                                          PreviewMouseLeftButtonDown="ComboBox_PreviewMouseLeftButtonDown"
+                                          SelectedValue="{Binding DURATIVE_INDICATOR, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedValuePath="ItemValue" SelectionChanged="ComboBox_SelectionChanged" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTemplateColumn Width="1.6*" Header="结束时间">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <control:DateSelector Name="EndTime" HorizontalAlignment="Center"
+                                                      Command="{Binding}"
+                                                      CommandParameter="{Binding}"
+                                                      ConsumerFontSize="13" InputTextWidth="15" IsDefaultValue="False"
+                                                      SelectedDate="{Binding END_TIME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>-->
+                    <control:DataGridDateSelectorColumn Width="1.6*"
+                                                        Binding="{Binding END_TIME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        Header="结束时间" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</local:BaseUserControl>

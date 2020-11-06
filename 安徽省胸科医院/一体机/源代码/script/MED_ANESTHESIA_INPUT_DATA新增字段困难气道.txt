@@ -1,0 +1,5 @@
+-- Add/modify columns 
+alter table MED_ANESTHESIA_INPUT_DATA add DIFFICULT_AIRWAY NUMBER(2);
+-- Add comments to the columns 
+comment on column MED_ANESTHESIA_INPUT_DATA.DIFFICULT_AIRWAY
+  is '困难气道；1-是；0-否';

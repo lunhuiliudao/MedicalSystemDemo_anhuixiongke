@@ -1,0 +1,162 @@
+-----------------------------------------------------------
+接口日志：时间 20170713 10:30:19
+传入参数:mess{"Patient":{"PatientId":"ddd","VisitId":null,"InpNo":"Ddd","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:30:19
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:30:19
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:30:19
+开始同步BMedPatOperation 入参PATIENT_ID:ddd-----------------------------------------------------------
+接口日志：时间 20170713 10:30:19
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+-----------------------------------------------------------
+接口日志：时间 20170713 10:30:31
+传入参数:mess{"Patient":{"PatientId":"ddd","VisitId":null,"InpNo":"Ddd","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:30:31
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:30:31
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:30:31
+开始同步BMedPatOperation 入参PATIENT_ID:ddd-----------------------------------------------------------
+接口日志：时间 20170713 10:30:31
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+-----------------------------------------------------------
+接口日志：时间 20170713 10:32:14
+传入参数:mess{"Patient":{"PatientId":"22","VisitId":null,"InpNo":"22","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:32:14
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:32:14
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:32:14
+开始同步BMedPatOperation 入参PATIENT_ID:22-----------------------------------------------------------
+接口日志：时间 20170713 10:32:15
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+-----------------------------------------------------------
+接口日志：时间 20170713 10:33:08
+传入参数:mess{"Patient":{"PatientId":"22","VisitId":null,"InpNo":"22","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:33:08
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:33:08
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:33:08
+开始同步BMedPatOperation 入参PATIENT_ID:22-----------------------------------------------------------
+接口日志：时间 20170713 10:33:08
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+-----------------------------------------------------------
+接口日志：时间 20170713 10:43:09
+传入参数:mess{"Patient":{"PatientId":"22","VisitId":null,"InpNo":"222","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:43:09
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:43:09
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:43:09
+开始同步BMedPatOperation 入参PATIENT_ID:22-----------------------------------------------------------
+接口日志：时间 20170713 10:43:10
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient
+-----------------------------------------------------------
+接口日志：时间 20170713 10:44:41
+传入参数:mess{"Patient":{"PatientId":"11","VisitId":null,"InpNo":"222","WardCode":null,"DeptCode":null,"DEP_ID":null,"StartDate":"\/Date(-62135596800000)\/","StopDate":"\/Date(-62135596800000)\/"},"OperatorBase":{"Operator":null,"OperatorDept":null,"OperateTime":null,"UserID":null,"PWD":null},"Operation":{"ScheduleId":null,"OperId":null,"StartDataTime":null,"StopDataTime":null,"BillAtr":null,"OperStep":null,"OperStatus":null,"Performedcode":null,"HisVisitId":null,"HisScheduleId":null},"Bar":{"BarCode":null,"BarParm":null},"EmrDocUpLoad":{"MrClass":null,"MrSubClass":null,"ArchiveKey":null,"ArchiveTimes":null,"EmrFileIndex":null,"EmrFileName":null},"ErrInfo":{"Flag":false,"ErrMsg":null},"LabTest":{"TestNo":null},"Coltd":null,"App":null,"Code":"PAT109","MsgType":null,"Route":null,"HospitalBranch":null,"Reserved1":null,"Reserved2":null,"Reserved3":null,"Reserved4":null,"Reserved5":null,"Reserved6":null,"Reserved7":null,"Reserved8":null,"Reserved9":null,"Reserved10":null,"SendMessage":null,"ReceiveMessage":null,"Result":null,"OpenClient":false}-----------------------------------------------------------
+接口日志：时间 20170713 10:44:41
+HanderDomain：PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:44:41
+CODExxxoooo:PAT109-----------------------------------------------------------
+接口日志：时间 20170713 10:44:41
+开始同步BMedPatOperation 入参PATIENT_ID:11-----------------------------------------------------------
+接口日志：时间 20170713 10:44:42
+ORA-00942: 表或视图不存在
+调用堆栈上的桢的字符串表现形式:   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MedicalSytem.Soft.DAL.OracleHelper.GetDataSet(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 e:\接口工作\NET_WS_V5\DAL\OracleHelper.cs:行号 166
+   在 InitDocare.Config2.GetMedIfHisViewSql() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 170
+   在 InitDocare.Config2.get_MedIfHisViewSqlList() 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 107
+   在 InitDocare.Config2.SelectMedIfHisViewSql(String appCode) 位置 e:\接口工作\NET_WS_V5\InitDocare\Config2.cs:行号 85
+   在 BLL.BMedPatOperation.PreDataBase(Config2 config, ParamInputDomain domain) 位置 e:\接口工作\NET_WS_V5\BLL\BMedPatOperation.cs:行号 57
+引发当前异常的函数为:CheckError
+导致错误的应用程序或对象的名称为:System.Data.OracleClient

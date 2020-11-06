@@ -1,0 +1,100 @@
+﻿@model MedicalSystem.AnesWorkStation.Domain.MED_VER_INFO
+@{
+    ViewBag.Title = "Index5";
+    Layout = "~/Areas/UpdateServer/Views/Shared/_Page.cshtml";
+}
+
+<style type="text/css">
+    .input_check {
+        width: 17px;
+        height: 17px;
+        background: #E92333;
+    }
+</style>
+<div style="width:100%;height:100%;">
+    <form id="form" method="post" enctype="multipart/form-data">
+        <table class="t2" cellpadding="0">
+            <tr>
+                <td class="f1">应用程序:</td>
+                <td>
+                    <input id="VER_ID" type="hidden" name="VER_ID" value="@Model.VER_ID">
+                    <input readonly="@ViewBag.ReadOnly" id="APP_ID" class="easyui-combogrid" name="APP_ID" style="width:350px" value="@Model.APP_ID" data-options="panelWidth: 350,idField: 'APP_ID' ,textField: 'APP_NAME',url: '/App/GetList',method: 'post',columns: [[{field:'APP_KEY',title:'Key',width:80},{field:'APP_NAME',title:'应用程序名称',width:200}]],fitColumns: true,required:true,prompt:'选择要发布版本应用程序',editable:false">
+                </td>
+            </tr>
+            <tr>
+                <td class="f1">版本号：</td>
+                <td><input id="VER_NO" class="easyui-textbox" type="text" name="VER_NO" data-options="required:true,prompt:'版本号自动增长'" style="width:350px;" value="@Model.VER_NO"></td>
+            </tr>
+            @*<tr>
+                <td class="f1">是否强制更新：</td>
+                <td><input id="IS_FORCIBLY" class="input_check" type="checkbox" name="IS_FORCIBLY" data-options="required:true" onclick="checkbox(this)" value="@Model.IS_FORCIBLY"></td>
+            </tr>
+            <tr>
+                <td class="f1">是否为测试版：</td>
+                <td>
+                    <input id="IS_TEST" class="input_check" type="checkbox" name="IS_TEST" data-options="required:true" onclick="checkbox(this)" value="@Model.IS_TEST">
+                </td>
+            </tr>*@
+            <tr>
+                <td class="f1">文件地址：</td>
+                <td>
+                    <input id="FILE_PATH" class="easyui-filebox" name="FILE_PATH" data-options="required:true,buttonText:'&nbsp;选&nbsp;择&nbsp;'" style="width:350px;" value="@Model.FILE_PATH" readonly="@ViewBag.ReadOnly">
+                </td>
+            </tr>
+            <tr>
+                <td class="f1">版本描述:</td>
+                <td><input id="DESCRIPTION" class="easyui-textbox" name="DESCRIPTION" data-options="required:true,multiline:true" style="height:60px;width:350px;" value="@Model.DESCRIPTION"></td>
+            </tr>
+            <tr>
+                <td class="f1">发布人：</td>
+                <td><input id="CREATER" class="easyui-textbox" type="text" name="CREATER" data-options="required:true,prompt:'发布人姓名'" style="width:350px;" value="@Model.CREATER"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" class="btn">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="SubmitUpdate(this)">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" onclick="clearForm(this)">重置</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" charset="UTF-8">
+    $(function () {
+        $("#VER_NO").textbox({ readonly: true });
+    });
+
+    function SubmitUpdate(tag) {
+        $(tag).attr('disabled', true);
+        if ($("#VER_ID").val() == "")
+            submitFormRest(tag, '/UpdateServer/Publish/Create');
+        else
+            submitForm(tag, '/UpdateServer/Publish/Update');
+        $(tag).attr('disabled', false);
+    }
+
+    $(document).ready(function () {
+        $("#form input[type=checkbox]").each(function () {
+            if ($(this).val() == "1")
+                $(this).attr("checked", true);
+            else
+                $(this).attr("checked", false);
+        });
+        $("#APP_ID").combogrid({
+            onChange: function (n, o) {
+                var url = "/UpdateServer/Version/GetAppVerion";
+                $.ajax({
+                    type: "post",
+                    url: url,
+                    contentType: "application/json",//传值的方式
+                    data: "{appID:'" + $('#APP_ID').combogrid('getValue') + "'}",
+                    success: function (date) {
+                        if (date)
+                            $("#VER_NO").textbox('setValue', date);
+                        else
+                            $.messager.alert('提示信息', '提交失败！\r\n' + data, 'warning');
+                    }
+                });
+            }
+        });
+    });
+</script>
